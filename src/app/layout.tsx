@@ -3,10 +3,13 @@ import "./globals.css";
 import { LenisProvider } from "@/providers/LenisProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition";
+import SiteFrame from "@/components/SiteFrame";
 
 export const metadata: Metadata = {
-  title: "Workhour Business – Together We Thrive",
+  title: {
+    default: "Workhour Business — Together We Thrive",
+    template: "%s | Workhour Business",
+  },
   description:
     "Business services across planning, people, payroll, travel, learning, workspaces, events, and digital marketing.",
   icons: {
@@ -26,11 +29,9 @@ export default function RootLayout({
       </head>
       <body>
         <LenisProvider>
-          <Navbar />
-          <PageTransition>
-            <main className="homepage">{children}</main>
-          </PageTransition>
-          <Footer />
+          <SiteFrame header={<Navbar />} footer={<Footer />}>
+            {children}
+          </SiteFrame>
         </LenisProvider>
       </body>
     </html>

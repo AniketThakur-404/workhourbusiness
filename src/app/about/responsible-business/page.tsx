@@ -1,68 +1,94 @@
-import Link from "next/link";
 import Image from "next/image";
+import AboutExperience from "../AboutExperience";
+
+export const metadata = { title: "Responsible Business" };
 
 export default function ResponsibleBusinessPage() {
   return (
-    <div className="AboutExperience-module__VGeTdW__page">
-      <div className="AboutExperience-module__VGeTdW__container">
-        <nav aria-label="Breadcrumb" className="AboutExperience-module__VGeTdW__breadcrumb">
-          <Link href="/">Home</Link>
-          <span aria-hidden="true">/</span>
-          <Link href="/about/">About Us</Link>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Responsible Business</span>
-        </nav>
-
-        <section className="AboutExperience-module__VGeTdW__hero">
-          <div className="AboutExperience-module__VGeTdW__heroCopy">
-            <p className="AboutExperience-module__VGeTdW__eyebrow">Workhour Business / About us</p>
-            <h1>Responsible Business</h1>
-            <p className="AboutExperience-module__VGeTdW__heroMessage">
-              Thoughtful decisions.
-              <br />
-              <span>Responsible work.</span>
-            </p>
-            <p className="AboutExperience-module__VGeTdW__heroIntro">
-              Clear expectations, thoughtful planning, and respect for the people behind every business decision.
-            </p>
-            <Link className="AboutExperience-module__VGeTdW__button" href="/contact/">
-              Let’s talk <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-
-          <div className="AboutExperience-module__VGeTdW__heroVisual">
-            <Image
-              alt="Illustrative professionals conducting business responsibly"
-              src="/about-responsible-v2.webp"
-              fill
-              priority
-              style={{ objectFit: "cover", position: "absolute" }}
-            />
-            <div className="AboutExperience-module__VGeTdW__imageLabel">
-              <span aria-hidden="true" />
-              People at the heart of the work
-            </div>
-          </div>
-        </section>
-
-        <section style={{ margin: "60px 0" }}>
-          <p className="eyebrow teal">Our approach</p>
-          <h2>Responsibility begins with how we work.</h2>
-          <p style={{ maxWidth: "780px", fontSize: "17px", lineHeight: "1.8", color: "#526a72", marginTop: "16px" }}>
-            Responsible business is not an afterthought; it guides everyday operations. We emphasize transparent communication, fair employment practices, regulatory integrity, and environmental consideration across all seven of our operating companies.
+    <AboutExperience
+      topic="responsible-business"
+      message={["Thoughtful decisions.", "Responsible work."]}
+      intro="Clear expectations, thoughtful planning, and respect for the people behind every business decision."
+      image={{
+        src: "/about-responsible-v2.webp",
+        alt: "Illustrative colleagues in an attentive one-to-one workplace conversation",
+        label: "People at the heart of the work",
+      }}
+    >
+      <section className="AboutExperience-module__VGeTdW__statement">
+        <p className="AboutExperience-module__VGeTdW__eyebrow">Our approach</p>
+        <h2>Responsibility begins with how we work.</h2>
+        <div>
+          <p>
+            Responsible work begins with clear expectations, thoughtful
+            planning, and respect for the people affected by business decisions.
           </p>
-        </section>
-
-        <section className="AboutExperience-module__VGeTdW__contact">
-          <div>
-            <p className="AboutExperience-module__VGeTdW__eyebrow">Start a conversation</p>
-            <h2>What’s your next step?</h2>
+          <p>
+            We approach each service with attention to its context and encourage
+            clients to define the outcomes, responsibilities, and safeguards
+            that matter to them.
+          </p>
+        </div>
+      </section>
+      <section
+        className="AboutExperience-module__VGeTdW__principles"
+        aria-label="Responsible working principles"
+      >
+        <div className="AboutExperience-module__VGeTdW__principleIntro">
+          <p className="AboutExperience-module__VGeTdW__eyebrow">
+            People. Context. Clarity.
+          </p>
+          <h2>
+            Considered decisions,
+            <br />
+            at every step.
+          </h2>
+          <p>
+            Keep the people affected by business decisions in view throughout
+            the process.
+          </p>
+          <div className="AboutExperience-module__VGeTdW__photo">
+            <Image
+              src="/about-responsible.webp"
+              alt="Illustrative colleagues discussing work in a shared workspace"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+            />
           </div>
-          <Link className="AboutExperience-module__VGeTdW__button" href="/contact/">
-            Connect with Workhour <span aria-hidden="true">↗</span>
-          </Link>
-        </section>
-      </div>
-    </div>
+        </div>
+        <div>
+          <article className="AboutExperience-module__VGeTdW__principle">
+            <span className="AboutExperience-module__VGeTdW__number">01</span>
+            <div>
+              <h3>Clear expectations</h3>
+              <p>
+                Define the outcomes and responsibilities that matter to the
+                work, from the beginning.
+              </p>
+            </div>
+          </article>
+          <article className="AboutExperience-module__VGeTdW__principle">
+            <span className="AboutExperience-module__VGeTdW__number">02</span>
+            <div>
+              <h3>Thoughtful planning</h3>
+              <p>
+                Consider the context of each service and the safeguards relevant
+                to it.
+              </p>
+            </div>
+          </article>
+          <article className="AboutExperience-module__VGeTdW__principle">
+            <span className="AboutExperience-module__VGeTdW__number">03</span>
+            <div>
+              <h3>Respect for people</h3>
+              <p>
+                Keep the people affected by business decisions in view
+                throughout the process.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </AboutExperience>
   );
 }

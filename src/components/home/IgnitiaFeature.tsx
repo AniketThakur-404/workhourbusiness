@@ -25,7 +25,7 @@ export default function IgnitiaFeature() {
         <p className="eyebrow teal">Featured announcement</p>
         <h2 id="ignitia-feature-heading">
           <Link href="/announcements/ignitia/">
-            IGNITIA <span aria-hidden="true">→</span>
+            IGNITIA <span aria-hidden="true">↗</span>
           </Link>
         </h2>
         <h3>
@@ -38,7 +38,7 @@ export default function IgnitiaFeature() {
           global impact – connecting Africa with the world.
         </p>
         <Link className="text-link" href="/announcements/ignitia/">
-          Discover IGNITIA <span aria-hidden="true">→</span>
+          Discover IGNITIA <span aria-hidden="true">↗</span>
         </Link>
       </div>
     </section>

@@ -14,10 +14,10 @@ export default function IntroSection() {
           <em>We Thrive</em>
         </p>
         <p className="intro-statement">
-          Workhour Business – we power your complete business journey.
+          Workhour Business — we power your complete business journey.
         </p>
         <Link className="text-link" href="/about/">
-          Discover our approach <span aria-hidden="true">→</span>
+          Discover our approach <span aria-hidden="true">↗</span>
         </Link>
       </div>
 
@@ -31,10 +31,9 @@ export default function IntroSection() {
         <div className="intro-brand">
           <Image
             alt="Workhour Business"
-            src="/workhour-business-logo.png"
+            src="/workhour-business-logo.jpeg"
             width={534}
             height={135}
-            style={{ width: "auto", height: "auto", maxWidth: "100%" }}
           />
         </div>
       </div>

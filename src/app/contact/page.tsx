@@ -5,19 +5,40 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function ContactPage() {
-  const [email, setEmail] = useState("");
-  const [company, setCompany] = useState("");
-  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState<{
+    email?: string;
+    company?: string;
+    message?: string;
+  }>({});
   const [status, setStatus] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email || !company || !message) {
-      setStatus("Please fill in all required fields.");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const email = form.elements.namedItem("email") as HTMLInputElement;
+    const nextErrors = {
+      email: !email.value.trim()
+        ? "Enter your email address."
+        : email.validity.typeMismatch
+          ? "Enter a valid email address."
+          : undefined,
+      company: String(data.get("company")).trim()
+        ? undefined
+        : "Enter your company name.",
+      message: String(data.get("message")).trim()
+        ? undefined
+        : "Enter a message.",
+    };
+    setErrors(nextErrors);
+    const invalid = Object.entries(nextErrors).find(([, error]) => error);
+    if (invalid) {
+      setStatus("Review the highlighted fields and try again.");
+      (form.elements.namedItem(invalid[0]) as HTMLElement).focus();
       return;
     }
     setStatus(
-      "Your enquiry details have been validated locally. Please note submission is not connected yet, so no message has been sent."
+      "Your enquiry details have been validated locally. Please note submission is not connected yet, so no message has been sent.",
     );
   };
 
@@ -32,7 +53,7 @@ export default function ContactPage() {
           className="PageBanner-module__C7wuVW__image"
           src="/about-responsible-v2.webp"
           fill
-          priority
+          preload
           style={{ objectFit: "cover", position: "absolute" }}
         />
         <div aria-hidden="true" className="PageBanner-module__C7wuVW__shade" />
@@ -90,10 +111,20 @@ export default function ContactPage() {
                 name="email"
                 type="email"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
+                aria-invalid={Boolean(errors.email)}
+                aria-describedby={
+                  errors.email ? "contact-email-error" : undefined
+                }
               />
+              {errors.email && (
+                <p
+                  id="contact-email-error"
+                  className="ContactEnquiryForm-module__E-5ava__error"
+                >
+                  {errors.email}
+                </p>
+              )}
             </div>
 
             <div className="ContactEnquiryForm-module__E-5ava__field">
@@ -105,10 +136,20 @@ export default function ContactPage() {
                 name="company"
                 type="text"
                 required
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
                 autoComplete="organization"
+                aria-invalid={Boolean(errors.company)}
+                aria-describedby={
+                  errors.company ? "contact-company-error" : undefined
+                }
               />
+              {errors.company && (
+                <p
+                  id="contact-company-error"
+                  className="ContactEnquiryForm-module__E-5ava__error"
+                >
+                  {errors.company}
+                </p>
+              )}
             </div>
 
             <div className="ContactEnquiryForm-module__E-5ava__field ContactEnquiryForm-module__E-5ava__messageField">
@@ -120,9 +161,19 @@ export default function ContactPage() {
                 name="message"
                 rows={6}
                 required
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={
+                  errors.message ? "contact-message-error" : undefined
+                }
               />
+              {errors.message && (
+                <p
+                  id="contact-message-error"
+                  className="ContactEnquiryForm-module__E-5ava__error"
+                >
+                  {errors.message}
+                </p>
+              )}
             </div>
 
             <p className="ContactEnquiryForm-module__E-5ava__unavailable">
@@ -134,16 +185,13 @@ export default function ContactPage() {
               Review enquiry <span aria-hidden="true">↗</span>
             </button>
 
-            {status && (
-              <p
-                aria-live="polite"
-                className="ContactEnquiryForm-module__E-5ava__status"
-                role="status"
-                style={{ marginTop: "16px", color: "var(--teal)" }}
-              >
-                {status}
-              </p>
-            )}
+            <p
+              aria-live="polite"
+              className="ContactEnquiryForm-module__E-5ava__status"
+              role="status"
+            >
+              {status}
+            </p>
           </form>
         </section>
 

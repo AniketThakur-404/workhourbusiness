@@ -6,13 +6,12 @@ export default function Footer() {
     <footer className="MainFooter-module__ck51Oq__footer">
       <div className="MainFooter-module__ck51Oq__footerTop">
         <Image
-          src="/workhour-business-logo.png"
+          src="/workhour-business-logo.jpeg"
           alt="Workhour Business"
-          width={194}
-          height={40}
-          style={{ width: "194px", height: "auto", display: "block" }}
+          width={534}
+          height={111}
         />
-        <p>Workhour Business – we power your complete business journey.</p>
+        <p>Workhour Business — we power your complete business journey.</p>
       </div>
 
       <div className="MainFooter-module__ck51Oq__footerLinks">
@@ -33,13 +32,13 @@ export default function Footer() {
 
         <div>
           <small>Our businesses</small>
-          <Link href="/businesses/#inceptura">Inceptura</Link>
-          <Link href="/businesses/#leaders-pinnacle">Leaders Pinnacle</Link>
-          <Link href="/businesses/#employaa">Employaa</Link>
-          <Link href="/businesses/#elevatrain">Elevatrain</Link>
-          <Link href="/businesses/#gotravel">Go Travel Global</Link>
-          <Link href="/businesses/#remunerax">Remunerax</Link>
-          <Link href="/businesses/#thinkrunspace">ThinkRunSpace</Link>
+          <a href="https://inceptura.workhourbusiness.com">Inceptura</a>
+          <a href="https://leaderspinnacle.workhourbusiness.com">Leaders Pinnacle</a>
+          <a href="https://employaa.workhourbusiness.com">Employaa</a>
+          <a href="https://elevatrain.workhourbusiness.com">Elevatrain</a>
+          <a href="https://gotravelglobal.workhourbusiness.com">Go Travel Global</a>
+          <a href="https://remunerax.workhourbusiness.com">Remunerax</a>
+          <a href="https://thinkrunspace.workhourbusiness.com">ThinkRunSpace</a>
         </div>
 
         <div>

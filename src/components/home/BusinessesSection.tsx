@@ -228,7 +228,7 @@ export default function BusinessesSection() {
               <span className="business-tab-number">{biz.number}</span>
               {biz.icon}
               <span className="business-tab-name">{biz.name}</span>
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true">↗</span>
             </button>
           ))}
         </div>
@@ -266,7 +266,7 @@ export default function BusinessesSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Explore {current.name} <span aria-hidden="true">→</span>
+              Explore {current.name} <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>

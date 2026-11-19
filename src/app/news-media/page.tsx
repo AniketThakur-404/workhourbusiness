@@ -77,7 +77,7 @@ export default function NewsMediaPage() {
               Mindfulness learning themes: attention, reflection, and wellbeing
               at work.
             </p>
-            <Link className="text-link" href="/about/">
+            <Link className="text-link" href="/brands/elevatrain/trainings/mindfulness/">
               Explore learning <span aria-hidden="true">↗</span>
             </Link>
           </article>
@@ -98,7 +98,7 @@ export default function NewsMediaPage() {
               Planning and coordination for conferences, talks, and
               professional gatherings.
             </p>
-            <Link className="text-link" href="/businesses/">
+            <Link className="text-link" href="/brands/leaders-pinnacle/services/bespoke-corporate-events/">
               Explore event services <span aria-hidden="true">↗</span>
             </Link>
           </article>

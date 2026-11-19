@@ -1,73 +1,116 @@
 import Link from "next/link";
-import Image from "next/image";
+import AboutExperience from "../AboutExperience";
 
-export default function AboutPresencePage() {
+export const metadata = { title: "Presence" };
+
+export default function PresencePage() {
   return (
-    <div className="AboutExperience-module__VGeTdW__page">
-      <div className="AboutExperience-module__VGeTdW__container">
-        <nav aria-label="Breadcrumb" className="AboutExperience-module__VGeTdW__breadcrumb">
-          <Link href="/">Home</Link>
-          <span aria-hidden="true">/</span>
-          <Link href="/about/">About Us</Link>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Presence</span>
-        </nav>
-
-        <section className="AboutExperience-module__VGeTdW__hero">
-          <div className="AboutExperience-module__VGeTdW__heroCopy">
-            <p className="AboutExperience-module__VGeTdW__eyebrow">Workhour Business / About us</p>
-            <h1>Presence</h1>
-            <p className="AboutExperience-module__VGeTdW__heroMessage">
-              A wider perspective.
-              <br />
-              <span>A connected world.</span>
-            </p>
-            <p className="AboutExperience-module__VGeTdW__heroIntro">
-              Explore the regional market context behind the Workhour Business planning material.
-            </p>
-            <Link className="AboutExperience-module__VGeTdW__button" href="/contact/">
-              Let’s talk <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-
-          <div className="AboutExperience-module__VGeTdW__heroVisual">
-            <Image
-              alt="Illustrative global footprint and international business relationships"
-              src="/about-presence-v2.webp"
-              fill
-              priority
-              style={{ objectFit: "cover", position: "absolute" }}
-            />
-            <div className="AboutExperience-module__VGeTdW__imageLabel">
-              <span aria-hidden="true" />
-              A broader business perspective
-            </div>
-          </div>
-        </section>
-
-        <section style={{ margin: "60px 0" }}>
-          <p className="eyebrow teal">Regional perspective</p>
-          <h2>Looking across regions and opportunities.</h2>
-          <p style={{ maxWidth: "780px", fontSize: "17px", lineHeight: "1.8", color: "#526a72", marginTop: "16px" }}>
-            The supplied planning material names markets across Asia, Oceania, the Middle East, Africa, and North America. Across borders and cultures, our group brings cross-border understanding to recruitment, logistics, workspace, and business execution.
+    <AboutExperience
+      topic="presence"
+      message={["A wider perspective.", "A connected world."]}
+      intro="Explore the regional market context behind the Workhour Business planning material."
+      image={{
+        src: "/about-presence-v2.webp",
+        alt: "Illustrative business traveller in a contemporary airport concourse",
+        label: "A broader business perspective",
+      }}
+    >
+      <section className="AboutExperience-module__VGeTdW__presence">
+        <div>
+          <p className="AboutExperience-module__VGeTdW__eyebrow">
+            Regional perspective
           </p>
-          <div style={{ marginTop: "24px" }}>
-            <Link className="text-link" href="/global-presence/">
-              View all global presence markets <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </section>
-
-        <section className="AboutExperience-module__VGeTdW__contact">
-          <div>
-            <p className="AboutExperience-module__VGeTdW__eyebrow">Start a conversation</p>
-            <h2>What’s your next step?</h2>
-          </div>
-          <Link className="AboutExperience-module__VGeTdW__button" href="/contact/">
-            Connect with Workhour <span aria-hidden="true">↗</span>
+          <h2>Looking across regions and opportunities.</h2>
+          <p>
+            The supplied planning material names markets across Asia, Oceania,
+            the Middle East, Africa, and North America.
+          </p>
+          <aside className="AboutExperience-module__VGeTdW__contextNote">
+            <strong>Planning markets</strong>
+            <p>
+              These are planning references, not a directory of confirmed
+              offices or service locations. Contact us to discuss the support
+              available for your location.
+            </p>
+          </aside>
+          <Link
+            className="AboutExperience-module__VGeTdW__textLink"
+            href="/contact/"
+          >
+            Discuss your location <span aria-hidden="true">↗</span>
           </Link>
-        </section>
-      </div>
-    </div>
+        </div>
+        <div
+          className="AboutExperience-module__VGeTdW__regionList"
+          aria-label="Markets referenced in planning"
+        >
+          <article>
+            <span className="AboutExperience-module__VGeTdW__number">01</span>
+            <div>
+              <h3>Asia</h3>
+              <ul>
+                <li>India</li>
+                <li>Malaysia</li>
+              </ul>
+            </div>
+            <span className="AboutExperience-module__VGeTdW__regionTag">
+              Planning reference
+            </span>
+          </article>
+          <article>
+            <span className="AboutExperience-module__VGeTdW__number">02</span>
+            <div>
+              <h3>Oceania</h3>
+              <ul>
+                <li>Australia</li>
+              </ul>
+            </div>
+            <span className="AboutExperience-module__VGeTdW__regionTag">
+              Planning reference
+            </span>
+          </article>
+          <article>
+            <span className="AboutExperience-module__VGeTdW__number">03</span>
+            <div>
+              <h3>Middle East</h3>
+              <ul>
+                <li>UAE</li>
+              </ul>
+            </div>
+            <span className="AboutExperience-module__VGeTdW__regionTag">
+              Planning reference
+            </span>
+          </article>
+          <article>
+            <span className="AboutExperience-module__VGeTdW__number">04</span>
+            <div>
+              <h3>Africa</h3>
+              <ul>
+                <li>Kenya</li>
+                <li>Zimbabwe</li>
+                <li>Malawi</li>
+                <li>Rwanda</li>
+              </ul>
+            </div>
+            <span className="AboutExperience-module__VGeTdW__regionTag">
+              Planning reference
+            </span>
+          </article>
+          <article>
+            <span className="AboutExperience-module__VGeTdW__number">05</span>
+            <div>
+              <h3>North America</h3>
+              <ul>
+                <li>Canada</li>
+                <li>Mexico</li>
+              </ul>
+            </div>
+            <span className="AboutExperience-module__VGeTdW__regionTag">
+              Planning reference
+            </span>
+          </article>
+        </div>
+      </section>
+    </AboutExperience>
   );
 }

@@ -1,0 +1,219 @@
+.presence-map {
+  background: #fbfdfc;
+  border: 1px solid #dbe5e8;
+  grid-template-columns: minmax(0, 1.15fr) minmax(275px, 0.85fr);
+  align-items: center;
+  gap: clamp(22px, 4vw, 48px);
+  margin: 32px 0 10px;
+  padding: clamp(18px, 3vw, 34px);
+  display: grid;
+}
+.presence-map__visual {
+  min-width: 0;
+}
+.presence-map__map-canvas {
+  position: relative;
+}
+.presence-map__pin {
+  cursor: pointer;
+  color: #168c84;
+  background: 0 0;
+  border: 0;
+  width: 20px;
+  height: 28px;
+  padding: 0;
+  position: absolute;
+  transform: translate(-50%, -100%);
+}
+.presence-map__pin svg {
+  fill: currentColor;
+  stroke: #fff;
+  stroke-width: 1px;
+  filter: drop-shadow(0 2px 2px #071a3133);
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+.presence-map__pin circle {
+  fill: #fff;
+  stroke: none;
+}
+.presence-map__india-pin {
+  color: #071a31;
+  width: 30px;
+  height: 40px;
+}
+.presence-map__pin:hover,
+.presence-map__pin:focus-visible,
+.presence-map__pin[aria-pressed="true"] {
+  z-index: 2;
+  color: #071a31;
+}
+.presence-map__pin:focus-visible {
+  outline-offset: 4px;
+  border-radius: 10px;
+  outline: 2px solid #168c84;
+}
+.presence-map__key {
+  color: #5e7379;
+  align-items: center;
+  gap: 9px;
+  margin-top: 12px;
+  font-size: 12px;
+  display: flex;
+}
+.presence-map__key span {
+  background: #071a31;
+  border-radius: 2px;
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+}
+.presence-map__tooltip {
+  color: #597077;
+  background: #eff7f4;
+  border-left: 3px solid #2baaa3;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 58px;
+  margin: 14px 0 0;
+  padding: 11px 13px;
+  font-size: 12px;
+  line-height: 1.45;
+  display: flex;
+}
+.presence-map__tooltip strong {
+  color: #071a31;
+  font-size: 13px;
+}
+.presence-map__country-list {
+  min-width: 0;
+}
+.presence-map__list-heading {
+  margin-bottom: 20px;
+}
+.presence-map__list-heading h3 {
+  color: #071a31;
+  letter-spacing: -0.04em;
+  margin: 0;
+  font:
+    400 clamp(25px, 3vw, 34px) / 1.08 Georgia,
+    Times New Roman,
+    serif;
+}
+.presence-map__region {
+  margin-top: 17px;
+}
+.presence-map__region h4 {
+  color: #168c84;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  font-size: 11px;
+}
+.presence-map__region ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+.presence-map__country-button {
+  color: #233c48;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #e0e9e6;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  min-height: 39px;
+  padding: 6px 8px;
+  font-size: 12px;
+  display: flex;
+}
+.presence-map__country-button:hover,
+.presence-map__country-button[aria-pressed="true"] {
+  background: #eef7f3;
+  border-color: #2baaa3;
+}
+.presence-map__country-button:focus-visible {
+  outline-offset: 2px;
+  outline: 3px solid #168c84;
+}
+@media (max-width: 900px) {
+  .presence-map {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+  .presence-map {
+    padding: clamp(18px, 4vw, 30px);
+  }
+  .presence-map__country-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 20px;
+    display: grid;
+  }
+  .presence-map__list-heading {
+    grid-column: 1/-1;
+  }
+  .presence-map__region {
+    margin-top: 3px;
+  }
+}
+@media (max-width: 520px) {
+  .presence-map {
+    gap: 20px;
+    margin-top: 22px;
+    padding: 15px;
+  }
+  .presence-map__country-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .presence-map__list-heading {
+    margin-bottom: 10px;
+  }
+  .presence-map__region {
+    margin-top: 12px;
+  }
+  .presence-map__region ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .presence-map__country-button {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 50px;
+  }
+}
+.presence-map__world-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.presence-map__pin-label {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #071a31;
+  color: #fff;
+  border-radius: 4px;
+  padding: 6px 9px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.presence-map__pin[data-active="true"] {
+  z-index: 2;
+  color: #071a31;
+}
+
+.presence-map__country-button[data-active="true"] {
+  background: #eef7f3;
+  border-color: #2baaa3;
+}

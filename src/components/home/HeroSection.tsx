@@ -8,25 +8,21 @@ const heroSlides = [
   {
     number: "01",
     headline: "Innovate to Exist",
-    sub: "Business capability for the complete journey – from the first idea to the next horizon.",
     image: "/hero-innovate.webp",
   },
   {
     number: "02",
     headline: "Progress never sleeps",
-    sub: "Continuous momentum and operational excellence to keep your business ahead of change.",
     image: "/hero-progress.webp",
   },
   {
     number: "03",
     headline: "Evolve beyond limits",
-    sub: "Integrated services that scale seamlessly with your strategic vision.",
     image: "/hero-evolve.webp",
   },
   {
     number: "04",
     headline: "Transformation is survival",
-    sub: "Navigating complexity with resilience, purpose, and pioneering solutions.",
     image: "/hero-transform.webp",
   },
 ];
@@ -34,14 +30,27 @@ const heroSlides = [
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    if (!isPlaying) return;
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    function updatePreference() {
+      setReduceMotion(motionPreference.matches);
+    }
+    updatePreference();
+    motionPreference.addEventListener("change", updatePreference);
+    return () => motionPreference.removeEventListener("change", updatePreference);
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying || reduceMotion || hovered || focused) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isPlaying, reduceMotion, hovered, focused]);
 
   const slide = heroSlides[currentSlide];
 
@@ -52,6 +61,14 @@ export default function HeroSection() {
       role="region"
       aria-roledescription="carousel"
       aria-label="Workhour Business highlights"
+      onPointerEnter={(event) => {
+        if (event.pointerType === "mouse") setHovered(true);
+      }}
+      onPointerLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+      }}
     >
       {/* Hero Background Image */}
       <Image
@@ -59,7 +76,7 @@ export default function HeroSection() {
         src={slide.image}
         alt=""
         fill
-        priority
+        preload={currentSlide === 0}
         className="hero-image"
         style={{ objectFit: "cover", zIndex: 0 }}
       />
@@ -79,9 +96,11 @@ export default function HeroSection() {
           {slide.number} <span>/ 04</span>
         </div>
         <h1>{slide.headline}</h1>
-        <p className="hero-sub">{slide.sub}</p>
+        <p className="hero-sub">
+          Business capability for the complete journey — from the first idea to the next horizon.
+        </p>
         <Link className="button button-light" href="/about/">
-          About Us <span aria-hidden="true">→</span>
+          About Us <span aria-hidden="true">↗</span>
         </Link>
 
         {/* Carousel Controls */}
@@ -102,7 +121,7 @@ export default function HeroSection() {
               key={s.number}
               aria-current={currentSlide === idx ? "true" : undefined}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`dot ${currentSlide === idx ? "active" : ""}`}
+              className={currentSlide === idx ? "dot active" : "dot"}
               onClick={() => setCurrentSlide(idx)}
             />
           ))}
@@ -117,7 +136,7 @@ export default function HeroSection() {
           </button>
 
           <button
-            aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
+            aria-label={isPlaying ? "Pause slideshow" : "Resume slideshow"}
             className="pause"
             onClick={() => setIsPlaying(!isPlaying)}
           >

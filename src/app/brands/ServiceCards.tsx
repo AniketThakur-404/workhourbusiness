@@ -6,9 +6,11 @@ import styles from "./CompanySite.module.css";
 export default function ServiceCards({
   category,
   services,
+  showDescriptions = true,
 }: {
   category: string;
-  services: CompanyService[];
+  services: Pick<CompanyService, "id" | "title" | "description" | "image" | "photo" | "current">[];
+  showDescriptions?: boolean;
 }) {
   return (
     <ul className={styles.cards}>
@@ -19,7 +21,7 @@ export default function ServiceCards({
               <Image {...(photo ?? image)} alt="" fill sizes="(max-width: 600px) 100vw, (max-width: 950px) 45vw, 25vw" />
             </div>
             <h3>{title}</h3>
-            <p>{current?.[0]?.paragraphs?.[0] ?? description}</p>
+            {showDescriptions && <p>{current?.[0]?.paragraphs?.[0] ?? description}</p>}
             <span className="text-link">View details</span>
           </Link>
         </li>

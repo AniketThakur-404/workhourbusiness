@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { companyDetailPaths, companyUrl } from "@/lib/company-sites";
+import { companyDetailPaths, companyLinkProps } from "@/lib/company-sites";
 
 export default function NewsMediaPage() {
   return (
@@ -78,7 +78,7 @@ export default function NewsMediaPage() {
               Mindfulness learning themes: attention, reflection, and wellbeing
               at work.
             </p>
-            <Link className="text-link" href={companyUrl("elevatrain", companyDetailPaths.elevatrain)}>
+            <Link className="text-link" {...companyLinkProps("elevatrain", companyDetailPaths.elevatrain)}>
               Explore learning <span aria-hidden="true">↗</span>
             </Link>
           </article>
@@ -99,7 +99,7 @@ export default function NewsMediaPage() {
               Planning and coordination for conferences, talks, and
               professional gatherings.
             </p>
-            <Link className="text-link" href={companyUrl("leaders-pinnacle", companyDetailPaths["leaders-pinnacle"])}>
+            <Link className="text-link" {...companyLinkProps("leaders-pinnacle", companyDetailPaths["leaders-pinnacle"])}>
               Explore event services <span aria-hidden="true">↗</span>
             </Link>
           </article>

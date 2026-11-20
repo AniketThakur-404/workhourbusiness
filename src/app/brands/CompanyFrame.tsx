@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { workhourUrl, type CompanySlug } from "@/lib/company-sites";
-import BusinessLogo from "../businesses/BusinessLogo";
+import CompanyWordmark from "./CompanyWordmark";
 import { businesses } from "../businesses/businesses";
 import BrandNavigation from "./BrandNavigation";
 import { getCompanyCatalog, leadersExtraPages, servicePath } from "./company-catalog";
@@ -26,7 +26,7 @@ export default function CompanyFrame({
   ];
 
   return (
-    <div className={styles.site}>
+    <div className={styles.site} data-company={slug}>
       <a className={styles.skipLink} href="#company-main">Skip to content</a>
       <BrandNavigation
         slug={slug}
@@ -43,7 +43,7 @@ export default function CompanyFrame({
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
           <Link className={styles.logo} href="/" aria-label={`${title} home`}>
-            <BusinessLogo slug={slug} name={title} />
+            <CompanyWordmark slug={slug} name={title} />
           </Link>
           <nav aria-label="Footer navigation">
             <Link href="/about/">About</Link>

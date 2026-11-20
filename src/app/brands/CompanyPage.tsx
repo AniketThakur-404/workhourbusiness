@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { employaaContact } from "../businesses/employaa-presentation";
+import { EmployaaServiceIndex } from "./EmployaaServices";
 import { workhourUrl, type CompanySlug } from "@/lib/company-sites";
 import { businesses } from "../businesses/businesses";
 import BrandHero from "./BrandHero";
@@ -52,13 +53,19 @@ export function companyPageContent(slug: CompanySlug, page: string) {
   const image = company.supportImage ?? company.image;
 
   if (page === "about") {
-    return { ...catalog.about, image, description: company.description };
+    const aboutImage = company.sections.find(({ id }) => id === "about")?.image;
+    return { ...catalog.about, image: aboutImage ? company.image : image, description: company.description };
   }
   if (page === catalog.category) {
-    return { title: catalog.label, description: catalog.introduction, image: company.image };
+    const catalogueImage = company.sections.find(({ id }) => id === catalog.category)?.image;
+    return { title: catalog.label, description: catalog.introduction, image: catalogueImage ?? company.image };
   }
   if (page === "contact") {
-    return { title: `Contact ${company.title}`, description: "Tell us about your goals and the support you’re looking for.", image };
+    return {
+      title: `Contact ${company.title}`,
+      description: "Tell us about your goals and the support you’re looking for.",
+      image: company.contact?.image ?? image,
+    };
   }
   if (page === "our-global-reach" && catalog.hasGlobalReach) {
     return {
@@ -80,16 +87,20 @@ export function CompanyContact({ slug }: { slug: CompanySlug }) {
   const { title, contact } = businesses[slug];
   return (
     <section className={styles.contact} id="contact">
-      <h2>Contact {title}</h2>
-      <div className={styles.actions}>
-        {contact ? (
-          <>
-            <a className="button button-dark" href={`mailto:${contact.email}`}>{contact.email}</a>
-            {contact.phone && <a className="text-link" href={contact.phone.href}>{contact.phone.label}</a>}
-          </>
-        ) : (
-          <a className="button button-dark" href={`${workhourUrl}/contact/`}>Contact Workhour Business</a>
-        )}
+      <div>
+        <h2>Contact {title}</h2>
+        {slug === "employaa" && <p className={styles.subtitle}>{employaaContact.title}</p>}
+        <div className={styles.actions}>
+          {contact ? (
+            <>
+              <a className="button button-dark" href={`mailto:${contact.email}`}>{contact.email}</a>
+              {contact.phone && <a className="text-link" href={contact.phone.href}>{contact.phone.label}</a>}
+            </>
+          ) : (
+            <a className="button button-dark" href={`${workhourUrl}/contact/`}>Contact Workhour Business</a>
+          )}
+        </div>
+        {slug === "employaa" && <p className={styles.websiteAddress}>Website<br />www.workhourbusiness.com/employaa</p>}
       </div>
     </section>
   );
@@ -144,13 +155,37 @@ export default function CompanyPage({
         {page === "contact" ? (
           <Link className="button button-light" href={catalog.href}>Explore {catalog.label.toLowerCase()}</Link>
         ) : (
-          <Link className="button button-light" href="/contact/">Contact us</Link>
+          <Link className="button button-light" href="/contact/">
+            {slug === "leaders-pinnacle" ? "Plan an event" : "Contact us"}
+          </Link>
         )}
       </BrandHero>
+      {slug === "leaders-pinnacle" && page === catalog.category && (
+        <div className={styles.statsStrip}>
+          <div className={styles.statItem}>
+            <b>3</b>
+            <span>Regions</span>
+          </div>
+          <div className={styles.statItem}>
+            <b>14</b>
+            <span>Hub Cities</span>
+          </div>
+          <div className={styles.statItem}>
+            <b>5</b>
+            <span>Event Formats</span>
+          </div>
+          <div className={styles.statItem}>
+            <b>1</b>
+            <span>Accountable Partner</span>
+          </div>
+        </div>
+      )}
       <div className={styles.content}>
         {page === "about" && <AboutContent slug={slug} image={content.image} />}
         {page === catalog.category && (
-          <ServiceCards category={catalog.category} services={catalog.services} />
+          slug === "employaa"
+            ? <EmployaaServiceIndex />
+            : <ServiceCards category={catalog.category} services={catalog.services} />
         )}
         {page === "our-global-reach" && (
           <>
@@ -159,9 +194,25 @@ export default function CompanyPage({
             <CompanySections sections={groupMarkets} />
           </>
         )}
-        {page === "industries" && <CompanySections sections={industrySections} />}
-        {page === "events-and-insights" && <CompanySections sections={eventSections} />}
-        <CompanyContact slug={slug} />
+        {page === "industries" && (
+          <CompanySections
+            sections={
+              slug === "leaders-pinnacle"
+                ? company.sections.filter(({ id }) => id === "industries")
+                : industrySections
+            }
+          />
+        )}
+        {page === "events-and-insights" && (
+          <CompanySections
+            sections={
+              slug === "leaders-pinnacle"
+                ? company.sections.filter(({ id }) => id === "events-and-insights")
+                : eventSections
+            }
+          />
+        )}
+        {(slug !== "employaa" || page === "contact") && <CompanyContact slug={slug} />}
       </div>
     </CompanyFrame>
   );

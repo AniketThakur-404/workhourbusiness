@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { companyUrl } from "@/lib/company-sites";
+import { companyLinkProps } from "@/lib/company-sites";
 import AboutExperience from "../AboutExperience";
 
 export const metadata = { title: "Our Story" };
@@ -79,7 +79,7 @@ export default function OurStoryPage() {
           </Link>
         </div>
         <div className="AboutExperience-module__VGeTdW__businessList">
-          <Link href={companyUrl("inceptura")}>
+          <Link {...companyLinkProps("inceptura")}>
             <span className="AboutExperience-module__VGeTdW__number">01</span>
             <span>
               <strong>Inceptura</strong>
@@ -87,7 +87,7 @@ export default function OurStoryPage() {
             </span>
             <span aria-hidden="true">↗</span>
           </Link>
-          <Link href={companyUrl("leaders-pinnacle")}>
+          <Link {...companyLinkProps("leaders-pinnacle")}>
             <span className="AboutExperience-module__VGeTdW__number">02</span>
             <span>
               <strong>Leaders Pinnacle</strong>
@@ -95,7 +95,7 @@ export default function OurStoryPage() {
             </span>
             <span aria-hidden="true">↗</span>
           </Link>
-          <Link href={companyUrl("employaa")}>
+          <Link {...companyLinkProps("employaa")}>
             <span className="AboutExperience-module__VGeTdW__number">03</span>
             <span>
               <strong>Employaa</strong>
@@ -103,7 +103,7 @@ export default function OurStoryPage() {
             </span>
             <span aria-hidden="true">↗</span>
           </Link>
-          <Link href={companyUrl("elevatrain")}>
+          <Link {...companyLinkProps("elevatrain")}>
             <span className="AboutExperience-module__VGeTdW__number">04</span>
             <span>
               <strong>Elevatrain</strong>
@@ -111,7 +111,7 @@ export default function OurStoryPage() {
             </span>
             <span aria-hidden="true">↗</span>
           </Link>
-          <Link href={companyUrl("go-travel-global")}>
+          <Link {...companyLinkProps("go-travel-global")}>
             <span className="AboutExperience-module__VGeTdW__number">05</span>
             <span>
               <strong>Go Travel Global</strong>
@@ -119,7 +119,7 @@ export default function OurStoryPage() {
             </span>
             <span aria-hidden="true">↗</span>
           </Link>
-          <Link href={companyUrl("remunerax")}>
+          <Link {...companyLinkProps("remunerax")}>
             <span className="AboutExperience-module__VGeTdW__number">06</span>
             <span>
               <strong>Remunerax</strong>
@@ -127,7 +127,7 @@ export default function OurStoryPage() {
             </span>
             <span aria-hidden="true">↗</span>
           </Link>
-          <Link href={companyUrl("thinkrunspace")}>
+          <Link {...companyLinkProps("thinkrunspace")}>
             <span className="AboutExperience-module__VGeTdW__number">07</span>
             <span>
               <strong>ThinkRunSpace</strong>

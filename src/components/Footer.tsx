@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { companyUrl } from "@/lib/company-sites";
+import { companyLinkProps } from "@/lib/company-sites";
 import Image from "next/image";
 
 export default function Footer() {
@@ -33,13 +33,13 @@ export default function Footer() {
 
         <div>
           <small>Our businesses</small>
-          <Link href={companyUrl("inceptura")}>Inceptura</Link>
-          <Link href={companyUrl("leaders-pinnacle")}>Leaders Pinnacle</Link>
-          <Link href={companyUrl("employaa")}>Employaa</Link>
-          <Link href={companyUrl("elevatrain")}>Elevatrain</Link>
-          <Link href={companyUrl("go-travel-global")}>Go Travel Global</Link>
-          <Link href={companyUrl("remunerax")}>Remunerax</Link>
-          <Link href={companyUrl("thinkrunspace")}>ThinkRunSpace</Link>
+          <Link {...companyLinkProps("inceptura")}>Inceptura</Link>
+          <Link {...companyLinkProps("leaders-pinnacle")}>Leaders Pinnacle</Link>
+          <Link {...companyLinkProps("employaa")}>Employaa</Link>
+          <Link {...companyLinkProps("elevatrain")}>Elevatrain</Link>
+          <Link {...companyLinkProps("go-travel-global")}>Go Travel Global</Link>
+          <Link {...companyLinkProps("remunerax")}>Remunerax</Link>
+          <Link {...companyLinkProps("thinkrunspace")}>ThinkRunSpace</Link>
         </div>
 
         <div>

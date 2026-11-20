@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { companyUrl } from "@/lib/company-sites";
+import { companyLinkProps } from "@/lib/company-sites";
 import BusinessLogo from "@/app/businesses/BusinessLogo";
 import {
   employaaDescription,
@@ -43,7 +43,7 @@ const businessesData = [
     id: "leaders-pinnacle",
     number: "02",
     name: "Leaders Pinnacle",
-    strapline: "B2B events and market intelligence",
+    strapline: "B2B Events, Summits & Experiences",
     image: "/business-leaders-pinnacle.webp",
     description: leadersPinnacleDescription,
     icon: (
@@ -241,7 +241,7 @@ export default function BusinessesSection() {
           <Link
             aria-label={`Explore ${current.name}`}
             className="business-art"
-            href={companyUrl(current.id)}
+            {...companyLinkProps(current.id)}
           >
             <Image
               alt={`${current.name} illustrative business scene`}
@@ -258,8 +258,8 @@ export default function BusinessesSection() {
             <p>{current.description}</p>
             <Link
               className="text-link"
-              href={companyUrl(current.id)}
-          >
+              {...companyLinkProps(current.id)}
+            >
               Explore {current.name}
             </Link>
           </div>

@@ -6,9 +6,13 @@ export type CompanyImage = { src: string; alt: string };
 
 export type CompanySection = {
   title: string;
+  subtitle?: string;
   paragraphs?: string[];
   bullets?: string[];
+  points?: { title: string; description: string }[];
   image?: CompanyImage;
+  imagePlacement?: "portrait-left";
+  groups?: { title: string; bullets: string[] }[];
 };
 
 export type CompanyService = {
@@ -60,13 +64,15 @@ export function getCompanyCatalog(slug: CompanySlug) {
         : [employaaIds[service.id] ?? service.id]
       : [service.id];
     const matches = updated.filter(({ id }) => updatedIds.includes(id));
-    if (matches.length === 1) used.add(matches[0].id);
+    const match = matches.length === 1 ? matches[0] : undefined;
+    if (match) used.add(match.id);
 
     return {
       ...service,
-      photo: matches.length === 1 ? matches[0].image : undefined,
-      current: matches.flatMap(({ title, description }) =>
-        description ? [{ title, paragraphs: [description] }] : []
+      title: match?.profile?.title ?? service.title,
+      photo: match?.image,
+      current: matches.flatMap(({ title, description, details, profile }) =>
+        profile ? [profile] : description ? [{ title, paragraphs: [description], bullets: details }] : []
       ),
     };
   });
@@ -78,7 +84,8 @@ export function getCompanyCatalog(slug: CompanySlug) {
       title: offering.title,
       description: offering.description,
       image: offering.image ?? business.image,
-      sections: [],
+      current: offering.profile ? [offering.profile] : [],
+      sections: offering.details ? [{ title: "What’s included", bullets: offering.details }] : [],
     });
   }
 

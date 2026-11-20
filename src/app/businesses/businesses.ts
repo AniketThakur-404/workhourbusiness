@@ -1,4 +1,5 @@
 import { companyDetailPaths, type CompanySlug } from "@/lib/company-sites";
+import type { CompanyImage, CompanySection } from "../brands/company-catalog";
 import {
   employaaDescription,
   employaaSections,
@@ -6,28 +7,29 @@ import {
   leadersPinnacleSections,
 } from "./company-content";
 
-type BusinessImage = { src: string; alt: string };
-
 type Business = {
   title: string;
   description: string;
-  image: BusinessImage;
-  supportImage: BusinessImage | null;
-  sections: {
+  image: CompanyImage;
+  supportImage: CompanyImage | null;
+  sections: (CompanySection & {
     id: string;
-    title: string;
     paragraphs: string[];
-    bullets?: string[];
-    image?: BusinessImage;
     offerings?: {
       id: string;
       title: string;
       description?: string;
       href?: string;
-      image?: BusinessImage;
+      image?: CompanyImage;
+      details?: string[];
+      profile?: CompanySection;
     }[];
-  }[];
-  contact?: { email: string; phone?: { label: string; href: string } };
+  })[];
+  contact?: {
+    email: string;
+    phone?: { label: string; href: string };
+    image?: CompanyImage;
+  };
 };
 
 export const businesses: Record<CompanySlug, Business> = {
@@ -88,8 +90,8 @@ export const businesses: Record<CompanySlug, Business> = {
     title: "Employaa",
     description: employaaDescription,
     image: {
-      src: "/employaa/recruitment-team.webp",
-      alt: "Business professionals meeting around a table",
+      src: "/employaa/cover.webp",
+      alt: "Business planning workspace",
     },
     supportImage: {
       src: "/employaa/office-building.webp",
@@ -98,7 +100,8 @@ export const businesses: Record<CompanySlug, Business> = {
     sections: employaaSections,
     contact: {
       email: "info@workhourbusiness.com",
-      phone: { label: "+91 981 032 1155", href: "tel:+919810321155" },
+      phone: { label: "+91-981 032 1155", href: "tel:+919810321155" },
+      image: { src: "/employaa/contact-building.webp", alt: "Modern office towers viewed from street level" },
     },
   },
   elevatrain: {

@@ -309,219 +309,235 @@
   "leaders-pinnacle": {
     "category": "services",
     "hasGlobalReach": true,
-    "services": [
-      {
-        "title": "Strategic Conferences",
-        "description": "Conference planning centered on a clear business theme, audience, and intended participant experience.",
-        "image": {
-          "src": "/ignitia-connections.webp",
-          "alt": "Illustrative professionals exchanging ideas at a conference"
-        },
-        "id": "strategic-conferences",
-        "sections": [
-          {
-            "title": "Who it is for",
-            "paragraphs": [
-              "Organizations convening industry, leadership, or stakeholder audiences."
-            ]
-          },
-          {
-            "title": "Scope",
-            "bullets": [
-              "Define conference objectives, audience, and format",
-              "Develop agenda themes and speaker requirements",
-              "Coordinate venue, production, and event communications as agreed"
-            ]
-          },
-          {
-            "title": "How we approach it",
-            "paragraphs": [
-              "Translate objectives into a working brief and production plan, with approvals and responsibilities tracked across contributors."
-            ]
-          },
-          {
-            "title": "Practical benefits",
-            "paragraphs": [
-              "A clear conference design connects content, logistics, and audience needs.",
-              "Leaders Pinnacle"
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Trade Expos & Exhibitions",
-        "description": "Planning support for exhibitions that bring organizations, products, and professional audiences together.",
-        "image": {
-          "src": "/ignitia-connections.webp",
-          "alt": "Illustrative professionals exchanging ideas at a conference"
-        },
-        "id": "trade-expos-and-exhibitions",
-        "sections": [
-          {
-            "title": "Who it is for",
-            "paragraphs": [
-              "Businesses and associations considering a trade exhibition or expo presence."
-            ]
-          },
-          {
-            "title": "Scope",
-            "bullets": [
-              "Clarify exhibitor and attendee objectives",
-              "Plan floor, programming, and participation requirements",
-              "Coordinate exhibitor information and event logistics"
-            ]
-          },
-          {
-            "title": "How we approach it",
-            "paragraphs": [
-              "Build a schedule and operating plan around the venue, confirmed participants, and agreed production scope."
-            ]
-          },
-          {
-            "title": "Practical benefits",
-            "paragraphs": [
-              "Well-organized exhibitor information and logistics help participants prepare for the event.",
-              "Leaders Pinnacle"
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Bespoke Corporate Events",
-        "description": "Corporate event planning shaped around a specific audience, purpose, and format.",
-        "image": {
-          "src": "/about-responsible-v2.webp",
-          "alt": "Illustrative one-to-one professional conversation"
-        },
-        "id": "bespoke-corporate-events",
-        "sections": [
-          {
-            "title": "Who it is for",
-            "paragraphs": [
-              "Organizations planning a tailored internal or external gathering."
-            ]
-          },
-          {
-            "title": "Scope",
-            "bullets": [
-              "Define the event purpose and participant needs",
-              "Shape the format, agenda, and experience",
-              "Coordinate production elements and event-day responsibilities"
-            ]
-          },
-          {
-            "title": "How we approach it",
-            "paragraphs": [
-              "Develop the event brief with stakeholders, confirm practical requirements, and keep decisions visible through delivery."
-            ]
-          },
-          {
-            "title": "Practical benefits",
-            "paragraphs": [
-              "A tailored plan helps an event feel cohesive while keeping operational details in view.",
-              "Leaders Pinnacle"
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Webinars & Virtual Events",
-        "description": "Planning and production coordination for online sessions designed around clear content and participant flow.",
-        "image": {
-          "src": "/digital-motion.webp",
-          "alt": "Illustrative motion designer working with three-dimensional forms in a design studio"
-        },
-        "id": "webinars-and-virtual-events",
-        "sections": [
-          {
-            "title": "Who it is for",
-            "paragraphs": [
-              "Organizations hosting virtual talks, demonstrations, panels, or learning sessions."
-            ]
-          },
-          {
-            "title": "Scope",
-            "bullets": [
-              "Set session goals, audience, and run time",
-              "Coordinate speakers, content, and platform requirements",
-              "Prepare rehearsals, moderation, and participant communications"
-            ]
-          },
-          {
-            "title": "How we approach it",
-            "paragraphs": [
-              "Confirm platform capabilities and responsibilities, rehearse key transitions, and prepare a practical contingency plan."
-            ]
-          },
-          {
-            "title": "Practical benefits",
-            "paragraphs": [
-              "A considered run of show helps speakers and attendees navigate the session more smoothly.",
-              "Leaders Pinnacle"
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Podcast & Content Series",
-        "description": "Development and coordination for a recurring audio or editorial series with a consistent subject and audience.",
-        "image": {
-          "src": "/digital-motion.webp",
-          "alt": "Illustrative motion designer working with three-dimensional forms in a design studio"
-        },
-        "id": "podcast-and-content-series",
-        "sections": [
-          {
-            "title": "Who it is for",
-            "paragraphs": [
-              "Organizations exploring a podcast or content program to share ideas with a defined audience."
-            ]
-          },
-          {
-            "title": "Scope",
-            "bullets": [
-              "Set editorial purpose, audience, and series format",
-              "Plan topics, contributors, and production stages",
-              "Coordinate recording, review, and publishing handoffs"
-            ]
-          },
-          {
-            "title": "How we approach it",
-            "paragraphs": [
-              "Create an editorial calendar and production workflow, then confirm rights, approvals, and publishing responsibilities for each contribution."
-            ]
-          },
-          {
-            "title": "Practical benefits",
-            "paragraphs": [
-              "A repeatable format helps teams plan content and maintain a coherent series.",
-              "Leaders Pinnacle"
-            ]
-          }
-        ]
-      }
-    ],
+    "tagline": "Leaders Pinnacle / B2B Events · Summits · Experiences",
+    "introduction": "Every format a leader needs, under one roof. Strategic conferences, trade expos, bespoke events, webinars, and executive podcasts across India, Asia, the Middle East, and Africa.",
     "about": {
       "title": "About Leaders Pinnacle",
-      "description": "Leaders Pinnacle focuses on B2B events and market intelligence, including conferences, summits, exhibitions, trade expos, and bespoke corporate events.",
+      "description": "Where leaders convene. Where decisions take shape. We create conferences, expos, and bespoke experiences that bring senior decision-makers together across India, Asia, the Middle East, and Africa, and turn every gathering into lasting business momentum.",
       "image": {
-        "src": "/ignitia-connections.webp",
-        "alt": "Illustrative professionals exchanging ideas at a conference"
+        "src": "/business-leaders-pinnacle.webp",
+        "alt": "Leaders Pinnacle conference and summit assembly"
       },
       "sections": [
         {
-          "title": "Business overview",
+          "title": "Our Story",
           "paragraphs": [
-            "Its service areas also include webinars, podcasts, and strategic market research for organizations planning professional events and audience engagement.",
-            "Organizations use conferences and events to bring customers, partners, and employees together around shared topics. Online formats such as webinars can support participation across locations.",
-            "Event planning can include content development, audience needs, production, and practical coordination. The right mix depends on the event purpose, format, and participants.",
-            "Leaders Pinnacle focuses on knowledge-led business events and market intelligence for professional audiences."
+            "Too many business events look impressive and leave little behind. Leaders Pinnacle was created to close that gap.",
+            "Today we are a specialist B2B events partner serving enterprises, governments, and industry associations across India, Asia, and the Middle East & Africa. We guide every engagement from first idea to final report, and we stay accountable for the result."
+          ]
+        },
+        {
+          "title": "Vision & Mission",
+          "bullets": [
+            "Vision: A trusted name in B2B events worldwide, recognized for insight-driven gatherings that help businesses connect, learn, and grow.",
+            "Mission: Strategy, audience, and execution as one, delivering events uniting strategic content, curated audiences, and seamless delivery with measurable returns."
+          ]
+        },
+        {
+          "title": "Principles We Work By",
+          "bullets": [
+            "Client Centricity — Every event begins with your objectives, not our template.",
+            "Integrity — Honest budgets, open planning, and transparent reporting.",
+            "Innovation — Hybrid formats and digital tools that raise engagement.",
+            "Quality — High standards in content, production, and delegate experience.",
+            "Collaboration — Close partnership with venues, technology providers, and media.",
+            "Partnership — We think in long-term programmes, not one-off transactions."
           ]
         }
       ]
     },
-    "introduction": "Explore Leaders Pinnacle services and find the service that fits your needs.",
-    "tagline": "Leaders Pinnacle / B2B events and market intelligence"
+    "services": [
+      {
+        "id": "strategic-conferences",
+        "title": "Strategic Conferences",
+        "description": "CXO-level forums with research-led agendas and purposeful networking that put thought leadership at the centre.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Leaders Pinnacle Strategic Conference"
+        },
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Senior executives, CXOs, and industry leaders seeking high-caliber peer dialogue, actionable business intelligence, and premium market authority."
+            ]
+          },
+          {
+            "title": "Format & Scope",
+            "bullets": [
+              "CXO-level keynote addresses, fireside chats, and expert debate panels",
+              "Curated, research-backed agendas reflecting genuine industry opportunities and regulatory shifts",
+              "Structured VIP roundtables, closed-door boardroom briefings, and executive networking sessions",
+              "Tailored sponsor integrations and thought leadership showcases delivering direct audience access"
+            ]
+          },
+          {
+            "title": "How we deliver",
+            "paragraphs": [
+              "Our research team conducts exhaustive industry interviews to identify timely themes and secure top-tier speakers. We manage delegate acquisition, on-site choreography, and high-impact stage production."
+            ]
+          },
+          {
+            "title": "Measurable impact",
+            "paragraphs": [
+              "Verified delegate qualification, peer relationship building, high-touch networking, and post-summit thought leadership summaries that extend event ROI."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trade-expos-and-exhibitions",
+        "title": "Trade Expos & Exhibitions",
+        "description": "Multi-brand showcases and trade platforms where innovative solutions are seen, tested, and discussed by qualified buyers.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Leaders Pinnacle Trade Expo & Exhibition"
+        },
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Solution providers, technology pioneers, and industrial suppliers aiming to accelerate commercial pipeline through live demonstration."
+            ]
+          },
+          {
+            "title": "Format & Scope",
+            "bullets": [
+              "Comprehensive exhibitor, sponsor, and national pavilion packaging",
+              "Interactive live demonstration stages and innovation launch zones",
+              "Targeted trade visitor marketing, hosted buyer delegations, and verified lead capture",
+              "End-to-end venue contracting, floor plan design, booth fabrication, and on-site exhibitor management"
+            ]
+          },
+          {
+            "title": "How we deliver",
+            "paragraphs": [
+              "We build the entire marketplace from the ground up: attracting qualified commercial decision-makers, optimizing floor dynamics, and providing exhibitors with seamless lead capture tools."
+            ]
+          },
+          {
+            "title": "Measurable impact",
+            "paragraphs": [
+              "Direct procurement conversations, qualified sales leads, on-floor contract discussions, and elevated industry brand visibility."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bespoke-corporate-events",
+        "title": "Bespoke Corporate Events",
+        "description": "High-touch experiences tailored entirely to your organization’s people, strategic message, and pivotal moments.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Leaders Pinnacle Bespoke Corporate Event"
+        },
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Enterprises and multinationals organizing landmark internal gatherings, leadership summits, partner conferences, or prestigious awards."
+            ]
+          },
+          {
+            "title": "Format & Scope",
+            "bullets": [
+              "Annual leadership meets, executive retreats, strategic offsites, and global townhalls",
+              "Industry excellence awards, gala dinners, and milestone celebration evenings",
+              "Ecosystem summits for distributors, dealers, partners, and marquee clients",
+              "Custom stage architecture, cinematic AV lighting, immersive media, and five-star executive hospitality"
+            ]
+          },
+          {
+            "title": "How we deliver",
+            "paragraphs": [
+              "We operate as an extension of your leadership team: translating your company vision into a cohesive creative theme, meticulous running orders, and flawless stage execution."
+            ]
+          },
+          {
+            "title": "Measurable impact",
+            "paragraphs": [
+              "Deepened organizational alignment, energized leadership teams, enhanced partner loyalty, and an unforgettable shared experience."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "webinars-and-virtual-events",
+        "title": "Webinars & Virtual Events",
+        "description": "Digital programmes built to generate qualified leads and deepen relationships at scale across global markets.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Leaders Pinnacle Webinars & Virtual Events"
+        },
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "B2B organizations seeking cost-effective, high-reach digital events that feed sales pipelines with verified attendee telemetry."
+            ]
+          },
+          {
+            "title": "Format & Scope",
+            "bullets": [
+              "Studio-grade webinar series, virtual panel discussions, and digital product launches",
+              "Integrated registration funnels, calendar syncing, and CRM data automation",
+              "Interactive features including live polling, moderated Q&A, and virtual networking tables",
+              "On-demand content hosting, attendee scoring, and detailed engagement analytics"
+            ]
+          },
+          {
+            "title": "How we deliver",
+            "paragraphs": [
+              "We handle speaker technical rehearsals, platform broadcast configuration, audience acquisition, and live stream moderation so presenters can focus entirely on delivering their message."
+            ]
+          },
+          {
+            "title": "Measurable impact",
+            "paragraphs": [
+              "Wider geographic reach, sales-ready lead reports with engagement timestamps, and evergreen video assets for ongoing demand generation."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "podcast-and-content-series",
+        "title": "Podcasts & Content Series",
+        "description": "Executive conversations and thought leadership programmes that keep your voice present in the market all year round.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Leaders Pinnacle Podcasts & Content Series"
+        },
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Brands and industry leaders looking to establish sustained thought leadership, brand authority, and regular market touchpoints."
+            ]
+          },
+          {
+            "title": "Format & Scope",
+            "bullets": [
+              "Host-led executive interview series exploring sector innovation, macro trends, and leadership lessons",
+              "Turnkey podcast production including sound engineering, intro/outro music, and professional editing",
+              "Multi-channel syndication across Apple Podcasts, Spotify, YouTube, and LinkedIn",
+              "Conversion of audio/video episodes into executive briefing articles, quote cards, and social media clips"
+            ]
+          },
+          {
+            "title": "How we deliver",
+            "paragraphs": [
+              "We guide concept design, guest sourcing and pre-interview briefings, professional studio recording, sound design, and promotional distribution packaging."
+            ]
+          },
+          {
+            "title": "Measurable impact",
+            "paragraphs": [
+              "Sustained brand affinity, expanding subscriber base among senior industry professionals, and high-retention content assets."
+            ]
+          }
+        ]
+      }
+    ]
   },
   "employaa": {
     "category": "services",

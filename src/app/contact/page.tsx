@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { companyUrl } from "@/lib/company-sites";
+import { companyLinkProps } from "@/lib/company-sites";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -207,43 +207,43 @@ export default function ContactPage() {
 
           <div className="contact-service-links">
             <Link
-              href={companyUrl("inceptura")}>
+              {...companyLinkProps("inceptura")}>
               <strong>Inceptura</strong>
               <span>Ideation to Execution</span>
               <span aria-hidden="true">↗</span>
             </Link>
             <Link
-              href={companyUrl("leaders-pinnacle")}>
+              {...companyLinkProps("leaders-pinnacle")}>
               <strong>Leaders Pinnacle</strong>
               <span>B2B events and market intelligence</span>
               <span aria-hidden="true">↗</span>
             </Link>
             <Link
-              href={companyUrl("employaa")}>
+              {...companyLinkProps("employaa")}>
               <strong>Employaa</strong>
               <span>Recruitment and staffing</span>
               <span aria-hidden="true">↗</span>
             </Link>
             <Link
-              href={companyUrl("elevatrain")}>
+              {...companyLinkProps("elevatrain")}>
               <strong>Elevatrain</strong>
               <span>Corporate training and workshops</span>
               <span aria-hidden="true">↗</span>
             </Link>
             <Link
-              href={companyUrl("go-travel-global")}>
+              {...companyLinkProps("go-travel-global")}>
               <strong>Go Travel Global</strong>
               <span>Travel services</span>
               <span aria-hidden="true">↗</span>
             </Link>
             <Link
-              href={companyUrl("remunerax")}>
+              {...companyLinkProps("remunerax")}>
               <strong>Remunerax</strong>
               <span>Payroll and workforce outsourcing</span>
               <span aria-hidden="true">↗</span>
             </Link>
             <Link
-              href={companyUrl("thinkrunspace")}>
+              {...companyLinkProps("thinkrunspace")}>
               <strong>ThinkRunSpace</strong>
               <span>Flexible workspace solutions</span>
               <span aria-hidden="true">↗</span>

@@ -14,8 +14,12 @@ export function isCompanySlug(value: string): value is CompanySlug {
   return companySlugs.some((slug) => slug === value);
 }
 
-export function companyUrl(slug: CompanySlug, path = "/") {
-  return `https://workhourbusiness-${slug}.vercel.app${path}`;
+export function companyLinkProps(slug: CompanySlug, path = "/") {
+  return {
+    href: `https://workhourbusiness-${slug}.vercel.app${path}`,
+    target: "_blank",
+    rel: "noopener",
+  } as const;
 }
 
 export const workhourUrl = (

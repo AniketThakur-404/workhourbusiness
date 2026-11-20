@@ -19,10 +19,9 @@ export default function BrandHero({
   children?: ReactNode;
 }) {
   return (
-    <section className={`brand-site-hero ${compact ? styles.compactHero : ""}`} aria-label={title}>
+    <section className={styles.hero} data-compact={compact} aria-label={title}>
       <Image {...image} fill preload sizes="100vw" />
-      <div className="brand-site-hero-shade" aria-hidden="true" />
-      <div className="brand-site-hero-copy">
+      <div className={styles.heroCopy}>
         <p className="eyebrow">{label}</p>
         <h1>{title}</h1>
         <p>{description}</p>

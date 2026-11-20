@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { companyUrl } from "@/lib/company-sites";
+import { companyLinkProps } from "@/lib/company-sites";
 
 const businesses = [
   {
@@ -17,11 +17,11 @@ const businesses = [
   {
     id: "leaders-pinnacle",
     name: "Leaders Pinnacle",
-    tagline: "B2B Events & Webinars",
+    tagline: "B2B Events, Summits & Experiences",
     description:
-      "Premium B2B events, conferences, expos, webinars, podcasts, and market intelligence for industry leaders.",
-    color: "#00d4ff",
-    icon: "🎯",
+      "Strategic conferences, trade expos, bespoke events, webinars, and executive podcasts across India, Asia, and MEA.",
+    color: "#c8a24a",
+    icon: "▲",
   },
   {
     id: "employaa",
@@ -138,7 +138,7 @@ export default function EcosystemSection() {
                 <div className="flex items-start justify-between mb-6">
                   <div className="text-3xl">{biz.icon}</div>
                   <Link
-                    href={companyUrl(biz.id)}
+                    {...companyLinkProps(biz.id)}
                     className="w-10 h-10 rounded-full border border-[#222] flex items-center justify-center text-[#555] group-hover:border-current group-hover:text-white transition-all duration-300"
                     style={
                       {

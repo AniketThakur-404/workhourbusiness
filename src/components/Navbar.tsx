@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { companyUrl } from "@/lib/company-sites";
+import { companyLinkProps } from "@/lib/company-sites";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -76,14 +76,25 @@ const pages = [
   { href: "/global-presence/", label: "Global Presence" },
 ];
 
-const groups = [
+type NavLink = {
+  href: string;
+  label: string;
+  keywords?: string;
+  target?: string;
+  rel?: string;
+};
+
+const companyLinks = portfolioLinks.map(({ slug, label, keywords }) => ({
+  ...companyLinkProps(slug),
+  label,
+  keywords,
+}));
+
+const groups: { label: string; href?: string; links: NavLink[] }[] = [
   { label: "About Us", href: "/about/", links: aboutLinks },
   {
     label: "Portfolio",
-    links: portfolioLinks.map(({ slug, label }) => ({
-      href: companyUrl(slug),
-      label,
-    })),
+    links: companyLinks,
   },
   {
     label: "Services",
@@ -92,13 +103,8 @@ const groups = [
   },
 ];
 
-const searchPages = [
-  ...portfolioLinks.map(({ slug, label, keywords }) => ({
-    href: companyUrl(slug),
-    label,
-    keywords,
-    type: "Business",
-  })),
+const searchPages: (NavLink & { type: string })[] = [
+  ...companyLinks.map((link) => ({ ...link, type: "Business" })),
   ...serviceLinks.map((link) => ({ ...link, type: "Service" })),
   ...[
     { href: "/about/", label: "About Us", keywords: "about whb workhour business" },
@@ -185,7 +191,7 @@ export default function Navbar() {
       : searchPages
           .filter((page) => {
             const text =
-              `${page.label} ${"keywords" in page ? page.keywords : ""}`.toLowerCase();
+              `${page.label} ${page.keywords ?? ""}`.toLowerCase();
             return terms.every((term) => text.includes(term));
           })
           .slice(0, 8);
@@ -338,17 +344,11 @@ export default function Navbar() {
               </span>
             </summary>
             <div className="dropdown">
-              {links.map(({ href: linkHref, label: linkLabel }) =>
-                linkHref.startsWith("/") ? (
-                  <Link href={linkHref} key={linkHref} onClick={closeAll}>
-                    {linkLabel}
-                  </Link>
-                ) : (
-                  <a href={linkHref} key={linkHref} onClick={closeAll}>
-                    {linkLabel}
-                  </a>
-                ),
-              )}
+              {links.map(({ href, label, target, rel }) => (
+                <Link href={href} key={href} target={target} rel={rel} onClick={closeAll}>
+                  {label}
+                </Link>
+              ))}
             </div>
           </details>
         ))}
@@ -382,9 +382,9 @@ export default function Navbar() {
             />
             {results.length > 0 ? (
               <ul className="search-results">
-                {results.map(({ href, label, type }) => (
+                {results.map(({ href, label, type, target, rel }) => (
                   <li key={href}>
-                    <Link href={href} onClick={closeAll}>
+                    <Link href={href} target={target} rel={rel} onClick={closeAll}>
                       <small>{type}</small>
                       <strong>{label}</strong>
                       <span aria-hidden="true">↗</span>

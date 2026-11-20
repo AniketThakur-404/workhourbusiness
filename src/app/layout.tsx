@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import SiteFrame from "@/components/SiteFrame";
 
 export const metadata: Metadata = activeCompany ? {
-  icons: { icon: `/company-logos/${activeCompany}.webp` },
+  icons: { icon: `/company-logos/marks/${activeCompany}.webp` },
 } : {
   title: {
     default: "Workhour Business — Together We Thrive",

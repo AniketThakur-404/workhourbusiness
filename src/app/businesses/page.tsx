@@ -1,7 +1,7 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
-import { companySlugs, companyUrl } from "@/lib/company-sites";
+import { companySlugs, companyLinkProps } from "@/lib/company-sites";
 import BusinessLogo from "./BusinessLogo";
 import { businesses } from "./businesses";
 
@@ -35,7 +35,7 @@ export default function BusinessesPage() {
                   <BusinessLogo slug={slug} name={business.title} />
                   <h2>{business.title}</h2>
                   <p>{business.description}</p>
-                  <Link className="text-link" href={companyUrl(slug)}>
+                  <Link className="text-link" {...companyLinkProps(slug)}>
                     Visit {business.title}
                   </Link>
                 </div>

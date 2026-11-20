@@ -406,4 +406,5 @@ export default function Navbar() {
         </Link>
       </nav>
     </header>
-  
+  );
+}

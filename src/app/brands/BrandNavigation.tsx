@@ -1,64 +1,94 @@
 "use client";
 
-import { useState } from "react";
-import type { brandDetails } from "./brand-details";
+import Link from "next/link";
+import { useRef, useState } from "react";
+import type { CompanySlug } from "@/lib/company-sites";
+import BusinessLogo from "../businesses/BusinessLogo";
+import styles from "./CompanySite.module.css";
 
-export type Brand = keyof typeof brandDetails;
+export type CompanyNavLink = { href: string; label: string };
 
 export default function BrandNavigation({
-  brand,
-  details,
+  slug,
+  name,
+  currentPath,
+  catalog,
+  serviceLinks,
+  sectionLinks,
 }: {
-  brand: Brand;
-  details: (typeof brandDetails)[Brand];
+  slug: CompanySlug;
+  name: string;
+  currentPath: string;
+  catalog: CompanyNavLink;
+  serviceLinks: CompanyNavLink[];
+  sectionLinks: CompanyNavLink[];
 }) {
   const [open, setOpen] = useState(false);
-  const { name, mark, url, category, links } = details;
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const dropdown = useRef<HTMLDetailsElement>(null);
+
+  function closeMenu() {
+    setOpen(false);
+    if (dropdown.current) dropdown.current.open = false;
+  }
 
   return (
-    <header className="brand-site-header">
-      <a className="brand-site-wordmark" href={url} aria-label={`${name} home`}>
-        <span className="brand-site-mark" aria-hidden="true">
-          {mark}
-        </span>
-        <span>{name}</span>
-      </a>
-      <button
-        type="button"
-        className="brand-menu-toggle"
-        aria-controls="brand-site-navigation"
-        aria-expanded={open}
-        aria-label={open ? "Close navigation" : "Open navigation"}
-        onClick={() => setOpen(!open)}
-      >
-        {open ? "Close" : "Menu"}
-      </button>
-      <nav
-        id="brand-site-navigation"
-        className={open ? "brand-site-nav open" : "brand-site-nav"}
-        aria-label={`${name} navigation`}
-      >
-        <a href={url}>Home</a>
-        <a href={`${url}/about`}>About</a>
-        <details>
-          <summary>
-            {category === "trainings" ? "Trainings" : "Services"}
-          </summary>
-          <div className="brand-site-menu">
-            {links.map(({ href, label }) => (
-              <a href={href} key={href}>
-                {label}
-              </a>
-            ))}
-          </div>
-        </details>
-        {brand === "leaders-pinnacle" && (
-          <a href={`${url}/our-global-reach`}>Our Global Reach</a>
-        )}
-        <a className="brand-site-contact" href={`${url}/contact`}>
-          Contact <span aria-hidden="true">↗</span>
-        </a>
-      </nav>
+    <header
+      className={styles.header}
+      onKeyDown={(event) => {
+        if (event.key !== "Escape") return;
+        if (dropdown.current?.open) {
+          dropdown.current.open = false;
+          dropdown.current.querySelector("summary")?.focus();
+        } else if (open) {
+          closeMenu();
+          menuButton.current?.focus();
+        }
+      }}
+    >
+      <div className={styles.headerInner}>
+        <Link className={styles.logo} href="/" aria-label={`${name} home`} onClick={closeMenu}>
+          <BusinessLogo slug={slug} name={name} />
+        </Link>
+        <button
+          ref={menuButton}
+          className={styles.menuToggle}
+          type="button"
+          aria-controls="company-navigation"
+          aria-expanded={open}
+          onClick={() => open ? closeMenu() : setOpen(true)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
+        <nav
+          className={styles.navigation}
+          data-open={open}
+          id="company-navigation"
+          aria-label={`${name} navigation`}
+        >
+          <Link href="/" aria-current={currentPath === "/" ? "page" : undefined} onClick={closeMenu}>
+            Home
+          </Link>
+          <Link href="/about/" aria-current={currentPath === "/about/" ? "page" : undefined} onClick={closeMenu}>About</Link>
+          <details ref={dropdown} className={styles.dropdown}>
+            <summary>{catalog.label}</summary>
+            <div className={styles.dropdownLinks}>
+              <Link href={catalog.href} onClick={closeMenu}>
+                All {catalog.label.toLowerCase()}
+              </Link>
+              {serviceLinks.map(({ href, label }) => (
+                <Link href={href} key={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
+              ))}
+            </div>
+          </details>
+          {sectionLinks.map(({ href, label }) => (
+            <Link href={href} key={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
+          ))}
+          <Link className={`contact-button ${styles.headerContact}`} href="/contact/" onClick={closeMenu}>
+            Contact Us
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }

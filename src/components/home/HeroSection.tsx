@@ -29,9 +29,6 @@ const heroSlides = [
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
@@ -45,12 +42,12 @@ export default function HeroSection() {
   }, []);
 
   useEffect(() => {
-    if (!isPlaying || reduceMotion || hovered || focused) return;
+    if (reduceMotion) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
+    }, 5000);
     return () => clearInterval(interval);
-  }, [isPlaying, reduceMotion, hovered, focused]);
+  }, [reduceMotion]);
 
   const slide = heroSlides[currentSlide];
 
@@ -61,25 +58,25 @@ export default function HeroSection() {
       role="region"
       aria-roledescription="carousel"
       aria-label="Workhour Business highlights"
-      onPointerEnter={(event) => {
-        if (event.pointerType === "mouse") setHovered(true);
-      }}
-      onPointerLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
-      }}
     >
-      {/* Hero Background Image */}
-      <Image
-        key={slide.image}
-        src={slide.image}
-        alt=""
-        fill
-        preload={currentSlide === 0}
-        className="hero-image"
-        style={{ objectFit: "cover", zIndex: 0 }}
-      />
+      {/* Hero Background Images - all slide images preserved with smooth crossfade */}
+      {heroSlides.map((s, idx) => (
+        <Image
+          key={s.image}
+          src={s.image}
+          alt=""
+          fill
+          priority={idx === 0}
+          className="hero-image"
+          style={{
+            objectFit: "cover",
+            zIndex: 0,
+            opacity: currentSlide === idx ? 1 : 0,
+            transition: "opacity 1.2s ease-in-out",
+            pointerEvents: "none",
+          }}
+        />
+      ))}
 
       <div className="hero-overlay" aria-hidden="true" />
 
@@ -92,9 +89,6 @@ export default function HeroSection() {
 
       <div className="hero-copy">
         <p className="eyebrow">Workhour Business</p>
-        <div className="hero-counter" aria-live="polite">
-          {slide.number} <span>/ 04</span>
-        </div>
         <h1>{slide.headline}</h1>
         <p className="hero-sub">
           Business capability for the complete journey — from the first idea to the next horizon.
@@ -102,47 +96,6 @@ export default function HeroSection() {
         <Link className="button button-light" href="/about/">
           About Us <span aria-hidden="true">↗</span>
         </Link>
-
-        {/* Carousel Controls */}
-        <div className="hero-controls" aria-label="Slide controls">
-          <button
-            aria-label="Previous slide"
-            onClick={() =>
-              setCurrentSlide((prev) =>
-                prev === 0 ? heroSlides.length - 1 : prev - 1
-              )
-            }
-          >
-            ←
-          </button>
-
-          {heroSlides.map((s, idx) => (
-            <button
-              key={s.number}
-              aria-current={currentSlide === idx ? "true" : undefined}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={currentSlide === idx ? "dot active" : "dot"}
-              onClick={() => setCurrentSlide(idx)}
-            />
-          ))}
-
-          <button
-            aria-label="Next slide"
-            onClick={() =>
-              setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-            }
-          >
-            →
-          </button>
-
-          <button
-            aria-label={isPlaying ? "Pause slideshow" : "Resume slideshow"}
-            className="pause"
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
-            {isPlaying ? "Pause" : "Play"}
-          </button>
-        </div>
       </div>
     </section>
   );

@@ -14,8 +14,6 @@ export default function SiteFrame({
 }) {
   const pathname = usePathname();
 
-  if (pathname.startsWith("/brands/")) return children;
-
   return (
     <>
       {header}

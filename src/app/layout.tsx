@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { activeCompany } from "@/lib/company-site-config";
 import "./globals.css";
 import { LenisProvider } from "@/providers/LenisProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SiteFrame from "@/components/SiteFrame";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = activeCompany ? {
+  icons: { icon: `/company-logos/${activeCompany}.webp` },
+} : {
   title: {
     default: "Workhour Business — Together We Thrive",
     template: "%s | Workhour Business",
@@ -24,15 +27,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
-      </head>
       <body>
-        <LenisProvider>
-          <SiteFrame header={<Navbar />} footer={<Footer />}>
-            {children}
-          </SiteFrame>
-        </LenisProvider>
+        {activeCompany ? children : (
+          <LenisProvider>
+            <SiteFrame header={<Navbar />} footer={<Footer />}>
+              {children}
+            </SiteFrame>
+          </LenisProvider>
+        )}
       </body>
     </html>
   );

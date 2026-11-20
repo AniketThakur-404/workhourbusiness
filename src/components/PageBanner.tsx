@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type PageBannerProps = {
   title: string;
   description: string;
   image: { src: string; alt: string };
   parent?: { href: string; label: string };
+  showBreadcrumb?: boolean;
+  children?: ReactNode;
 };
 
 export default function PageBanner({
@@ -13,6 +16,8 @@ export default function PageBanner({
   description,
   image,
   parent,
+  showBreadcrumb = true,
+  children,
 }: PageBannerProps) {
   return (
     <section
@@ -27,20 +32,22 @@ export default function PageBanner({
       />
       <div className="PageBanner-module__C7wuVW__shade" aria-hidden="true" />
       <div className="PageBanner-module__C7wuVW__inner">
-        <nav
-          className="PageBanner-module__C7wuVW__breadcrumb"
-          aria-label="Breadcrumb"
-        >
-          <Link href="/">Home</Link>
-          <span aria-hidden="true">/</span>
-          {parent && (
-            <>
-              <Link href={parent.href}>{parent.label}</Link>
-              <span aria-hidden="true">/</span>
-            </>
-          )}
-          <span aria-current="page">{title}</span>
-        </nav>
+        {showBreadcrumb && (
+          <nav
+            className="PageBanner-module__C7wuVW__breadcrumb"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/">Home</Link>
+            <span aria-hidden="true">/</span>
+            {parent && (
+              <>
+                <Link href={parent.href}>{parent.label}</Link>
+                <span aria-hidden="true">/</span>
+              </>
+            )}
+            <span aria-current="page">{title}</span>
+          </nav>
+        )}
         <div className="PageBanner-module__C7wuVW__copy">
           <p className="PageBanner-module__C7wuVW__eyebrow">
             Workhour Business
@@ -49,6 +56,7 @@ export default function PageBanner({
           <p className="PageBanner-module__C7wuVW__description">
             {description}
           </p>
+          {children}
         </div>
       </div>
     </section>

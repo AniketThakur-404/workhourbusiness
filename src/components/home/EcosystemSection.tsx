@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { companyUrl } from "@/lib/company-sites";
 
 const businesses = [
   {
@@ -41,7 +42,7 @@ const businesses = [
     icon: "📚",
   },
   {
-    id: "go-travel",
+    id: "go-travel-global",
     name: "Go Travel Global",
     tagline: "Corporate Travel & Visa",
     description:
@@ -67,7 +68,7 @@ const businesses = [
     color: "#06b6d4",
     icon: "🏢",
   },
-];
+] as const;
 
 export default function EcosystemSection() {
   return (
@@ -137,7 +138,7 @@ export default function EcosystemSection() {
                 <div className="flex items-start justify-between mb-6">
                   <div className="text-3xl">{biz.icon}</div>
                   <Link
-                    href={`/businesses#${biz.id}`}
+                    href={companyUrl(biz.id)}
                     className="w-10 h-10 rounded-full border border-[#222] flex items-center justify-center text-[#555] group-hover:border-current group-hover:text-white transition-all duration-300"
                     style={
                       {
@@ -186,7 +187,7 @@ export default function EcosystemSection() {
           className="text-center mt-12"
         >
           <Link
-            href="/businesses"
+            href="/businesses/"
             className="group inline-flex items-center gap-3 px-8 py-4 border border-[#333] text-white rounded-full hover:border-[#c8ff00]/50 hover:bg-[#c8ff00]/5 transition-all duration-300"
           >
             Explore All Businesses

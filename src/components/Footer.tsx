@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { companyUrl } from "@/lib/company-sites";
 import Image from "next/image";
 
 export default function Footer() {
@@ -32,13 +33,13 @@ export default function Footer() {
 
         <div>
           <small>Our businesses</small>
-          <a href="https://inceptura.workhourbusiness.com">Inceptura</a>
-          <a href="https://leaderspinnacle.workhourbusiness.com">Leaders Pinnacle</a>
-          <a href="https://employaa.workhourbusiness.com">Employaa</a>
-          <a href="https://elevatrain.workhourbusiness.com">Elevatrain</a>
-          <a href="https://gotravelglobal.workhourbusiness.com">Go Travel Global</a>
-          <a href="https://remunerax.workhourbusiness.com">Remunerax</a>
-          <a href="https://thinkrunspace.workhourbusiness.com">ThinkRunSpace</a>
+          <Link href={companyUrl("inceptura")}>Inceptura</Link>
+          <Link href={companyUrl("leaders-pinnacle")}>Leaders Pinnacle</Link>
+          <Link href={companyUrl("employaa")}>Employaa</Link>
+          <Link href={companyUrl("elevatrain")}>Elevatrain</Link>
+          <Link href={companyUrl("go-travel-global")}>Go Travel Global</Link>
+          <Link href={companyUrl("remunerax")}>Remunerax</Link>
+          <Link href={companyUrl("thinkrunspace")}>ThinkRunSpace</Link>
         </div>
 
         <div>

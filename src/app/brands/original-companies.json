@@ -1,0 +1,1746 @@
+{
+  "inceptura": {
+    "category": "offerings",
+    "hasGlobalReach": true,
+    "services": [
+      {
+        "title": "Company Registration & Compliance",
+        "description": "A clear starting point for founders organizing a new business and its recurring administrative responsibilities.",
+        "image": {
+          "src": "/business-operations.webp",
+          "alt": "Illustrative payroll administrator organizing everyday office work"
+        },
+        "id": "company-registration-and-compliance",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Founders and growing teams preparing to establish or formalize a business."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify the intended business structure and operating context",
+              "Organize registration information and supporting records",
+              "Map recurring compliance responsibilities for qualified review"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Begin with the business model and jurisdiction selected by the client, build a documented task list, and coordinate next steps with the appropriate professional advisers where required."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A structured view of setup tasks, ownership, and follow-up helps founders approach early administration with greater clarity.",
+              "Inceptura"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Business Strategy & Growth Planning",
+        "description": "A practical planning process that turns business priorities into a focused set of decisions and next steps.",
+        "image": {
+          "src": "/about-story-v2.webp",
+          "alt": "Illustrative business specialists sharing ideas in a workplace"
+        },
+        "id": "business-strategy-and-growth-planning",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Founders and leadership teams evaluating priorities, growth options, or a new operating direction."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify the current business context and goals",
+              "Identify customer, offer, and operating questions to resolve",
+              "Translate agreed priorities into a sequenced action plan"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Use guided discussions and available business information to frame options, surface assumptions, and document actions with owners and review points."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A shared plan gives the team a clearer basis for decisions and makes trade-offs easier to discuss.",
+              "Inceptura"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Talent Acquisition",
+        "description": "Recruitment coordination shaped around the roles, capabilities, and working context a business needs.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "talent-acquisition",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Teams planning a hire or building a more deliberate approach to attracting candidates."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify role outcomes and selection criteria",
+              "Prepare role information and candidate outreach",
+              "Coordinate review, interview, and selection steps"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Align on the role first, keep candidate evaluation tied to agreed criteria, and maintain a clear handoff between the hiring team and recruitment activity."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A defined process helps hiring teams compare candidates consistently and keep decisions connected to the actual role.",
+              "Inceptura"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Event Management",
+        "description": "Planning and coordination for business events with a defined purpose, audience, and run of show.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Illustrative professionals exchanging ideas at a conference"
+        },
+        "id": "event-management",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations bringing people together for a business, learning, or relationship-building event."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Set event objectives and audience needs",
+              "Outline format, agenda, and production requirements",
+              "Coordinate preparation tasks and event-day responsibilities"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Start with the outcome, build a practical event plan, and track dependencies with the people responsible for each part."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A clear plan helps teams align event content, logistics, and participant experience.",
+              "Inceptura"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Travel & Logistics",
+        "description": "Travel planning and logistics coordination for business activities that depend on people and schedules moving together.",
+        "image": {
+          "src": "/business-travel.webp",
+          "alt": "Illustrative business traveller walking through an airport"
+        },
+        "id": "travel-and-logistics",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Teams arranging work-related travel or coordinating the practical details around a business activity."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Gather traveler, timing, and destination requirements",
+              "Organize itinerary and logistics information",
+              "Track changes and communicate confirmed arrangements"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Work from the client’s approved travel requirements and confirm each arrangement with the relevant provider before sharing it as final."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Centralized planning makes itineraries easier to review and helps teams keep important travel details together.",
+              "Inceptura"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "International Expansions",
+        "description": "A structured way to assess the work involved in entering a new market and organize the decisions that follow.",
+        "image": {
+          "src": "/business-travel.webp",
+          "alt": "Illustrative business traveller walking through an airport"
+        },
+        "id": "international-expansions",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Businesses exploring cross-border growth or comparing possible markets."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Frame market-entry objectives and open questions",
+              "Map operational, people, and compliance workstreams",
+              "Sequence research and decisions before implementation"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Separate assumptions from verified information, assess options against the client’s priorities, and involve local qualified advisers for jurisdiction-specific matters."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A staged plan helps leaders see dependencies and make informed choices before committing resources.",
+              "Inceptura"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Revenue Checks & Performance Monitoring",
+        "description": "A regular review of agreed revenue measures and operating indicators to make performance easier to understand.",
+        "image": {
+          "src": "/digital-marketing.webp",
+          "alt": "Illustrative marketing analysts reviewing campaign charts together"
+        },
+        "id": "revenue-checks-and-performance-monitoring",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Owners and leadership teams who want a consistent view of business performance."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Agree the measures and source records to review",
+              "Compare actuals with the relevant plan or prior period",
+              "Summarize variances, questions, and follow-up actions"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Use client-provided information, document definitions, and distinguish observed results from interpretation or forecast."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Consistent reporting can help teams spot questions earlier and focus discussion on practical decisions.",
+              "Inceptura"
+            ]
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About Inceptura",
+      "description": "Inceptura is a strategic growth partner designed to support startups and growing enterprises from the earliest spark of an idea through full execution and global expansion.",
+      "image": {
+        "src": "/about-story-v2.webp",
+        "alt": "Illustrative business specialists sharing ideas in a workplace"
+      },
+      "sections": [
+        {
+          "title": "Ideation to execution",
+          "paragraphs": [
+            "Inceptura is a strategic growth partner designed to support startups and growing enterprises from the earliest spark of an idea through full execution and global expansion. Our integrated service model covers company registration and compliance, business strategy, talent acquisition and payroll, event management, travel and logistics, international expansion, and revenue optimization. By operating as an embedded extension of our clients’ founding and leadership teams, we help transform raw ideas into scalable, compliant and investor-ready businesses.",
+            "With a vision of Ideation to Execution, Inceptura provides a single umbrella of mentorship, operational support, and strategic guidance so that founders can focus on innovation, customers, and product-market fit while we handle the operational backbone required for sustainable growth.",
+            "02 / Inceptura"
+          ]
+        },
+        {
+          "title": "A partner across the business lifecycle",
+          "paragraphs": [
+            "Inceptura is built on the belief that ambitious founders need more than ad-hoc consulting or transactional services. They need a committed partner that understands the full lifecycle of a business and can orchestrate all the critical functions required to grow.",
+            "Our multidisciplinary team brings together experts in corporate law and compliance, strategy consulting, HR and payroll, event production, travel and logistics, and cross-border market entry. This allows us to offer a unified solution instead of fragmented vendor relationships, reducing friction, cost, and execution risk for our clients.",
+            "Inceptura offers a modular yet integrated portfolio of services that collectively form a robust growth-enablement platform. Clients can engage us at any stage of their journey, while benefitting most when we partner from the earliest ideation stage.",
+            "03 / Inceptura"
+          ]
+        },
+        {
+          "title": "Problem statement and market need",
+          "paragraphs": [
+            "Startups and scaling businesses face a complex, fragmented landscape of operational requirements. Founders are forced to juggle multiple vendors while trying to build products, raise capital, and win customers. This often leads to costly mistakes, lost opportunities, and burnout."
+          ]
+        }
+      ]
+    },
+    "introduction": "Explore Inceptura offerings and find the service that fits your needs.",
+    "tagline": "Inceptura / Ideation to Execution"
+  },
+  "leaders-pinnacle": {
+    "category": "services",
+    "hasGlobalReach": true,
+    "services": [
+      {
+        "title": "Strategic Conferences",
+        "description": "Conference planning centered on a clear business theme, audience, and intended participant experience.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Illustrative professionals exchanging ideas at a conference"
+        },
+        "id": "strategic-conferences",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations convening industry, leadership, or stakeholder audiences."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Define conference objectives, audience, and format",
+              "Develop agenda themes and speaker requirements",
+              "Coordinate venue, production, and event communications as agreed"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Translate objectives into a working brief and production plan, with approvals and responsibilities tracked across contributors."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A clear conference design connects content, logistics, and audience needs.",
+              "Leaders Pinnacle"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Trade Expos & Exhibitions",
+        "description": "Planning support for exhibitions that bring organizations, products, and professional audiences together.",
+        "image": {
+          "src": "/ignitia-connections.webp",
+          "alt": "Illustrative professionals exchanging ideas at a conference"
+        },
+        "id": "trade-expos-and-exhibitions",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Businesses and associations considering a trade exhibition or expo presence."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify exhibitor and attendee objectives",
+              "Plan floor, programming, and participation requirements",
+              "Coordinate exhibitor information and event logistics"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Build a schedule and operating plan around the venue, confirmed participants, and agreed production scope."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Well-organized exhibitor information and logistics help participants prepare for the event.",
+              "Leaders Pinnacle"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bespoke Corporate Events",
+        "description": "Corporate event planning shaped around a specific audience, purpose, and format.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "bespoke-corporate-events",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations planning a tailored internal or external gathering."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Define the event purpose and participant needs",
+              "Shape the format, agenda, and experience",
+              "Coordinate production elements and event-day responsibilities"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Develop the event brief with stakeholders, confirm practical requirements, and keep decisions visible through delivery."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A tailored plan helps an event feel cohesive while keeping operational details in view.",
+              "Leaders Pinnacle"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Webinars & Virtual Events",
+        "description": "Planning and production coordination for online sessions designed around clear content and participant flow.",
+        "image": {
+          "src": "/digital-motion.webp",
+          "alt": "Illustrative motion designer working with three-dimensional forms in a design studio"
+        },
+        "id": "webinars-and-virtual-events",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations hosting virtual talks, demonstrations, panels, or learning sessions."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Set session goals, audience, and run time",
+              "Coordinate speakers, content, and platform requirements",
+              "Prepare rehearsals, moderation, and participant communications"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Confirm platform capabilities and responsibilities, rehearse key transitions, and prepare a practical contingency plan."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A considered run of show helps speakers and attendees navigate the session more smoothly.",
+              "Leaders Pinnacle"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Podcast & Content Series",
+        "description": "Development and coordination for a recurring audio or editorial series with a consistent subject and audience.",
+        "image": {
+          "src": "/digital-motion.webp",
+          "alt": "Illustrative motion designer working with three-dimensional forms in a design studio"
+        },
+        "id": "podcast-and-content-series",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations exploring a podcast or content program to share ideas with a defined audience."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Set editorial purpose, audience, and series format",
+              "Plan topics, contributors, and production stages",
+              "Coordinate recording, review, and publishing handoffs"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Create an editorial calendar and production workflow, then confirm rights, approvals, and publishing responsibilities for each contribution."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A repeatable format helps teams plan content and maintain a coherent series.",
+              "Leaders Pinnacle"
+            ]
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About Leaders Pinnacle",
+      "description": "Leaders Pinnacle focuses on B2B events and market intelligence, including conferences, summits, exhibitions, trade expos, and bespoke corporate events.",
+      "image": {
+        "src": "/ignitia-connections.webp",
+        "alt": "Illustrative professionals exchanging ideas at a conference"
+      },
+      "sections": [
+        {
+          "title": "Business overview",
+          "paragraphs": [
+            "Its service areas also include webinars, podcasts, and strategic market research for organizations planning professional events and audience engagement.",
+            "Organizations use conferences and events to bring customers, partners, and employees together around shared topics. Online formats such as webinars can support participation across locations.",
+            "Event planning can include content development, audience needs, production, and practical coordination. The right mix depends on the event purpose, format, and participants.",
+            "Leaders Pinnacle focuses on knowledge-led business events and market intelligence for professional audiences."
+          ]
+        }
+      ]
+    },
+    "introduction": "Explore Leaders Pinnacle services and find the service that fits your needs.",
+    "tagline": "Leaders Pinnacle / B2B events and market intelligence"
+  },
+  "employaa": {
+    "category": "services",
+    "hasGlobalReach": true,
+    "services": [
+      {
+        "title": "Permanent Hiring",
+        "description": "A structured recruitment process for roles intended to become part of a client’s ongoing team.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "permanent-hiring",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Employers filling continuing positions across agreed functions and experience levels."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify role requirements and selection criteria",
+              "Source and review relevant candidate profiles",
+              "Coordinate interviews, feedback, and offer-stage handoffs"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Agree the role brief and evaluation criteria before outreach, then keep communication and feedback organized throughout selection."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A consistent process helps candidates understand the opportunity and gives hiring teams a clearer basis for comparison.",
+              "Employaa"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Contract Hiring",
+        "description": "Recruitment coordination for time-bound or project-based roles with a clearly defined assignment.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "contract-hiring",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations seeking candidates for a specific term, project, or temporary requirement."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Define assignment outcomes, duration, and essential skills",
+              "Identify and review candidates against the brief",
+              "Coordinate selection and engagement handoffs"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Confirm role expectations and the client’s engagement model early, then align candidate evaluation with the work and term described."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Clear role and assignment details help both the hiring team and candidates assess fit.",
+              "Employaa"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "IT/Tech Staffing",
+        "description": "Recruitment support for technology roles, with evaluation centered on the skills and context each team needs.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "it-tech-staffing",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations hiring for software, infrastructure, data, product, or other technology work."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Translate technical requirements into a role brief",
+              "Identify relevant experience and skill evidence",
+              "Coordinate technical and team interviews"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Work with the hiring team to distinguish essential capabilities from preferences and apply the same criteria across candidate reviews."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A focused brief helps reduce ambiguity and keeps assessment connected to the actual work.",
+              "Employaa"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "RPO",
+        "description": "Recruitment process outsourcing for organizations that want an agreed portion of hiring activity coordinated as a service.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "rpo",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Teams managing recurring hiring needs or seeking additional structure in recruitment operations."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Map the current recruitment workflow and responsibilities",
+              "Agree which activities are included and how progress is tracked",
+              "Coordinate sourcing, candidate communication, or scheduling as defined"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Document the operating model, decision points, and reporting rhythm before recruitment activity begins."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Clear ownership and repeatable steps make ongoing recruitment easier for teams to manage.",
+              "Employaa"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Campus Hiring",
+        "description": "Early-career recruitment planning for organizations engaging students or recent graduates.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "campus-hiring",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Employers developing entry-level talent pipelines or graduate hiring activity."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Define eligible roles and candidate criteria",
+              "Plan outreach and selection stages for the intended cohort",
+              "Coordinate candidate communications and evaluation"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Shape the process around the roles and participating institutions confirmed by the client, with consistent criteria at each stage."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A planned experience helps candidates understand opportunities and supports fair, organized evaluation.",
+              "Employaa"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bulk Hiring",
+        "description": "Coordinated recruitment for multiple openings that share a timeline, role profile, or selection process.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "bulk-hiring",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations hiring across several similar or related positions."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Group roles by shared requirements and hiring priorities",
+              "Plan sourcing and assessment stages",
+              "Track candidate progress and decision status across openings"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Set a practical sequence with the hiring team, standardize common evaluation steps, and surface role-specific exceptions."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A shared view of progress helps teams coordinate decisions across multiple vacancies.",
+              "Employaa"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "GIG / Industry Specific",
+        "description": "Recruitment support tailored to defined gig work or roles with sector-specific requirements.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "gig-industry-specific",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations seeking talent for flexible assignments or specialized industry roles."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify work type, skills, and engagement expectations",
+              "Identify relevant candidate pools and screening criteria",
+              "Coordinate selection and agreed engagement handoffs"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Confirm the role classification and requirements with the client, then use a brief and screening approach suited to the work."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Specific role criteria help candidates and hiring teams understand what the assignment requires.",
+              "Employaa"
+            ]
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About Employaa",
+      "description": "Employaa is a specialized recruitment and staffing partner focused on delivering end-to-end talent solutions for organizations across industries.",
+      "image": {
+        "src": "/about-responsible-v2.webp",
+        "alt": "Illustrative one-to-one professional conversation"
+      },
+      "sections": [
+        {
+          "title": "Recruitment market context",
+          "paragraphs": [
+            "The recruitment and staffing industry continues to expand, driven by factors such as increased specialization of roles, rapid business growth cycles, and the rising preference for flexible workforce models. Companies are increasingly outsourcing recruitment and staffing functions to specialized partners to gain access to wider talent pools, reduce hiring timelines, and ensure compliance with labor regulations.",
+            "Outsourced staffing solutions are particularly attractive to organizations that need to manage headcount flexibility, control fixed costs, and navigate complex regulatory requirements for short-term or project-based employees.",
+            "02 / Employaa"
+          ]
+        },
+        {
+          "title": "Recruitment and staffing solutions",
+          "paragraphs": [
+            "Employaa is a specialized recruitment and staffing partner focused on delivering end-to-end talent solutions for organizations across industries. We support clients with both permanent recruitment and outsourced staffing models, covering roles from entry-level to senior leadership and CXO positions. Our strength lies in a seasoned team of recruiters, structured processes, and a commitment to speed, quality, and cultural fit.",
+            "Employaa’s service portfolio includes direct hiring (recruit-only) and full-service staffing on Employaa’s payroll. This dual-model approach enables client organizations to flexibly scale their workforce while optimizing costs, mitigating compliance risks, and reducing time-to-hire.",
+            "Employaa partners with multiple organizations to source, assess, and onboard talent across a wide range of functions and experience levels. The company operates with a professional delivery model driven by experienced recruiters, standardized processes, and strong client relationships.",
+            "03 / Employaa"
+          ]
+        },
+        {
+          "title": "Key attributes of Employaa’s positioning",
+          "paragraphs": [
+            "04 / Employaa"
+          ],
+          "bullets": [
+            "Coverage of roles from junior, mid-level, managerial to CXO and leadership positions",
+            "Flexible engagement models: recruit-only and full outsourced staffing on Employaa’s payroll",
+            "Sector-agnostic approach with capacity to serve multiple industries",
+            "Emphasis on speed, accuracy of profiles, and long-term client partnerships"
+          ]
+        },
+        {
+          "title": "Brand identity",
+          "paragraphs": [
+            "The brand identity for Employaa is designed to reflect professionalism, reliability, and modern HR expertise. Clean typography and a corporate colour palette reinforce trust and simplicity, supporting both digital and print communication materials."
+          ]
+        }
+      ]
+    },
+    "introduction": "Explore Employaa services and find the service that fits your needs.",
+    "tagline": "Employaa / Recruitment and staffing"
+  },
+  "elevatrain": {
+    "category": "trainings",
+    "hasGlobalReach": false,
+    "services": [
+      {
+        "title": "Tech & Digital Skills",
+        "description": "Learning sessions that help teams build practical confidence with selected technology and digital tools.",
+        "image": {
+          "src": "/digital-design.webp",
+          "alt": "Illustrative web designer developing a website layout in a creative studio"
+        },
+        "id": "tech-and-digital-skills",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations and learners identifying a specific technology or digital-skills gap."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Assess learner roles and current familiarity",
+              "Set learning outcomes and select relevant topics",
+              "Use guided practice and examples tied to the intended work"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Agree the audience and outcomes first, then shape the content and practice activities to the delivery format selected."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Focused learning goals give participants a clearer path from concepts to workplace application.",
+              "Elevatrain"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Dev Ops & Agile",
+        "description": "Workshops introducing DevOps and Agile concepts through team workflows and practical exercises.",
+        "image": {
+          "src": "/digital-design.webp",
+          "alt": "Illustrative web designer developing a website layout in a creative studio"
+        },
+        "id": "dev-ops-and-agile",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Product, engineering, operations, and delivery teams exploring collaborative ways of working."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Review the team’s current workflow and terminology",
+              "Explore relevant Agile and DevOps practices",
+              "Practice planning, feedback, and continuous improvement scenarios"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Use the team’s context to select concepts and exercises, then identify small experiments participants can assess in their own environment."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Shared language and practical exercises can make workflow discussions more concrete.",
+              "Elevatrain"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Six Sigma & Process Excellence",
+        "description": "Training in process analysis and improvement methods, tailored to the learner’s role and experience.",
+        "image": {
+          "src": "/business-learning.webp",
+          "alt": "Illustrative professional skills workshop with participants working on laptops"
+        },
+        "id": "six-sigma-and-process-excellence",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Teams seeking a structured way to understand process variation, quality, or improvement opportunities."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Introduce relevant process-improvement concepts",
+              "Practice mapping and analyzing a sample workflow",
+              "Discuss how to define and review improvement measures"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Set learning outcomes and participant level in advance, use examples suited to the work, and clarify that credentials are offered only if separately confirmed."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A common method helps teams describe processes and evaluate improvement ideas more consistently.",
+              "Elevatrain"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Mindfulness",
+        "description": "A learning experience introducing mindfulness practices that participants can explore in a workplace context.",
+        "image": {
+          "src": "/business-learning.webp",
+          "alt": "Illustrative professional skills workshop with participants working on laptops"
+        },
+        "id": "mindfulness",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Teams or individuals interested in attention, reflection, and everyday wellbeing practices."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Set a clear and inclusive session purpose",
+              "Introduce optional guided reflection and attention exercises",
+              "Offer ways to adapt practices to individual comfort"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Create a respectful learning environment, make participation choices clear, and avoid presenting the session as clinical care."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Participants can explore practical reflection techniques and decide which, if any, suit their routine.",
+              "Elevatrain"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Project & Program Management",
+        "description": "Practical learning in planning, coordination, and oversight across projects or related initiatives.",
+        "image": {
+          "src": "/business-learning.webp",
+          "alt": "Illustrative professional skills workshop with participants working on laptops"
+        },
+        "id": "project-and-program-management",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Project contributors, managers, and teams coordinating work across dependencies."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify objectives, roles, and decision points",
+              "Practice planning, risk and dependency tracking",
+              "Review progress communication and change handling"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Use familiar project examples and exercises to connect management concepts with the team’s delivery context."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Shared planning tools and language can make responsibilities and project status easier to communicate.",
+              "Elevatrain"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Communication & Soft Skills",
+        "description": "Interactive learning in communication habits that support clearer collaboration at work.",
+        "image": {
+          "src": "/business-learning.webp",
+          "alt": "Illustrative professional skills workshop with participants working on laptops"
+        },
+        "id": "communication-and-soft-skills",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Teams and professionals strengthening day-to-day communication and relationship skills."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Identify relevant communication situations",
+              "Practice listening, feedback, and message framing",
+              "Reflect on approaches for meetings and collaboration"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Use scenarios, guided practice, and reflection matched to participant roles and learning goals."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Practical rehearsal gives participants a chance to consider how different communication choices land.",
+              "Elevatrain"
+            ]
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About Elevatrain",
+      "description": "Elevatrain is a specialist corporate training and workshop provider focused on performance-critical capability building for organizations.",
+      "image": {
+        "src": "/business-learning.webp",
+        "alt": "Illustrative professional skills workshop with participants working on laptops"
+      },
+      "sections": [
+        {
+          "title": "Business overview",
+          "paragraphs": [
+            "With deep expertise in compliance, process excellence, technology, leadership, and communication, Elevatrain designs, delivers, and scales training solutions for B2B clients across industries."
+          ]
+        }
+      ]
+    },
+    "introduction": "Explore Elevatrain trainings and find the service that fits your needs.",
+    "tagline": "Elevatrain / Corporate training and workshops"
+  },
+  "go-travel-global": {
+    "category": "services",
+    "hasGlobalReach": false,
+    "services": [
+      {
+        "title": "Visa Assistance & Documentation",
+        "description": "Guidance to organize travel-document requirements and prepare an application file for a chosen destination.",
+        "image": {
+          "src": "/business-travel.webp",
+          "alt": "Illustrative business traveller walking through an airport"
+        },
+        "id": "visa-assistance-and-documentation",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Travelers and organizations preparing for international travel."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Identify destination-specific document requirements from authoritative sources",
+              "Organize application information and supporting documents",
+              "Review completeness before the traveler submits through the appropriate channel"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Use current destination guidance, explain that authorities make visa decisions, and keep the traveler responsible for accurate information and final submission unless a different arrangement is confirmed."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A structured checklist helps travelers prepare documents and understand the steps involved.",
+              "Go Travel Global"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Corporate & Business Travel",
+        "description": "Travel planning that brings business schedules, traveler preferences, and trip logistics into one itinerary.",
+        "image": {
+          "src": "/business-travel.webp",
+          "alt": "Illustrative business traveller walking through an airport"
+        },
+        "id": "corporate-and-business-travel",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations arranging travel for employees, guests, or business activities."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Gather approved dates, destinations, and traveler needs",
+              "Coordinate itinerary options and required travel details",
+              "Share confirmed arrangements and relevant trip information"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Build around the client’s travel policy and approved choices, confirming availability and terms with each provider before booking."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A consolidated itinerary makes schedules and travel details easier to review.",
+              "Go Travel Global"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Domestic & Intl Tours",
+        "description": "Tour planning for domestic or international journeys, shaped around the destination, group, and travel style.",
+        "image": {
+          "src": "/business-travel.webp",
+          "alt": "Illustrative business traveller walking through an airport"
+        },
+        "id": "domestic-and-intl-tours",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Individuals, families, and groups exploring a planned holiday or tour."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Discuss destination interests, timing, and traveler needs",
+              "Outline itinerary options and inclusions for review",
+              "Coordinate confirmed transport, stays, and activities where agreed"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Present options with their stated inclusions and conditions, then confirm availability and provider terms before travel is finalized."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A coherent itinerary helps travelers understand how each part of a trip fits together.",
+              "Go Travel Global"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Customized Travel planning",
+        "description": "A tailored trip plan built around traveler preferences, practical constraints, and agreed priorities.",
+        "image": {
+          "src": "/business-travel.webp",
+          "alt": "Illustrative business traveller walking through an airport"
+        },
+        "id": "customized-travel-planning",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Travelers whose trip needs do not fit a single standard itinerary."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Capture interests, dates, budget parameters, and accessibility needs",
+              "Compare route and stay options",
+              "Build a day-by-day plan with confirmed details clearly identified"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Develop the itinerary collaboratively, explain choices and trade-offs, and confirm each booking with the relevant provider."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Personalized planning makes it easier to balance priorities while keeping trip details in one place.",
+              "Go Travel Global"
+            ]
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About Go Travel Global",
+      "description": "Go Travel Global is a specialized tour and travel company focused on delivering seamless visa, travel, and stay solutions for corporate clients, while strategically expanding into the business-to-consumer (B2C) segment.",
+      "image": {
+        "src": "/business-travel.webp",
+        "alt": "Illustrative business traveller walking through an airport"
+      },
+      "sections": [
+        {
+          "title": "Travel market trends",
+          "paragraphs": [
+            "The global travel and tourism sector is rebounding and transforming, driven by renewed demand, hybrid work, and the blending of business and leisure travel. Corporates are increasingly seeking reliable partners that can manage complex visa and travel requirements, while retail travellers are prioritizing curated, safe, and experience-rich itineraries.",
+            "02 / Go Travel Global"
+          ],
+          "bullets": [
+            "Rising corporate focus on travel compliance, duty of care, and cost control.",
+            "Shift from mass-market tours to personalized and small-group experiences.",
+            "Growing interest in nature, wellness, cultural immersion, and sustainable travel.",
+            "Increased reliance on digital channels for research, booking, and traveller support."
+          ]
+        },
+        {
+          "title": "Corporate and leisure travel",
+          "paragraphs": [
+            "Go Travel Global is a specialized tour and travel company focused on delivering seamless visa, travel, and stay solutions for corporate clients, while strategically expanding into the business-to-consumer (B2C) segment. The company designs and manages curated group tours, family holidays, and individual travel experiences across Europe, Nepal, key Asian destinations, African safaris, and other high-demand global hotspots.",
+            "Go Travel Global is a tour and travel solutions provider with a strong foundation in corporate travel services, particularly in visa management and stay arrangements for business travellers. Building on this core expertise, the company is diversifying into curated leisure travel for individuals, families, and special interest groups.",
+            "03 / Go Travel Global"
+          ]
+        },
+        {
+          "title": "End-to-end travel experiences",
+          "paragraphs": [
+            "Through strategic collaborations with established international tour operators and destination management companies, Go Travel Global offers end-to-end travel experiences that integrate visa processing, flight coordination, accommodation, local transfers, curated activities, and travel assistance. The company aims to become a trusted one-stop travel partner for both corporate and retail travellers, known for reliability, customization, and elevated service quality.",
+            "The company operates as a high-touch service organization, combining expert travel consulting with robust partnerships across key global destinations to ensure reliability, compliance, and traveller satisfaction."
+          ]
+        }
+      ]
+    },
+    "introduction": "Explore Go Travel Global services and find the service that fits your needs.",
+    "tagline": "Go Travel Global / Travel services"
+  },
+  "remunerax": {
+    "category": "services",
+    "hasGlobalReach": false,
+    "services": [
+      {
+        "title": "Payroll Processing",
+        "description": "A planned payroll workflow that organizes approved employee and pay information for a defined pay cycle.",
+        "image": {
+          "src": "/business-operations.webp",
+          "alt": "Illustrative payroll administrator organizing everyday office work"
+        },
+        "id": "payroll-processing",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Employers seeking a consistent process for payroll preparation and review."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Collect and organize approved payroll inputs",
+              "Apply agreed pay components and change records",
+              "Prepare payroll outputs for client review and processing"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Use documented calendars, input checks, and approval points so exceptions can be resolved before payroll is finalized."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A repeatable workflow helps teams manage payroll information with clearer ownership and review.",
+              "Remunerax"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Statutory Compliances",
+        "description": "Administrative coordination around recurring workforce compliance tasks and the records used to review them.",
+        "image": {
+          "src": "/business-remunerax.webp",
+          "alt": "Illustrative administrator reviewing workforce records in an office"
+        },
+        "id": "statutory-compliances",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Employers managing recurring statutory documentation and deadlines."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "List applicable tasks and due dates identified by the client’s advisers",
+              "Organize supporting workforce records",
+              "Track completion status and items requiring qualified review"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Confirm the relevant jurisdiction and responsibilities with the client, maintain a dated task register, and escalate unclear requirements for professional advice."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A central task view helps teams see upcoming obligations and keep supporting documentation organized.",
+              "Remunerax"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tax Management",
+        "description": "Coordination of agreed payroll tax information, records, and review points for a workforce context.",
+        "image": {
+          "src": "/business-operations.webp",
+          "alt": "Illustrative payroll administrator organizing everyday office work"
+        },
+        "id": "tax-management",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Employers organizing tax-related information connected with compensation and payroll."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Gather approved employee and payroll inputs",
+              "Organize tax records and review checkpoints",
+              "Coordinate questions with the client’s designated tax professionals"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Follow the client’s documented rules and applicable professional guidance; keep calculations and assumptions traceable for review."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Organized information and clear review points support a more orderly payroll-tax process.",
+              "Remunerax"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Employee Self Service Portal",
+        "description": "An informational description of an employee self-service offering for common workforce information and requests.",
+        "image": {
+          "src": "/digital-design.webp",
+          "alt": "Illustrative web designer developing a website layout in a creative studio"
+        },
+        "id": "employee-self-service-portal",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Employers exploring ways for employees to access selected work-related information."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Identify the information employees may need to view",
+              "Map request types and the responsible teams",
+              "Define access, privacy, and support expectations before selecting a solution"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Begin with user needs and data-handling requirements, then assess suitable tools and workflows. This page describes a service concept; it is not an employee portal."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Well-defined self-service needs can help organizations evaluate appropriate tools without confusing a service description with a working portal.",
+              "Remunerax"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Full & Final Settlement",
+        "description": "Coordination of the information and review steps used when an employee’s service concludes.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "full-and-final-settlement",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Employers managing employee exits and final-pay administration."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Collect approved exit date and payroll changes",
+              "Organize relevant leave, deductions, and payment inputs",
+              "Prepare settlement information for authorized review"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Follow the client’s exit checklist and applicable professional guidance, documenting missing inputs and approvals before finalization."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A clear checklist helps teams coordinate exit records and review responsibilities.",
+              "Remunerax"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Support for Contractual",
+        "description": "Workforce administration support for contractual engagements with responsibilities defined in advance.",
+        "image": {
+          "src": "/about-responsible-v2.webp",
+          "alt": "Illustrative one-to-one professional conversation"
+        },
+        "id": "support-for-contractual",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations coordinating records and processes for contract-based workers."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify worker categories and required records",
+              "Coordinate approved onboarding and payroll inputs",
+              "Track contract dates and agreed administrative tasks"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Confirm the client’s engagement model and division of responsibilities before maintaining records or coordinating recurring tasks."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Defined processes help keep contractual workforce administration organized across teams.",
+              "Remunerax"
+            ]
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About Remunerax",
+      "description": "Remunerax is a specialized payroll and workforce outsourcing company focused on delivering accurate, compliant, and scalable payroll and team management solutions for businesses across multiple industries.",
+      "image": {
+        "src": "/business-operations.webp",
+        "alt": "Illustrative payroll administrator organizing everyday office work"
+      },
+      "sections": [
+        {
+          "title": "Business overview",
+          "paragraphs": [
+            "By combining robust technology with expert human support, Remunerax enables organizations to reduce administrative burden, maintain regulatory compliance, and focus internal resources on strategic growth.",
+            "Positioned within the rapidly expanding global BPO (Business Process Outsourcing) market, Remunerax addresses the increasing demand for reliable payroll outsourcing driven by complex regulatory environments, remote and distributed teams, and the need for cost-efficient operations. Our service portfolio covers end-to-end payroll outsourcing, employment administration, team staffing and management, and compliance support across jurisdictions.",
+            "Remunerax is a B2B-focused payroll and workforce outsourcing provider serving small, mid-sized, and growth-stage enterprises. We operate as an extension of our clients’ HR and finance departments, delivering secure and compliant payroll processing and complete team outsourcing solutions."
+          ],
+          "bullets": [
+            "Industry: BPO / Payroll Outsourcing / Workforce Management",
+            "Business Model: Subscription-based and volume-based service contracts",
+            "Target Clients: SMEs, scale-ups, and multi-entity organizations operating locally or across borders",
+            "Service Delivery: Cloud-based platform complemented by regional payroll and compliance experts"
+          ]
+        }
+      ]
+    },
+    "introduction": "Explore Remunerax services and find the service that fits your needs.",
+    "tagline": "Remunerax / Payroll and workforce outsourcing"
+  },
+  "thinkrunspace": {
+    "category": "offerings",
+    "hasGlobalReach": true,
+    "services": [
+      {
+        "title": "Serviced & Managed offices",
+        "description": "Office options for teams seeking a managed workspace arrangement with agreed facilities and services.",
+        "image": {
+          "src": "/business-thinkrunspace.webp",
+          "alt": "Illustrative flexible workspace with shared and individual work areas"
+        },
+        "id": "serviced-and-managed-offices",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Organizations comparing office arrangements for a team or business function."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Define capacity, location, timing, and facility needs",
+              "Compare available workspace configurations",
+              "Review service inclusions and commercial terms"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Confirm current availability and location-specific terms before presenting any option as suitable or reservable."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A clear comparison helps teams understand the trade-offs between workspace configurations.",
+              "ThinkRunSpace"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Co-Working Spaces",
+        "description": "Shared workspace options for individuals or teams looking for a flexible place to work.",
+        "image": {
+          "src": "/business-thinkrunspace.webp",
+          "alt": "Illustrative flexible workspace with shared and individual work areas"
+        },
+        "id": "co-working-spaces",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Professionals and organizations evaluating shared workspace access."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify preferred area, schedule, and team size",
+              "Compare access, amenities, and workspace types",
+              "Review current availability and membership terms"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Match needs to verified options and explain access conditions, inclusions, and any restrictions before a decision."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A structured comparison makes it easier to evaluate shared workspace against a team’s working pattern.",
+              "ThinkRunSpace"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Virtual Office Solutions",
+        "description": "A discussion of virtual office services that may support selected business administration needs.",
+        "image": {
+          "src": "/business-thinkrunspace.webp",
+          "alt": "Illustrative flexible workspace with shared and individual work areas"
+        },
+        "id": "virtual-office-solutions",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Businesses exploring a non-dedicated physical workspace arrangement."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Clarify the intended use and business requirements",
+              "Identify possible services and permitted uses",
+              "Review jurisdictional rules and provider terms"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Confirm availability, permitted use, and legal requirements with the relevant provider and qualified advisers before making a commitment."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "Clear requirements help businesses assess whether a virtual-office arrangement fits their intended use.",
+              "ThinkRunSpace"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meeting Rooms & Business Infra",
+        "description": "Meeting space and supporting infrastructure options for planned business activities.",
+        "image": {
+          "src": "/business-thinkrunspace.webp",
+          "alt": "Illustrative flexible workspace with shared and individual work areas"
+        },
+        "id": "meeting-rooms-and-business-infra",
+        "sections": [
+          {
+            "title": "Who it is for",
+            "paragraphs": [
+              "Teams needing a place and basic facilities for meetings or collaborative work."
+            ]
+          },
+          {
+            "title": "Scope",
+            "bullets": [
+              "Define participant count, timing, and room setup",
+              "Identify equipment and connectivity requirements",
+              "Confirm access, availability, and service terms"
+            ]
+          },
+          {
+            "title": "How we approach it",
+            "paragraphs": [
+              "Match the requested setup to a confirmed venue or provider option and share any requirements the team needs to prepare."
+            ]
+          },
+          {
+            "title": "Practical benefits",
+            "paragraphs": [
+              "A coordinated room plan helps participants arrive with the right setup and expectations.",
+              "ThinkRunSpace"
+            ]
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About ThinkRunSpace",
+      "description": "ThinkRunSpace is a next-generation workspace solutions company specializing in flexible office spaces for B2B clients, offering both physical and virtual offices across multiple cities and countries.",
+      "image": {
+        "src": "/business-thinkrunspace.webp",
+        "alt": "Illustrative flexible workspace with shared and individual work areas"
+      },
+      "sections": [
+        {
+          "title": "Flexible workspace market",
+          "paragraphs": [
+            "The global flexible workspace and coworking market continues to expand, driven by hybrid work trends, rising real estate costs, and the need for agility. India is one of the fastest-growing flexible workspace markets, with strong adoption by IT/ITeS, startups, GCCs (Global Capability Centers), and professional services firms. Internationally, gateway cities in Asia-Pacific, Europe, and North America are seeing sustained demand from enterprises consolidating or decentralizing their physical footprints.",
+            "02 / ThinkRunSpace"
+          ]
+        },
+        {
+          "title": "Workspace solutions",
+          "paragraphs": [
+            "ThinkRunSpace is a next-generation workspace solutions company specializing in flexible office spaces for B2B clients, offering both physical and virtual offices across multiple cities and countries. We provide configurable work environments ranging from bare-shell units to fully furnished, plug-and-play offices, supported by modular infrastructure options, cafeteria services, and professional administrative support. Our model is designed to scale rapidly across geographies while maintaining a high level of customization, service quality, and technology integration.",
+            "03 / ThinkRunSpace"
+          ]
+        },
+        {
+          "title": "Positioning and ambition",
+          "paragraphs": [
+            "The company is positioned to capture the growing global demand for flexible workspaces driven by hybrid work models, cost optimization, and business expansion into new markets. ThinkRunSpace differentiates itself from competitors in India and internationally through a highly modular product offering, strong enterprise-grade service levels, deep technology integration, and a global-yet-local operating model.",
+            "We aim to establish ThinkRunSpace as the preferred workspace partner for startups, SMEs, and large enterprises seeking reliable, scalable, and customizable office solutions without the capital and operational burden of traditional leasing."
+          ]
+        }
+      ]
+    },
+    "introduction": "Explore ThinkRunSpace offerings and find the service that fits your needs.",
+    "tagline": "ThinkRunSpace / Flexible workspace solutions"
+  }
+}

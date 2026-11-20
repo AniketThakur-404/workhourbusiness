@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { companyUrl } from "@/lib/company-sites";
 import AboutExperience from "../AboutExperience";
 
 export const metadata = { title: "Our Story" };
@@ -78,62 +79,62 @@ export default function OurStoryPage() {
           </Link>
         </div>
         <div className="AboutExperience-module__VGeTdW__businessList">
-          <a href="https://inceptura.workhourbusiness.com">
+          <Link href={companyUrl("inceptura")}>
             <span className="AboutExperience-module__VGeTdW__number">01</span>
             <span>
               <strong>Inceptura</strong>
               <small>Ideation to Execution</small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://leaderspinnacle.workhourbusiness.com">
+          </Link>
+          <Link href={companyUrl("leaders-pinnacle")}>
             <span className="AboutExperience-module__VGeTdW__number">02</span>
             <span>
               <strong>Leaders Pinnacle</strong>
               <small>B2B events and market intelligence</small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://employaa.workhourbusiness.com">
+          </Link>
+          <Link href={companyUrl("employaa")}>
             <span className="AboutExperience-module__VGeTdW__number">03</span>
             <span>
               <strong>Employaa</strong>
               <small>Recruitment and staffing</small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://elevatrain.workhourbusiness.com">
+          </Link>
+          <Link href={companyUrl("elevatrain")}>
             <span className="AboutExperience-module__VGeTdW__number">04</span>
             <span>
               <strong>Elevatrain</strong>
               <small>Corporate training and workshops</small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://gotravelglobal.workhourbusiness.com">
+          </Link>
+          <Link href={companyUrl("go-travel-global")}>
             <span className="AboutExperience-module__VGeTdW__number">05</span>
             <span>
               <strong>Go Travel Global</strong>
               <small>Travel services</small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://remunerax.workhourbusiness.com">
+          </Link>
+          <Link href={companyUrl("remunerax")}>
             <span className="AboutExperience-module__VGeTdW__number">06</span>
             <span>
               <strong>Remunerax</strong>
               <small>Payroll and workforce outsourcing</small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
-          <a href="https://thinkrunspace.workhourbusiness.com">
+          </Link>
+          <Link href={companyUrl("thinkrunspace")}>
             <span className="AboutExperience-module__VGeTdW__number">07</span>
             <span>
               <strong>ThinkRunSpace</strong>
               <small>Flexible workspace solutions</small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </div>
       </section>
     </AboutExperience>

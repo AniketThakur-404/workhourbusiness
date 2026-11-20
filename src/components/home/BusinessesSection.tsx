@@ -2,6 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { companyUrl } from "@/lib/company-sites";
+import BusinessLogo from "@/app/businesses/BusinessLogo";
+import {
+  employaaDescription,
+  leadersPinnacleDescription,
+} from "@/app/businesses/company-content";
 
 const businessesData = [
   {
@@ -10,7 +17,6 @@ const businessesData = [
     name: "Inceptura",
     strapline: "Ideation to Execution",
     image: "/business-inceptura.webp",
-    href: "https://inceptura.workhourbusiness.com",
     description:
       "Inceptura is a strategic growth partner designed to support startups and growing enterprises from the earliest spark of an idea through full execution and global expansion.",
     icon: (
@@ -39,9 +45,7 @@ const businessesData = [
     name: "Leaders Pinnacle",
     strapline: "B2B events and market intelligence",
     image: "/business-leaders-pinnacle.webp",
-    href: "https://leaderspinnacle.workhourbusiness.com",
-    description:
-      "Leaders Pinnacle curates executive conferences, trade expos, podcasts, and bespoke corporate events that connect decision-makers and illuminate market trends.",
+    description: leadersPinnacleDescription,
     icon: (
       <svg
         aria-hidden="true"
@@ -65,9 +69,7 @@ const businessesData = [
     name: "Employaa",
     strapline: "Recruitment and staffing",
     image: "/business-employaa.webp",
-    href: "https://employaa.workhourbusiness.com",
-    description:
-      "Employaa connects organizations with qualified permanent, contract, and executive talent through targeted search, RPO solutions, and scalable recruitment campaigns.",
+    description: employaaDescription,
     icon: (
       <svg
         aria-hidden="true"
@@ -92,7 +94,6 @@ const businessesData = [
     name: "Elevatrain",
     strapline: "Corporate training and workshops",
     image: "/business-elevatrain.webp",
-    href: "https://elevatrain.workhourbusiness.com",
     description:
       "Elevatrain builds workforce capability with practical training programs in technology, agile methodologies, leadership, process improvement, and soft skills.",
     icon: (
@@ -117,7 +118,6 @@ const businessesData = [
     name: "Go Travel Global",
     strapline: "Travel services",
     image: "/business-gotravel.webp",
-    href: "https://gotravelglobal.workhourbusiness.com",
     description:
       "Go Travel Global manages corporate travel, visa documentation, itinerary planning, and MICE arrangements to keep business teams moving safely and smoothly.",
     icon: (
@@ -141,7 +141,6 @@ const businessesData = [
     name: "Remunerax",
     strapline: "Payroll and workforce outsourcing",
     image: "/business-remunerax.webp",
-    href: "https://remunerax.workhourbusiness.com",
     description:
       "Remunerax delivers accurate payroll processing, statutory compliance support, employee self-service portals, and full workforce administration.",
     icon: (
@@ -167,7 +166,6 @@ const businessesData = [
     name: "ThinkRunSpace",
     strapline: "Flexible workspace solutions",
     image: "/business-thinkrunspace.webp",
-    href: "https://thinkrunspace.workhourbusiness.com",
     description:
       "ThinkRunSpace provides modern serviced offices, coworking memberships, virtual office addresses, and equipped meeting rooms designed for productive teams.",
     icon: (
@@ -185,7 +183,7 @@ const businessesData = [
       </svg>
     ),
   },
-];
+] as const;
 
 export default function BusinessesSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -240,12 +238,10 @@ export default function BusinessesSection() {
           role="tabpanel"
           tabIndex={0}
         >
-          <a
+          <Link
             aria-label={`Explore ${current.name}`}
             className="business-art"
-            href={current.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={companyUrl(current.id)}
           >
             <Image
               alt={`${current.name} illustrative business scene`}
@@ -254,20 +250,18 @@ export default function BusinessesSection() {
               style={{ objectFit: "cover", position: "absolute" }}
             />
             <div aria-hidden="true" className="business-image-overlay" />
-          </a>
+          </Link>
 
           <div className="business-detail">
-            <p className="eyebrow">{current.number} / 07</p>
+            <BusinessLogo slug={current.id} name={current.name} />
             <h3>{current.name}</h3>
             <p>{current.description}</p>
-            <a
+            <Link
               className="text-link"
-              href={current.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Explore {current.name} <span aria-hidden="true">↗</span>
-            </a>
+              href={companyUrl(current.id)}
+          >
+              Explore {current.name}
+            </Link>
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import { companyUrl } from "@/lib/company-sites";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const aboutLinks = [
-  { href: "/about/", label: "About WHB" },
   { href: "/about/our-story/", label: "Our Story" },
   { href: "/about/our-impact/", label: "Our Impact" },
   { href: "/about/responsible-business/", label: "Responsible Business" },
@@ -34,46 +35,39 @@ const portfolioLinks = [
   {
     label: "Inceptura",
     slug: "inceptura",
-    domain: "inceptura",
     keywords: "ideation business planning execution strategy",
   },
   {
     label: "Leaders Pinnacle",
     slug: "leaders-pinnacle",
-    domain: "leaderspinnacle",
     keywords: "events conference intelligence",
   },
   {
     label: "Employaa",
     slug: "employaa",
-    domain: "employaa",
     keywords: "recruitment people staffing",
   },
   {
     label: "Elevatrain",
     slug: "elevatrain",
-    domain: "elevatrain",
     keywords: "learning training workshops",
   },
   {
     label: "Go Travel Global",
     slug: "go-travel-global",
-    domain: "gotravelglobal",
     keywords: "travel visa stay",
   },
   {
     label: "Remunerax",
     slug: "remunerax",
-    domain: "remunerax",
     keywords: "payroll outsourcing",
   },
   {
     label: "ThinkRunSpace",
     slug: "thinkrunspace",
-    domain: "thinkrunspace",
     keywords: "office flexible workspace",
   },
-];
+] as const;
 
 const pages = [
   { href: "/announcements/", label: "Announcement" },
@@ -83,35 +77,37 @@ const pages = [
 ];
 
 const groups = [
-  { label: "About Us", links: aboutLinks },
+  { label: "About Us", href: "/about/", links: aboutLinks },
   {
     label: "Portfolio",
-    links: portfolioLinks.map(({ domain, label }) => ({
-      href: `https://${domain}.workhourbusiness.com`,
+    links: portfolioLinks.map(({ slug, label }) => ({
+      href: companyUrl(slug),
       label,
     })),
   },
   {
     label: "Services",
-    links: [{ href: "/services/", label: "All services" }, ...serviceLinks],
+    href: "/services/",
+    links: serviceLinks,
   },
 ];
 
 const searchPages = [
   ...portfolioLinks.map(({ slug, label, keywords }) => ({
-    href: `/businesses/${slug}/`,
+    href: companyUrl(slug),
     label,
     keywords,
     type: "Business",
   })),
   ...serviceLinks.map((link) => ({ ...link, type: "Service" })),
   ...[
+    { href: "/about/", label: "About Us", keywords: "about whb workhour business" },
     ...aboutLinks,
     ...pages,
     {
       href: "/services/",
       label: "Services",
-      keywords: "website animation seo marketing",
+      keywords: "website animation seo marketing all services",
     },
     { href: "/businesses/", label: "Our businesses", keywords: "portfolio" },
     { href: "/contact/", label: "Contact Us" },
@@ -124,6 +120,7 @@ const searchPages = [
 ];
 
 export default function Navbar() {
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<{
@@ -247,7 +244,7 @@ export default function Navbar() {
         className={mobileOpen ? "nav open" : "nav"}
         aria-label="Main navigation"
       >
-        {groups.map(({ label, links }) => (
+        {groups.map(({ label, href, links }) => (
           <details
             className="nav-dropdown"
             key={label}
@@ -283,6 +280,20 @@ export default function Navbar() {
               className="nav-link"
               aria-expanded={openDropdown?.label === label}
               onClick={(event) => {
+                const target = event.target as HTMLElement;
+                const isArrow = Boolean(target.closest(".nav-arrow"));
+
+                if (href && !isArrow) {
+                  if (event.ctrlKey || event.metaKey) {
+                    window.open(href, "_blank");
+                    return;
+                  }
+                  event.preventDefault();
+                  closeAll();
+                  router.push(href);
+                  return;
+                }
+
                 event.preventDefault();
                 setSearchOpen(false);
                 const keyboardActivation = event.detail === 0;
@@ -293,18 +304,48 @@ export default function Navbar() {
                     : { label, openedBy: "activation" },
                 );
               }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" && href) {
+                  const target = event.target as HTMLElement;
+                  const isArrow = Boolean(target.closest(".nav-arrow"));
+                  if (!isArrow) {
+                    event.preventDefault();
+                    closeAll();
+                    router.push(href);
+                  }
+                }
+              }}
             >
-              {label} <span aria-hidden="true">⌄</span>
+              {label}{" "}
+              <span
+                className="nav-arrow"
+                aria-hidden="true"
+                role="button"
+                tabIndex={-1}
+                title={`Toggle ${label} menu`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  setSearchOpen(false);
+                  setOpenDropdown((current) =>
+                    current?.label === label
+                      ? null
+                      : { label, openedBy: "activation" },
+                  );
+                }}
+              >
+                ⌄
+              </span>
             </summary>
             <div className="dropdown">
-              {links.map(({ href, label }) =>
-                href.startsWith("/") ? (
-                  <Link href={href} key={href} onClick={closeAll}>
-                    {label}
+              {links.map(({ href: linkHref, label: linkLabel }) =>
+                linkHref.startsWith("/") ? (
+                  <Link href={linkHref} key={linkHref} onClick={closeAll}>
+                    {linkLabel}
                   </Link>
                 ) : (
-                  <a href={href} key={href} onClick={closeAll}>
-                    {label}
+                  <a href={linkHref} key={linkHref} onClick={closeAll}>
+                    {linkLabel}
                   </a>
                 ),
               )}
@@ -365,5 +406,4 @@ export default function Navbar() {
         </Link>
       </nav>
     </header>
-  );
-}
+  

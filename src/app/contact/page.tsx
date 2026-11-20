@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { companyUrl } from "@/lib/company-sites";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -205,69 +206,48 @@ export default function ContactPage() {
           </p>
 
           <div className="contact-service-links">
-            <a
-              href="https://inceptura.workhourbusiness.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link
+              href={companyUrl("inceptura")}>
               <strong>Inceptura</strong>
               <span>Ideation to Execution</span>
               <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href="https://leaderspinnacle.workhourbusiness.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link
+              href={companyUrl("leaders-pinnacle")}>
               <strong>Leaders Pinnacle</strong>
               <span>B2B events and market intelligence</span>
               <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href="https://employaa.workhourbusiness.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link
+              href={companyUrl("employaa")}>
               <strong>Employaa</strong>
               <span>Recruitment and staffing</span>
               <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href="https://elevatrain.workhourbusiness.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link
+              href={companyUrl("elevatrain")}>
               <strong>Elevatrain</strong>
               <span>Corporate training and workshops</span>
               <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href="https://gotravelglobal.workhourbusiness.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link
+              href={companyUrl("go-travel-global")}>
               <strong>Go Travel Global</strong>
               <span>Travel services</span>
               <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href="https://remunerax.workhourbusiness.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link
+              href={companyUrl("remunerax")}>
               <strong>Remunerax</strong>
               <span>Payroll and workforce outsourcing</span>
               <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href="https://thinkrunspace.workhourbusiness.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link
+              href={companyUrl("thinkrunspace")}>
               <strong>ThinkRunSpace</strong>
               <span>Flexible workspace solutions</span>
               <span aria-hidden="true">↗</span>
-            </a>
+            </Link>
           </div>
         </section>
 

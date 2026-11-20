@@ -31,6 +31,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy the corporate project from the repository root with the Next.js preset and
+leave `NEXT_PUBLIC_COMPANY_SLUG` unset. The corporate portfolio links directly to
+the production domains below.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Each company uses its own Vercel project with the same repository root and
+Next.js preset. Set `NEXT_PUBLIC_COMPANY_SLUG` for Production and Preview to the
+matching value before deployment.
+
+| Company | `NEXT_PUBLIC_COMPANY_SLUG` | Production domain |
+| --- | --- | --- |
+| Inceptura | `inceptura` | `workhourbusiness-inceptura.vercel.app` |
+| Leaders Pinnacle | `leaders-pinnacle` | `workhourbusiness-leaders-pinnacle.vercel.app` |
+| Employaa | `employaa` | `workhourbusiness-employaa.vercel.app` |
+| Elevatrain | `elevatrain` | `workhourbusiness-elevatrain.vercel.app` |
+| Go Travel Global | `go-travel-global` | `workhourbusiness-go-travel-global.vercel.app` |
+| Remunerax | `remunerax` | `workhourbusiness-remunerax.vercel.app` |
+| ThinkRunSpace | `thinkrunspace` | `workhourbusiness-thinkrunspace.vercel.app` |
+
+The company site's home page is served at `/`. Set `NEXT_PUBLIC_WORKHOUR_URL`
+if the company sites should link back to a different corporate domain.
+
+To start an individual company locally in PowerShell, set its slug before
+starting Next.js.
+
+```powershell
+$env:NEXT_PUBLIC_COMPANY_SLUG = "employaa"
+npm run dev
+```

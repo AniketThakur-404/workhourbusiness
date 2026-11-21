@@ -94,12 +94,15 @@
 }
 
 .navigation > a:not(.headerContact),
+.catalogLink,
 .dropdown summary {
   padding-block: 12px;
 }
 
 .navigation > a:not(.headerContact):hover,
 .navigation > a[aria-current="page"],
+.catalogLink:hover,
+.catalogLink[aria-current="page"],
 .dropdown summary:hover,
 .dropdownLinks a[aria-current="page"] {
   color: var(--navy);
@@ -110,6 +113,22 @@
 
 .dropdown {
   position: relative;
+}
+
+.catalogItem[data-split="true"] {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.catalogItem[data-split="true"] .dropdown {
+  position: static;
+}
+
+.catalogItem[data-split="true"] summary {
+  justify-content: center;
+  width: 34px;
+  min-height: 44px;
 }
 
 .dropdown summary {
@@ -619,6 +638,25 @@
     border-bottom: 1px solid var(--line);
   }
 
+  .catalogItem[data-split="true"] {
+    display: block;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .catalogLink {
+    display: block;
+    min-height: 44px;
+    padding-right: 44px;
+  }
+
+  .catalogItem[data-split="true"] summary {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    border-bottom: 0;
+  }
+
   .navigation > .headerContact {
     justify-self: start;
     margin-top: 12px;
@@ -701,12 +739,15 @@
 }
 
 .site[data-company="leaders-pinnacle"] .navigation > a:not(.headerContact),
+.site[data-company="leaders-pinnacle"] .catalogLink,
 .site[data-company="leaders-pinnacle"] .dropdown summary {
   color: #d6deee;
   font-weight: 500;
 }
 
 .site[data-company="leaders-pinnacle"] .navigation > a:not(.headerContact):hover,
+.site[data-company="leaders-pinnacle"] .catalogLink:hover,
+.site[data-company="leaders-pinnacle"] .catalogLink[aria-current="page"],
 .site[data-company="leaders-pinnacle"] .dropdown summary:hover,
 .site[data-company="leaders-pinnacle"] .navigation > a[aria-current="page"] {
   color: #ffffff;
@@ -941,6 +982,7 @@
   }
 
   .site[data-company="leaders-pinnacle"] .navigation > a:not(.headerContact),
+  .site[data-company="leaders-pinnacle"] .catalogItem[data-split="true"],
   .site[data-company="leaders-pinnacle"] .dropdown summary {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }

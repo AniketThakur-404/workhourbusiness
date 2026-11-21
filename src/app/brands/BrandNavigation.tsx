@@ -29,6 +29,7 @@ export default function BrandNavigation({
   const menuButton = useRef<HTMLButtonElement>(null);
   const catalogToggle = useRef<HTMLElement>(null);
   const hoverTimer = useRef<ReturnType<typeof setTimeout>>(null);
+  const splitCatalog = slug === "leaders-pinnacle";
 
   useEffect(() => () => clearTimeout(hoverTimer.current ?? undefined), []);
 
@@ -103,58 +104,73 @@ export default function BrandNavigation({
             Home
           </Link>
           <Link href="/about/" aria-current={currentPath === "/about/" ? "page" : undefined} onClick={closeMenu}>About</Link>
-          <details
-            className={styles.dropdown}
-            open={catalogOpen !== null}
-            onPointerEnter={(event) => {
-              clearTimeout(hoverTimer.current ?? undefined);
-              if (event.pointerType === "mouse" && window.matchMedia("(min-width: 981px)").matches) {
-                setCatalogOpen((current) => current ?? "hover");
-              }
-            }}
-            onPointerLeave={(event) => {
-              if (event.pointerType !== "mouse") return;
-              const dropdown = event.currentTarget;
-              hoverTimer.current = setTimeout(() => {
-                if (!dropdown.contains(document.activeElement)) {
-                  setCatalogOpen((current) => current === "hover" ? null : current);
-                }
-              }, 140);
-            }}
-            onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget) && !event.currentTarget.matches(":hover")) {
-                setCatalogOpen(null);
-              }
-            }}
-          >
-            <summary
-              ref={catalogToggle}
-              aria-controls="company-catalog-links"
-              aria-expanded={catalogOpen !== null}
-              onClick={(event) => {
-                event.preventDefault();
+          <div className={styles.catalogItem} data-split={splitCatalog}>
+            {splitCatalog && (
+              <Link
+                className={styles.catalogLink}
+                href={catalog.href}
+                aria-current={currentPath === catalog.href ? "page" : undefined}
+                onClick={closeMenu}
+              >
+                {catalog.label}
+              </Link>
+            )}
+            <details
+              className={styles.dropdown}
+              open={catalogOpen !== null}
+              onPointerEnter={(event) => {
                 clearTimeout(hoverTimer.current ?? undefined);
-                const keyboard = event.detail === 0;
-                setCatalogOpen((current) =>
-                  current === "activation" || (keyboard && current) ? null : "activation"
-                );
+                if (event.pointerType === "mouse" && window.matchMedia("(min-width: 981px)").matches) {
+                  setCatalogOpen((current) => current ?? "hover");
+                }
+              }}
+              onPointerLeave={(event) => {
+                if (event.pointerType !== "mouse") return;
+                const dropdown = event.currentTarget;
+                hoverTimer.current = setTimeout(() => {
+                  if (!dropdown.contains(document.activeElement)) {
+                    setCatalogOpen((current) => current === "hover" ? null : current);
+                  }
+                }, 140);
+              }}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget) && !event.currentTarget.matches(":hover")) {
+                  setCatalogOpen(null);
+                }
               }}
             >
-              {catalog.label}
-            </summary>
-            <div
-              id="company-catalog-links"
-              className={styles.dropdownLinks}
-              data-columns={serviceLinks.length > 6}
-            >
-              <Link href={catalog.href} onClick={closeMenu}>
-                All {catalog.label.toLowerCase()}
-              </Link>
-              {serviceLinks.map(({ href, label }) => (
-                <Link href={href} key={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
-              ))}
-            </div>
-          </details>
+              <summary
+                ref={catalogToggle}
+                aria-label={splitCatalog ? "Individual services" : undefined}
+                aria-controls="company-catalog-links"
+                aria-expanded={catalogOpen !== null}
+                onClick={(event) => {
+                  event.preventDefault();
+                  clearTimeout(hoverTimer.current ?? undefined);
+                  const keyboard = event.detail === 0;
+                  setCatalogOpen((current) =>
+                    current === "activation" || (keyboard && current) ? null : "activation"
+                  );
+                }}
+              >
+                {!splitCatalog && catalog.label}
+              </summary>
+              <div
+                id="company-catalog-links"
+                className={styles.dropdownLinks}
+                data-columns={!splitCatalog && serviceLinks.length > 6}
+              >
+                {!splitCatalog && (
+                  <Link href={catalog.href} onClick={closeMenu}>
+                    All {catalog.label.toLowerCase()}
+                  </Link>
+                )}
+                {serviceLinks.map(({ href, label }) => (
+                  <Link href={href} key={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
+                ))}
+              </div>
+            </details>
+          </div>
           {sectionLinks.map(({ href, label }) => (
             <Link href={href} key={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
           ))}

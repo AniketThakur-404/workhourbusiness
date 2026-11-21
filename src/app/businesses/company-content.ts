@@ -260,6 +260,10 @@ export const leadersPinnacleSections = [
   {
     id: "events-and-insights",
     title: "Signature gatherings & participation",
+    image: {
+      src: "/ignitia-auditorium.webp",
+      alt: "Illustrative leadership summit with a speaker addressing an auditorium",
+    },
     paragraphs: [
       "Our signature summits bring senior executives, policymakers, and innovators together to examine the questions shaping their industries.",
     ],

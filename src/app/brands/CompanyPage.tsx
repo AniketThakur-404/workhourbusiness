@@ -15,13 +15,38 @@ import {
 } from "./company-catalog";
 import styles from "./CompanySite.module.css";
 
-const groupMarkets: CompanySection[] = [
+const groupMarkets = [
   { title: "Asia", bullets: ["India", "Malaysia"] },
   { title: "Oceania", bullets: ["Australia"] },
   { title: "Middle East", bullets: ["United Arab Emirates"] },
   { title: "Africa", bullets: ["Kenya", "Zimbabwe", "Malawi", "Rwanda"] },
   { title: "North America", bullets: ["Canada", "Mexico"] },
 ];
+
+function PlanningMarkets() {
+  return (
+    <section className={styles.planningMarkets} aria-labelledby="planning-markets-title">
+      <div className={styles.marketsHeader}>
+        <h2 id="planning-markets-title">Group planning markets</h2>
+        <p>
+          Markets identified in Workhour Business’s expansion plans.
+          <br />
+          <Link href="/contact/">Contact us to confirm service availability.</Link>
+        </p>
+      </div>
+      <div className={styles.marketsGrid}>
+        {groupMarkets.map(({ title, bullets }) => (
+          <div className={styles.marketRegion} key={title}>
+            <h3>{title}</h3>
+            <ul>
+              {bullets.map((country) => <li key={country}>{country}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 const eventSections: CompanySection[] = [
   {
@@ -190,8 +215,12 @@ export default function CompanyPage({
         {page === "our-global-reach" && (
           <>
             <CompanySections sections={globalDetails} />
-            <p className={styles.scopeNote}>These group planning markets are indicative. Contact the company to discuss service availability in a specific location.</p>
-            <CompanySections sections={groupMarkets} />
+            {slug === "leaders-pinnacle" ? <PlanningMarkets /> : (
+              <>
+                <p className={styles.scopeNote}>These group planning markets are indicative. Contact the company to discuss service availability in a specific location.</p>
+                <CompanySections sections={groupMarkets} />
+              </>
+            )}
           </>
         )}
         {page === "industries" && (

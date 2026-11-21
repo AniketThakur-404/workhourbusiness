@@ -443,6 +443,104 @@
   color: #61747b;
 }
 
+.planningMarkets {
+  --market-padding: clamp(20px, 3vw, 40px);
+  margin-bottom: clamp(30px, 4vw, 52px);
+  overflow: hidden;
+  border: 1px solid #dbe3ee;
+  border-radius: 20px;
+  background: #eef2f7;
+}
+
+.marketsHeader {
+  position: relative;
+  isolation: isolate;
+  padding: var(--market-padding);
+  background: linear-gradient(115deg, var(--navy), var(--navy2));
+  color: white;
+}
+
+.marketsHeader::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 auto;
+  width: 50%;
+  background: linear-gradient(90deg, transparent, var(--gold2));
+  mask: url("/presence-world-map.svg") center / auto 155% no-repeat;
+  opacity: .25;
+}
+
+.marketsHeader h2 {
+  margin: 0 0 12px;
+  font: 400 clamp(30px, 3vw, 46px)/1.08 var(--serif);
+  letter-spacing: -.035em;
+}
+
+.marketsHeader p {
+  color: #d6deee;
+  line-height: 1.65;
+}
+
+.marketsHeader a {
+  color: var(--gold2);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.marketsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.3vw, 18px);
+  padding: var(--market-padding);
+}
+
+.marketRegion {
+  padding: clamp(14px, 1.75vw, 24px);
+  border: 1px solid #dbe3ee;
+  border-top: 2px solid var(--gold);
+  border-radius: 10px;
+  background: white;
+}
+
+.marketRegion h3 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font: 400 clamp(19px, 1.7vw, 24px)/1.15 var(--serif);
+}
+
+.marketRegion ul {
+  display: grid;
+  gap: 6px;
+  padding-inline-start: 1em;
+  color: #465c69;
+  font-size: 15px;
+  line-height: 1.45;
+  list-style: square;
+}
+
+.marketRegion li::marker {
+  color: var(--gold);
+}
+
+@media (max-width: 379px) {
+  .marketsGrid { grid-template-columns: 1fr; }
+}
+
+@media (380px <= width < 760px) {
+  .marketRegion:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+@media (760px <= width < 1150px) {
+  .marketsGrid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .marketRegion { grid-column: span 2; }
+  .marketRegion:nth-child(n + 4) { grid-column: span 3; }
+}
+
+@media (min-width: 1150px) {
+  .marketsGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
 .overviewLink {
   margin: -28px 0 42px;
 }

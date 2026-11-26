@@ -8,11 +8,11 @@ const businesses = [
   {
     id: "inceptura",
     name: "Inceptura",
-    tagline: "Ideation & Execution",
+    tagline: "Ideation to Global Execution",
     description:
-      "Strategic growth, startup support, and business execution. From concept to market entry, we help turn ideas into thriving ventures.",
-    color: "#c8ff00",
-    icon: "💡",
+      "A unified 7-pillar growth suite uniting legal, strategy, talent, events, travel, international expansion, and revenue telemetry.",
+    color: "#1575D1",
+    icon: "◆",
   },
   {
     id: "leaders-pinnacle",

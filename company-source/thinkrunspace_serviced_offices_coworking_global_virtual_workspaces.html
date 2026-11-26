@@ -1,0 +1,2900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkRunSpace | Serviced Offices, Coworking &amp; Global Virtual Workspaces — A Group Company of WorkHour Business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* =========================================================================
+       THINKRUNSPACE DESIGN TOKENS (DERIVED FROM OFFICIAL BRAND LOGO)
+       Deep Sapphire #0E4D92 | Cerulean Sky #1C88C7 | Aqua Mint Teal #2BB6A8
+       Sunset Crimson-Orange #D9381E -> #F26419 -> Amber Gold #F7A81B
+       Charcoal Slate #33373D | Cool Mist Surface #F4F8FB
+    ========================================================================= */
+    :root {
+      --trs-sapphire: #0E4D92;
+      --trs-sapphire-dark: #093566;
+      --trs-cerulean: #1C88C7;
+      --trs-teal: #2BB6A8;
+      --trs-crimson: #D9381E;
+      --trs-orange: #F26419;
+      --trs-amber: #F7A81B;
+      --trs-charcoal: #373A3C;
+      --trs-ink: #16202A;
+      --trs-muted: #5A6573;
+      --trs-mist: #F8FAFC;
+      --trs-warm-tint: #FFF8F1;
+      --trs-border: #DCE6F0;
+      --trs-white: #FFFFFF;
+      --trs-tower-grad: linear-gradient(135deg, #0E4D92 0%, #1C88C7 55%, #2BB6A8 100%);
+      --trs-swoosh-grad: linear-gradient(135deg, #D9381E 0%, #F26419 52%, #F7A81B 100%);
+      --shadow-sm: 0 2px 10px rgba(14, 77, 146, 0.06);
+      --shadow-md: 0 12px 30px rgba(14, 77, 146, 0.09);
+      --shadow-lg: 0 22px 48px rgba(9, 53, 102, 0.14);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --container-max: 1240px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--trs-charcoal);
+      background-color: var(--trs-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--trs-ink);
+      line-height: 1.18;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 2rem;
+      }
+    }
+
+    /* Utility Badges & Gradients */
+    .text-tower-grad {
+      background: var(--trs-tower-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-swoosh-grad {
+      background: var(--trs-swoosh-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-swoosh {
+      background: var(--trs-swoosh-grad);
+      color: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(217, 56, 30, 0.24);
+    }
+
+    .btn-swoosh:hover {
+      box-shadow: 0 12px 26px rgba(217, 56, 30, 0.32);
+    }
+
+    .btn-tower {
+      background: var(--trs-tower-grad);
+      color: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(14, 77, 146, 0.22);
+    }
+
+    .btn-tower:hover {
+      box-shadow: 0 12px 26px rgba(14, 77, 146, 0.30);
+    }
+
+    .btn-outline {
+      background: #FFFFFF;
+      color: var(--trs-sapphire);
+      border-color: rgba(14, 77, 146, 0.3);
+    }
+
+    .btn-outline:hover {
+      background: var(--trs-mist);
+      border-color: var(--trs-sapphire);
+    }
+
+    .section-pad {
+      padding: 4.5rem 0;
+    }
+
+    @media (min-width: 992px) {
+      .section-pad {
+        padding: 6rem 0;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--trs-cerulean);
+      margin-bottom: 0.65rem;
+    }
+
+    .eyebrow-warm {
+      color: var(--trs-orange);
+    }
+
+    /* =========================================================================
+       1. TOP UTILITY BAR & STICKY EXECUTIVE NAVIGATION
+    ========================================================================= */
+    .top-bar {
+      background: var(--trs-sapphire-dark);
+      color: #E2EEF9;
+      font-size: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--trs-teal);
+      box-shadow: 0 0 0 3px rgba(43, 182, 168, 0.25);
+    }
+
+    .top-bar-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .top-bar-right a:hover {
+      color: var(--trs-amber);
+    }
+
+    .sep {
+      opacity: 0.3;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--trs-border);
+    }
+
+    .header-inner {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-svg {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .brand-lockup:hover .brand-logo-svg {
+      transform: scale(1.04);
+    }
+
+    .brand-wordmark {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--trs-charcoal);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--trs-muted);
+      margin-top: 0.22rem;
+    }
+
+    .brand-group-pill {
+      display: inline-block;
+      margin-top: 0.2rem;
+      font-size: 0.63rem;
+      font-weight: 600;
+      color: var(--trs-sapphire);
+      background: var(--trs-mist);
+      border: 1px solid var(--trs-border);
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 1.65rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--trs-charcoal);
+    }
+
+    .desktop-nav a {
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.2s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--trs-cerulean);
+    }
+
+    .desktop-nav a.nav-highlight {
+      color: var(--trs-sapphire);
+    }
+
+    .header-actions {
+      display: none;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .header-actions .btn {
+      padding: 0.65rem 1.05rem;
+      font-size: 0.8rem;
+    }
+
+    .mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid var(--trs-border);
+      background: #FFFFFF;
+      color: var(--trs-ink);
+      cursor: pointer;
+    }
+
+    @media (min-width: 1120px) {
+      .desktop-nav {
+        display: flex;
+      }
+      .header-actions {
+        display: flex;
+      }
+      .mobile-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-drawer {
+      display: none;
+      background: #FFFFFF;
+      border-top: 1px solid var(--trs-border);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer a {
+      display: block;
+      padding: 0.7rem 0.5rem;
+      font-weight: 600;
+      font-size: 0.925rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .mobile-drawer-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    /* =========================================================================
+       2. HERO SECTION & INTERACTIVE AUDIENCE LENS SWITCHER
+    ========================================================================= */
+    .hero-section {
+      background-color: #F8FAFC;
+      background-image:
+        radial-gradient(at 94% 8%, rgba(242, 100, 25, 0.11) 0px, transparent 48%),
+        radial-gradient(at 6% 90%, rgba(43, 182, 168, 0.13) 0px, transparent 52%),
+        radial-gradient(at 45% 15%, rgba(14, 77, 146, 0.07) 0px, transparent 55%);
+      border-bottom: 1px solid var(--trs-border);
+      padding: 3.5rem 0 4.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .hero-section {
+        padding: 4.75rem 0 5.75rem;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1.18fr 0.82fr;
+        gap: 3rem;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.9rem;
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--trs-sapphire);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4.1vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--trs-ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: 1.04rem;
+      color: var(--trs-muted);
+      max-width: 630px;
+      margin-bottom: 1.85rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding-top: 1.65rem;
+      border-top: 1px solid var(--trs-border);
+      max-width: 580px;
+    }
+
+    .metric-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .metric-lbl {
+      font-size: 0.75rem;
+      color: var(--trs-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* Interactive Audience Lens Card */
+    .lens-card {
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .lens-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .lens-card-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--trs-sapphire);
+    }
+
+    .lens-pill-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: var(--trs-warm-tint);
+      color: var(--trs-crimson);
+      border: 1px solid rgba(242, 100, 25, 0.25);
+    }
+
+    .lens-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+      background: var(--trs-mist);
+      padding: 0.35rem;
+      border-radius: 14px;
+      border: 1px solid var(--trs-border);
+      margin-bottom: 1.25rem;
+    }
+
+    .lens-tab-btn {
+      padding: 0.65rem 0.4rem;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--trs-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      line-height: 1.25;
+    }
+
+    .lens-tab-btn.active {
+      background: var(--trs-sapphire);
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(14, 77, 146, 0.25);
+    }
+
+    .lens-panel-box {
+      background: var(--trs-mist);
+      border: 1px solid var(--trs-border);
+      border-radius: 16px;
+      padding: 1.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .lens-panel-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .lens-stage-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--trs-orange);
+    }
+
+    .lens-speed-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: #FFFFFF;
+      color: var(--trs-teal);
+      border: 1px solid rgba(43, 182, 168, 0.35);
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    .lens-panel-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .lens-panel-desc {
+      font-size: 0.82rem;
+      color: var(--trs-muted);
+      line-height: 1.55;
+    }
+
+    .lens-kpi-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .lens-kpi-item {
+      background: var(--trs-warm-tint);
+      border: 1px solid rgba(242, 100, 25, 0.2);
+      border-radius: 12px;
+      padding: 0.65rem 0.8rem;
+    }
+
+    .lens-kpi-item span {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--trs-muted);
+      font-weight: 600;
+    }
+
+    .lens-kpi-item strong {
+      font-size: 0.84rem;
+      color: var(--trs-crimson);
+      font-weight: 800;
+    }
+
+    /* =========================================================================
+       3. ABOUT & VISION / MISSION
+    ========================================================================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .body-copy {
+      font-size: 0.95rem;
+      color: var(--trs-muted);
+      margin-bottom: 1rem;
+      line-height: 1.72;
+    }
+
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 600px) {
+      .vm-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .vm-card {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--trs-border);
+    }
+
+    .vm-card.vision {
+      background: var(--trs-mist);
+      border-left: 4px solid var(--trs-cerulean);
+    }
+
+    .vm-card.mission {
+      background: var(--trs-warm-tint);
+      border-left: 4px solid var(--trs-orange);
+    }
+
+    .vm-card h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .vm-card p {
+      font-size: 0.82rem;
+      color: var(--trs-charcoal);
+      line-height: 1.58;
+    }
+
+    .pillars-2x2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 560px) {
+      .pillars-2x2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .pillar-mini {
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .pillar-mini:hover {
+      border-color: var(--trs-teal);
+      transform: translateY(-2px);
+    }
+
+    .pillar-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .pillar-num.blue {
+      background: rgba(28, 136, 199, 0.12);
+      color: var(--trs-sapphire);
+    }
+
+    .pillar-num.amber {
+      background: rgba(242, 100, 25, 0.12);
+      color: var(--trs-crimson);
+    }
+
+    .pillar-mini h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .pillar-mini p {
+      font-size: 0.81rem;
+      color: var(--trs-muted);
+      line-height: 1.55;
+    }
+
+    /* =========================================================================
+       4. 4 CORE WORKSPACE SOLUTIONS (TABS + CARDS)
+    ========================================================================= */
+    .solutions-section {
+      background: var(--trs-mist);
+      border-top: 1px solid var(--trs-border);
+      border-bottom: 1px solid var(--trs-border);
+    }
+
+    .section-header-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .section-header-flex {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+
+    .sol-tab-btn {
+      padding: 0.7rem 1.15rem;
+      border-radius: 12px;
+      border: 1px solid var(--trs-border);
+      background: #FFFFFF;
+      color: var(--trs-charcoal);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sol-tab-btn:hover {
+      border-color: var(--trs-cerulean);
+    }
+
+    .sol-tab-btn.active {
+      background: var(--trs-sapphire);
+      color: #FFFFFF;
+      border-color: var(--trs-sapphire);
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(14, 77, 146, 0.22);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .solutions-grid.multi {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .solutions-grid.single {
+        max-width: 820px;
+        margin: 0 auto;
+      }
+    }
+
+    .sol-card {
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-lg);
+      padding: 1.85rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .sol-card:hover {
+      border-color: var(--trs-cerulean);
+      box-shadow: var(--shadow-md);
+    }
+
+    .sol-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .sol-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      color: #FFFFFF;
+    }
+
+    .sol-badge.tower {
+      background: var(--trs-tower-grad);
+    }
+
+    .sol-badge.swoosh {
+      background: var(--trs-swoosh-grad);
+    }
+
+    .sol-fit-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--trs-muted);
+    }
+
+    .sol-card h3 {
+      font-size: 1.32rem;
+      font-weight: 800;
+      margin-bottom: 0.55rem;
+    }
+
+    .sol-card p {
+      font-size: 0.88rem;
+      color: var(--trs-muted);
+      margin-bottom: 1rem;
+      line-height: 1.62;
+    }
+
+    .sol-features {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .sol-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--trs-charcoal);
+    }
+
+    .check-icon {
+      color: var(--trs-teal);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .sol-card-footer {
+      padding-top: 1rem;
+      border-top: 1px solid #EEF3F8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .sol-link-btn {
+      background: none;
+      border: none;
+      color: var(--trs-sapphire);
+      font-weight: 800;
+      font-size: 0.82rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s ease;
+    }
+
+    .sol-link-btn:hover {
+      color: var(--trs-orange);
+    }
+
+    /* =========================================================================
+       5. INTERACTIVE MODULAR WORKSPACE BUILDER ("CONFIGURE YOUR EXACT SPACE")
+    ========================================================================= */
+    .builder-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (min-width: 1024px) {
+      .builder-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .builder-controls {
+      background: var(--trs-mist);
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .control-group-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--trs-sapphire);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .option-cards-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+    }
+
+    @media (min-width: 640px) {
+      .option-cards-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .option-cards-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+    }
+
+    @media (min-width: 640px) {
+      .option-cards-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .mod-choice {
+      background: #FFFFFF;
+      border: 2px solid var(--trs-border);
+      border-radius: 14px;
+      padding: 0.9rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mod-choice:hover {
+      border-color: var(--trs-cerulean);
+    }
+
+    .mod-choice.active {
+      border-color: var(--trs-sapphire);
+      background: #EFF6FF;
+      box-shadow: 0 4px 14px rgba(14, 77, 146, 0.12);
+    }
+
+    .mod-choice.addon-active {
+      border-color: var(--trs-orange);
+      background: var(--trs-warm-tint);
+      box-shadow: 0 4px 14px rgba(242, 100, 25, 0.12);
+    }
+
+    .mod-choice strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--trs-ink);
+      margin-bottom: 0.2rem;
+    }
+
+    .mod-choice span {
+      display: block;
+      font-size: 0.73rem;
+      color: var(--trs-muted);
+      line-height: 1.4;
+    }
+
+    .seat-slider-box {
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+    }
+
+    .seat-slider-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .seat-pill {
+      background: var(--trs-swoosh-grad);
+      color: #FFFFFF;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--trs-sapphire);
+      cursor: pointer;
+    }
+
+    /* Live Summary Card */
+    .builder-summary {
+      background: var(--trs-sapphire-dark);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .builder-summary::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(43, 182, 168, 0.28) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .summary-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--trs-teal);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .summary-title {
+      color: #FFFFFF;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .sum-metric-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 0.9rem;
+    }
+
+    .sum-metric-box span {
+      display: block;
+      font-size: 0.7rem;
+      color: #B8D4EE;
+      margin-bottom: 0.2rem;
+    }
+
+    .sum-metric-box strong {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      color: var(--trs-amber);
+      font-weight: 800;
+    }
+
+    .summary-spec-list {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      margin-bottom: 1.35rem;
+      font-size: 0.83rem;
+    }
+
+    .summary-spec-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      color: #E2EEF9;
+    }
+
+    .summary-spec-list li strong {
+      color: #FFFFFF;
+      text-align: right;
+    }
+
+    /* =========================================================================
+       6. STARTUP, ENTREPRENEUR & GLOBAL EXPANSION PARTNERSHIPS HUB
+    ========================================================================= */
+    .expansion-section {
+      background: linear-gradient(160deg, #093566 0%, #0E4D92 60%, #12619E 100%);
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .expansion-section .section-title {
+      color: #FFFFFF;
+    }
+
+    .expansion-lead {
+      color: #CBE1F6;
+      max-width: 740px;
+      font-size: 0.98rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Interactive 3-Phase Geographic Network Explorer */
+    .geo-explorer-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      margin-bottom: 2.25rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .geo-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .geo-tab-btn {
+      padding: 0.65rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      color: #E2EEF9;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .geo-tab-btn:hover {
+      border-color: var(--trs-teal);
+      color: #FFFFFF;
+    }
+
+    .geo-tab-btn.active {
+      background: var(--trs-swoosh-grad);
+      color: #FFFFFF;
+      border-color: transparent;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(217, 56, 30, 0.3);
+    }
+
+    .geo-panel-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .geo-panel-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .geo-hub-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+
+    .geo-hub-chip {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.3rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(43, 182, 168, 0.22);
+      border: 1px solid rgba(43, 182, 168, 0.48);
+      color: #B4F8F1;
+    }
+
+    .geo-stat-box {
+      background: rgba(9, 53, 102, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+      padding: 1.25rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .phases-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    @media (min-width: 900px) {
+      .phases-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .phase-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: 1.65rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .phase-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: var(--trs-swoosh-grad);
+      color: #FFFFFF;
+    }
+
+    .phase-card h3 {
+      color: #FFFFFF;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .phase-card p {
+      font-size: 0.84rem;
+      color: #D7E8F8;
+      line-height: 1.6;
+    }
+
+    .city-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    .city-chip {
+      font-size: 0.71rem;
+      font-weight: 600;
+      padding: 0.22rem 0.6rem;
+      border-radius: 8px;
+      background: rgba(43, 182, 168, 0.2);
+      border: 1px solid rgba(43, 182, 168, 0.4);
+      color: #A7F3EC;
+    }
+
+    /* Ecosystem & Channel Alliances Strip */
+    .alliance-banner {
+      background: #FFFFFF;
+      color: var(--trs-charcoal);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (min-width: 960px) {
+      .alliance-banner {
+        grid-template-columns: 1.3fr 0.7fr;
+        padding: 2.25rem 2.5rem;
+      }
+    }
+
+    .alliance-banner h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .alliance-banner p {
+      font-size: 0.88rem;
+      color: var(--trs-muted);
+      margin-bottom: 1rem;
+    }
+
+    .synergy-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .synergy-pill {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 10px;
+      background: var(--trs-mist);
+      color: var(--trs-sapphire);
+      border: 1px solid var(--trs-border);
+    }
+
+    /* =========================================================================
+       7. COMPETITIVE COMPARISON MATRIX
+    ========================================================================= */
+    .matrix-section {
+      background: var(--trs-mist);
+      border-top: 1px solid var(--trs-border);
+      border-bottom: 1px solid var(--trs-border);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      margin-top: 2rem;
+    }
+
+    table.comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      text-align: left;
+    }
+
+    table.comp-table th,
+    table.comp-table td {
+      padding: 1.15rem 1.35rem;
+      border-bottom: 1px solid #E8EFF6;
+      font-size: 0.875rem;
+    }
+
+    table.comp-table thead th {
+      background: var(--trs-sapphire-dark);
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    table.comp-table thead th.trs-col-head {
+      background: var(--trs-tower-grad);
+      font-size: 0.92rem;
+    }
+
+    table.comp-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.comp-table tbody tr:nth-child(even) {
+      background: #FAFBFD;
+    }
+
+    td.feature-cell {
+      font-weight: 700;
+      color: var(--trs-ink);
+    }
+
+    td.trs-highlight {
+      background: rgba(43, 182, 168, 0.08);
+      font-weight: 700;
+      color: var(--trs-sapphire-dark);
+    }
+
+    /* =========================================================================
+       8. LEADERSHIP SECTION (CO-FOUNDERS)
+    ========================================================================= */
+    .leaders-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .leaders-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .leader-card {
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-lg);
+      padding: 1.85rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--trs-cerulean);
+    }
+
+    .leader-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #FFFFFF;
+    }
+
+    .leader-avatar.blue {
+      background: var(--trs-tower-grad);
+    }
+
+    .leader-avatar.amber {
+      background: var(--trs-swoosh-grad);
+    }
+
+    .leader-role {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--trs-orange);
+    }
+
+    .leader-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .leader-card p {
+      font-size: 0.85rem;
+      color: var(--trs-muted);
+      line-height: 1.62;
+    }
+
+    /* =========================================================================
+       9. DUAL-MODE CONVERSION FORM & FOOTER
+    ========================================================================= */
+    .contact-section {
+      background: var(--trs-mist);
+      border-top: 1px solid var(--trs-border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 3rem;
+      }
+    }
+
+    .desk-card {
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .desk-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    .desk-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .desk-icon.sapphire { background: var(--trs-sapphire); }
+    .desk-icon.orange { background: var(--trs-orange); }
+    .desk-icon.teal { background: var(--trs-teal); }
+
+    .desk-row small {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--trs-muted);
+    }
+
+    .desk-row strong, .desk-row a {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--trs-ink);
+    }
+
+    .desk-row a:hover {
+      color: var(--trs-cerulean);
+      text-decoration: underline;
+    }
+
+    .form-card {
+      background: #FFFFFF;
+      border: 1px solid var(--trs-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .mode-switcher {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem;
+      background: var(--trs-mist);
+      padding: 0.35rem;
+      border-radius: 14px;
+      border: 1px solid var(--trs-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .mode-btn {
+      padding: 0.75rem 0.65rem;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--trs-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn.active-blue {
+      background: var(--trs-sapphire);
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .mode-btn.active-orange {
+      background: var(--trs-swoosh-grad);
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .form-row-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--trs-charcoal);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid var(--trs-border);
+      background: var(--trs-mist);
+      font-size: 0.88rem;
+      color: var(--trs-ink);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--trs-cerulean);
+      background: #FFFFFF;
+    }
+
+    .confirm-banner {
+      display: none;
+      margin-top: 1.25rem;
+      padding: 1.15rem;
+      border-radius: 14px;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #065F46;
+      font-size: 0.84rem;
+    }
+
+    .confirm-banner.show {
+      display: block;
+      animation: fadeUp 0.3s ease;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--trs-sapphire-dark);
+      color: #CBE1F6;
+      padding: 3.75rem 0 2.25rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    @media (min-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1.4fr 0.8fr 0.9fr;
+      }
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.82rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--trs-amber);
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.76rem;
+      color: #93B8DC;
+    }
+
+    /* Toast Notification */
+    .toast-stack {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      max-width: 380px;
+      pointer-events: none;
+    }
+
+    .toast-item {
+      pointer-events: auto;
+      background: #FFFFFF;
+      border-left: 4px solid var(--trs-orange);
+      border-top: 1px solid var(--trs-border);
+      border-right: 1px solid var(--trs-border);
+      border-bottom: 1px solid var(--trs-border);
+      border-radius: 14px;
+      padding: 0.95rem 1.1rem;
+      box-shadow: var(--shadow-lg);
+      animation: fadeUp 0.25s ease;
+    }
+
+    .toast-item strong {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--trs-sapphire-dark);
+      margin-bottom: 0.15rem;
+    }
+
+    .toast-item span {
+      font-size: 0.76rem;
+      color: var(--trs-muted);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeUp 0.28s ease forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Non-blocking Toast Container (Zero alert() calls) -->
+  <div id="toast-stack" class="toast-stack"></div>
+
+  <!-- ===================================================================== -->
+  <!-- 1. TOP UTILITY BAR & STICKY EXECUTIVE NAVIGATION                      -->
+  <!-- ===================================================================== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="pulse-dot"></span>
+        <span>A Group Company of <strong style="color:#FFFFFF;">WorkHour Business</strong></span>
+        <span class="sep">|</span>
+        <span>Global Locations &amp; India Metros</span>
+      </div>
+      <div class="top-bar-right">
+        <span>Delhi, India</span>
+        <span class="sep">|</span>
+        <a href="tel:+919810321155"><strong>+91-981 032 1155</strong></a>
+        <span class="sep">|</span>
+        <a href="https://www.workhourbusiness.com/thinkrunspace" target="_blank" rel="noopener noreferrer">www.workhourbusiness.com/thinkrunspace</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Custom SVG Brand Mark: High-Rise Towers (Sapphire -> Cerulean -> Aqua Teal) + Sunset Swoosh & Sparkle Star -->
+      <a href="#top" class="brand-lockup" aria-label="ThinkRunSpace Home">
+        <svg class="brand-logo-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="trsTowerGrad" x1="22" y1="95" x2="78" y2="22" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#0E4D92"/>
+              <stop offset="52%" stop-color="#1C88C7"/>
+              <stop offset="100%" stop-color="#2BB6A8"/>
+            </linearGradient>
+            <linearGradient id="trsSwooshGrad" x1="16" y1="74" x2="96" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#D9381E"/>
+              <stop offset="52%" stop-color="#F26419"/>
+              <stop offset="100%" stop-color="#F7A81B"/>
+            </linearGradient>
+          </defs>
+          <!-- Stylized High-Rise Towers -->
+          <!-- Left Tower -->
+          <path d="M24 46L37 38V96H24V46Z" fill="url(#trsTowerGrad)"/>
+          <rect x="27" y="48" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="27" y="57" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="27" y="66" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="27" y="75" width="7" height="5" fill="#FFFFFF"/>
+          <!-- Center Tallest Tower -->
+          <path d="M40 31L55 21V96H40V31Z" fill="url(#trsTowerGrad)"/>
+          <rect x="44" y="34" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="44" y="43" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="44" y="52" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="44" y="61" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="44" y="70" width="7" height="5" fill="#FFFFFF"/>
+          <!-- Mid-Right Tower -->
+          <path d="M58 33L71 41V96H58V33Z" fill="url(#trsTowerGrad)"/>
+          <rect x="61" y="42" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="61" y="51" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="61" y="60" width="7" height="5" fill="#FFFFFF"/>
+          <rect x="61" y="69" width="7" height="5" fill="#FFFFFF"/>
+          <!-- Far Right Accent Tower -->
+          <path d="M74 47L83 53V96H74V47Z" fill="url(#trsTowerGrad)"/>
+          <rect x="76" y="55" width="5" height="4" fill="#FFFFFF"/>
+          <rect x="76" y="63" width="5" height="4" fill="#FFFFFF"/>
+          <!-- Dynamic Sunset Orange-Red to Amber Upward Arrow Swoosh -->
+          <path d="M25 60C11 72 15 86 35 84C57 82 79 63 91 37L98 40L94 21L78 31L85 34C73 56 53 71 36 73C23 74 20 67 25 60Z" fill="url(#trsSwooshGrad)"/>
+          <!-- Four-Point Sparkle Star Above Arrowhead -->
+          <path d="M84 12L86 17L91 19L86 21L84 26L82 21L77 19L82 17L84 12Z" fill="#F7A81B"/>
+        </svg>
+        <div>
+          <div class="brand-wordmark">Thinkrunspace</div>
+          <div class="brand-sub">SERVICED OFFICES &amp; COWORKING</div>
+          <span class="brand-group-pill">A Group Company of WorkHour Business</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#solutions">Solutions</a>
+        <a href="#modular-builder">Modular Studio</a>
+        <a href="#global-expansion" class="nav-highlight">Global Expansion</a>
+        <a href="#why-thinkrunspace">Why ThinkRunSpace</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Dual Header CTAs -->
+      <div class="header-actions">
+        <a href="#global-expansion" class="btn btn-outline">Explore Expansion Partnerships</a>
+        <a href="#contact" onclick="switchFormMode('workspace')" class="btn btn-swoosh">Book a Workspace</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" id="mobile-toggle-btn" class="mobile-toggle" aria-label="Toggle Navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <a href="#solutions" onclick="closeMobileMenu()">Solutions (Virtual &amp; Serviced)</a>
+      <a href="#modular-builder" onclick="closeMobileMenu()">Modular Studio</a>
+      <a href="#global-expansion" onclick="closeMobileMenu()">Global &amp; Multi-City Expansion</a>
+      <a href="#why-thinkrunspace" onclick="closeMobileMenu()">Why ThinkRunSpace</a>
+      <a href="#leadership" onclick="closeMobileMenu()">Leadership Team</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact Advisory Desk</a>
+      <div class="mobile-drawer-btns">
+        <a href="#global-expansion" onclick="closeMobileMenu()" class="btn btn-outline" style="padding:0.65rem;font-size:0.78rem;">Expansion Partnerships</a>
+        <a href="#contact" onclick="closeMobileMenu();switchFormMode('workspace')" class="btn btn-swoosh" style="padding:0.65rem;font-size:0.78rem;">Book a Workspace</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 2. HERO SECTION WITH INTERACTIVE AUDIENCE LENS SWITCHER               -->
+  <!-- ===================================================================== -->
+  <section id="top" class="hero-section">
+    <div class="container hero-grid">
+      <!-- Left Hero Narrative -->
+      <div>
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>B2B Workspace-as-a-Service • Virtual &amp; Physical Offices Worldwide</span>
+        </div>
+
+        <h1 class="hero-title">
+          Workspaces Built for <span class="text-tower-grad">Ambition.</span> Ready for
+          <span class="text-swoosh-grad">Global Scale.</span>
+        </h1>
+
+        <p class="hero-sub">
+          Rigid commercial leases and fragmented vendor contracts shouldn't slow down your next milestone. <strong>ThinkRunSpace</strong> empowers solo entrepreneurs, fast-scaling startups, and expanding enterprises with compliance-ready Virtual Offices, Plug-and-Play Serviced Offices, Co-Working Hubs, and Managed Enterprise Floors across India and global business gateways.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#solutions" class="btn btn-tower">
+            <span>Explore Virtual &amp; Serviced Offices</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#global-expansion" class="btn btn-swoosh">
+            <span>Explore Expansion Partnerships</span>
+          </a>
+        </div>
+
+        <div class="hero-metrics">
+          <div>
+            <div class="metric-val text-tower-grad">0 CapEx</div>
+            <div class="metric-lbl">Turnkey Plug-and-Play Move-In</div>
+          </div>
+          <div>
+            <div class="metric-val text-swoosh-grad">48 Hrs</div>
+            <div class="metric-lbl">Virtual Office &amp; GST/KYC Activation</div>
+          </div>
+          <div>
+            <div class="metric-val" style="color:var(--trs-sapphire-dark);">3 Tiers</div>
+            <div class="metric-lbl">Bare-Shell, Semi &amp; Fully Furnished</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Interactive Audience Lens Switcher -->
+      <div class="lens-card">
+        <div class="lens-card-header">
+          <span class="lens-card-label">Tailored Workspace Playbook</span>
+          <span class="lens-pill-tag">Select Your Stage</span>
+        </div>
+
+        <div class="lens-tabs" role="tablist">
+          <button type="button" data-lens="entrepreneurs" class="lens-tab-btn active">Entrepreneurs &amp; Solo Founders</button>
+          <button type="button" data-lens="startups" class="lens-tab-btn">Startups &amp; Scaling Teams</button>
+          <button type="button" data-lens="global" class="lens-tab-btn">Global &amp; Multi-City Expansion</button>
+        </div>
+
+        <div id="lens-dynamic-content" class="fade-in">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. ABOUT THINKRUNSPACE & VISION / MISSION                             -->
+  <!-- ===================================================================== -->
+  <section id="about" class="section-pad">
+    <div class="container about-grid">
+      <div>
+        <span class="eyebrow">Why ThinkRunSpace Exists</span>
+        <h2 class="section-title">
+          The Way People Work Has Changed. <span class="text-tower-grad">Your Office Should Adapt With You.</span>
+        </h2>
+        <p class="body-copy">
+          Great companies outgrow rigid five-year lock-ins faster than landlords can approve a floor plan. We built <strong>ThinkRunSpace</strong> (a group company of <strong>WorkHour Business</strong>) to strip away heavy fit-out capital, fragmented vendor contracts, and administrative headaches—replacing them with modular, technology-enabled workspaces that expand or reconfigure on demand.
+        </p>
+        <p class="body-copy">
+          Whether you are an independent founder registering an entity in a prestige business district, a 40-person product team needing a custom-branded floor, or a multinational launching regional hubs across borders, our onsite and remote operations teams handle every detail under transparent SLAs.
+        </p>
+
+        <div class="vm-grid">
+          <div class="vm-card vision">
+            <h3 style="color:var(--trs-sapphire);">Our Vision</h3>
+            <p>To become the most trusted global partner for flexible, future-ready workspaces that empower businesses to grow anywhere, anytime.</p>
+          </div>
+          <div class="vm-card mission">
+            <h3 style="color:var(--trs-crimson);">Our Mission</h3>
+            <p>To deliver customizable, technology-enabled office solutions that reduce complexity, lower operating costs, and enhance productivity across cities and countries.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillars-2x2">
+        <div class="pillar-mini">
+          <div class="pillar-num blue">01</div>
+          <h3>Flexible Terms Aligned to Growth</h3>
+          <p>Start with a virtual presence or 5 desks and scale seamlessly into a dedicated 150-seat managed suite without breaking lease agreements.</p>
+        </div>
+        <div class="pillar-mini">
+          <div class="pillar-num amber">02</div>
+          <h3>Zero Hidden Operational Complexity</h3>
+          <p>Power backup, enterprise Wi-Fi, biometric access, housekeeping, and cafeteria logistics are bundled into one predictable monthly statement.</p>
+        </div>
+        <div class="pillar-mini">
+          <div class="pillar-num blue">03</div>
+          <h3>Business-First Modular Design</h3>
+          <p>Choose your exact fit-out level—bare-shell, semi-furnished, or plug-and-play—tailored to your brand culture and security protocols.</p>
+        </div>
+        <div class="pillar-mini">
+          <div class="pillar-num amber">04</div>
+          <h3>End-to-End Onsite &amp; Virtual Ownership</h3>
+          <p>Dedicated receptionists, facility managers, IT coordinators, and compliance specialists keep your teams productive from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. 4 CORE WORKSPACE SOLUTIONS (INTERACTIVE TABS + CARDS)              -->
+  <!-- ===================================================================== -->
+  <section id="solutions" class="section-pad solutions-section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <span class="eyebrow eyebrow-warm">Complete Workspace Ecosystem</span>
+          <h2 class="section-title" style="margin-bottom:0;">4 Core Workspace Solutions Built for Every Stage.</h2>
+        </div>
+        <p style="font-size:0.88rem;color:var(--trs-muted);max-width:440px;">
+          Filter by workspace format to explore how individuals, startups, and global enterprises operate seamlessly with ThinkRunSpace.
+        </p>
+      </div>
+
+      <!-- Interactive Category Filter Tabs -->
+      <div class="filter-bar" role="tablist">
+        <button type="button" data-sol="ALL" class="sol-tab-btn active">All Solutions</button>
+        <button type="button" data-sol="virtual" class="sol-tab-btn">1. Virtual Offices</button>
+        <button type="button" data-sol="serviced" class="sol-tab-btn">2. Serviced &amp; Managed Offices</button>
+        <button type="button" data-sol="coworking" class="sol-tab-btn">3. Co-Working Spaces</button>
+        <button type="button" data-sol="meetings" class="sol-tab-btn">4. Meeting &amp; Business Suites</button>
+      </div>
+
+      <!-- Solutions Cards Container -->
+      <div id="solutions-grid" class="solutions-grid multi">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 5. INTERACTIVE MODULAR WORKSPACE CONFIGURATOR ("BUILD YOUR IDEAL OFFICE") -->
+  <!-- ===================================================================== -->
+  <section id="modular-builder" class="section-pad">
+    <div class="container">
+      <div style="max-width:740px;margin-bottom:2.25rem;">
+        <span class="eyebrow">Signature Modular Studio</span>
+        <h2 class="section-title">Build Your Ideal Office — Pay Only for What Your Team Uses.</h2>
+        <p class="body-copy" style="margin-bottom:0;">
+          Unlike rigid coworking chains that force one-size-fits-all packages, ThinkRunSpace lets you configure your workspace mode, headcount, fit-out level, IT infrastructure, cafeteria, and dedicated front-office team.
+        </p>
+      </div>
+
+      <div class="builder-grid">
+        <!-- Left Interactive Controls -->
+        <div class="builder-controls">
+          <!-- Step 1: Workspace Mode -->
+          <div>
+            <div class="control-group-title">
+              <span>Step 1 • Select Workspace Mode</span>
+            </div>
+            <div class="option-cards-2" id="mode-options">
+              <button type="button" data-wsmode="Virtual Office Presence" data-modespeed="24–48 Hours" data-modecapex="Zero Lease Deposit" class="mod-choice">
+                <strong>Virtual Office Presence</strong>
+                <span>Prestige address, GST/KYC docs, mail handling &amp; on-demand boardrooms.</span>
+              </button>
+              <button type="button" data-wsmode="Co-Working Pods" data-modespeed="Same-Day Access" data-modecapex="Zero Upfront CapEx" class="mod-choice">
+                <strong>Co-Working Pods</strong>
+                <span>Dedicated desks and collaborative team pods with zero long-term lock-in.</span>
+              </button>
+              <button type="button" data-wsmode="Private Serviced Suite" data-modespeed="24–72 Hours" data-modecapex="Zero Upfront CapEx" class="mod-choice active">
+                <strong>Private Serviced Suite</strong>
+                <span>Exclusive, lockable team office with custom branding and full support.</span>
+              </button>
+              <button type="button" data-wsmode="Enterprise Managed Floor" data-modespeed="2–4 Weeks" data-modecapex="Up to 75% CapEx Saved" class="mod-choice">
+                <strong>Enterprise Managed Floor</strong>
+                <span>Dedicated custom floorplate with enterprise IT, biometric security &amp; SLAs.</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Team Size Slider -->
+          <div>
+            <div class="control-group-title">
+              <span>Step 2 • Team Size (1 to 200 Workstations)</span>
+              <span style="color:var(--trs-muted);font-weight:600;text-transform:none;">Drag to adjust seats</span>
+            </div>
+            <div class="seat-slider-box">
+              <div class="seat-slider-top">
+                <span>Workstation Capacity</span>
+                <span id="seat-display" class="seat-pill">25 Workstations (~2,250 sq.ft)</span>
+              </div>
+              <input type="range" id="seat-slider" min="1" max="200" value="25" />
+              <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--trs-muted);margin-top:0.35rem;">
+                <span>1 Solo / Virtual</span>
+                <span>25 Growth Team</span>
+                <span>100+ Enterprise Floor</span>
+                <span>200+ Regional HQ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Fit-Out Configuration -->
+          <div>
+            <div class="control-group-title">
+              <span>Step 3 • Fit-Out Configuration</span>
+            </div>
+            <div class="option-cards-3" id="fitout-options">
+              <button type="button" data-fitout="Bare-Shell Unit" data-speed="2–4 Weeks" data-capex="65% Lower CapEx" class="mod-choice">
+                <strong>Bare-Shell</strong>
+                <span>Structural space with power, HVAC &amp; basic lighting for custom corporate fit-out.</span>
+              </button>
+              <button type="button" data-fitout="Semi-Furnished Office" data-speed="10–14 Days" data-capex="80% Lower CapEx" class="mod-choice">
+                <strong>Semi-Furnished</strong>
+                <span>Ready flooring, false ceiling, partitions &amp; cabling for rapid customization.</span>
+              </button>
+              <button type="button" data-fitout="Fully Furnished Plug-and-Play" data-speed="24–48 Hours" data-capex="Zero Upfront CapEx" class="mod-choice active">
+                <strong>Fully Furnished</strong>
+                <span>Turnkey workstations, private cabins, lounge &amp; reception ready on day one.</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Infrastructure & Hospitality Stack -->
+          <div>
+            <div class="control-group-title">
+              <span>Step 4 • Infrastructure, Cafeteria &amp; Front-Office Stack</span>
+            </div>
+            <div class="option-cards-2" id="infra-options" style="margin-bottom:0.65rem;">
+              <button type="button" data-infra="Basic Infrastructure" class="mod-choice">
+                <strong>Basic Infra</strong>
+                <span>Power backup, high-speed internet readiness, basic security &amp; common housekeeping.</span>
+              </button>
+              <button type="button" data-infra="Full Enterprise Infrastructure" class="mod-choice active">
+                <strong>Full Enterprise Infra</strong>
+                <span>Managed leased-line Wi-Fi, biometric access control, CCTV, AV boardrooms &amp; print zones.</span>
+              </button>
+            </div>
+
+            <div class="option-cards-3" id="addon-options">
+              <button type="button" data-addon="Full Cafeteria & Pantry" class="mod-choice addon-active">
+                <strong>Cafeteria / Pantry</strong>
+                <span>Full cafeteria, barista pantry &amp; vending support.</span>
+              </button>
+              <button type="button" data-addon="Dedicated Front-Office & Admin Team" class="mod-choice addon-active">
+                <strong>Front-Office &amp; Admin Team</strong>
+                <span>Dedicated reception concierge, mail &amp; vendor ops.</span>
+              </button>
+              <button type="button" data-addon="Onsite IT & Safety Compliance SLA" class="mod-choice">
+                <strong>Onsite IT &amp; Compliance</strong>
+                <span>Dedicated network support &amp; building safety SLA.</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Live Configuration Summary -->
+        <div class="builder-summary">
+          <span class="summary-eyebrow">Live Workspace Blueprint</span>
+          <h3 class="summary-title">Your Custom ThinkRunSpace Specification</h3>
+
+          <div class="summary-metrics">
+            <div class="sum-metric-box">
+              <span>Estimated Setup Timeline</span>
+              <strong id="sum-speed">24–48 Hours</strong>
+            </div>
+            <div class="sum-metric-box">
+              <span>CapEx Exposure</span>
+              <strong id="sum-capex">Zero Upfront CapEx</strong>
+            </div>
+          </div>
+
+          <ul class="summary-spec-list">
+            <li><span>Workspace Mode</span><strong id="sum-mode">Private Serviced Suite</strong></li>
+            <li><span>Team Capacity</span><strong id="sum-seats">25 Workstations (~2,250 sq.ft)</strong></li>
+            <li><span>Fit-Out Configuration</span><strong id="sum-fitout">Fully Furnished Plug-and-Play</strong></li>
+            <li><span>Infrastructure Stack</span><strong id="sum-infra">Full Enterprise Infrastructure</strong></li>
+            <li><span>Hospitality &amp; Admin</span><strong id="sum-addons">Full Cafeteria &amp; Pantry, Dedicated Front-Office &amp; Admin Team</strong></li>
+            <li><span>Recommended SLA Tier</span><strong id="sum-sla">Enterprise Managed SLA (99.9% Uptime)</strong></li>
+          </ul>
+
+          <button type="button" onclick="sendBuilderToAdvisor()" class="btn btn-swoosh" style="width:100%;padding:1rem;">
+            <span>Send Blueprint to Expansion Advisor →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 6. STARTUP, ENTREPRENEUR & GLOBAL EXPANSION PARTNERSHIPS HUB          -->
+  <!-- ===================================================================== -->
+  <section id="global-expansion" class="section-pad expansion-section">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--trs-teal);">Startup, Entrepreneur &amp; Global Expansion Partnerships Hub</span>
+      <h2 class="section-title">Expand Across India &amp; Global Gateways Under a Single Workspace Partner.</h2>
+      <p class="expansion-lead">
+        Whether you are a founder launching your first metro headquarters, an enterprise opening regional GCC hubs, or an international company soft-landing in India, explore our 3-Phase Geographic Network and strategic partnership tracks below.
+      </p>
+
+      <!-- Interactive 3-Phase Geographic Network Explorer -->
+      <div class="geo-explorer-box">
+        <div class="geo-tabs" role="tablist">
+          <button type="button" data-phase="phase1" class="geo-tab-btn active">Phase 1: India Core Metros</button>
+          <button type="button" data-phase="phase2" class="geo-tab-btn">Phase 2: High-Growth Regional &amp; GCC Hubs</button>
+          <button type="button" data-phase="phase3" class="geo-tab-btn">Phase 3: International Gateway Hubs</button>
+        </div>
+        <div id="geo-explorer-panel" class="fade-in">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- 3 Strategic Partnership Tracks -->
+      <div class="phases-grid">
+        <div class="phase-card">
+          <span class="phase-tag">Track 01 • Founders &amp; Venture Studios</span>
+          <h3>Startup &amp; Venture Scale-Up Program</h3>
+          <p>
+            Zero-deposit virtual addresses for incorporation and GST registration, transitioning seamlessly into modular coworking pods and private serviced suites as you raise Seed through Series C rounds.
+          </p>
+          <button type="button" onclick="launchPartnershipInquiry('Track 1: Startup & Venture Scale-Up Program')" class="btn btn-swoosh" style="margin-top:auto;padding:0.7rem 1rem;font-size:0.8rem;">
+            Apply for Startup Scale-Up Track →
+          </button>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-tag">Track 02 • Inbound &amp; Outbound Enterprises</span>
+          <h3>Cross-Border Market-Entry &amp; GCC Launchpad</h3>
+          <p>
+            Launch satellite offices or Global Capability Centers without real-estate lock-in—integrated with <strong>WorkHour Business</strong> sister ventures for local entity compliance, specialized hiring, and executive travel.
+          </p>
+          <button type="button" onclick="launchPartnershipInquiry('Track 2: Cross-Border Market-Entry & GCC Launchpad')" class="btn btn-swoosh" style="margin-top:auto;padding:0.7rem 1rem;font-size:0.8rem;">
+            Launch Market-Entry Brief →
+          </button>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-tag">Track 03 • Property Owners &amp; Advisors</span>
+          <h3>Commercial Landlord &amp; Channel Alliances</h3>
+          <p>
+            Unlock higher asset yields through revenue-share managed workspace partnerships, or partner as an IPC broker, incubator, or corporate relocation advisor with structured referral incentives.
+          </p>
+          <button type="button" onclick="launchPartnershipInquiry('Track 3: Commercial Landlord & Channel Alliance')" class="btn btn-outline" style="margin-top:auto;padding:0.7rem 1rem;font-size:0.8rem;">
+            Partner as Landlord / Channel Advisor →
+          </button>
+        </div>
+      </div>
+
+      <!-- Ecosystem Synergy Banner -->
+      <div class="alliance-banner">
+        <div>
+          <span class="eyebrow eyebrow-warm" style="margin-bottom:0.35rem;">WorkHour Business Ecosystem Advantage</span>
+          <h3>More Than Four Walls — A Complete Business Expansion Platform</h3>
+          <p>
+            As a group company of <strong>WorkHour Business</strong>, ThinkRunSpace gives expanding founders and global enterprises single-window access to compliant workspace infrastructure alongside recruitment, workforce upskilling, and corporate mobility support.
+          </p>
+          <div class="synergy-pills">
+            <span class="synergy-pill">Entity Registration &amp; GST Address Readiness</span>
+            <span class="synergy-pill">Multi-City Single-Contract Billing</span>
+            <span class="synergy-pill">WorkHour Talent, Training &amp; Travel Synergy</span>
+          </div>
+        </div>
+        <div style="display:grid;gap:0.75rem;">
+          <button type="button" onclick="launchPartnershipInquiry('Full WorkHour + ThinkRunSpace Expansion Bundle')" class="btn btn-swoosh" style="width:100%;">
+            Request Multi-City Expansion Proposal
+          </button>
+          <a href="tel:+919810321155" class="btn btn-outline" style="width:100%;">
+            Speak With Delhi Expansion Desk: +91-981 032 1155
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 6. STARTUP, ENTREPRENEUR & GLOBAL EXPANSION PARTNERSHIPS HUB          -->
+  <!-- ===================================================================== -->
+  <section id="global-expansion" class="section-pad expansion-section">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--trs-teal);">Global-Yet-Local Growth Engine</span>
+      <h2 class="section-title">Expand Across India &amp; Global Gateways Under a Single Workspace Partner.</h2>
+      <p class="expansion-lead">
+        Whether you are an Indian startup entering new regional metros or an international company establishing an India hub without local real-estate friction, ThinkRunSpace lets you test markets virtually and scale into physical flagships smoothly.
+      </p>
+
+      <div class="phases-grid">
+        <div class="phase-card">
+          <span class="phase-tag">Phase 1 • India Core Metros</span>
+          <h3>Flagship Centers in Tier-1 Business Hubs</h3>
+          <p>
+            Immediate virtual office registration, coworking passes, and custom-built managed offices across India’s primary technology, financial, and commercial capitals.
+          </p>
+          <div class="city-chips">
+            <span class="city-chip">Delhi NCR</span>
+            <span class="city-chip">Bengaluru</span>
+            <span class="city-chip">Mumbai</span>
+            <span class="city-chip">Hyderabad</span>
+            <span class="city-chip">Pune</span>
+            <span class="city-chip">Chennai</span>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-tag">Phase 2 • High-Growth Regional Hubs</span>
+          <h3>Emerging Startup &amp; IT Ecosystems</h3>
+          <p>
+            Tap into high-retention talent pools across fast-growing Tier-2 cities with turnkey satellite offices, interview suites, and compliant local business addresses.
+          </p>
+          <div class="city-chips">
+            <span class="city-chip">Ahmedabad</span>
+            <span class="city-chip">Jaipur</span>
+            <span class="city-chip">Chandigarh</span>
+            <span class="city-chip">Kochi</span>
+            <span class="city-chip">Indore</span>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-tag">Phase 3 • International Gateways</span>
+          <h3>Cross-Border Virtual-to-Physical Soft Landing</h3>
+          <p>
+            Establish a credible international presence with local business addresses, mail forwarding, and on-demand executive suites across global commercial hubs.
+          </p>
+          <div class="city-chips">
+            <span class="city-chip">Dubai &amp; UAE</span>
+            <span class="city-chip">Singapore</span>
+            <span class="city-chip">London</span>
+            <span class="city-chip">New York</span>
+            <span class="city-chip">Riyadh</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partnership & WorkHour Business Ecosystem Banner -->
+      <div class="alliance-banner">
+        <div>
+          <span class="eyebrow eyebrow-warm" style="margin-bottom:0.35rem;">Strategic Partnerships &amp; Ecosystem Synergy</span>
+          <h3>Built for Founders, Real Estate Partners &amp; Cross-Border Ventures</h3>
+          <p>
+            We collaborate with <strong>venture studios, startup incubators, property landlords, and relocation advisors</strong>—and connect you directly to the wider <strong>WorkHour Business</strong> growth ecosystem when you need talent, corporate travel, or workforce training alongside your office.
+          </p>
+          <div class="synergy-pills">
+            <span class="synergy-pill">Landlord Revenue-Share Alliances</span>
+            <span class="synergy-pill">VC &amp; Incubator Startup Perks</span>
+            <span class="synergy-pill">WorkHour Talent &amp; Mobility Synergy</span>
+          </div>
+        </div>
+        <div style="display:grid;gap:0.75rem;">
+          <button type="button" onclick="launchPartnershipInquiry('Startup / Incubator Expansion Partnership')" class="btn btn-swoosh" style="width:100%;">
+            Partner as a Startup or Incubator
+          </button>
+          <button type="button" onclick="launchPartnershipInquiry('Landlord / Channel Broker Alliance')" class="btn btn-outline" style="width:100%;">
+            Partner as a Landlord or Broker
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 7. COMPETITIVE COMPARISON MATRIX                                      -->
+  <!-- ===================================================================== -->
+  <section id="why-thinkrunspace" class="section-pad matrix-section">
+    <div class="container">
+      <div style="max-width:700px;">
+        <span class="eyebrow">The ThinkRunSpace Advantage</span>
+        <h2 class="section-title">Why Enterprises &amp; Founders Choose ThinkRunSpace Over Traditional Providers.</h2>
+        <p class="body-copy" style="margin-bottom:0;">
+          We bridge the gap between rigid global real-estate chains and basic local coworking operators—giving you enterprise SLAs with modular startup agility.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Capability Dimension</th>
+              <th>Typical Indian Coworking</th>
+              <th>Global Workspace Chains</th>
+              <th class="trs-col-head">ThinkRunSpace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-cell">Customization &amp; Modularity</td>
+              <td>Low to medium; fixed seating templates</td>
+              <td>Standardized global layouts; rigid fit-outs</td>
+              <td class="trs-highlight">High modular choice: Bare-Shell, Semi, or Fully Furnished + custom infra &amp; cafeteria</td>
+            </tr>
+            <tr>
+              <td class="feature-cell">Target Client Focus</td>
+              <td>Freelancers and micro-teams</td>
+              <td>Large enterprises at premium pricing</td>
+              <td class="trs-highlight">Startups, SMEs &amp; Enterprises with a seamless scale-up pathway</td>
+            </tr>
+            <tr>
+              <td class="feature-cell">Virtual-to-Physical Expansion</td>
+              <td>Limited standalone mail addresses</td>
+              <td>Available, but siloed from custom offices</td>
+              <td class="trs-highlight">Integrated virtual office launchpad transitioning smoothly into physical suites</td>
+            </tr>
+            <tr>
+              <td class="feature-cell">Admin, IT &amp; SLA Support</td>
+              <td>Basic shared front desk</td>
+              <td>Moderate standardized support</td>
+              <td class="trs-highlight">Enterprise-grade SLA governance, dedicated reception, IT &amp; compliance care</td>
+            </tr>
+            <tr>
+              <td class="feature-cell">Geographic Reach</td>
+              <td>Single-city or India-only footprint</td>
+              <td>Multi-country, high overhead</td>
+              <td class="trs-highlight">Strategic India metro core + global gateway network under one partner</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 8. LEADERSHIP TEAM (CO-FOUNDERS — CLEAN & HUMANIZED)                  -->
+  <!-- ===================================================================== -->
+  <section id="leadership" class="section-pad">
+    <div class="container">
+      <div style="max-width:680px;">
+        <span class="eyebrow eyebrow-warm">Founding Leadership</span>
+        <h2 class="section-title">Guided by Leaders Who Understand Growth, Operations &amp; Scale.</h2>
+        <p class="body-copy" style="margin-bottom:0;">
+          Behind ThinkRunSpace is a hands-on founding team committed to building dependable, human-centric work environments for ambitious businesses.
+        </p>
+      </div>
+
+      <div class="leaders-grid">
+        <div class="leader-card">
+          <div class="leader-avatar blue">SG</div>
+          <div>
+            <div class="leader-role">Co-Founder</div>
+            <h3>Dr. Shobhit Gupta</h3>
+          </div>
+          <p>
+            Spearheads enterprise strategy, multi-city expansion, and institutional partnerships—aligning ThinkRunSpace’s global workspace roadmap with the evolving needs of scaling ventures and corporate real estate leaders.
+          </p>
+        </div>
+
+        <div class="leader-card">
+          <div class="leader-avatar amber">AS</div>
+          <div>
+            <div class="leader-role">Co-Founder</div>
+            <h3>Abhay Singh</h3>
+          </div>
+          <p>
+            Leads workspace architecture, modular infrastructure delivery, and SLA governance—ensuring every bare-shell, semi-furnished, and turnkey office meets strict benchmarks for uptime, security, and speed-to-move-in.
+          </p>
+        </div>
+
+        <div class="leader-card">
+          <div class="leader-avatar blue">SS</div>
+          <div>
+            <div class="leader-role">Co-Founder</div>
+            <h3>Shivani Sangwan</h3>
+          </div>
+          <p>
+            Champions client experience, community hospitality, and virtual office compliance—creating responsive, people-first workplaces where entrepreneurs and distributed teams feel supported from day one.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 9. DUAL-MODE CONVERSION FORM & EXECUTIVE FOOTER                       -->
+  <!-- ===================================================================== -->
+  <section id="contact" class="section-pad contact-section">
+    <div class="container contact-grid">
+      <!-- Left Advisory Desk -->
+      <div>
+        <span class="eyebrow">Connect With ThinkRunSpace</span>
+        <h2 class="section-title">Book a Workspace Tour or Launch a Strategic Partnership.</h2>
+        <p class="body-copy">
+          Whether you need a virtual office address within 48 hours, a 50-seat custom managed office, or a cross-border expansion partnership, our Delhi advisory desk responds within 4 business hours.
+        </p>
+
+        <div class="desk-card">
+          <div class="desk-row">
+            <div class="desk-icon sapphire">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <small>Headquarters</small>
+              <strong>ThinkRunSpace — Delhi, India</strong>
+              <div style="font-size:0.78rem;color:var(--trs-muted);margin-top:0.15rem;">A Group Company of WorkHour Business</div>
+            </div>
+          </div>
+
+          <div class="desk-row">
+            <div class="desk-icon orange">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <small>Workspace &amp; Partnership Hotline</small>
+              <a href="tel:+919810321155">+91-981 032 1155</a>
+            </div>
+          </div>
+
+          <div class="desk-row">
+            <div class="desk-icon teal">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <div>
+              <small>Official Web Portal</small>
+              <a href="https://www.workhourbusiness.com/thinkrunspace" target="_blank" rel="noopener noreferrer">www.workhourbusiness.com/thinkrunspace</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Dual-Mode Conversion Form -->
+      <div class="form-card">
+        <div class="mode-switcher">
+          <button type="button" id="mode-btn-workspace" onclick="switchFormMode('workspace')" class="mode-btn active-blue">
+            Book Workspace / Virtual Office
+          </button>
+          <button type="button" id="mode-btn-partner" onclick="switchFormMode('partner')" class="mode-btn">
+            Apply for Expansion / Channel Partnership
+          </button>
+        </div>
+
+        <form id="trs-inquiry-form">
+          <input type="hidden" id="trs-inquiry-type" value="Book Workspace / Virtual Office" />
+
+          <div class="form-row-2">
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="trs-name">Your Full Name *</label>
+              <input type="text" id="trs-name" class="form-control" required placeholder="e.g., Arjun Malhotra" />
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="trs-company" id="trs-company-label">Company / Venture Name *</label>
+              <input type="text" id="trs-company" class="form-control" required placeholder="e.g., NexaGrid Technologies" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="trs-email">Work Email *</label>
+              <input type="email" id="trs-email" class="form-control" required placeholder="name@company.com" />
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="trs-phone">Phone / WhatsApp *</label>
+              <input type="tel" id="trs-phone" class="form-control" required placeholder="+91 98XXX XXXXX" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="trs-city">Target City / Global Location</label>
+              <input type="text" id="trs-city" class="form-control" placeholder="e.g., Delhi NCR, Bengaluru, Dubai, Singapore" />
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="trs-solution">Selected Solution / Partnership Track</label>
+              <input type="text" id="trs-solution" class="form-control" placeholder="e.g., Serviced Office, Virtual Office, Expansion Partner" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="trs-notes">Workspace Blueprint, Seat Count &amp; Move-In Timeline</label>
+            <textarea id="trs-notes" rows="4" class="form-control" placeholder="Share your required workstations, fit-out preference (Bare-Shell / Semi / Fully Furnished), virtual office needs, or partnership goals..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-swoosh" style="width:100%;padding:1rem;font-size:0.92rem;">
+            Submit Request to ThinkRunSpace Advisory Desk
+          </button>
+        </form>
+
+        <div id="trs-confirm-banner" class="confirm-banner">
+          <strong style="display:block;font-size:0.92rem;margin-bottom:0.25rem;">✓ Request Registered With ThinkRunSpace!</strong>
+          <span id="trs-confirm-msg"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.85rem;">
+            <svg width="42" height="42" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 46L37 38V96H24V46Z" fill="#1C88C7"/>
+              <path d="M40 31L55 21V96H40V31Z" fill="#2BB6A8"/>
+              <path d="M58 33L71 41V96H58V33Z" fill="#1C88C7"/>
+              <path d="M74 47L83 53V96H74V47Z" fill="#2BB6A8"/>
+              <path d="M25 60C11 72 15 86 35 84C57 82 79 63 91 37L98 40L94 21L78 31L85 34C73 56 53 71 36 73C23 74 20 67 25 60Z" fill="#F26419"/>
+              <path d="M84 12L86 17L91 19L86 21L84 26L82 21L77 19L82 17L84 12Z" fill="#F7A81B"/>
+            </svg>
+            <div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.25rem;color:#FFFFFF;line-height:1;">Thinkrunspace</div>
+              <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.13em;color:#F7A81B;margin-top:0.2rem;">SERVICED OFFICES &amp; COWORKING</div>
+            </div>
+          </div>
+          <p style="font-size:0.82rem;color:#B8D4EE;max-width:360px;line-height:1.65;">
+            A Group Company of <strong>WorkHour Business</strong>. Delivering modular serviced offices, collaborative coworking spaces, and compliance-ready virtual offices across India and global business hubs.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Workspace Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="#solutions">Virtual Office Solutions</a></li>
+            <li><a href="#solutions">Serviced &amp; Managed Offices</a></li>
+            <li><a href="#solutions">Co-Working Spaces</a></li>
+            <li><a href="#solutions">Meeting Rooms &amp; Business Infra</a></li>
+            <li><a href="#modular-builder">Modular Fit-Out Configurator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Advisory &amp; Partnerships</h4>
+          <ul class="footer-links">
+            <li>Delhi, India</li>
+            <li><a href="tel:+919810321155" style="color:#FFFFFF;font-weight:700;">+91-981 032 1155</a></li>
+            <li><a href="https://www.workhourbusiness.com/thinkrunspace" target="_blank" rel="noopener noreferrer" style="color:#F7A81B;">www.workhourbusiness.com/thinkrunspace</a></li>
+            <li><a href="#global-expansion">Startup &amp; Landlord Partnerships</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 ThinkRunSpace (WorkHour Business Group). All rights reserved.</span>
+        <span>Serviced Offices • Coworking • Virtual Offices • Managed Workspaces</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- VANILLA JAVASCRIPT INTERACTIVITY ENGINE                               -->
+  <!-- ===================================================================== -->
+  <script>
+    // Non-blocking Toast Helper
+    function showToast(title, message) {
+      const stack = document.getElementById('toast-stack');
+      const el = document.createElement('div');
+      el.className = 'toast-item';
+      el.innerHTML = '<strong>' + title + '</strong><span>' + message + '</span>';
+      stack.appendChild(el);
+      setTimeout(() => {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.25s ease';
+        setTimeout(() => el.remove(), 260);
+      }, 4200);
+    }
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-toggle-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    mobileBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      mobileDrawer.classList.remove('open');
+    }
+
+    // -----------------------------------------------------------------------
+    // 3. INTERACTIVE MODULAR WORKSPACE BUILDER ("BUILD YOUR IDEAL OFFICE")
+    // -----------------------------------------------------------------------
+    const seatSlider = document.getElementById('seat-slider');
+
+    function updateBuilderSummary() {
+      const seats = parseInt(seatSlider.value, 10);
+      const sqft = seats * 90;
+      const seatText = seats === 1
+        ? '1 Solo Workstation / Virtual Desk'
+        : `${seats} Workstations (~${sqft.toLocaleString()} sq.ft)`;
+
+      document.getElementById('seat-display').textContent = seatText;
+      document.getElementById('sum-seats').textContent = seatText;
+
+      const activeMode = document.querySelector('#mode-options .mod-choice.active');
+      const modeName = activeMode ? activeMode.getAttribute('data-wsmode') : 'Private Serviced Suite';
+
+      const activeFitout = document.querySelector('#fitout-options .mod-choice.active');
+      const fitoutName = activeFitout ? activeFitout.getAttribute('data-fitout') : 'Fully Furnished Plug-and-Play';
+      let speedVal = activeFitout ? activeFitout.getAttribute('data-speed') : '24–48 Hours';
+      let capexVal = activeFitout ? activeFitout.getAttribute('data-capex') : 'Zero Upfront CapEx';
+
+      if (modeName === 'Virtual Office Presence') {
+        speedVal = '24–48 Hours';
+        capexVal = 'Zero Lease Deposit';
+      } else if (modeName === 'Enterprise Managed Floor' && fitoutName === 'Bare-Shell Unit') {
+        speedVal = '3–4 Weeks';
+      }
+
+      const activeInfra = document.querySelector('#infra-options .mod-choice.active');
+      const infraName = activeInfra ? activeInfra.getAttribute('data-infra') : 'Full Enterprise Infrastructure';
+
+      const activeAddons = Array.from(document.querySelectorAll('#addon-options .mod-choice.addon-active'))
+        .map(el => el.getAttribute('data-addon'));
+
+      const slaTier = seats >= 50 || modeName === 'Enterprise Managed Floor'
+        ? 'Dedicated Enterprise SLA (99.95% Uptime + Account Lead)'
+        : 'Enterprise Standard SLA (99.9% Uptime + Helpdesk)';
+
+      document.getElementById('sum-mode').textContent = modeName;
+      document.getElementById('sum-speed').textContent = speedVal;
+      document.getElementById('sum-capex').textContent = capexVal;
+      document.getElementById('sum-fitout').textContent = fitoutName;
+      document.getElementById('sum-infra').textContent = infraName;
+      document.getElementById('sum-addons').textContent = activeAddons.length ? activeAddons.join(', ') : 'Core Space Only';
+      document.getElementById('sum-sla').textContent = slaTier;
+    }
+
+    seatSlider.addEventListener('input', updateBuilderSummary);
+
+    document.querySelectorAll('#mode-options .mod-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#mode-options .mod-choice').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateBuilderSummary();
+      });
+    });
+
+    document.querySelectorAll('#fitout-options .mod-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#fitout-options .mod-choice').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateBuilderSummary();
+      });
+    });
+
+    document.querySelectorAll('#infra-options .mod-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#infra-options .mod-choice').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateBuilderSummary();
+      });
+    });
+
+    document.querySelectorAll('#addon-options .mod-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('addon-active');
+        updateBuilderSummary();
+      });
+    });
+
+    function sendBuilderToAdvisor() {
+      const mode = document.getElementById('sum-mode').textContent;
+      const seats = document.getElementById('sum-seats').textContent;
+      const fitout = document.getElementById('sum-fitout').textContent;
+      const infra = document.getElementById('sum-infra').textContent;
+      const addons = document.getElementById('sum-addons').textContent;
+      const sla = document.getElementById('sum-sla').textContent;
+
+      switchFormMode('workspace');
+      document.getElementById('trs-solution').value = `${mode} (${fitout})`;
+      document.getElementById('trs-notes').value =
+        `Custom ThinkRunSpace Modular Blueprint:\n` +
+        `• Workspace Mode: ${mode}\n` +
+        `• Capacity: ${seats}\n` +
+        `• Fit-Out Tier: ${fitout}\n` +
+        `• Infrastructure: ${infra}\n` +
+        `• Hospitality & Admin: ${addons}\n` +
+        `• SLA Tier: ${sla}`;
+
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      showToast('Blueprint Loaded', 'Your modular workspace configuration has been pre-filled in the advisor form.');
+    }
+
+    // -----------------------------------------------------------------------
+    // 3B. INTERACTIVE 3-PHASE GEOGRAPHIC NETWORK EXPLORER
+    // -----------------------------------------------------------------------
+    const geoPhases = {
+      phase1: {
+        title: 'Phase 1: India Core Metros — Flagship Anchor Centers & Prestige Addresses',
+        desc: 'Immediate virtual office incorporation readiness, flexible coworking pods, and custom-built managed floors across India’s six primary commercial and technology capitals.',
+        hubs: ['Delhi NCR (Connaught Place, Gurugram, Noida)', 'Bengaluru (ORR, Indiranagar, Whitefield)', 'Mumbai (BKC, Lower Parel, Andheri)', 'Hyderabad (HITEC City, Gachibowli)', 'Pune (Baner, Kharadi)', 'Chennai (OMR, Guindy)'],
+        stat1Label: 'Available Formats',
+        stat1Val: 'Virtual, Coworking, Serviced & Managed Floors',
+        stat2Label: 'Activation Velocity',
+        stat2Val: '48 Hrs Virtual • 24–72 Hrs Plug-and-Play'
+      },
+      phase2: {
+        title: 'Phase 2: High-Growth Regional & GCC Hubs — Tier-2 Innovation Corridors',
+        desc: 'Tap into high-retention regional talent pools and lower operating costs with turnkey satellite offices, interview suites, and compliant local business addresses.',
+        hubs: ['Ahmedabad (GIFT City & SG Highway)', 'Jaipur', 'Chandigarh Tricity', 'Kochi (Infopark)', 'Indore', 'Coimbatore'],
+        stat1Label: 'Ideal Use Case',
+        stat1Val: 'Regional Sales Hubs, R&D Pods & Satellite GCCs',
+        stat2Label: 'Contract Structure',
+        stat2Val: 'Flexible Multi-City Master Agreement'
+      },
+      phase3: {
+        title: 'Phase 3: International Gateway Hubs — Cross-Border Virtual-to-Physical Soft Landing',
+        desc: 'Expand globally or launch inbound India operations under a single workspace partner—starting with compliant local addresses and scaling into physical executive suites.',
+        hubs: ['Dubai & Abu Dhabi (Middle East)', 'Singapore & Kuala Lumpur (Southeast Asia)', 'London & Frankfurt (Europe)', 'New York & Austin (North America)', 'Riyadh (GCC)'],
+        stat1Label: 'Cross-Border Advantage',
+        stat1Val: 'Test Demand Virtually Before Physical Lease',
+        stat2Label: 'Ecosystem Support',
+        stat2Val: 'Integrated With WorkHour Business Advisory'
+      }
+    };
+
+    function renderGeoPhase(key) {
+      const p = geoPhases[key];
+      document.getElementById('geo-explorer-panel').innerHTML = `
+        <div class="geo-panel-grid">
+          <div>
+            <h3 style="color:#FFFFFF;font-size:1.2rem;font-weight:800;margin-bottom:0.45rem;">${p.title}</h3>
+            <p style="font-size:0.86rem;color:#D7E8F8;line-height:1.6;">${p.desc}</p>
+            <div class="geo-hub-chips">
+              ${p.hubs.map(h => `<span class="geo-hub-chip">${h}</span>`).join('')}
+            </div>
+          </div>
+          <div class="geo-stat-box">
+            <div>
+              <span style="display:block;font-size:0.7rem;color:#93B8DC;text-transform:uppercase;font-weight:700;">${p.stat1Label}</span>
+              <strong style="color:#FFFFFF;font-size:0.9rem;">${p.stat1Val}</strong>
+            </div>
+            <div style="border-top:1px solid rgba(255,255,255,0.12);padding-top:0.65rem;">
+              <span style="display:block;font-size:0.7rem;color:#93B8DC;text-transform:uppercase;font-weight:700;">${p.stat2Label}</span>
+              <strong style="color:#F7A81B;font-size:0.9rem;">${p.stat2Val}</strong>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    document.querySelectorAll('.geo-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.geo-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderGeoPhase(btn.getAttribute('data-phase'));
+      });
+    });
+
+    // -----------------------------------------------------------------------
+    // 4. DUAL-MODE CONVERSION FORM HANDLER
+    // -----------------------------------------------------------------------
+    function switchFormMode(mode) {
+      const wsBtn = document.getElementById('mode-btn-workspace');
+      const ptBtn = document.getElementById('mode-btn-partner');
+      const typeHidden = document.getElementById('trs-inquiry-type');
+      const compLabel = document.getElementById('trs-company-label');
+      const compInput = document.getElementById('trs-company');
+
+      if (mode === 'workspace') {
+        wsBtn.className = 'mode-btn active-blue';
+        ptBtn.className = 'mode-btn';
+        typeHidden.value = 'Book Workspace / Virtual Office';
+        compLabel.textContent = 'Company / Venture Name *';
+        compInput.placeholder = 'e.g., NexaGrid Technologies';
+      } else {
+        ptBtn.className = 'mode-btn active-orange';
+        wsBtn.className = 'mode-btn';
+        typeHidden.value = 'Apply for Expansion / Channel Partnership';
+        compLabel.textContent = 'Startup / Property / Partner Organization *';
+        compInput.placeholder = 'e.g., Horizon Ventures / Landmark Properties';
+      }
+    }
+
+    function selectSolutionAndScroll(label) {
+      switchFormMode('workspace');
+      document.getElementById('trs-solution').value = label;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      showToast('Solution Selected', `Pre-filled "${label}" in the advisory form below.`);
+    }
+
+    function launchPartnershipInquiry(trackLabel) {
+      switchFormMode('partner');
+      document.getElementById('trs-solution').value = trackLabel;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      showToast('Partnership Track Selected', `Pre-filled "${trackLabel}" in the form below.`);
+    }
+
+    document.getElementById('trs-inquiry-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('trs-name').value.trim();
+      const company = document.getElementById('trs-company').value.trim();
+      const type = document.getElementById('trs-inquiry-type').value;
+      const sol = document.getElementById('trs-solution').value.trim() || 'Flexible Workspace / Virtual Office';
+
+      const banner = document.getElementById('trs-confirm-banner');
+      const msg = document.getElementById('trs-confirm-msg');
+      msg.textContent = `Thank you, ${name}! We have logged your ${type} for ${company} (${sol}). A workspace advisor from our Delhi headquarters will contact you within 4 business hours, or you may call +91-981 032 1155 directly.`;
+      banner.classList.add('show');
+
+      showToast('Inquiry Submitted', `Thank you, ${name}! Your request has been assigned to a ThinkRunSpace advisor.`);
+      e.target.reset();
+    });
+
+    // Initialize Dynamic Components on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderAudienceLens('entrepreneurs');
+      renderSolutions('ALL');
+      updateBuilderSummary();
+      renderGeoPhase('phase1');
+    });
+  </script>
+</body>
+</html>

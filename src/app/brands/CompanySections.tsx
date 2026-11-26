@@ -1,13 +1,16 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import type { CompanySection } from "./company-catalog";
 import styles from "./CompanySite.module.css";
 
 export default function CompanySections({
   sections,
+  children,
 }: {
   sections: (CompanySection & { id?: string })[];
+  children?: ReactNode;
 }) {
-  return sections.map(({ title, subtitle, paragraphs, bullets, image, imagePlacement, groups, points, id }) => (
+  return sections.map(({ title, subtitle, paragraphs, bullets, image, imagePlacement, groups, points, id }, index) => (
     <section className={styles.section} id={id} key={id ?? title}>
       <div className={image ? styles.feature : styles.sectionIntro} data-image-placement={imagePlacement}>
         <div className={styles.sectionCopy}>
@@ -38,11 +41,12 @@ export default function CompanySections({
               ))}
             </dl>
           )}
+          {index === sections.length - 1 && children}
         </div>
         {image && (
           <figure className={styles.featureFigure}>
             <div className={styles.featurePhoto}>
-              <Image {...image} fill sizes="(max-width: 800px) 100vw, 48vw" />
+              <Image src={image.src} alt={image.alt} fill sizes="(max-width: 800px) 100vw, 48vw" />
             </div>
           </figure>
         )}

@@ -1,4 +1,4 @@
-import { companyDetailPaths, type CompanySlug } from "@/lib/company-sites";
+import { type CompanySlug } from "@/lib/company-sites";
 import type { CompanyImage, CompanySection } from "../brands/company-catalog";
 import {
   employaaDescription,
@@ -6,12 +6,15 @@ import {
   leadersPinnacleDescription,
   leadersPinnacleSections,
 } from "./company-content";
+import { incepturaDescription, incepturaSections } from "./inceptura-content";
+import { elevatrainSections, travelSections, workspaceSections } from "./updated-portfolios";
 
 type Business = {
   title: string;
   description: string;
   image: CompanyImage;
   supportImage: CompanyImage | null;
+  updatedProfile?: { headline: string; tagline: string; contactTitle: string; contactDescription: string };
   sections: (CompanySection & {
     id: string;
     paragraphs: string[];
@@ -26,7 +29,7 @@ type Business = {
     }[];
   })[];
   contact?: {
-    email: string;
+    email?: string;
     phone?: { label: string; href: string };
     image?: CompanyImage;
   };
@@ -35,8 +38,7 @@ type Business = {
 export const businesses: Record<CompanySlug, Business> = {
   inceptura: {
     title: "Inceptura",
-    description:
-      "Inceptura supports startups and growing enterprises from early ideas through business execution and global expansion.",
+    description: incepturaDescription,
     image: {
       src: "/business-inceptura.webp",
       alt: "Inceptura illustrative scene",
@@ -45,32 +47,11 @@ export const businesses: Record<CompanySlug, Business> = {
       src: "/about-story-v2.webp",
       alt: "Illustrative business specialists sharing ideas in a workplace",
     },
-    sections: [
-      {
-        id: "about",
-        title: "Ideation to execution",
-        paragraphs: [
-          "Inceptura is a strategic growth partner designed to support startups and growing enterprises from the earliest spark of an idea through full execution and global expansion. Our integrated service model covers company registration and compliance, business strategy, talent acquisition and payroll, event management, travel and logistics, international expansion, and revenue optimization. By operating as an embedded extension of our clients’ founding and leadership teams, we help transform raw ideas into scalable, compliant and investor-ready businesses.",
-          "With a vision of Ideation to Execution, Inceptura provides a single umbrella of mentorship, operational support, and strategic guidance so that founders can focus on innovation, customers, and product-market fit while we handle the operational backbone required for sustainable growth.",
-        ],
-      },
-      {
-        id: "services",
-        title: "A partner across the business lifecycle",
-        paragraphs: [
-          "Inceptura is built on the belief that ambitious founders need more than ad-hoc consulting or transactional services. They need a committed partner that understands the full lifecycle of a business and can orchestrate all the critical functions required to grow.",
-          "Our multidisciplinary team brings together experts in corporate law and compliance, strategy consulting, HR and payroll, event production, travel and logistics, and cross-border market entry. This allows us to offer a unified solution instead of fragmented vendor relationships, reducing friction, cost, and execution risk for our clients.",
-          "Inceptura offers a modular yet integrated portfolio of services that collectively form a robust growth-enablement platform. Clients can engage us at any stage of their journey, while benefitting most when we partner from the earliest ideation stage.",
-        ],
-      },
-      {
-        id: "market-need",
-        title: "Problem statement and market need",
-        paragraphs: [
-          "Startups and scaling businesses face a complex, fragmented landscape of operational requirements. Founders are forced to juggle multiple vendors while trying to build products, raise capital, and win customers. This often leads to costly mistakes, lost opportunities, and burnout.",
-        ],
-      },
-    ],
+    sections: incepturaSections,
+    contact: {
+      email: "inceptura@workhourbusiness.com",
+      phone: { label: "+91-981 032 1155", href: "tel:+919810321155" },
+    },
   },
   "leaders-pinnacle": {
     title: "Leaders Pinnacle",
@@ -106,83 +87,48 @@ export const businesses: Record<CompanySlug, Business> = {
   },
   elevatrain: {
     title: "Elevatrain",
-    description:
-      "Elevatrain designs and delivers corporate training and workshops across compliance, process, technology, leadership, and communication.",
+    description: "Practitioner-led training for corporate teams, startups, and individual professionals across technical skills, operations, and leadership.",
+    updatedProfile: {
+      headline: "Practical training that improves everyday work",
+      tagline: "Learn. Grow. Lead.",
+      contactTitle: "Plan your training programme",
+      contactDescription: "Talk to the New Delhi team about corporate learning, a scale-up academy, or individual training.",
+    },
     image: {
       src: "/business-elevatrain.webp",
       alt: "Elevatrain illustrative scene",
     },
     supportImage: {
       src: "/business-learning.webp",
-      alt: "Illustrative professional skills workshop with participants working on laptops",
+      alt: "Participants working on laptops in a skills workshop",
     },
-    sections: [
-      {
-        id: "about",
-        title: "About Elevatrain",
-        paragraphs: [
-          "Elevatrain is a specialist corporate training and workshop provider focused on performance-critical capability building for organizations.",
-          "With deep expertise in compliance, process excellence, technology, leadership, and communication, Elevatrain designs, delivers, and scales training solutions for B2B clients across industries.",
-        ],
-      },
-      {
-        id: "trainings",
-        title: "Training programmes",
-        paragraphs: [],
-        offerings: [
-          { id: "tech-and-digital-skills", title: "Tech & Digital Skills" },
-          { id: "dev-ops-and-agile", title: "DevOps & Agile" },
-          { id: "six-sigma-and-process-excellence", title: "Six Sigma & Process Excellence" },
-          { id: "mindfulness", title: "Mindfulness", href: companyDetailPaths.elevatrain },
-          { id: "project-and-program-management", title: "Project & Program Management" },
-          { id: "communication-and-soft-skills", title: "Communication & Soft Skills" },
-        ],
-      },
-    ],
+    sections: elevatrainSections,
+    contact: {
+      email: "info@workhourbusiness.com",
+      phone: { label: "+91-981 032 1155", href: "tel:+919810321155" },
+    },
   },
   "go-travel-global": {
     title: "Go Travel Global",
-    description:
-      "Go Travel Global provides corporate visa, travel, and stay support alongside curated leisure travel.",
+    description: "Corporate mobility, visa assistance, and curated holidays, with one team coordinating flights, stays, transfers, and on-trip support.",
+    updatedProfile: {
+      headline: "Business travel and holidays, planned end to end",
+      tagline: "Corporate mobility and curated travel",
+      contactTitle: "Talk to the travel desk",
+      contactDescription: "The New Delhi desk handles travel and partnership enquiries Monday to Saturday, 9:30 a.m. to 7:30 p.m. IST. On-trip support is available for active trips.",
+    },
     image: {
       src: "/business-gotravel.webp",
       alt: "Go Travel Global illustrative scene",
     },
     supportImage: {
       src: "/business-travel.webp",
-      alt: "Illustrative business traveller walking through an airport",
+      alt: "A business traveller walking through an airport",
     },
-    sections: [
-      {
-        id: "about",
-        title: "Travel market trends",
-        paragraphs: [
-          "The global travel and tourism sector is rebounding and transforming, driven by renewed demand, hybrid work, and the blending of business and leisure travel. Corporates are increasingly seeking reliable partners that can manage complex visa and travel requirements, while retail travellers are prioritizing curated, safe, and experience-rich itineraries.",
-        ],
-        bullets: [
-          "Rising corporate focus on travel compliance, duty of care, and cost control.",
-          "Shift from mass-market tours to personalized and small-group experiences.",
-          "Growing interest in nature, wellness, cultural immersion, and sustainable travel.",
-          "Increased reliance on digital channels for research, booking, and traveller support.",
-        ],
-      },
-      {
-        id: "services",
-        title: "Corporate and leisure travel",
-        paragraphs: [
-          "Go Travel Global is a specialized tour and travel company focused on delivering seamless visa, travel, and stay solutions for corporate clients, while strategically expanding into the business-to-consumer (B2C) segment. The company designs and manages curated group tours, family holidays, and individual travel experiences across Europe, Nepal, key Asian destinations, African safaris, and other high-demand global hotspots.",
-          "Go Travel Global is a tour and travel solutions provider with a strong foundation in corporate travel services, particularly in visa management and stay arrangements for business travellers. Building on this core expertise, the company is diversifying into curated leisure travel for individuals, families, and special interest groups.",
-        ],
-      },
-      {
-        id: "travel-experiences",
-        title: "End-to-end travel experiences",
-        paragraphs: [
-          "Through strategic collaborations with established international tour operators and destination management companies, Go Travel Global offers end-to-end travel experiences that integrate visa processing, flight coordination, accommodation, local transfers, curated activities, and travel assistance. The company aims to become a trusted one-stop travel partner for both corporate and retail travellers, known for reliability, customization, and elevated service quality.",
-          "The company operates as a high-touch service organization, combining expert travel consulting with robust partnerships across key global destinations to ensure reliability, compliance, and traveller satisfaction.",
-        ],
-      },
-    ],
+    sections: travelSections,
+    contact: {
+      phone: { label: "+91-981 032 1155", href: "tel:+919810321155" },
+    },
   },
   remunerax: {
     title: "Remunerax",
@@ -223,39 +169,24 @@ export const businesses: Record<CompanySlug, Business> = {
   },
   thinkrunspace: {
     title: "ThinkRunSpace",
-    description:
-      "ThinkRunSpace provides flexible physical and virtual workspaces with configurable office support.",
+    description: "Virtual offices, serviced offices, coworking, and managed floors for teams expanding across India and international business hubs.",
+    updatedProfile: {
+      headline: "Flexible workspaces built around your team",
+      tagline: "Physical and virtual workspaces",
+      contactTitle: "Book a tour or discuss a partnership",
+      contactDescription: "Contact the Delhi team about a virtual office, a move-in-ready suite, or an expansion partnership.",
+    },
     image: {
       src: "/business-thinkrunspace.webp",
       alt: "ThinkRunSpace illustrative scene",
     },
     supportImage: {
       src: "/business-thinkrunspace.webp",
-      alt: "Illustrative flexible workspace with shared and individual work areas",
+      alt: "Flexible workspace with shared desks and meeting areas",
     },
-    sections: [
-      {
-        id: "about",
-        title: "Flexible workspace market",
-        paragraphs: [
-          "The global flexible workspace and coworking market continues to expand, driven by hybrid work trends, rising real estate costs, and the need for agility. India is one of the fastest-growing flexible workspace markets, with strong adoption by IT/ITeS, startups, GCCs (Global Capability Centers), and professional services firms. Internationally, gateway cities in Asia-Pacific, Europe, and North America are seeing sustained demand from enterprises consolidating or decentralizing their physical footprints.",
-        ],
-      },
-      {
-        id: "services",
-        title: "Workspace solutions",
-        paragraphs: [
-          "ThinkRunSpace is a next-generation workspace solutions company specializing in flexible office spaces for B2B clients, offering both physical and virtual offices across multiple cities and countries. We provide configurable work environments ranging from bare-shell units to fully furnished, plug-and-play offices, supported by modular infrastructure options, cafeteria services, and professional administrative support. Our model is designed to scale rapidly across geographies while maintaining a high level of customization, service quality, and technology integration.",
-        ],
-      },
-      {
-        id: "ambition",
-        title: "Positioning and ambition",
-        paragraphs: [
-          "The company is positioned to capture the growing global demand for flexible workspaces driven by hybrid work models, cost optimization, and business expansion into new markets. ThinkRunSpace differentiates itself from competitors in India and internationally through a highly modular product offering, strong enterprise-grade service levels, deep technology integration, and a global-yet-local operating model.",
-          "We aim to establish ThinkRunSpace as the preferred workspace partner for startups, SMEs, and large enterprises seeking reliable, scalable, and customizable office solutions without the capital and operational burden of traditional leasing.",
-        ],
-      },
-    ],
+    sections: workspaceSections,
+    contact: {
+      phone: { label: "+91-981 032 1155", href: "tel:+919810321155" },
+    },
   },
 };

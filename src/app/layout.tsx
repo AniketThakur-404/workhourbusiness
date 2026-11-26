@@ -28,13 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {activeCompany ? children : (
-          <LenisProvider>
+        <LenisProvider>
+          {activeCompany ? children : (
             <SiteFrame header={<Navbar />} footer={<Footer />}>
               {children}
             </SiteFrame>
-          </LenisProvider>
-        )}
+          )}
+        </LenisProvider>
       </body>
     </html>
   );

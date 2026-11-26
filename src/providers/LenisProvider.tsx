@@ -1,29 +1,23 @@
 "use client";
 
-import { ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useEffect } from "react";
 import Lenis from "lenis";
 
 export function LenisProvider({ children }: { children: ReactNode }) {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      touchMultiplier: 2,
-    });
-
-    lenisRef.current = lenis;
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let lenis: Lenis | undefined;
+    function update() {
+      lenis?.destroy();
+      lenis = preference.matches ? undefined : new Lenis({ autoRaf: true, anchors: true });
     }
 
-    requestAnimationFrame(raf);
+    update();
+    preference.addEventListener("change", update);
 
     return () => {
-      lenis.destroy();
+      preference.removeEventListener("change", update);
+      lenis?.destroy();
     };
   }, []);
 

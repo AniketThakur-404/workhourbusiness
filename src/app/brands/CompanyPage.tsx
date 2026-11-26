@@ -3,6 +3,7 @@ import { employaaContact } from "../businesses/employaa-presentation";
 import { EmployaaServiceIndex } from "./EmployaaServices";
 import { workhourUrl, type CompanySlug } from "@/lib/company-sites";
 import { businesses } from "../businesses/businesses";
+import { workspaceMarkets } from "../businesses/updated-portfolios";
 import BrandHero from "./BrandHero";
 import CompanyFrame from "./CompanyFrame";
 import CompanySections from "./CompanySections";
@@ -79,7 +80,7 @@ export function companyPageContent(slug: CompanySlug, page: string) {
 
   if (page === "about") {
     const aboutImage = company.sections.find(({ id }) => id === "about")?.image;
-    return { ...catalog.about, image: aboutImage ? company.image : image, description: company.description };
+    return { ...catalog.about, image: aboutImage ?? image, description: company.description };
   }
   if (page === catalog.category) {
     const catalogueImage = company.sections.find(({ id }) => id === catalog.category)?.image;
@@ -87,8 +88,8 @@ export function companyPageContent(slug: CompanySlug, page: string) {
   }
   if (page === "contact") {
     return {
-      title: `Contact ${company.title}`,
-      description: "Tell us about your goals and the support you’re looking for.",
+      title: company.updatedProfile?.contactTitle ?? `Contact ${company.title}`,
+      description: company.updatedProfile?.contactDescription ?? "Tell us about your goals and the support you’re looking for.",
       image: company.contact?.image ?? image,
     };
   }
@@ -97,7 +98,9 @@ export function companyPageContent(slug: CompanySlug, page: string) {
       title: "Our Global Reach",
       description: slug === "leaders-pinnacle"
         ? "Leaders Pinnacle works with regional event partners across India, Asia, the Middle East, and Africa."
-        : "Markets identified in Workhour Business’s group expansion plans.",
+        : slug === "thinkrunspace"
+          ? "Explore ThinkRunSpace’s planned network across Indian metros, regional hubs, and international gateways."
+          : "Markets identified in Workhour Business’s group expansion plans.",
       image,
     };
   }
@@ -108,20 +111,18 @@ export function companyPageContent(slug: CompanySlug, page: string) {
   }
 }
 
-export function CompanyContact({ slug }: { slug: CompanySlug }) {
-  const { title, contact } = businesses[slug];
+export function CompanyContact({ slug, standalone = false }: { slug: CompanySlug; standalone?: boolean }) {
+  const { title, contact, updatedProfile } = businesses[slug];
   return (
     <section className={styles.contact} id="contact">
       <div>
-        <h2>Contact {title}</h2>
+        <h2>{standalone ? "Contact details" : updatedProfile?.contactTitle ?? `Contact ${title}`}</h2>
+        {updatedProfile && !standalone && <p className={styles.contactDescription}>{updatedProfile.contactDescription}</p>}
         {slug === "employaa" && <p className={styles.subtitle}>{employaaContact.title}</p>}
         <div className={styles.actions}>
-          {contact ? (
-            <>
-              <a className="button button-dark" href={`mailto:${contact.email}`}>{contact.email}</a>
-              {contact.phone && <a className="text-link" href={contact.phone.href}>{contact.phone.label}</a>}
-            </>
-          ) : (
+          {contact?.email && <a className="button button-dark" href={`mailto:${contact.email}`}>{contact.email}</a>}
+          {contact?.phone && <a className={contact.email ? "text-link" : "button button-dark"} href={contact.phone.href}>{contact.phone.label}</a>}
+          {!contact?.email && !contact?.phone && (
             <a className="button button-dark" href={`${workhourUrl}/contact/`}>Contact Workhour Business</a>
           )}
         </div>
@@ -151,7 +152,7 @@ function AboutContent({ slug, image }: { slug: CompanySlug; image: CompanyImage 
   return (
     <>
       <CompanySections sections={sections} />
-      {original.length > 0 && (
+      {!company.updatedProfile && original.length > 0 && (
         <details className={styles.companyBackground}>
           <summary>Company background</summary>
           <CompanySections sections={original} />
@@ -215,7 +216,9 @@ export default function CompanyPage({
         {page === "our-global-reach" && (
           <>
             <CompanySections sections={globalDetails} />
-            {slug === "leaders-pinnacle" ? <PlanningMarkets /> : (
+            {slug === "leaders-pinnacle" ? <PlanningMarkets /> : slug === "thinkrunspace" ? (
+              <CompanySections sections={workspaceMarkets} />
+            ) : (
               <>
                 <p className={styles.scopeNote}>These group planning markets are indicative. Contact the company to discuss service availability in a specific location.</p>
                 <CompanySections sections={groupMarkets} />
@@ -241,7 +244,7 @@ export default function CompanyPage({
             }
           />
         )}
-        {(slug !== "employaa" || page === "contact") && <CompanyContact slug={slug} />}
+        {(slug !== "employaa" || page === "contact") && <CompanyContact slug={slug} standalone={page === "contact"} />}
       </div>
     </CompanyFrame>
   );

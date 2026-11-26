@@ -69,8 +69,10 @@ export function getCompanyCatalog(slug: CompanySlug) {
 
     return {
       ...service,
-      title: match?.profile?.title ?? service.title,
+      title: business.updatedProfile ? match?.title ?? service.title : match?.profile?.title ?? service.title,
+      description: business.updatedProfile ? match?.description ?? service.description : service.description,
       photo: match?.image,
+      sections: business.updatedProfile && match?.profile ? [] : service.sections,
       current: matches.flatMap(({ title, description, details, profile }) =>
         profile ? [profile] : description ? [{ title, paragraphs: [description], bullets: details }] : []
       ),
@@ -91,6 +93,10 @@ export function getCompanyCatalog(slug: CompanySlug) {
 
   return {
     ...original,
+    tagline: business.updatedProfile?.tagline ?? original.tagline,
+    introduction: business.updatedProfile
+      ? business.sections.find(({ offerings }) => offerings)?.paragraphs[0] ?? original.introduction
+      : original.introduction,
     label: categories[original.category],
     href: `/${original.category}/`,
     services,

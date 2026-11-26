@@ -4,6 +4,7 @@ import { workhourUrl, type CompanySlug } from "@/lib/company-sites";
 import CompanyWordmark from "./CompanyWordmark";
 import { businesses } from "../businesses/businesses";
 import BrandNavigation from "./BrandNavigation";
+import BrandMain from "./BrandMain";
 import { getCompanyCatalog, leadersExtraPages, servicePath } from "./company-catalog";
 import styles from "./CompanySite.module.css";
 
@@ -39,7 +40,7 @@ export default function CompanyFrame({
         }))}
         sectionLinks={sectionLinks}
       />
-      <main id="company-main" tabIndex={-1}>{children}</main>
+      <BrandMain key={currentPath}>{children}</BrandMain>
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
           <Link className={styles.logo} href="/" aria-label={`${title} home`}>

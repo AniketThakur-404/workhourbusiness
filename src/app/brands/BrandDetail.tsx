@@ -12,18 +12,15 @@ export default function BrandDetail({ brand, service }: { brand: CompanySlug; se
   const photo = service.photo ?? service.image;
   const content = [...current, ...service.sections];
   const sections = content.length ? content : [{ title: service.title, paragraphs: [service.description] }];
-  const illustrated = sections.map((section, index) =>
-    index === 0 && !section.image ? { ...section, image: photo } : section
-  );
 
   return (
     <CompanyFrame slug={brand} currentPath={servicePath(catalog.category, service.id)}>
-      <BrandHero title={service.title} description={service.description} image={photo} label={catalog.tagline}>
+      <BrandHero title={service.title} description={service.description} image={photo} label={catalog.tagline} compact>
         <Link className="button button-light" href={catalog.href}>Explore {catalog.label.toLowerCase()}</Link>
         <Link className={`text-link ${styles.bannerLink}`} href="/contact/">Contact us</Link>
       </BrandHero>
       <div className={styles.content}>
-        <CompanySections sections={illustrated} />
+        <CompanySections sections={sections} />
         <div className={styles.contact}>
           <h2>Discuss {service.title}</h2>
           <div className={styles.actions}>

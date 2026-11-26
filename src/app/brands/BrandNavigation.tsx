@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import type { CompanySlug } from "@/lib/company-sites";
 import CompanyWordmark from "./CompanyWordmark";
 import styles from "./CompanySite.module.css";
@@ -23,161 +24,72 @@ export default function BrandNavigation({
   serviceLinks: CompanyNavLink[];
   sectionLinks: CompanyNavLink[];
 }) {
-  const [open, setOpen] = useState(false);
-  const [catalogOpen, setCatalogOpen] = useState<"hover" | "activation" | null>(null);
-  const header = useRef<HTMLElement>(null);
-  const menuButton = useRef<HTMLButtonElement>(null);
-  const catalogToggle = useRef<HTMLElement>(null);
-  const hoverTimer = useRef<ReturnType<typeof setTimeout>>(null);
-  const splitCatalog = slug === "leaders-pinnacle";
-
-  useEffect(() => () => clearTimeout(hoverTimer.current ?? undefined), []);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const catalogMenu = useRef<HTMLDetailsElement>(null);
+  const primary = [{ href: "/", label: "Home" }, { href: "/about/", label: "About" }];
+  const contact = { href: "/contact/", label: slug === "leaders-pinnacle" ? "Plan an event" : "Contact us" };
 
   useEffect(() => {
-    if (!open && !catalogOpen) return;
-
-    function dismissOutside(event: PointerEvent) {
-      if (event.target instanceof Node && !header.current?.contains(event.target)) {
-        setOpen(false);
-        setCatalogOpen(null);
-      }
+    function closeCatalog(event: PointerEvent) {
+      const menu = catalogMenu.current;
+      if (menu && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
     }
-
-    function dismissHover(event: KeyboardEvent) {
-      if (event.key === "Escape" && !header.current?.contains(document.activeElement)) {
-        setCatalogOpen(null);
-        setOpen(false);
-      }
-    }
-
-    document.addEventListener("pointerdown", dismissOutside);
-    document.addEventListener("keydown", dismissHover);
+    const desktop = window.matchMedia("(min-width: 1100px)");
+    const closeSheet = () => { if (desktop.matches) setMobileOpen(false); };
+    document.addEventListener("pointerdown", closeCatalog);
+    desktop.addEventListener("change", closeSheet);
     return () => {
-      document.removeEventListener("pointerdown", dismissOutside);
-      document.removeEventListener("keydown", dismissHover);
+      document.removeEventListener("pointerdown", closeCatalog);
+      desktop.removeEventListener("change", closeSheet);
     };
-  }, [open, catalogOpen]);
+  }, []);
 
-  function closeMenu() {
-    clearTimeout(hoverTimer.current ?? undefined);
-    setOpen(false);
-    setCatalogOpen(null);
-  }
+  const current = (href: string) => currentPath === href ? "page" : undefined;
 
   return (
-    <header
-      className={styles.header}
-      ref={header}
-      onKeyDown={(event) => {
-        if (event.key !== "Escape") return;
-        if (catalogOpen) {
-          clearTimeout(hoverTimer.current ?? undefined);
-          setCatalogOpen(null);
-          catalogToggle.current?.focus();
-        } else if (open) {
-          closeMenu();
-          menuButton.current?.focus();
-        }
-      }}
-    >
+    <header className={styles.header}>
       <div className={styles.headerInner}>
-        <Link className={styles.logo} href="/" aria-label={`${name} home`} onClick={closeMenu}>
+        <Link className={styles.logo} href="/" aria-label={`${name} home`}>
           <CompanyWordmark slug={slug} name={name} />
         </Link>
-        <button
-          ref={menuButton}
-          className={styles.menuToggle}
-          type="button"
-          aria-controls="company-navigation"
-          aria-expanded={open}
-          onClick={() => open ? closeMenu() : setOpen(true)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
-        <nav
-          className={styles.navigation}
-          data-open={open}
-          id="company-navigation"
-          aria-label={`${name} navigation`}
-        >
-          <Link href="/" aria-current={currentPath === "/" ? "page" : undefined} onClick={closeMenu}>
-            Home
-          </Link>
-          <Link href="/about/" aria-current={currentPath === "/about/" ? "page" : undefined} onClick={closeMenu}>About</Link>
-          <div className={styles.catalogItem} data-split={splitCatalog}>
-            {splitCatalog && (
-              <Link
-                className={styles.catalogLink}
-                href={catalog.href}
-                aria-current={currentPath === catalog.href ? "page" : undefined}
-                onClick={closeMenu}
-              >
-                {catalog.label}
+        <nav className={styles.navigation} aria-label={`${name} navigation`}>
+          {primary.map(({ href, label }) => <Link key={href} href={href} aria-current={current(href)}>{label}</Link>)}
+          <details className={styles.dropdown} ref={catalogMenu} onKeyDown={(event) => {
+            if (event.key !== "Escape" || !event.currentTarget.open) return;
+            event.currentTarget.open = false;
+            event.currentTarget.querySelector("summary")?.focus();
+          }}>
+            <summary>{catalog.label}</summary>
+            <div className={styles.dropdownLinks} data-columns={serviceLinks.length > 6}>
+              <Link href={catalog.href} aria-current={current(catalog.href)} onClick={() => { if (catalogMenu.current) catalogMenu.current.open = false; }}>
+                All {catalog.label.toLowerCase()}
               </Link>
-            )}
-            <details
-              className={styles.dropdown}
-              open={catalogOpen !== null}
-              onPointerEnter={(event) => {
-                clearTimeout(hoverTimer.current ?? undefined);
-                if (event.pointerType === "mouse" && window.matchMedia("(min-width: 981px)").matches) {
-                  setCatalogOpen((current) => current ?? "hover");
-                }
-              }}
-              onPointerLeave={(event) => {
-                if (event.pointerType !== "mouse") return;
-                const dropdown = event.currentTarget;
-                hoverTimer.current = setTimeout(() => {
-                  if (!dropdown.contains(document.activeElement)) {
-                    setCatalogOpen((current) => current === "hover" ? null : current);
-                  }
-                }, 140);
-              }}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget) && !event.currentTarget.matches(":hover")) {
-                  setCatalogOpen(null);
-                }
-              }}
-            >
-              <summary
-                ref={catalogToggle}
-                aria-label={splitCatalog ? "Individual services" : undefined}
-                aria-controls="company-catalog-links"
-                aria-expanded={catalogOpen !== null}
-                onClick={(event) => {
-                  event.preventDefault();
-                  clearTimeout(hoverTimer.current ?? undefined);
-                  const keyboard = event.detail === 0;
-                  setCatalogOpen((current) =>
-                    current === "activation" || (keyboard && current) ? null : "activation"
-                  );
-                }}
-              >
-                {!splitCatalog && catalog.label}
-              </summary>
-              <div
-                id="company-catalog-links"
-                className={styles.dropdownLinks}
-                data-columns={!splitCatalog && serviceLinks.length > 6}
-              >
-                {!splitCatalog && (
-                  <Link href={catalog.href} onClick={closeMenu}>
-                    All {catalog.label.toLowerCase()}
-                  </Link>
-                )}
-                {serviceLinks.map(({ href, label }) => (
-                  <Link href={href} key={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
-                ))}
-              </div>
-            </details>
-          </div>
-          {sectionLinks.map(({ href, label }) => (
-            <Link href={href} key={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeMenu}>{label}</Link>
-          ))}
-          <Link className={`contact-button ${styles.headerContact}`} href="/contact/" onClick={closeMenu}>
-            {slug === "leaders-pinnacle" ? "Plan an Event" : "Contact Us"}
-          </Link>
+              {serviceLinks.map(({ href, label }) => (
+                <Link href={href} key={href} aria-current={current(href)} onClick={() => { if (catalogMenu.current) catalogMenu.current.open = false; }}>{label}</Link>
+              ))}
+            </div>
+          </details>
+          {sectionLinks.map(({ href, label }) => <Link href={href} key={href} aria-current={current(href)}>{label}</Link>)}
+          <Link className={`contact-button ${styles.headerContact}`} href={contact.href} aria-current={current(contact.href)}>{contact.label}</Link>
         </nav>
+
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetTrigger className={styles.menuToggle} type="button">Menu</SheetTrigger>
+          <SheetContent className={styles.mobileSheet} data-company={slug} aria-describedby={undefined}>
+            <SheetTitle className={styles.mobileTitle}>{name}</SheetTitle>
+            <nav className={styles.mobileNav} aria-label={`${name} mobile navigation`}>
+              {[...primary, catalog, ...sectionLinks, contact].map(({ href, label }) => (
+                <SheetClose key={href} asChild><Link href={href} aria-current={current(href)}>{label}</Link></SheetClose>
+              ))}
+              <details className={styles.mobileServices}>
+                <summary>Browse {catalog.label.toLowerCase()} by topic</summary>
+                {serviceLinks.map(({ href, label }) => (
+                  <SheetClose key={href} asChild><Link href={href} aria-current={current(href)}>{label}</Link></SheetClose>
+                ))}
+              </details>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

@@ -1,0 +1,288 @@
+{
+  "training": {
+    "tech": {
+      "title": "Technology & Digital Skills Training",
+      "tagline": "Practical, role-based engineering mastery built for modern production environments.",
+      "audience": "Software Engineers, Cloud Architects, QA Teams & Tech Leads",
+      "modules": [
+        "Modern software development practices & clean code architecture",
+        "Secure, scalable, and high-performance system design",
+        "Cloud computing fundamentals, deployment patterns & cost optimization",
+        "Workflow automation, scripting & modern developer productivity toolchains"
+      ],
+      "outcome": "Higher code quality, faster feature velocity, and reduced production incidents."
+    },
+    "devops": {
+      "title": "DevOps & Agile Training",
+      "tagline": "Break down silos between development and operations with automated delivery pipelines.",
+      "audience": "Engineering Pods, DevOps Engineers, Scrum Masters & Product Teams",
+      "modules": [
+        "End-to-end CI/CD pipeline design, automated testing & release gates",
+        "Infrastructure-as-Code, container orchestration & observability",
+        "Agile sprint execution, backlog refinement & cross-functional rituals",
+        "Building an engineering culture of shared ownership & continuous improvement"
+      ],
+      "outcome": "Shorter release cycles, higher deployment reliability, and tighter dev-ops alignment."
+    },
+    "pmp": {
+      "title": "Project & Program Management (PMP® Readiness)",
+      "tagline": "Improve delivery predictability across complex multi-stakeholder initiatives.",
+      "audience": "Project Managers, Delivery Leads, PMO Analysts & Technical Leads",
+      "modules": [
+        "Project Management Professional (PMP®) exam & framework readiness",
+        "Proactive risk identification, dependency mapping & schedule control",
+        "Executive stakeholder governance, scope management & resource balancing",
+        "Practical hybrid (Predictive + Agile) project execution playbooks"
+      ],
+      "outcome": "On-time, on-budget project delivery with clear executive visibility."
+    },
+    "sixsigma": {
+      "title": "Six Sigma & Process Excellence",
+      "tagline": "Eliminate operational bottlenecks, rework, and waste through data-driven rigor.",
+      "audience": "Operations Teams, Process Owners, Quality Leads & Service Delivery Managers",
+      "modules": [
+        "Identify operational inefficiencies & perform structured root-cause analysis",
+        "Reduce process defects, turnaround delays, waste & costly rework",
+        "Build standardized SOPs, quality checkpoints & SLA governance",
+        "Improve continuously using DMAIC metrics and lean operational dashboards"
+      ],
+      "outcome": "Measurable cycle-time compression, lower error rates, and higher customer satisfaction."
+    },
+    "softskills": {
+      "title": "Communication & Soft Skills",
+      "tagline": "Turn technical specialists and emerging managers into persuasive workplace leaders.",
+      "audience": "Engineers, First-Time Managers, Client-Facing Teams & Senior Leaders",
+      "modules": [
+        "Structured business communication, storytelling & executive presence",
+        "Cross-functional collaboration, active listening & conflict resolution",
+        "High-stakes presentation delivery & stakeholder influence techniques",
+        "Global business etiquette, client empathy & workplace confidence"
+      ],
+      "outcome": "Clearer client conversations, smoother team alignment, and stronger leadership readiness."
+    },
+    "mindfulness": {
+      "title": "Mindfulness & Well-Being at Work",
+      "tagline": "Build resilient, focused, people-centric teams that thrive under high-growth pressure.",
+      "audience": "Startup Founders, Senior Leadership, Engineering & Operations Teams",
+      "modules": [
+        "Cognitive focus, attention management & deep-work habits",
+        "Emotional intelligence (EQ) & composure during high-pressure sprints",
+        "Practical burnout prevention & sustainable stress-recovery routines",
+        "Strengthening empathetic leadership presence & clear decision-making"
+      ],
+      "outcome": "Lower burnout attrition, sharper executive focus, and healthier team culture."
+    }
+  },
+  "delivery": [
+    {
+      "title": "Diagnostic Training Needs Assessment (TNA)",
+      "subtitle": "We align every learning intervention with real operational gaps and future organizational goals.",
+      "points": [
+        {
+          "title": "Employee Surveys & Self-Assessments",
+          "description": "Captures direct input from team members on role confidence, tool friction, and skill priorities."
+        },
+        {
+          "title": "Performance Reviews & KPI Audits",
+          "description": "Analyzes delivery metrics, defect rates, and SLA reports to isolate high-leverage capability gaps."
+        },
+        {
+          "title": "Managerial & Tech-Lead Feedback",
+          "description": "Synthesizes daily observations from engineering and operations supervisors who lead the work."
+        },
+        {
+          "title": "Role-Based Skill Gap Matrix",
+          "description": "Maps current workforce capabilities against upcoming product roadmaps and market expansion plans."
+        }
+      ]
+    },
+    {
+      "title": "Flexible Multi-Modal Delivery Formats",
+      "subtitle": "Engineered to fit live sprint cycles and operational schedules without disrupting productivity.",
+      "points": [
+        {
+          "title": "Onsite Corporate Workshops & Offsites",
+          "description": "High-energy, in-person facilitator workshops at your office or destination leadership retreats."
+        },
+        {
+          "title": "Virtual Instructor-Led (VILT)",
+          "description": "Interactive live cohorts with breakout labs, screen-share debugging, and real-time Q&A."
+        },
+        {
+          "title": "Hybrid & Bootcamp Journeys",
+          "description": "Intensive short-term bootcamps paired with multi-week spaced reinforcement and capstone projects."
+        },
+        {
+          "title": "On-the-Job (OJT) & 1:1 Mentoring",
+          "description": "Guided application inside live work environments plus personalized leadership coaching."
+        }
+      ]
+    },
+    {
+      "title": "Measurable Learning Impact & Business ROI",
+      "subtitle": "We prove training value to founders, HR leaders, and CFOs through multi-level outcome tracking.",
+      "points": [
+        {
+          "title": "Pre- & Post-Training Assessments",
+          "description": "Quantifies technical and conceptual proficiency gains from Day-1 baseline to program completion."
+        },
+        {
+          "title": "Workplace KPI & Velocity Tracking",
+          "description": "Measures real improvements in deployment frequency, rework reduction, and project predictability."
+        },
+        {
+          "title": "30/60/90-Day Manager Evaluations",
+          "description": "Structured supervisor scorecards verifying on-the-job behavioral and technical adoption."
+        },
+        {
+          "title": "Learner Feedback & Retention Audits",
+          "description": "Tracks participant NPS, confidence uplift, and long-term capability retention across teams."
+        }
+      ]
+    }
+  ],
+  "travel": {
+    "corp": {
+      "title": "Corporate & Startup Mobility Desk",
+      "summary": "Designed for startups, SMEs, and enterprises that need fast turnaround, policy-aligned bookings, and single-point accountability for executive travel and project deployments.",
+      "deliverables": [
+        "Negotiated corporate airfares, hotels & serviced apartments",
+        "Multi-city founder roadshow & client visit coordination",
+        "Travel policy alignment & transparent GST invoicing",
+        "Dedicated account manager with rapid schedule-change support"
+      ],
+      "outcome": "Ideal for teams scaling across Indian metros and global commercial hubs."
+    },
+    "visa": {
+      "title": "Visa & Global Documentation Desk",
+      "summary": "Navigating consular checklists and appointment queues shouldn’t stall your trip. We guide individuals, executives, and student delegations through every requirement.",
+      "deliverables": [
+        "Category guidance: Business, Tourist, Student & Work visas",
+        "Thorough document audit, cover letter & itinerary alignment",
+        "VFS / Embassy appointment scheduling & application tracking",
+        "Pre-travel immigration & country-advisory briefings"
+      ],
+      "outcome": "Covers Schengen Europe, UK, USA, UAE, Singapore, Japan, Australia & more."
+    },
+    "intl": {
+      "title": "International Curated Holidays & Safaris",
+      "summary": "From fixed-departure small group tours to tailor-made family vacations, honeymoons, and wildlife expeditions—backed by vetted international destination partners.",
+      "deliverables": [
+        "Europe cultural circuits & multi-country rail/flight passes",
+        "Southeast Asia & Middle East getaways (Singapore, Bali, Vietnam, Thailand, Dubai)",
+        "Nepal Himalayan treks, spiritual circuits & wellness retreats",
+        "Classic & luxury African safaris with city & beach extensions"
+      ],
+      "outcome": "Includes flights, handpicked stays, private/group transfers, sightseeing & insurance."
+    },
+    "dom": {
+      "title": "Domestic India Travel Packages",
+      "summary": "Crafted journeys across India’s hill stations, royal heritage circuits, coastal escapes, wildlife reserves, and spiritual destinations—matched to your pace and comfort.",
+      "deliverables": [
+        "Family holidays, weekend retreats & curated group departures",
+        "Heritage, spiritual, wellness & wildlife safari itineraries",
+        "Trusted local transport & verified boutique/luxury stays",
+        "End-to-end coordination from arrival to departure"
+      ],
+      "outcome": "Authentic experiences across Himachal, Uttarakhand, Rajasthan, Kerala, Goa & Northeast."
+    },
+    "mice": {
+      "title": "MICE, Offsites & Founder Roadshows",
+      "summary": "Whether hosting an annual company offsite, an international dealer incentive, or an academic conference delegation, we manage complex group logistics down to the minute.",
+      "deliverables": [
+        "Venue sourcing, group air blocks & conference logistics",
+        "Startup demo-day delegations & international trade expo travel",
+        "University & institutional educational study tours",
+        "On-site coordinator & 24/7 escalation desk"
+      ],
+      "outcome": "Built for groups of 15 to 250+ travelers across domestic and international venues."
+    }
+  },
+  "destinations": [
+    {
+      "name": "Schengen Europe Circuits",
+      "region": "Europe",
+      "tag": "Business & Family Leisure",
+      "duration": "7–14 Days",
+      "description": "Switzerland, France, Italy, Germany & Netherlands—curated family holidays, rail passes, and executive trade-fair travel."
+    },
+    {
+      "name": "Nepal & Himalayan Retreats",
+      "region": "Himalayas",
+      "tag": "Trekking, Spiritual & Wellness",
+      "duration": "4–10 Days",
+      "description": "Kathmandu heritage, Pokhara wellness escapes, soft Himalayan treks, and guided spiritual journeys with vetted mountain guides."
+    },
+    {
+      "name": "Southeast Asia & Dubai Hubs",
+      "region": "Asia",
+      "tag": "Short Breaks & Roadshows",
+      "duration": "4–8 Days",
+      "description": "Singapore, Dubai, Vietnam, Bali, and Thailand—ideal for founder summits, corporate offsites, and family island vacations."
+    },
+    {
+      "name": "African Wildlife Safaris",
+      "region": "Africa",
+      "tag": "Signature Luxury & Adventure",
+      "duration": "6–10 Days",
+      "description": "Kenya Masai Mara, Tanzania Serengeti, and South Africa circuits combining private game drives with coastal extensions."
+    },
+    {
+      "name": "Incredible India Circuits",
+      "region": "India",
+      "tag": "Heritage, Hills & Corporate Offsites",
+      "duration": "3–9 Days",
+      "description": "Rajasthan royal retreats, Kerala backwaters, Himachal & Uttarakhand hills, and Goa leadership offsites."
+    },
+    {
+      "name": "UK & Global Financial Centers",
+      "region": "Europe",
+      "tag": "Startup Expansion & Roadshows",
+      "duration": "5–12 Days",
+      "description": "London, Frankfurt, and Zurich executive itineraries with central business stays, airport transfers, and flexible ticketing."
+    }
+  ],
+  "workspaceMarkets": [
+    {
+      "title": "India Core Metros — Flagship Anchor Centers & Prestige Addresses",
+      "paragraphs": [
+        "Immediate virtual office incorporation readiness, flexible coworking pods, and custom-built managed floors across India’s six primary commercial and technology capitals."
+      ],
+      "bullets": [
+        "Delhi NCR (Connaught Place, Gurugram, Noida)",
+        "Bengaluru (ORR, Indiranagar, Whitefield)",
+        "Mumbai (BKC, Lower Parel, Andheri)",
+        "Hyderabad (HITEC City, Gachibowli)",
+        "Pune (Baner, Kharadi)",
+        "Chennai (OMR, Guindy)"
+      ]
+    },
+    {
+      "title": "High-Growth Regional & GCC Hubs — Tier-2 Innovation Corridors",
+      "paragraphs": [
+        "Tap into high-retention regional talent pools and lower operating costs with turnkey satellite offices, interview suites, and compliant local business addresses."
+      ],
+      "bullets": [
+        "Ahmedabad (GIFT City & SG Highway)",
+        "Jaipur",
+        "Chandigarh Tricity",
+        "Kochi (Infopark)",
+        "Indore",
+        "Coimbatore"
+      ]
+    },
+    {
+      "title": "International Gateway Hubs — Cross-Border Virtual-to-Physical Soft Landing",
+      "paragraphs": [
+        "Expand globally or launch inbound India operations under a single workspace partner—starting with compliant local addresses and scaling into physical executive suites."
+      ],
+      "bullets": [
+        "Dubai & Abu Dhabi (Middle East)",
+        "Singapore & Kuala Lumpur (Southeast Asia)",
+        "London & Frankfurt (Europe)",
+        "New York & Austin (North America)",
+        "Riyadh (GCC)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Go Travel Global | End-to-End Travel Consulting, Visas &amp; Corporate Expansion Mobility</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              indigo: '#1E1B7A',
+              cobalt: '#1952B5',
+              cerulean: '#1E88E5',
+              ice: '#F4F7FC',
+              ink: '#0F172A',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FFFFFF;
+      color: #0F172A;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .brand-gradient {
+      background: linear-gradient(135deg, #1E1B7A 0%, #1952B5 55%, #1E88E5 100%);
+    }
+    .brand-text-gradient {
+      background: linear-gradient(135deg, #1E1B7A 0%, #1952B5 52%, #1E88E5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-mesh {
+      background-color: #F4F7FC;
+      background-image:
+        radial-gradient(at 88% 12%, rgba(30, 136, 229, 0.14) 0px, transparent 48%),
+        radial-gradient(at 10% 85%, rgba(30, 27, 122, 0.08) 0px, transparent 52%);
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up {
+      animation: fadeUp 0.28s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#1E88E5]/20 selection:text-[#1E1B7A]">
+
+  <!-- Floating Toast Feedback (No alert() used anywhere) -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 max-w-md pointer-events-none"></div>
+
+  <!-- Top Utility Bar -->
+  <div class="bg-[#1E1B7A] text-white text-xs py-2 px-4 sm:px-8 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-[#1E88E5]"></span>
+        <span class="font-medium tracking-wide text-blue-100">A Group Company of <strong class="text-white font-semibold">WorkHour Business</strong></span>
+      </div>
+      <div class="flex items-center gap-4 text-blue-100">
+        <span class="hidden sm:inline">New Delhi, India</span>
+        <span class="hidden sm:inline text-white/30">|</span>
+        <a href="tel:+919810321155" class="hover:text-white font-semibold transition-colors">+91-981 032 1155</a>
+        <span class="hidden md:inline text-white/30">|</span>
+        <a href="https://www.workhourbusiness.com/gotravelglobal" target="_blank" rel="noopener noreferrer" class="hidden md:inline hover:text-white transition-colors">www.workhourbusiness.com/gotravelglobal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo Recreation (Exact Circular 'G' with Two Aerodynamic Swooshes) -->
+      <a href="#top" class="flex items-center gap-3 group shrink-0" aria-label="Go Travel Global Home">
+        <svg class="w-11 h-11 shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gtgRingGrad" x1="15" y1="15" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1E1B7A"/>
+              <stop offset="50%" stop-color="#1E88E5"/>
+              <stop offset="100%" stop-color="#1E1B7A"/>
+            </linearGradient>
+            <linearGradient id="gtgSwooshGrad" x1="35" y1="62" x2="106" y2="68" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1E88E5"/>
+              <stop offset="65%" stop-color="#1952B5"/>
+              <stop offset="100%" stop-color="#1E1B7A"/>
+            </linearGradient>
+          </defs>
+          <!-- Outer Circular C-Arc of 'G' -->
+          <path d="M98.5 38.5C90.6 23.8 75.1 14 57.5 14C31.8 14 11 34.8 11 60.5C11 86.2 31.8 107 57.5 107C79.4 107 97.7 91.9 102.7 71.5H85.8C81.3 83.2 70.3 91.5 57.5 91.5C40.4 91.5 26.5 77.6 26.5 60.5C26.5 43.4 40.4 29.5 57.5 29.5C68.6 29.5 78.3 35.4 83.7 44.2L98.5 38.5Z" fill="url(#gtgRingGrad)"/>
+          <!-- Upper Dynamic Flight-Path Swoosh -->
+          <path d="M36 62.5C54 51.5 79.5 51.5 104 61.5L101.5 68.2C79 59.5 56 59.2 36 62.5Z" fill="url(#gtgSwooshGrad)"/>
+          <!-- Lower Dynamic Flight-Path Swoosh -->
+          <path d="M43 70.5C59 61.5 81 62 101 70.5L98.2 77.2C80 69.5 60.5 68.8 43 70.5Z" fill="url(#gtgSwooshGrad)"/>
+        </svg>
+        <div>
+          <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight leading-none">
+            <span class="text-[#1E1B7A]">Go</span><span class="text-[#1952B5]">Travel</span><span class="text-[#1E88E5]">Global</span>
+          </div>
+          <span class="text-[10px] font-semibold uppercase tracking-widest text-slate-500 block mt-1">WorkHour Business Group</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center gap-7 text-sm font-medium text-slate-700" aria-label="Primary Navigation">
+        <a href="#about" class="hover:text-[#1952B5] transition-colors">About</a>
+        <a href="#who-we-serve" class="hover:text-[#1952B5] transition-colors">Who We Serve</a>
+        <a href="#services" class="hover:text-[#1952B5] transition-colors">Services</a>
+        <a href="#partnerships" class="hover:text-[#1952B5] font-semibold text-[#1E1B7A] transition-colors">Expansion Partnerships</a>
+        <a href="#destinations" class="hover:text-[#1952B5] transition-colors">Destinations</a>
+        <a href="#workflow" class="hover:text-[#1952B5] transition-colors">How We Work</a>
+      </nav>
+
+      <!-- Dual Action CTAs -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#partnerships" class="px-4 py-2.5 rounded-xl border border-[#1952B5]/30 text-[#1E1B7A] hover:bg-[#F4F7FC] text-xs font-bold transition-all">
+          Partner With Us
+        </a>
+        <a href="#contact" onclick="selectInquiryTab('holiday')" class="px-4 py-2.5 rounded-xl brand-gradient text-white hover:opacity-95 text-xs font-bold shadow-md shadow-blue-900/15 transition-all">
+          Plan Your Trip
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <button type="button" id="mobile-menu-btn" class="xl:hidden p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50" aria-label="Toggle Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-4 py-5 space-y-3 shadow-xl">
+      <a href="#about" class="block py-2 text-sm font-semibold text-slate-700 hover:text-[#1952B5]">About Go Travel Global</a>
+      <a href="#who-we-serve" class="block py-2 text-sm font-semibold text-slate-700 hover:text-[#1952B5]">Who We Serve</a>
+      <a href="#services" class="block py-2 text-sm font-semibold text-slate-700 hover:text-[#1952B5]">Services &amp; Visa Desk</a>
+      <a href="#partnerships" class="block py-2 text-sm font-bold text-[#1E1B7A]">Startup &amp; Corporate Expansion Partnerships</a>
+      <a href="#destinations" class="block py-2 text-sm font-semibold text-slate-700 hover:text-[#1952B5]">Global &amp; India Destinations</a>
+      <a href="#workflow" class="block py-2 text-sm font-semibold text-slate-700 hover:text-[#1952B5]">How We Work</a>
+      <div class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2.5">
+        <a href="#partnerships" class="py-2.5 text-center rounded-xl border border-[#1952B5] text-[#1E1B7A] text-xs font-bold">Partner With Us</a>
+        <a href="#contact" class="py-2.5 text-center rounded-xl brand-gradient text-white text-xs font-bold">Plan Your Trip</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 1. HERO SECTION WITH INTERACTIVE TRAVEL & PARTNERSHIP MODE SWITCHER   -->
+  <!-- ===================================================================== -->
+  <section id="top" class="hero-mesh pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Hero Narrative (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-200/80 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-[#1E88E5]"></span>
+            <span class="text-xs font-bold text-[#1E1B7A]">End-to-End Travel Consulting, Visas &amp; Global Mobility</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0F172A] tracking-tight leading-[1.12]">
+            Redefining Travel. <br class="hidden sm:block" />
+            <span class="brand-text-gradient">Simplifying Journeys.</span> <br class="hidden sm:block" />
+            Creating Experiences.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Whether you are a founder scaling into new international markets, a corporate team flying across time zones, or a family planning an unforgettable holiday—<strong>Go Travel Global</strong> handles every visa, flight, stay, and local transfer with single-point accountability.
+          </p>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-1">
+            <a href="#partnerships" class="px-6 py-3.5 rounded-xl brand-gradient text-white font-bold text-sm shadow-lg shadow-blue-900/20 hover:opacity-95 transition-all inline-flex items-center gap-2">
+              <span>Explore Startup &amp; Corporate Partnerships</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#contact" onclick="selectInquiryTab('holiday')" class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-[#1E1B7A] border border-slate-300 font-bold text-sm shadow-sm transition-all">
+              Design a Custom Holiday
+            </a>
+          </div>
+
+          <!-- Trust Proof Metrics -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 max-w-xl">
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-[#1E1B7A]">100%</p>
+              <p class="text-xs text-slate-600 mt-0.5">Transparent &amp; Policy-Aligned</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-[#1952B5]">35+</p>
+              <p class="text-xs text-slate-600 mt-0.5">Global Visa &amp; DMC Corridors</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-[#1E88E5]">24/7</p>
+              <p class="text-xs text-slate-600 mt-0.5">Dedicated On-Trip Desk</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive Travel & Partnership Mode Switcher Card (5 Cols) -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-xl shadow-slate-900/5 space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#1952B5]">Tailored Journey Explorer</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-[#F4F7FC] text-[#1E1B7A] text-[11px] font-bold">Select Your Focus</span>
+            </div>
+
+            <!-- Interactive Mode Tabs -->
+            <div class="grid grid-cols-3 gap-1.5 p-1.5 rounded-2xl bg-[#F4F7FC] border border-slate-200/70" role="tablist">
+              <button type="button" data-hero-mode="startup" class="hero-mode-btn active py-2.5 px-2 rounded-xl text-xs font-bold bg-[#1E1B7A] text-white shadow-sm transition-all text-center">
+                Startups &amp; Corporates
+              </button>
+              <button type="button" data-hero-mode="leisure" class="hero-mode-btn py-2.5 px-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all text-center">
+                Holidays &amp; Families
+              </button>
+              <button type="button" data-hero-mode="visa" class="hero-mode-btn py-2.5 px-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all text-center">
+                Visa &amp; Mobility
+              </button>
+            </div>
+
+            <!-- Dynamic Mode Panel Content -->
+            <div id="hero-mode-panel" class="space-y-4 animate-fade-up">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 2. ABOUT & HUMANIZED PROMISE SECTION                                  -->
+  <!-- ===================================================================== -->
+  <section id="about" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#1E88E5]">Who We Are</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
+            More Than a Booking Desk — <span class="text-[#1952B5]">Your Trusted Travel Partner.</span>
+          </h2>
+          <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+            Modern travel is rarely just a flight ticket. Behind every international client pitch, leadership offsite, or multi-country family holiday lies a maze of changing consular rules, tight layovers, hotel contracts, and last-minute schedule shifts.
+          </p>
+          <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+            At <strong>Go Travel Global</strong> (a group company of <strong>WorkHour Business</strong>), we treat every journey as a responsibility, not a transaction. Built on a strong foundation of corporate visa management and executive stay solutions, we bridge high-precision business mobility with thoughtfully curated leisure experiences across Europe, Asia, Africa, Nepal, and India.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-3">
+            <div class="p-4 rounded-2xl bg-[#F4F7FC] border border-blue-100">
+              <h3 class="font-bold text-sm text-[#1E1B7A]">Our Vision</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                To be the preferred global travel partner for businesses and leisure travelers—recognized for clarity, compliance, and seamless end-to-end execution.
+              </p>
+            </div>
+            <div class="p-4 rounded-2xl bg-[#F4F7FC] border border-blue-100">
+              <h3 class="font-bold text-sm text-[#1952B5]">Our Promise</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Transparent pricing, vetted global ground partners, compliant documentation, and real human support from pre-departure briefing until safe return.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Core Pillars of Trust (Right 6 Cols) -->
+        <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:border-[#1E88E5] transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#1E1B7A]/10 text-[#1E1B7A] flex items-center justify-center font-extrabold text-sm mb-3.5">01</div>
+            <h3 class="font-bold text-base text-[#0F172A]">Expert-Led Visa Precision</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Country-specific checklists, thorough document review, appointment scheduling, and consulate follow-up so you travel on schedule without last-minute surprises.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:border-[#1E88E5] transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#1952B5]/10 text-[#1952B5] flex items-center justify-center font-extrabold text-sm mb-3.5">02</div>
+            <h3 class="font-bold text-base text-[#0F172A]">Vetted Global DMC Network</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Direct collaborations with trusted international destination management companies ensure priority hotel rates, safe transfers, and local ground support.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:border-[#1E88E5] transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#1E88E5]/10 text-[#1E88E5] flex items-center justify-center font-extrabold text-sm mb-3.5">03</div>
+            <h3 class="font-bold text-base text-[#0F172A]">Complete Cost Transparency</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Clear itemized quotes, GST-compliant corporate invoicing, and smart route optimization—zero hidden markups or opaque cancellation clauses.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:border-[#1E88E5] transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#1E1B7A]/10 text-[#1E1B7A] flex items-center justify-center font-extrabold text-sm mb-3.5">04</div>
+            <h3 class="font-bold text-base text-[#0F172A]">Human Support That Stays</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Flight delayed in Frankfurt or meeting extended in Singapore? One call connects you to a dedicated coordinator who rebooks your stays and transfers immediately.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. WHO WE SERVE (STARTUPS, CORPORATES & LEISURE TRAVELERS)            -->
+  <!-- ===================================================================== -->
+  <section id="who-we-serve" class="py-16 sm:py-24 bg-[#F4F7FC] border-y border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#1952B5]">Designed For Every Traveler</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight mt-2">
+          Built for Founders on the Move, Growing Enterprises &amp; Curious Explorers.
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+          One unified travel partner that understands both boardroom deadlines and family memories.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Card 1: Startups, Entrepreneurs & Expanding Companies -->
+        <div class="bg-white rounded-3xl p-7 border-2 border-[#1952B5]/30 shadow-md flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 px-3.5 py-1 rounded-bl-2xl brand-gradient text-white text-[10px] font-bold uppercase tracking-wider">
+            Growth &amp; Expansion Focus
+          </div>
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#1E1B7A] text-white flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#0F172A]">Startups, Entrepreneurs &amp; Expanding Companies</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Scaling into Europe, the Middle East, APAC, or new Indian hubs? We act as your external mobility desk so founders and leadership teams focus on closing deals, not chasing visa slots.
+            </p>
+            <ul class="space-y-2.5 pt-2 text-xs text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Founder investor roadshows &amp; multi-city demo sprints</li>
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Market-entry delegations &amp; international trade expos</li>
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Serviced apartments &amp; project-team extended stays</li>
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Startup-friendly retainers &amp; consolidated GST billing</li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100">
+            <a href="#partnerships" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#1952B5] hover:text-[#1E1B7A]">
+              <span>Configure Expansion Partnership</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Corporates & SMEs -->
+        <div class="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#1952B5]/10 text-[#1952B5] flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#0F172A]">Established Corporates &amp; SMEs</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Structured travel programs across IT, manufacturing, pharma, consulting, and finance—engineered for policy compliance, duty of care, and measurable travel spend savings.
+            </p>
+            <ul class="space-y-2.5 pt-2 text-xs text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><span class="text-[#1952B5] font-bold">✓</span> Priority business visa processing &amp; compliance tracking</li>
+              <li class="flex items-start gap-2"><span class="text-[#1952B5] font-bold">✓</span> MICE events, leadership offsites &amp; annual incentive trips</li>
+              <li class="flex items-start gap-2"><span class="text-[#1952B5] font-bold">✓</span> Policy-aligned airfare &amp; negotiated corporate hotel rates</li>
+              <li class="flex items-start gap-2"><span class="text-[#1952B5] font-bold">✓</span> Dedicated account manager with SLA-backed turnaround</li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100">
+            <a href="#contact" onclick="selectInquiryTab('corporate')" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#1952B5] hover:text-[#1E1B7A]">
+              <span>Request Corporate Travel Audit</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Individuals, Families & Institutions -->
+        <div class="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#1E88E5]/10 text-[#1E88E5] flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#0F172A]">Individuals, Families &amp; Institutions</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Thoughtfully paced, personalized itineraries for families, couples, solo explorers, and educational delegations—blending authentic local culture with stress-free logistics.
+            </p>
+            <ul class="space-y-2.5 pt-2 text-xs text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Curated group departures &amp; bespoke family holidays</li>
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Honeymoons, wellness retreats, Nepal treks &amp; safaris</li>
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Academic study tours, student visas &amp; university delegations</li>
+              <li class="flex items-start gap-2"><span class="text-[#1E88E5] font-bold">✓</span> Door-to-door flights, hotels, sightseeing &amp; insurance</li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100">
+            <a href="#destinations" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#1952B5] hover:text-[#1E1B7A]">
+              <span>Explore Curated Destinations</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. INTERACTIVE 5-PILLAR SERVICES EXPLORER                             -->
+  <!-- ===================================================================== -->
+  <section id="services" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#1E88E5]">Comprehensive Capabilities</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight mt-2">
+            Everything You Need. Everywhere You Want to Go.
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 max-w-md">
+          Select a service pillar below to explore how Go Travel Global orchestrates every detail from documentation to return.
+        </p>
+      </div>
+
+      <!-- Interactive Service Pillar Selector Tabs -->
+      <div class="flex flex-wrap gap-2.5" id="service-tabs" role="tablist">
+        <button type="button" data-service="corp" class="service-tab-btn active px-4 py-3 rounded-xl text-xs sm:text-sm font-bold bg-[#1E1B7A] text-white shadow-sm transition-all">
+          Corporate &amp; Startup Mobility
+        </button>
+        <button type="button" data-service="visa" class="service-tab-btn px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">
+          Visa &amp; Global Documentation
+        </button>
+        <button type="button" data-service="intl" class="service-tab-btn px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">
+          International Curated Holidays
+        </button>
+        <button type="button" data-service="dom" class="service-tab-btn px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">
+          Domestic India Circuits
+        </button>
+        <button type="button" data-service="mice" class="service-tab-btn px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">
+          MICE, Offsites &amp; Roadshows
+        </button>
+      </div>
+
+      <!-- Service Detail Display Panel -->
+      <div id="service-detail-card" class="rounded-3xl bg-[#F4F7FC] border border-slate-200/90 p-6 sm:p-10 animate-fade-up">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 5. STARTUP, ENTREPRENEUR & CORPORATE EXPANSION PARTNERSHIPS (B2B HUB) -->
+  <!-- ===================================================================== -->
+  <section id="partnerships" class="py-16 sm:py-24 bg-[#1E1B7A] text-white relative overflow-hidden">
+    <!-- Subtle Geometric Accent -->
+    <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[#1E88E5]/20 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-[#1952B5]/30 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 space-y-12">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+        <!-- Left Pitch for Startups, Founders & Expanding Companies (6 Cols) -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-blue-200 text-xs font-bold">
+            <span>Startup &amp; Enterprise Expansion Program</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+            Expanding Into New Markets? <br />
+            <span class="text-[#60A5FA]">Make Global Mobility Your Unfair Advantage.</span>
+          </h2>
+
+          <p class="text-blue-100 text-sm sm:text-base leading-relaxed">
+            When startups raise capital, entrepreneurs launch cross-border ventures, or enterprises open new regional offices, travel quickly becomes a major operational bottleneck. Go Travel Global partners directly with founders, CXOs, incubators, and HR/Admin leaders to run your travel desk on autopilot.
+          </p>
+
+          <!-- 4 Partnership Pillars -->
+          <div class="grid sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm space-y-1.5">
+              <h3 class="font-bold text-sm text-white">Founder &amp; Investor Roadshows</h3>
+              <p class="text-xs text-blue-100/90 leading-relaxed">
+                Tight multi-city schedules across London, Dubai, Singapore, Berlin, or Bengaluru with flexible fare protection and fast-track visas.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm space-y-1.5">
+              <h3 class="font-bold text-sm text-white">Market-Entry &amp; Team Relocation</h3>
+              <p class="text-xs text-blue-100/90 leading-relaxed">
+                Business visa strategy, serviced apartments, and extended corporate stays for teams setting up new domestic or global branches.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm space-y-1.5">
+              <h3 class="font-bold text-sm text-white">Zero-Capex Travel Desk Retainer</h3>
+              <p class="text-xs text-blue-100/90 leading-relaxed">
+                Skip hiring an in-house travel team. Get a dedicated Go Travel Global account desk with transparent fees and volume discounts.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm space-y-1.5">
+              <h3 class="font-bold text-sm text-white">Coworking &amp; Ecosystem Alliances</h3>
+              <p class="text-xs text-blue-100/90 leading-relaxed">
+                Preferred mobility perks for startup accelerators, venture studios, industry associations, and event organizers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive Partnership Scope Builder (6 Cols) -->
+        <div class="lg:col-span-6 bg-white text-[#0F172A] rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
+          <div class="border-b border-slate-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#1952B5]">Interactive Scope Builder</span>
+            <h3 class="text-xl font-extrabold text-[#0F172A] mt-1">Build Your Custom Travel Partnership Plan</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Select your company profile below to generate a tailored mobility setup.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="partner-stage" class="block text-xs font-bold text-slate-700 mb-1.5">Organization Profile</label>
+              <select id="partner-stage" class="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F7FC] border border-slate-200 text-xs sm:text-sm font-semibold text-slate-900 focus:outline-none focus:border-[#1952B5]">
+                <option value="Seed / Series A Startup">Seed / Series A Startup (Founder-Led)</option>
+                <option value="Growth-Stage Scaleup">Growth-Stage Scaleup (International Expansion)</option>
+                <option value="Mid-Market / Enterprise">Established SME / Enterprise Corporate</option>
+                <option value="Incubator / Event Organizer">Incubator, VC Network or Event Organizer</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="partner-volume" class="block text-xs font-bold text-slate-700 mb-1.5">Monthly Trips (Domestic + Intl.)</label>
+              <select id="partner-volume" class="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F7FC] border border-slate-200 text-xs sm:text-sm font-semibold text-slate-900 focus:outline-none focus:border-[#1952B5]">
+                <option value="5–15 Trips / Month">5–15 Trips / Month (Agile Desk)</option>
+                <option value="15–50 Trips / Month" selected>15–50 Trips / Month (Dedicated Pod)</option>
+                <option value="50+ Trips / Month">50+ Trips / Month (Enterprise SLA)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <span class="block text-xs font-bold text-slate-700 mb-2">Target Expansion Corridors</span>
+            <div class="flex flex-wrap gap-2" id="partner-corridors">
+              <button type="button" data-corridor="Europe & UK" class="corridor-chip active px-3 py-1.5 rounded-lg text-xs font-bold bg-[#1E1B7A] text-white transition-all">Europe &amp; UK</button>
+              <button type="button" data-corridor="Middle East (UAE/KSA)" class="corridor-chip active px-3 py-1.5 rounded-lg text-xs font-bold bg-[#1E1B7A] text-white transition-all">Middle East (UAE/KSA)</button>
+              <button type="button" data-corridor="Asia-Pacific (SG/VN/JP)" class="corridor-chip px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#F4F7FC] text-slate-700 border border-slate-200 transition-all">Asia-Pacific</button>
+              <button type="button" data-corridor="Africa Market Entry" class="corridor-chip px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#F4F7FC] text-slate-700 border border-slate-200 transition-all">Africa</button>
+              <button type="button" data-corridor="Pan-India Hubs" class="corridor-chip active px-3 py-1.5 rounded-lg text-xs font-bold bg-[#1E1B7A] text-white transition-all">Pan-India Hubs</button>
+            </div>
+          </div>
+
+          <div>
+            <span class="block text-xs font-bold text-slate-700 mb-2">Priority Modules Needed</span>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#F4F7FC] border border-slate-200/80 cursor-pointer font-medium text-slate-800">
+                <input type="checkbox" class="partner-mod accent-[#1952B5]" value="Business Visa Desk" checked />
+                <span>Business Visa Desk</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#F4F7FC] border border-slate-200/80 cursor-pointer font-medium text-slate-800">
+                <input type="checkbox" class="partner-mod accent-[#1952B5]" value="Executive Flights & Stays" checked />
+                <span>Executive Flights &amp; Stays</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#F4F7FC] border border-slate-200/80 cursor-pointer font-medium text-slate-800">
+                <input type="checkbox" class="partner-mod accent-[#1952B5]" value="Team Offsites & MICE" />
+                <span>Team Offsites &amp; MICE</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#F4F7FC] border border-slate-200/80 cursor-pointer font-medium text-slate-800">
+                <input type="checkbox" class="partner-mod accent-[#1952B5]" value="Long-Stay Relocation" />
+                <span>Long-Stay Relocation</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Dynamic Recommendation Output -->
+          <div id="partner-summary-box" class="p-4 rounded-2xl bg-[#F4F7FC] border border-blue-200/80 space-y-1.5">
+            <!-- Populated via JS -->
+          </div>
+
+          <button type="button" onclick="applyPartnershipScopeToForm()" class="w-full py-3.5 px-5 rounded-xl brand-gradient text-white font-bold text-sm shadow-lg shadow-blue-900/20 hover:opacity-95 transition-all">
+            Lock This Scope &amp; Request Partnership Proposal →
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 6. CURATED GLOBAL & DOMESTIC DESTINATION SHOWCASE                     -->
+  <!-- ===================================================================== -->
+  <section id="destinations" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#1952B5]">Global Reach, Local Depth</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight mt-2">
+            Curated Destinations for Business &amp; Leisure
+          </h2>
+        </div>
+
+        <!-- Region Filter Pills -->
+        <div class="flex flex-wrap gap-2" id="dest-filters">
+          <button type="button" data-region="ALL" class="dest-filter-btn active px-3.5 py-2 rounded-xl text-xs font-bold bg-[#1E1B7A] text-white transition-all">All Regions</button>
+          <button type="button" data-region="Europe" class="dest-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">Europe (Schengen)</button>
+          <button type="button" data-region="Asia" class="dest-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">Asia-Pacific &amp; Middle East</button>
+          <button type="button" data-region="Himalayas" class="dest-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">Nepal &amp; Himalayas</button>
+          <button type="button" data-region="Africa" class="dest-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">Africa Safaris</button>
+          <button type="button" data-region="India" class="dest-filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#F4F7FC] text-slate-700 hover:bg-blue-50 transition-all">Incredible India</button>
+        </div>
+      </div>
+
+      <!-- Destinations Grid -->
+      <div id="destinations-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 7. 6-STEP SEAMLESS EXECUTION WORKFLOW                                 -->
+  <!-- ===================================================================== -->
+  <section id="workflow" class="py-16 sm:py-24 bg-[#F4F7FC] border-y border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#1E88E5]">How We Deliver</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight mt-2">
+          From First Brief to Safe Return — Zero Friction.
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-3">
+          Every corporate delegation and family vacation follows our structured 6-stage quality workflow.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-2.5">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1E1B7A] text-white text-xs font-bold">Step 01</span>
+          <h3 class="font-bold text-base text-[#0F172A]">Requirement Capture &amp; Profiling</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            We align on your business goals, traveler preferences, budget guardrails, and timeline before recommending routes.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-2.5">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1952B5] text-white text-xs font-bold">Step 02</span>
+          <h3 class="font-bold text-base text-[#0F172A]">Visa &amp; Route Feasibility Check</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Immediate verification of embassy lead times, transit rules, and multi-city flight connections to eliminate bottlenecks.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-2.5">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1E88E5] text-white text-xs font-bold">Step 03</span>
+          <h3 class="font-bold text-base text-[#0F172A]">Custom Costing &amp; DMC Selection</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Transparent, itemized itinerary options backed by our vetted international hotel and ground-transport partners.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-2.5">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1E1B7A] text-white text-xs font-bold">Step 04</span>
+          <h3 class="font-bold text-base text-[#0F172A]">Visa Filing &amp; Confirmed Bookings</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Hands-on application review, appointment scheduling, and locked-in air, hotel, and insurance confirmations.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-2.5">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1952B5] text-white text-xs font-bold">Step 05</span>
+          <h3 class="font-bold text-base text-[#0F172A]">Pre-Departure Briefing Pack</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Consolidated digital travel dossier with immigration tips, local SIM/forex guidance, weather advisories, and emergency contacts.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-2.5">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1E88E5] text-white text-xs font-bold">Step 06</span>
+          <h3 class="font-bold text-base text-[#0F172A]">24/7 On-Trip Ground Support</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Active monitoring throughout your journey with rapid rebooking and local ground escalation whenever plans shift.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 8. CONSULTATION & PARTNERSHIP INQUIRY SECTION                         -->
+  <!-- ===================================================================== -->
+  <section id="contact" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+        <!-- Left Direct Contact & Office Card (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#1952B5]">Let’s Travel Forward</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight mt-2">
+              Start a Conversation With Our Travel Desk.
+            </h2>
+            <p class="text-slate-600 text-sm leading-relaxed mt-3">
+              Whether you are exploring a corporate mobility partnership for your startup/enterprise or planning your next international holiday, our specialists in New Delhi respond within 4 business hours.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-[#F4F7FC] border border-slate-200/90 space-y-5">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-[#1E1B7A] text-white flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase text-slate-400">Headquarters</p>
+                <p class="font-bold text-sm text-[#0F172A] mt-0.5">Go Travel Global</p>
+                <p class="text-xs text-slate-600">New Delhi, India • A Group Company of WorkHour Business</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-[#1952B5] text-white flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase text-slate-400">Direct Travel &amp; Partnership Desk</p>
+                <a href="tel:+919810321155" class="font-extrabold text-base text-[#1E1B7A] hover:text-[#1E88E5] block mt-0.5">+91-981 032 1155</a>
+                <p class="text-xs text-slate-500">Mon – Sat • 09:30 AM – 07:30 PM IST (24/7 Active Trip Desk)</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-[#1E88E5] text-white flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase text-slate-400">Official Web Portal</p>
+                <a href="https://www.workhourbusiness.com/gotravelglobal" target="_blank" rel="noopener noreferrer" class="font-semibold text-xs sm:text-sm text-[#1952B5] hover:underline break-all mt-0.5 block">
+                  www.workhourbusiness.com/gotravelglobal
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive Dual-Purpose Inquiry Form (7 Cols) -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-9 border border-slate-200/90 shadow-xl shadow-slate-900/5 space-y-6">
+          <!-- Mode Toggle -->
+          <div class="grid grid-cols-2 gap-2 p-1.5 rounded-2xl bg-[#F4F7FC] border border-slate-200/70">
+            <button type="button" id="inq-tab-corporate" onclick="selectInquiryTab('corporate')" class="py-3 px-4 rounded-xl text-xs sm:text-sm font-bold bg-[#1E1B7A] text-white shadow-sm transition-all">
+              Startup / Corporate Partnership
+            </button>
+            <button type="button" id="inq-tab-holiday" onclick="selectInquiryTab('holiday')" class="py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all">
+              Individual / Group Holiday &amp; Visa
+            </button>
+          </div>
+
+          <form id="gtg-inquiry-form" class="space-y-4">
+            <input type="hidden" id="inq-type" value="Startup / Corporate Partnership" />
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="inq-name" class="block text-xs font-bold text-slate-700 mb-1.5">Your Full Name *</label>
+                <input type="text" id="inq-name" required placeholder="e.g., Aarav Sharma" class="w-full px-4 py-3 rounded-xl bg-[#F4F7FC] border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#1952B5]" />
+              </div>
+              <div>
+                <label for="inq-org" id="inq-org-label" class="block text-xs font-bold text-slate-700 mb-1.5">Company / Startup Name *</label>
+                <input type="text" id="inq-org" required placeholder="e.g., NexaCloud Technologies" class="w-full px-4 py-3 rounded-xl bg-[#F4F7FC] border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#1952B5]" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="inq-email" class="block text-xs font-bold text-slate-700 mb-1.5">Work or Personal Email *</label>
+                <input type="email" id="inq-email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-[#F4F7FC] border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#1952B5]" />
+              </div>
+              <div>
+                <label for="inq-phone" class="block text-xs font-bold text-slate-700 mb-1.5">Phone / WhatsApp Number *</label>
+                <input type="tel" id="inq-phone" required placeholder="+91 98XXX XXXXX" class="w-full px-4 py-3 rounded-xl bg-[#F4F7FC] border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#1952B5]" />
+              </div>
+            </div>
+
+            <div>
+              <label for="inq-destination" class="block text-xs font-bold text-slate-700 mb-1.5">Primary Destination / Expansion Corridor</label>
+              <input type="text" id="inq-destination" placeholder="e.g., Schengen Europe, Dubai, Singapore, Nepal, Africa Safari" class="w-full px-4 py-3 rounded-xl bg-[#F4F7FC] border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#1952B5]" />
+            </div>
+
+            <div>
+              <label for="inq-notes" class="block text-xs font-bold text-slate-700 mb-1.5">Travel / Partnership Requirements</label>
+              <textarea id="inq-notes" rows="4" placeholder="Tell us about your upcoming expansion roadshow, corporate travel volume, visa needs, or family holiday dates..." class="w-full px-4 py-3 rounded-xl bg-[#F4F7FC] border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#1952B5]"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 px-6 rounded-xl brand-gradient text-white font-bold text-sm shadow-lg shadow-blue-900/20 hover:opacity-95 transition-all">
+              Submit Request to Go Travel Global Desk
+            </button>
+          </form>
+
+          <!-- Instant Submission Confirmation Banner -->
+          <div id="inq-confirmation" class="hidden p-5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2 animate-fade-up">
+            <p class="text-sm font-extrabold text-emerald-900">✓ Thank You! Your Brief Has Been Assigned to Our Senior Travel Consultant.</p>
+            <p id="inq-confirmation-text" class="text-xs text-emerald-800 leading-relaxed"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 9. FOOTER                                                             -->
+  <!-- ===================================================================== -->
+  <footer class="bg-[#0F172A] text-slate-300 pt-14 pb-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+      <div class="grid md:grid-cols-12 gap-8 pb-10 border-b border-slate-800">
+        <!-- Brand Column -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <svg class="w-10 h-10 shrink-0" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M98.5 38.5C90.6 23.8 75.1 14 57.5 14C31.8 14 11 34.8 11 60.5C11 86.2 31.8 107 57.5 107C79.4 107 97.7 91.9 102.7 71.5H85.8C81.3 83.2 70.3 91.5 57.5 91.5C40.4 91.5 26.5 77.6 26.5 60.5C26.5 43.4 40.4 29.5 57.5 29.5C68.6 29.5 78.3 35.4 83.7 44.2L98.5 38.5Z" fill="#1E88E5"/>
+              <path d="M36 62.5C54 51.5 79.5 51.5 104 61.5L101.5 68.2C79 59.5 56 59.2 36 62.5Z" fill="#60A5FA"/>
+              <path d="M43 70.5C59 61.5 81 62 101 70.5L98.2 77.2C80 69.5 60.5 68.8 43 70.5Z" fill="#60A5FA"/>
+            </svg>
+            <div>
+              <span class="font-display font-extrabold text-xl text-white tracking-tight block leading-none">GoTravelGlobal</span>
+              <span class="text-[11px] text-blue-300 font-medium block mt-1">A Group Company of WorkHour Business</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Whether it’s a visa, a vacation, or an international business expansion sprint—we handle the complexity, so you enjoy the journey.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3 space-y-2.5 text-xs">
+          <p class="font-bold uppercase tracking-wider text-white mb-3">Solutions</p>
+          <a href="#partnerships" class="block text-slate-400 hover:text-white transition-colors">Startup &amp; Corporate Partnerships</a>
+          <a href="#services" class="block text-slate-400 hover:text-white transition-colors">Visa &amp; Documentation Desk</a>
+          <a href="#services" class="block text-slate-400 hover:text-white transition-colors">MICE, Offsites &amp; Roadshows</a>
+          <a href="#destinations" class="block text-slate-400 hover:text-white transition-colors">Curated International Holidays</a>
+          <a href="#destinations" class="block text-slate-400 hover:text-white transition-colors">Domestic India Packages</a>
+        </div>
+
+        <!-- Destinations & Contact -->
+        <div class="md:col-span-4 space-y-2.5 text-xs">
+          <p class="font-bold uppercase tracking-wider text-white mb-3">Connect With Us</p>
+          <p class="text-slate-400">New Delhi, India</p>
+          <p><a href="tel:+919810321155" class="text-white font-bold hover:text-blue-300">+91-981 032 1155</a></p>
+          <p><a href="https://www.workhourbusiness.com/gotravelglobal" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:underline break-all">www.workhourbusiness.com/gotravelglobal</a></p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <p>© 2026 Go Travel Global (WorkHour Business Group). All rights reserved.</p>
+        <p>End-to-End Travel Consulting • Visas • Corporate Mobility • Global Holidays</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE JAVASCRIPT ENGINE                                         -->
+  <!-- ===================================================================== -->
+  <script>
+    // Toast Notification Helper
+    function showToast(title, message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto p-4 rounded-2xl bg-white border-l-4 border-[#1952B5] shadow-2xl border border-slate-200 animate-fade-up';
+      toast.innerHTML = `
+        <p class="text-xs font-extrabold text-[#1E1B7A]">${title}</p>
+        <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">${message}</p>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 4200);
+    }
+
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // -----------------------------------------------------------------------
+    // 1. HERO INTERACTIVE MODE SWITCHER
+    // -----------------------------------------------------------------------
+    const heroModes = {
+      startup: {
+        badge: 'For Founders, Startups & Expanding Teams',
+        title: 'Scale Globally Without Travel Friction',
+        desc: 'Dedicated business visa support, multi-city investor roadshows, serviced apartments, and GST-consolidated corporate billing tailored for fast-moving companies.',
+        highlights: [
+          'Priority Schengen, UK, US, UAE & APAC business visa coordination',
+          'Flexible flight & hotel rebooking for dynamic founder schedules',
+          'Dedicated account desk with zero in-house travel overhead'
+        ],
+        ctaText: 'Build Your Expansion Partnership →',
+        ctaHref: '#partnerships',
+        action: () => {}
+      },
+      leisure: {
+        badge: 'For Families, Couples & Group Explorers',
+        title: 'Curated Holidays Crafted Around Your Pace',
+        desc: 'From European cultural circuits and African wildlife safaris to serene Nepal retreats and Indian heritage getaways—every flight, stay, and transfer handled end-to-end.',
+        highlights: [
+          'Fixed-departure group tours & 100% custom family itineraries',
+          'Vetted local destination partners with 24/7 on-trip assistance',
+          'Complete tourist visa, travel insurance & forex guidance'
+        ],
+        ctaText: 'Plan Your Custom Holiday →',
+        ctaHref: '#contact',
+        action: () => selectInquiryTab('holiday')
+      },
+      visa: {
+        badge: 'Country-Specific Consular Expertise',
+        title: 'Visas Without the Stress or Guesswork',
+        desc: 'Whether traveling for business meetings, global conferences, tourism, or higher education, our visa specialists audit every document before submission.',
+        highlights: [
+          'Tourist, Business, Student & Work visa documentation checklists',
+          'Appointment scheduling, form review & status monitoring',
+          'Pre-departure immigration & travel advisory briefings'
+        ],
+        ctaText: 'Consult Our Visa Desk →',
+        ctaHref: '#contact',
+        action: () => selectInquiryTab('holiday')
+      }
+    };
+
+    function renderHeroMode(key) {
+      const m = heroModes[key];
+      const panel = document.getElementById('hero-mode-panel');
+      panel.innerHTML = `
+        <div class="p-4 rounded-2xl bg-[#F4F7FC] border border-blue-100 space-y-2">
+          <span class="text-[11px] font-bold text-[#1E88E5]">${m.badge}</span>
+          <h3 class="text-lg font-extrabold text-[#0F172A]">${m.title}</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">${m.desc}</p>
+        </div>
+        <ul class="space-y-2.5 text-xs font-medium text-slate-700 px-1">
+          ${m.highlights.map(h => `
+            <li class="flex items-start gap-2.5">
+              <span class="w-4 h-4 rounded-full bg-[#1952B5]/10 text-[#1952B5] flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">✓</span>
+              <span>${h}</span>
+            </li>
+          `).join('')}
+        </ul>
+        <a href="${m.ctaHref}" id="hero-panel-cta" class="block w-full py-3.5 px-4 rounded-xl brand-gradient text-white text-center font-bold text-xs sm:text-sm shadow-md hover:opacity-95 transition-all">
+          ${m.ctaText}
+        </a>
+      `;
+      document.getElementById('hero-panel-cta').addEventListener('click', m.action);
+    }
+
+    document.querySelectorAll('.hero-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.hero-mode-btn').forEach(b => {
+          b.classList.remove('active', 'bg-[#1E1B7A]', 'text-white', 'shadow-sm', 'font-bold');
+          b.classList.add('text-slate-600', 'font-semibold');
+        });
+        btn.classList.add('active', 'bg-[#1E1B7A]', 'text-white', 'shadow-sm', 'font-bold');
+        btn.classList.remove('text-slate-600', 'font-semibold');
+        renderHeroMode(btn.getAttribute('data-hero-mode'));
+      });
+    });
+
+    // -----------------------------------------------------------------------
+    // 2. INTERACTIVE 5-PILLAR SERVICES EXPLORER
+    // -----------------------------------------------------------------------
+    const servicePillars = {
+      corp: {
+        tag: 'Corporate & Startup Mobility Desk',
+        title: 'Precision Business Travel That Respects Your Time & Budget',
+        summary: 'Designed for startups, SMEs, and enterprises that need fast turnaround, policy-aligned bookings, and single-point accountability for executive travel and project deployments.',
+        deliverables: [
+          'Negotiated corporate airfares, hotels & serviced apartments',
+          'Multi-city founder roadshow & client visit coordination',
+          'Travel policy alignment & transparent GST invoicing',
+          'Dedicated account manager with rapid schedule-change support'
+        ],
+        outcome: 'Ideal for teams scaling across Indian metros and global commercial hubs.'
+      },
+      visa: {
+        tag: 'Visa & Global Documentation Desk',
+        title: 'Transparent, Compliant Visa Assistance Across Major Geographies',
+        summary: 'Navigating consular checklists and appointment queues shouldn’t stall your trip. We guide individuals, executives, and student delegations through every requirement.',
+        deliverables: [
+          'Category guidance: Business, Tourist, Student & Work visas',
+          'Thorough document audit, cover letter & itinerary alignment',
+          'VFS / Embassy appointment scheduling & application tracking',
+          'Pre-travel immigration & country-advisory briefings'
+        ],
+        outcome: 'Covers Schengen Europe, UK, USA, UAE, Singapore, Japan, Australia & more.'
+      },
+      intl: {
+        tag: 'International Curated Holidays & Safaris',
+        title: 'The World, Thoughtfully Curated Around Your Travel Style',
+        summary: 'From fixed-departure small group tours to tailor-made family vacations, honeymoons, and wildlife expeditions—backed by vetted international destination partners.',
+        deliverables: [
+          'Europe cultural circuits & multi-country rail/flight passes',
+          'Southeast Asia & Middle East getaways (Singapore, Bali, Vietnam, Thailand, Dubai)',
+          'Nepal Himalayan treks, spiritual circuits & wellness retreats',
+          'Classic & luxury African safaris with city & beach extensions'
+        ],
+        outcome: 'Includes flights, handpicked stays, private/group transfers, sightseeing & insurance.'
+      },
+      dom: {
+        tag: 'Domestic India Travel Packages',
+        title: 'Discover Incredible India With Seamless Local Coordination',
+        summary: 'Crafted journeys across India’s hill stations, royal heritage circuits, coastal escapes, wildlife reserves, and spiritual destinations—matched to your pace and comfort.',
+        deliverables: [
+          'Family holidays, weekend retreats & curated group departures',
+          'Heritage, spiritual, wellness & wildlife safari itineraries',
+          'Trusted local transport & verified boutique/luxury stays',
+          'End-to-end coordination from arrival to departure'
+        ],
+        outcome: 'Authentic experiences across Himachal, Uttarakhand, Rajasthan, Kerala, Goa & Northeast.'
+      },
+      mice: {
+        tag: 'MICE, Offsites & Founder Roadshows',
+        title: 'High-Impact Group Movements, Leadership Offsites & Delegations',
+        summary: 'Whether hosting an annual company offsite, an international dealer incentive, or an academic conference delegation, we manage complex group logistics down to the minute.',
+        deliverables: [
+          'Venue sourcing, group air blocks & conference logistics',
+          'Startup demo-day delegations & international trade expo travel',
+          'University & institutional educational study tours',
+          'On-site coordinator & 24/7 escalation desk'
+        ],
+        outcome: 'Built for groups of 15 to 250+ travelers across domestic and international venues.'
+      }
+    };
+
+    function renderServiceDetail(key) {
+      const s = servicePillars[key];
+      document.getElementById('service-detail-card').innerHTML = `
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="inline-block px-3 py-1 rounded-full bg-white text-[#1E1B7A] border border-blue-200 text-xs font-bold">${s.tag}</span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-[#0F172A] leading-tight">${s.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">${s.summary}</p>
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <a href="#contact" class="px-5 py-3 rounded-xl brand-gradient text-white text-xs font-bold shadow-md hover:opacity-95 transition-all">
+                Enquire About This Service →
+              </a>
+              <span class="text-xs font-semibold text-[#1952B5]">${s.outcome}</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5 bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm space-y-3">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">What’s Included</p>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 font-medium">
+              ${s.deliverables.map(item => `
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-full bg-[#1E88E5]/15 text-[#1952B5] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+                  <span>${item}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+
+    document.querySelectorAll('.service-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.service-tab-btn').forEach(b => {
+          b.classList.remove('active', 'bg-[#1E1B7A]', 'text-white', 'shadow-sm', 'font-bold');
+          b.classList.add('bg-[#F4F7FC]', 'text-slate-700', 'font-semibold');
+        });
+        btn.classList.add('active', 'bg-[#1E1B7A]', 'text-white', 'shadow-sm', 'font-bold');
+        btn.classList.remove('bg-[#F4F7FC]', 'text-slate-700', 'font-semibold');
+        renderServiceDetail(btn.getAttribute('data-service'));
+      });
+    });
+
+    // -----------------------------------------------------------------------
+    // 3. STARTUP & CORPORATE PARTNERSHIP SCOPE BUILDER
+    // -----------------------------------------------------------------------
+    document.querySelectorAll('.corridor-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('active');
+        if (chip.classList.contains('active')) {
+          chip.classList.add('bg-[#1E1B7A]', 'text-white', 'font-bold');
+          chip.classList.remove('bg-[#F4F7FC]', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
+        } else {
+          chip.classList.remove('bg-[#1E1B7A]', 'text-white', 'font-bold');
+          chip.classList.add('bg-[#F4F7FC]', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
+        }
+        updatePartnershipSummary();
+      });
+    });
+
+    document.getElementById('partner-stage').addEventListener('change', updatePartnershipSummary);
+    document.getElementById('partner-volume').addEventListener('change', updatePartnershipSummary);
+    document.querySelectorAll('.partner-mod').forEach(cb => cb.addEventListener('change', updatePartnershipSummary));
+
+    function getPartnershipSummaryData() {
+      const stage = document.getElementById('partner-stage').value;
+      const volume = document.getElementById('partner-volume').value;
+      const corridors = Array.from(document.querySelectorAll('.corridor-chip.active')).map(c => c.getAttribute('data-corridor'));
+      const modules = Array.from(document.querySelectorAll('.partner-mod:checked')).map(m => m.value);
+
+      const tierName = volume.includes('50+')
+        ? 'Enterprise Dedicated SLA Desk'
+        : (volume.includes('15–50') ? 'Growth Expansion Pod' : 'Founder Agile Mobility Retainer');
+
+      return { stage, volume, corridors, modules, tierName };
+    }
+
+    function updatePartnershipSummary() {
+      const data = getPartnershipSummaryData();
+      const box = document.getElementById('partner-summary-box');
+      box.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#1952B5]">Recommended Setup</span>
+          <span class="px-2 py-0.5 rounded bg-[#1E1B7A] text-white text-[10px] font-bold">${data.tierName}</span>
+        </div>
+        <p class="text-xs text-slate-700 leading-relaxed">
+          Tailored for <strong>${data.stage}</strong> (${data.volume}) covering <strong>${data.corridors.length ? data.corridors.join(', ') : 'Global Corridors'}</strong> with <strong>${data.modules.length ? data.modules.join(' + ') : 'Full End-to-End Travel Support'}</strong>.
+        </p>
+      `;
+    }
+
+    function applyPartnershipScopeToForm() {
+      const data = getPartnershipSummaryData();
+      selectInquiryTab('corporate');
+      document.getElementById('inq-destination').value = data.corridors.join(', ') || 'Global & Pan-India';
+      document.getElementById('inq-notes').value =
+        `Partnership Tier: ${data.tierName}\n` +
+        `Organization Profile: ${data.stage}\n` +
+        `Estimated Volume: ${data.volume}\n` +
+        `Modules Required: ${data.modules.join(', ') || 'End-to-End Mobility'}`;
+
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      showToast('Partnership Scope Pre-Filled', 'Your custom corporate mobility configuration has been loaded into the inquiry form.');
+    }
+
+    // -----------------------------------------------------------------------
+    // 4. DESTINATION SHOWCASE GRID WITH REGION FILTERS
+    // -----------------------------------------------------------------------
+    const destinations = [
+      {
+        name: 'Schengen Europe Circuits',
+        region: 'Europe',
+        tag: 'Business & Family Leisure',
+        duration: '7–14 Days',
+        visa: 'Full Schengen Visa Desk',
+        desc: 'Switzerland, France, Italy, Germany & Netherlands—curated family holidays, rail passes, and executive trade-fair travel.',
+        accent: 'from-[#1E1B7A] to-[#1952B5]'
+      },
+      {
+        name: 'Nepal & Himalayan Retreats',
+        region: 'Himalayas',
+        tag: 'Trekking, Spiritual & Wellness',
+        duration: '4–10 Days',
+        visa: 'Hassle-Free Entry Briefing',
+        desc: 'Kathmandu heritage, Pokhara wellness escapes, soft Himalayan treks, and guided spiritual journeys with vetted mountain guides.',
+        accent: 'from-[#1952B5] to-[#1E88E5]'
+      },
+      {
+        name: 'Southeast Asia & Dubai Hubs',
+        region: 'Asia',
+        tag: 'Short Breaks & Roadshows',
+        duration: '4–8 Days',
+        visa: 'Fast-Track e-Visa Support',
+        desc: 'Singapore, Dubai, Vietnam, Bali, and Thailand—ideal for founder summits, corporate offsites, and family island vacations.',
+        accent: 'from-[#1E1B7A] to-[#1E88E5]'
+      },
+      {
+        name: 'African Wildlife Safaris',
+        region: 'Africa',
+        tag: 'Signature Luxury & Adventure',
+        duration: '6–10 Days',
+        visa: 'e-Visa & Yellow Fever Advisory',
+        desc: 'Kenya Masai Mara, Tanzania Serengeti, and South Africa circuits combining private game drives with coastal extensions.',
+        accent: 'from-[#1952B5] to-[#1E1B7A]'
+      },
+      {
+        name: 'Incredible India Circuits',
+        region: 'India',
+        tag: 'Heritage, Hills & Corporate Offsites',
+        duration: '3–9 Days',
+        visa: 'Pan-India Ground Network',
+        desc: 'Rajasthan royal retreats, Kerala backwaters, Himachal & Uttarakhand hills, and Goa leadership offsites.',
+        accent: 'from-[#1E88E5] to-[#1952B5]'
+      },
+      {
+        name: 'UK & Global Financial Centers',
+        region: 'Europe',
+        tag: 'Startup Expansion & Roadshows',
+        duration: '5–12 Days',
+        visa: 'UK Standard Visitor / Business',
+        desc: 'London, Frankfurt, and Zurich executive itineraries with central business stays, airport transfers, and flexible ticketing.',
+        accent: 'from-[#1E1B7A] to-[#1952B5]'
+      }
+    ];
+
+    function renderDestinations(regionFilter = 'ALL') {
+      const grid = document.getElementById('destinations-grid');
+      const items = regionFilter === 'ALL' ? destinations : destinations.filter(d => d.region === regionFilter);
+
+      grid.innerHTML = items.map(d => `
+        <div class="rounded-3xl border border-slate-200/90 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="h-28 bg-gradient-to-r ${d.accent} p-6 flex flex-col justify-between text-white">
+              <div class="flex items-center justify-between text-[11px] font-bold">
+                <span class="px-2.5 py-0.5 rounded-full bg-white/15 backdrop-blur-sm">${d.tag}</span>
+                <span>${d.duration}</span>
+              </div>
+              <h3 class="text-xl font-extrabold tracking-tight">${d.name}</h3>
+            </div>
+            <div class="p-6 space-y-3">
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${d.desc}</p>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#F4F7FC] text-[#1E1B7A] text-xs font-bold">
+                <span>✓</span>
+                <span>${d.visa}</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <button type="button" onclick="inquireDestination('${d.name}')" class="w-full py-2.5 px-4 rounded-xl border border-[#1952B5]/30 hover:bg-[#F4F7FC] text-[#1E1B7A] text-xs font-bold transition-all">
+              Request Itinerary &amp; Quote →
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.querySelectorAll('.dest-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.dest-filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-[#1E1B7A]', 'text-white', 'font-bold');
+          b.classList.add('bg-[#F4F7FC]', 'text-slate-700', 'font-semibold');
+        });
+        btn.classList.add('active', 'bg-[#1E1B7A]', 'text-white', 'font-bold');
+        btn.classList.remove('bg-[#F4F7FC]', 'text-slate-700', 'font-semibold');
+        renderDestinations(btn.getAttribute('data-region'));
+      });
+    });
+
+    function inquireDestination(destName) {
+      selectInquiryTab('holiday');
+      document.getElementById('inq-destination').value = destName;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      showToast('Destination Selected', `Pre-filled "${destName}" in the consultation form below.`);
+    }
+
+    // -----------------------------------------------------------------------
+    // 5. DUAL-MODE INQUIRY FORM HANDLER
+    // -----------------------------------------------------------------------
+    function selectInquiryTab(mode) {
+      const corpTab = document.getElementById('inq-tab-corporate');
+      const holTab = document.getElementById('inq-tab-holiday');
+      const orgLabel = document.getElementById('inq-org-label');
+      const orgInput = document.getElementById('inq-org');
+      const typeInput = document.getElementById('inq-type');
+
+      if (mode === 'corporate') {
+        corpTab.className = 'py-3 px-4 rounded-xl text-xs sm:text-sm font-bold bg-[#1E1B7A] text-white shadow-sm transition-all';
+        holTab.className = 'py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all';
+        orgLabel.textContent = 'Company / Startup Name *';
+        orgInput.placeholder = 'e.g., NexaCloud Technologies';
+        typeInput.value = 'Startup / Corporate Partnership';
+      } else {
+        holTab.className = 'py-3 px-4 rounded-xl text-xs sm:text-sm font-bold bg-[#1E1B7A] text-white shadow-sm transition-all';
+        corpTab.className = 'py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all';
+        orgLabel.textContent = 'City / Number of Travelers *';
+        orgInput.placeholder = 'e.g., New Delhi • 4 Adults, 2 Kids';
+        typeInput.value = 'Individual / Group Holiday & Visa';
+      }
+    }
+
+    document.getElementById('gtg-inquiry-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('inq-name').value.trim();
+      const org = document.getElementById('inq-org').value.trim();
+      const type = document.getElementById('inq-type').value;
+      const dest = document.getElementById('inq-destination').value.trim() || 'Custom Itinerary';
+
+      const confirmBox = document.getElementById('inq-confirmation');
+      const confirmText = document.getElementById('inq-confirmation-text');
+      confirmText.textContent = `We have logged your ${type} request for ${name} (${org}) regarding ${dest}. A Go Travel Global consultant from our New Delhi desk will contact you within 4 business hours, or you can reach us immediately at +91-981 032 1155.`;
+      confirmBox.classList.remove('hidden');
+
+      showToast('Request Received', `Thank you, ${name}! Our New Delhi travel advisory desk has received your brief.`);
+      e.target.reset();
+    });
+
+    // Initialize Interactive Sections on Page Load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderHeroMode('startup');
+      renderServiceDetail('corp');
+      updatePartnershipSummary();
+      renderDestinations('ALL');
+    });
+  </script>
+</body>
+</html>

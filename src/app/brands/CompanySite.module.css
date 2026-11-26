@@ -1,12 +1,16 @@
 .site {
-  --company-gutter: clamp(20px, 6vw, 104px);
+  --company-gutter: clamp(20px, 5vw, 80px);
+  --section-space: clamp(38px, 5vw, 72px);
+  --body-ink: #374b5e;
+  --link-ink: color-mix(in srgb, var(--teal) 68%, var(--navy));
+  --panel-line: #dce5ec;
   --navy: #142d50;
   --teal: #17648a;
   --highlight: var(--teal);
   --mint: color-mix(in srgb, var(--teal) 9%, white);
   min-height: 100vh;
   color: var(--ink);
-  background: var(--paper);
+  background: #f7f9fc;
 }
 
 .site[data-company="employaa"] { --navy: #102f56; --teal: #096d90; --highlight: #ed9a23; }
@@ -59,7 +63,7 @@
 }
 
 .headerInner {
-  min-height: 82px;
+  min-height: 74px;
 }
 
 .logo {
@@ -89,20 +93,17 @@
   align-items: center;
   flex-wrap: wrap;
   gap: clamp(16px, 2.6vw, 34px);
-  font-size: 12px;
+  font-size: .9375rem;
   letter-spacing: 0.02em;
 }
 
 .navigation > a:not(.headerContact),
-.catalogLink,
 .dropdown summary {
   padding-block: 12px;
 }
 
 .navigation > a:not(.headerContact):hover,
 .navigation > a[aria-current="page"],
-.catalogLink:hover,
-.catalogLink[aria-current="page"],
 .dropdown summary:hover,
 .dropdownLinks a[aria-current="page"] {
   color: var(--navy);
@@ -113,22 +114,6 @@
 
 .dropdown {
   position: relative;
-}
-
-.catalogItem[data-split="true"] {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.catalogItem[data-split="true"] .dropdown {
-  position: static;
-}
-
-.catalogItem[data-split="true"] summary {
-  justify-content: center;
-  width: 34px;
-  min-height: 44px;
 }
 
 .dropdown summary {
@@ -159,12 +144,13 @@
   right: 0;
   display: grid;
   width: max-content;
-  max-width: 300px;
+  max-width: 330px;
   max-height: calc(100dvh - 90px);
   overflow-y: auto;
   scrollbar-width: none;
   padding: 8px;
   border: 1px solid var(--line);
+  border-radius: 12px;
   background: #fff;
   box-shadow: 0 18px 40px #071a3120;
 }
@@ -178,7 +164,7 @@
   background: var(--mint);
 }
 
-@media (min-width: 981px) {
+@media (min-width: 1100px) {
   .dropdownLinks[data-columns="true"] {
     width: min(480px, 54vw);
     max-width: none;
@@ -199,7 +185,10 @@
   padding: 0 12px;
   color: var(--navy);
   border: 1px solid var(--line);
-  font-size: 12px;
+  border-radius: 8px;
+  font-size: .9375rem;
+  font-weight: 650;
+  cursor: pointer;
 }
 
 .featurePhoto img,
@@ -219,6 +208,8 @@
 .bannerActions > :global(.button), .bannerActions > :global(.text-link) {
   margin: 0;
   max-width: 100%;
+  min-height: 44px;
+  font-size: .875rem;
 }
 
 .hero {
@@ -226,41 +217,72 @@
   align-items: end;
   position: relative;
   isolation: isolate;
-  min-height: clamp(490px, 72svh, 780px);
-  padding: clamp(64px, 9vh, 118px) 0;
+  min-height: clamp(480px, 67svh, 700px);
+  padding: clamp(52px, 8vh, 100px) 0;
   overflow: hidden;
   color: white;
   background: var(--navy);
 }
 
-.hero[data-compact="true"] { min-height: clamp(440px, 62svh, 680px); }
+.hero[data-compact="true"] {
+  min-height: clamp(290px, 44svh, 480px);
+  padding-block: clamp(42px, 6vh, 72px);
+}
 .hero > img { z-index: -2; object-fit: cover; object-position: center 44%; }
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--navy) 96%, transparent) 0%, color-mix(in srgb, var(--navy) 84%, transparent) 40%, transparent 95%),
-    linear-gradient(0deg, #07182c55, transparent 80%);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--navy) 96%, transparent) 0%, color-mix(in srgb, var(--navy) 88%, transparent) 42%, #091c3447 100%),
+    linear-gradient(0deg, #07182cb8, transparent 90%);
 }
-.heroCopy { width: min(1320px, calc(100% - 2 * var(--company-gutter))); margin-inline: auto; }
-.heroCopy > :global(.eyebrow) { color: white; border-left: 4px solid var(--highlight); padding-left: 12px; }
+.heroCopy { position: relative; width: min(1280px, calc(100% - 2 * var(--company-gutter))); margin-inline: auto; }
+.heroCopy > :global(.eyebrow) {
+  color: #fff;
+  border-left: 3px solid var(--highlight);
+  padding-left: 12px;
+  margin-bottom: 15px;
+  font-size: .875rem;
+  line-height: 1.45;
+  letter-spacing: .09em;
+}
 .heroCopy h1 {
-  margin: 0 0 22px;
-  max-width: 18ch;
-  font: 400 clamp(48px, 7vw, 106px)/.99 var(--serif);
-  letter-spacing: -.055em;
-  overflow-wrap: anywhere;
+  margin: 0 0 18px;
+  max-width: min(19ch, 820px);
+  color: #fff;
+  font: 400 clamp(39px, 5.9vw, 88px)/1.03 var(--serif);
+  letter-spacing: -.045em;
+  overflow-wrap: break-word;
   text-wrap: balance;
 }
+.hero[data-compact="true"] h1 { font-size: clamp(37px, 4.8vw, 68px); }
 .heroCopy > p:not(:global(.eyebrow)) {
   max-width: 59ch;
   color: #f4f7fb;
   font-size: clamp(16px, 1.4vw, 20px);
   line-height: 1.55;
 }
+.heroArt {
+  position: absolute;
+  z-index: 0;
+  inset: 10% 2% 10% auto;
+  width: min(36%, 540px);
+  pointer-events: none;
+}
+
+.bannerActions > :global(.button-light) {
+  background: #fff;
+  color: var(--navy);
+  border-color: #fff;
+}
+
+.bannerActions > :global(.button-light):hover {
+  background: #e8f1f8;
+  color: var(--navy);
+}
 .bannerActions {
-  margin-top: 24px;
+  margin-top: clamp(18px, 3vw, 30px);
 }
 
 .bannerActions .bannerLink {
@@ -269,15 +291,15 @@
 }
 
 .content {
-  width: min(1320px, calc(100% - 2 * var(--company-gutter)));
+  width: min(1280px, calc(100% - 2 * var(--company-gutter)));
   margin-inline: auto;
-  padding-block: clamp(44px, 6vw, 84px);
+  padding-block: var(--section-space);
 }
 
 .section {
-  margin-bottom: clamp(30px, 4vw, 52px);
-  padding-bottom: clamp(30px, 4vw, 52px);
-  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--section-space);
+  padding-bottom: var(--section-space);
+  border-bottom: 1px solid var(--panel-line);
 }
 
 .section,
@@ -289,16 +311,17 @@
 
 .section h2,
 .contact h2 {
-  margin: 0 0 25px;
+  margin: 0 0 16px;
   color: var(--navy);
-  font: 400 clamp(34px, 5vw, 58px)/1.05 var(--serif);
-  letter-spacing: -0.05em;
-  text-wrap: balance;
+  font: 400 clamp(30px, 4.2vw, 52px)/1.1 var(--serif);
+  letter-spacing: -.04em;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
-.sectionIntro {
-  max-width: 76ch;
-}
+.sectionCopy { min-width: 0; }
+.sectionCopy > p { max-width: 72ch; }
+.sectionIntro:has(.bullets):not(:has(.sectionGroups)) .bullets { max-width: 74ch; }
 
 .feature {
   display: grid;
@@ -309,16 +332,28 @@
 
 .featurePhoto {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   overflow: hidden;
+  border-radius: 18px;
   background: var(--mint);
 }
 
 .featureFigure { margin: 0; min-width: 0; }
 .subtitle { color: var(--navy); font-weight: 650; margin-bottom: 12px; }
-.points { display: grid; gap: 16px; margin-block: 22px 0; }
+.points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+  gap: 12px;
+  margin-block: 20px 0;
+}
+.points > div {
+  padding: clamp(14px, 2vw, 22px);
+  background: white;
+  border: 1px solid var(--panel-line);
+  border-radius: 12px;
+}
 .points dt { color: var(--navy); font-weight: 700; }
-.points dd { margin: 4px 0 0; line-height: 1.6; color: #465c69; }
+.points dd { margin: 6px 0 0; line-height: 1.6; color: var(--body-ink); }
 .profileIndex { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .profileIndex { margin-bottom: clamp(32px, 5vw, 64px); border-block: 1px solid var(--line); padding-block: 12px; }
 .profileIndex a { color: var(--teal); padding-block: 6px; text-decoration: underline; text-underline-offset: 4px; }
@@ -348,8 +383,9 @@
 .sectionCopy p,
 .card p,
 .bullets {
-  color: #61747b;
-  line-height: 1.75;
+  color: var(--body-ink);
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .sectionCopy p + p,
@@ -371,7 +407,7 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 285px), 1fr));
   gap: clamp(18px, 2vw, 32px);
 }
 
@@ -382,8 +418,10 @@
 .card {
   display: flex;
   min-width: 0;
-  border: 1px solid var(--line);
-  background: #f7faf8;
+  border: 1px solid var(--panel-line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px #142d500a;
 }
 
 .card h2,
@@ -403,13 +441,14 @@
   flex-direction: column;
   width: 100%;
   padding-bottom: 22px;
+  border-radius: inherit;
 }
 
 .serviceCard > :is(h3, p, span) { margin-inline: 22px; }
 .serviceCard > p { margin-bottom: 20px; }
 .serviceCard > h3:has(+ :global(.text-link)) { margin-bottom: 16px; }
-.serviceCard > :global(.text-link) { align-self: start; margin-top: auto; }
-.serviceCard .cardPhoto { aspect-ratio: 16 / 10; margin-bottom: 22px; }
+.serviceCard > :global(.text-link) { align-self: start; margin-top: auto; color: var(--link-ink); }
+.serviceCard .cardPhoto { aspect-ratio: 16 / 9; margin-bottom: 20px; border-radius: 15px 15px 0 0; }
 
 .site a:hover { text-underline-offset: 4px; }
 
@@ -434,8 +473,9 @@
   .feature { grid-template-columns: minmax(0, 1fr); }
   .feature[data-image-placement="portrait-left"] .featureFigure { grid-column: auto; grid-row: auto; }
   .feature[data-image-placement="portrait-left"] .featurePhoto { aspect-ratio: 6 / 5; }
-  .hero, .hero[data-compact="true"] { min-height: clamp(400px, 64svh, 630px); }
-  .hero::before { background: linear-gradient(90deg, #091c34ed 0%, #091c34ad 80%, #091c3473); }
+  .hero { min-height: clamp(365px, 57svh, 510px); }
+  .hero[data-compact="true"] { min-height: 290px; }
+  .hero::before { background: linear-gradient(110deg, #091c34f4 0%, #091c34bc 100%); }
   .contact { align-items: flex-start; flex-direction: column; }
   .contact .actions { align-items: flex-start; }
 }
@@ -444,6 +484,11 @@
   text-decoration: underline;
   text-decoration-color: var(--teal);
   text-underline-offset: 4px;
+}
+
+.serviceCard:hover,
+.serviceCard:focus-visible {
+  box-shadow: 0 12px 32px #142d5022;
 }
 
 .companyBackground {
@@ -561,7 +606,7 @@
 }
 
 .overviewLink {
-  margin: -28px 0 42px;
+  margin: 18px 0 0;
 }
 
 .cardPhoto {
@@ -575,7 +620,10 @@
 .contact {
   padding: clamp(32px, 5vw, 55px) clamp(24px, 5vw, 55px);
   background: var(--mint);
+  border-radius: 18px;
 }
+
+.contactDescription { max-width: 64ch; margin-top: 12px; line-height: 1.6; }
 
 .contact :global(.button-dark),
 .contact :global(.text-link) {
@@ -584,14 +632,14 @@
 }
 
 .footer {
-  padding-block: 24px;
+  padding-block: clamp(25px, 4vw, 44px);
   border-top: 1px solid #e3eae7;
   background: #fff;
 }
 
 .footer nav {
-  color: #5e7078;
-  font-size: 13px;
+  color: var(--body-ink);
+  font-size: .9375rem;
 }
 
 .footer nav a:hover {
@@ -599,7 +647,57 @@
   text-underline-offset: 4px;
 }
 
-@media (max-width: 980px) {
+.mobileSheet {
+  padding: 24px 20px;
+}
+
+.mobileTitle {
+  padding-right: 54px;
+  margin-bottom: 24px;
+  font: 400 1.75rem/1.15 var(--serif);
+}
+
+.mobileNav {
+  display: grid;
+  gap: 4px;
+}
+
+.mobileNav a,
+.mobileNav summary {
+  display: block;
+  min-height: 46px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  overflow-wrap: break-word;
+}
+
+.mobileNav summary { display: list-item; cursor: pointer; }
+.mobileNav a:hover,
+.mobileNav a[aria-current="page"],
+.mobileNav summary:hover { background: #edf3fb; }
+.mobileNav a[aria-current="page"] { font-weight: 700; }
+.mobileServices { margin-top: 8px; border-top: 1px solid #dce5ec; padding-top: 8px; }
+.mobileServices a { padding-inline-start: 24px; }
+
+.site:is([data-company="employaa"], [data-company="inceptura"], [data-company="leaders-pinnacle"]) .contact :global(.text-link) {
+  color: #fff;
+}
+
+@media (max-width: 1049px) {
+  .heroArt { display: none; }
+}
+
+@media (max-width: 420px) {
+  .heroCopy h1 { max-width: 100%; }
+  .bannerActions .bannerLink { min-height: 44px; }
+  .headerInner { gap: 8px; }
+  .header .logo { flex: 0 1 auto; gap: 7px; font-size: clamp(18px, 5.4vw, 21px); }
+  .header .logo .mark { width: 38px; }
+  .menuToggle { flex-shrink: 0; }
+}
+
+@media (max-width: 1099px) {
   .site {
     --company-gutter: 20px;
   }
@@ -613,63 +711,7 @@
     align-items: center;
   }
 
-  .navigation {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    display: none;
-    max-height: calc(100dvh - 68px);
-    overflow: auto;
-    scrollbar-width: none;
-    padding: 8px var(--company-gutter) 20px;
-    border-bottom: 1px solid var(--line);
-    background: #fff;
-    box-shadow: 0 12px 30px #081a3026;
-  }
-
-  .navigation[data-open="true"] {
-    display: grid;
-    gap: 0;
-  }
-
-  .navigation > a:not(.headerContact),
-  .dropdown summary {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .catalogItem[data-split="true"] {
-    display: block;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .catalogLink {
-    display: block;
-    min-height: 44px;
-    padding-right: 44px;
-  }
-
-  .catalogItem[data-split="true"] summary {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 44px;
-    border-bottom: 0;
-  }
-
-  .navigation > .headerContact {
-    justify-self: start;
-    margin-top: 12px;
-  }
-
-  .dropdownLinks {
-    position: static;
-    width: auto;
-    max-width: none;
-    max-height: none;
-    border: 0;
-    box-shadow: none;
-  }
+  .navigation { display: none; }
 
   .footerInner {
     align-items: flex-start;
@@ -739,15 +781,12 @@
 }
 
 .site[data-company="leaders-pinnacle"] .navigation > a:not(.headerContact),
-.site[data-company="leaders-pinnacle"] .catalogLink,
 .site[data-company="leaders-pinnacle"] .dropdown summary {
   color: #d6deee;
   font-weight: 500;
 }
 
 .site[data-company="leaders-pinnacle"] .navigation > a:not(.headerContact):hover,
-.site[data-company="leaders-pinnacle"] .catalogLink:hover,
-.site[data-company="leaders-pinnacle"] .catalogLink[aria-current="page"],
 .site[data-company="leaders-pinnacle"] .dropdown summary:hover,
 .site[data-company="leaders-pinnacle"] .navigation > a[aria-current="page"] {
   color: #ffffff;
@@ -784,42 +823,34 @@
   color: #e3c477;
 }
 
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero) {
-  background: radial-gradient(900px 420px at 85% 0%, rgba(200, 162, 74, 0.26), transparent 60%), radial-gradient(600px 320px at 15% 100%, rgba(0, 168, 232, 0.18), transparent 50%), linear-gradient(160deg, #0a1f44 0%, #13306a 65%, #060d1b 100%);
-}
-
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero-shade) {
-  background: linear-gradient(95deg, rgba(10, 31, 68, 0.94) 0%, rgba(19, 48, 106, 0.85) 45%, rgba(6, 13, 27, 0.72) 100%);
-}
-
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero-copy) :global(.eyebrow) {
+.site[data-company="leaders-pinnacle"] .heroCopy :global(.eyebrow) {
   color: #e3c477;
   letter-spacing: 0.16em;
   font-weight: 600;
 }
 
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero-copy) h1 {
+.site[data-company="leaders-pinnacle"] .heroCopy h1 {
   font-family: var(--serif);
   color: #ffffff;
 }
 
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero-copy) h1 em {
+.site[data-company="leaders-pinnacle"] .heroCopy h1 em {
   color: #e3c477;
   font-style: normal;
 }
 
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero-copy) > p:not(:global(.eyebrow)) {
+.site[data-company="leaders-pinnacle"] .heroCopy > p:not(:global(.eyebrow)) {
   color: #cdd7ec;
 }
 
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero-copy) :global(.button-light) {
+.site[data-company="leaders-pinnacle"] .heroCopy :global(.button-light) {
   background: #c8a24a;
   color: #0a1f44;
   border-color: #c8a24a;
   font-weight: 600;
 }
 
-.site[data-company="leaders-pinnacle"] :global(.brand-site-hero-copy) :global(.button-light):hover {
+.site[data-company="leaders-pinnacle"] .heroCopy :global(.button-light):hover {
   background: #e3c477;
   border-color: #e3c477;
   color: #0a1f44;
@@ -903,35 +934,10 @@
   background: #c8a24a;
 }
 
-.site[data-company="leaders-pinnacle"] .serviceCard {
-  border-radius: 16px;
-  border-color: #e1e6ef;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
 .site[data-company="leaders-pinnacle"] .serviceCard:hover {
   transform: translateY(-4px);
   border-color: #c8a24a;
   box-shadow: 0 14px 34px rgba(10, 31, 68, 0.12);
-}
-
-.site[data-company="leaders-pinnacle"] .serviceCard span {
-  color: #c8a24a;
-  font-weight: 700;
-}
-
-.site[data-company="leaders-pinnacle"] .serviceCard h3 {
-  color: #0a1f44;
-  font-family: var(--serif);
-}
-
-.site[data-company="leaders-pinnacle"] .serviceCard a {
-  color: #c8a24a;
-  font-weight: 600;
-}
-
-.site[data-company="leaders-pinnacle"] .serviceCard a:hover {
-  color: #e3c477;
 }
 
 .site[data-company="leaders-pinnacle"] .contact {
@@ -975,20 +981,140 @@
   color: #e3c477;
 }
 
-@media (max-width: 980px) {
-  .site[data-company="leaders-pinnacle"] .navigation {
-    background: #0a1f44;
-    border-color: rgba(200, 162, 74, 0.25);
-  }
-
-  .site[data-company="leaders-pinnacle"] .navigation > a:not(.headerContact),
-  .site[data-company="leaders-pinnacle"] .catalogItem[data-split="true"],
-  .site[data-company="leaders-pinnacle"] .dropdown summary {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
+@media (max-width: 1099px) {
   .site[data-company="leaders-pinnacle"] .menuToggle {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.3);
   }
+}
+
+/* =========================================================
+   Inceptura Brand Theme (Four-Diamond Navy/Sapphire/Azure/Ice)
+   ========================================================= */
+.site[data-company="inceptura"] {
+  --navy: #052242;
+  --navy2: #0a4d8c;
+  --teal: #1575d1;
+}
+
+.site[data-company="inceptura"] .header {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(5, 34, 66, 0.1);
+}
+
+.site[data-company="inceptura"] .headerContact {
+  background: #052242 !important;
+  color: #fff !important;
+  border-color: #052242 !important;
+}
+
+.site[data-company="inceptura"] .headerContact:hover {
+  background: #1575d1 !important;
+  border-color: #1575d1 !important;
+}
+
+.site[data-company="inceptura"] .heroCopy :global(.eyebrow) {
+  color: #7bc0f8;
+}
+
+.site[data-company="inceptura"] .heroCopy :global(.button-light) {
+  background: #1575d1;
+  color: #fff;
+  border-color: #1575d1;
+}
+
+.site[data-company="inceptura"] .contact {
+  background: linear-gradient(135deg, #052242 0%, #0a4d8c 100%);
+  color: #fff;
+  border-radius: 22px;
+  padding: 48px var(--company-gutter);
+}
+
+.site[data-company="inceptura"] .contact h2 {
+  color: #fff;
+}
+
+.site[data-company="inceptura"] .contact :global(.button-dark) {
+  background: #1575d1;
+  color: #fff;
+  border-color: #1575d1;
+}
+
+/* =========================================================
+   Employaa Brand Theme (Cerulean Blue & Warm Amber Logo)
+   ========================================================= */
+.site[data-company="employaa"] {
+  --navy: #0b2545;
+  --teal: #0077c8;
+}
+
+.site[data-company="employaa"] .header {
+  background: #ffffff;
+  border-bottom: 1px solid #d9eaf6;
+}
+
+.site[data-company="employaa"] .headerContact {
+  background: #0077c8 !important;
+  color: #ffffff !important;
+  border-color: #0077c8 !important;
+}
+
+.site[data-company="employaa"] .headerContact:hover {
+  background: #0b2545 !important;
+  border-color: #0b2545 !important;
+  color: #ffffff !important;
+}
+
+.site[data-company="employaa"] .heroCopy :global(.eyebrow) {
+  color: #fbb03b;
+}
+
+.site[data-company="employaa"] .heroCopy :global(.button-light) {
+  background: #0077c8;
+  color: #ffffff;
+  border-color: #0077c8;
+  font-weight: 700;
+}
+
+.site[data-company="employaa"] .heroCopy :global(.button-light):hover {
+  background: #00aeef;
+  border-color: #00aeef;
+  color: #0b2545;
+}
+
+.site[data-company="employaa"] .statsStrip {
+  background: #0b2545;
+  border-top: 1px solid rgba(0, 174, 239, 0.25);
+  border-bottom: 1px solid rgba(0, 174, 239, 0.25);
+}
+
+.site[data-company="employaa"] .statItem b {
+  color: #fbb03b;
+}
+
+.site[data-company="employaa"] .statItem span {
+  color: #cbe6f8;
+}
+
+.site[data-company="employaa"] .contact {
+  background: linear-gradient(135deg, #0b2545 0%, #0d3a68 65%, #0077c8 100%);
+  color: #ffffff;
+  border-radius: 22px;
+  padding: 48px var(--company-gutter);
+}
+
+.site[data-company="employaa"] .contact h2 {
+  color: #ffffff;
+}
+
+.site[data-company="employaa"] .contact :global(.button-dark) {
+  background: #f58220;
+  color: #0b2545;
+  border-color: #f58220;
+  font-weight: 700;
+}
+
+.site[data-company="employaa"] .contact :global(.button-dark):hover {
+  background: #fbb03b;
+  border-color: #fbb03b;
 }

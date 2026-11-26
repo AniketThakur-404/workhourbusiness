@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -28,7 +34,23 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    ".next-inceptura/types/**/*.ts",
+    ".next-inceptura/dev/types/**/*.ts",
+    ".next-employaa/types/**/*.ts",
+    ".next-employaa/dev/types/**/*.ts",
+    ".next-leaders-pinnacle/types/**/*.ts",
+    ".next-leaders-pinnacle/dev/types/**/*.ts",
+    ".next-go-travel-global/types/**/*.ts",
+    ".next-go-travel-global/dev/types/**/*.ts",
+    ".next-thinkrunspace/types/**/*.ts",
+    ".next-thinkrunspace/dev/types/**/*.ts",
+    ".next-elevatrain/types/**/*.ts",
+    ".next-elevatrain/dev/types/**/*.ts",
+    ".next-remunerax/types/**/*.ts",
+    ".next-remunerax/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

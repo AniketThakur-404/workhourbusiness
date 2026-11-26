@@ -94,6 +94,7 @@ const groups: { label: string; href?: string; links: NavLink[] }[] = [
   { label: "About Us", href: "/about/", links: aboutLinks },
   {
     label: "Portfolio",
+    href: "/businesses/",
     links: companyLinks,
   },
   {

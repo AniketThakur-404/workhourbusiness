@@ -1,0 +1,39 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: #08182a9e;
+}
+
+.content {
+  position: fixed;
+  inset: 0 0 0 auto;
+  z-index: 50;
+  width: min(92vw, 400px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: white;
+  color: #122b40;
+  box-shadow: -16px 0 60px #08182a33;
+}
+
+.close {
+  position: absolute;
+  inset: 16px 16px auto auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d9e2eb;
+  border-radius: 50%;
+  background: #f5f8fb;
+  color: #122b40;
+  cursor: pointer;
+  font: 28px/1 system-ui;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .overlay[data-state="open"] { animation: fade-in .2s ease-out both; }
+  .content[data-state="open"] { animation: slide-in .25s ease-out both; }
+}
+
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes slide-in { from { transform: translateX(100%); } }

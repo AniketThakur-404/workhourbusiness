@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inceptura | From the First Spark of Ideation to Global Execution</title>
+  <meta name="description" content="Inceptura, a Group Company of WorkHour Business, is a unified growth suite guiding startups, entrepreneurs, and expanding enterprises from ideation to global execution." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            inceptura: {
+              navy: '#052242',
+              sapphire: '#0A4D8C',
+              azure: '#1575D1',
+              ice: '#7BC0F8',
+              surface: '#F4F8FC',
+            }
+          },
+          boxShadow: {
+            'card': '0 10px 30px -5px rgba(5, 34, 66, 0.06), 0 4px 12px -2px rgba(5, 34, 66, 0.03)',
+            'card-hover': '0 20px 40px -8px rgba(10, 77, 140, 0.14), 0 8px 16px -4px rgba(5, 34, 66, 0.06)',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #052242;
+      background-color: #FFFFFF;
+    }
+    .hero-grid-bg {
+      background-image: radial-gradient(rgba(10, 77, 140, 0.09) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .diamond-pulse {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .group:hover .diamond-pulse {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#7BC0F8]/30 selection:text-[#052242]">
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY NAVIGATION BAR                                              -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#052242]/10 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Exact Inceptura Four-Diamond SVG Logo -->
+        <a href="#top" class="flex items-center gap-3.5 group focus:outline-none">
+          <svg class="w-11 h-11 shrink-0 diamond-pulse" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Inceptura Logo">
+            <!-- Top Diamond: Deep Midnight Navy (#052242) with Wi-Fi / Connectivity Icon -->
+            <g transform="translate(50 26) rotate(45)">
+              <rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#052242" />
+            </g>
+            <path d="M41.5 23.5C46.2 19.5 53.8 19.5 58.5 23.5" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
+            <path d="M44.5 27C47.7 24.3 52.3 24.3 55.5 27" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
+            <circle cx="50" cy="30.5" r="2" fill="#FFFFFF" />
+
+            <!-- Right Diamond: Ocean Sapphire Blue (#0A4D8C) with Downward Integration / Intake Icon -->
+            <g transform="translate(74 50) rotate(45)">
+              <rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#0A4D8C" />
+            </g>
+            <path d="M74 42V48.5M74 48.5L71.5 46M74 48.5L76.5 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M67.5 46.5L71 50M71 50H68.5M71 50V47.5" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M80.5 46.5L77 50M77 50H79.5M77 50V47.5" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M67 52V55.5H81V52" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+
+            <!-- Bottom Diamond: Vibrant Azure Blue (#1575D1) with Laptop & Gears Execution Icon -->
+            <g transform="translate(50 74) rotate(45)">
+              <rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#1575D1" />
+            </g>
+            <rect x="42.5" y="67.5" width="15" height="10" rx="1.5" stroke="#FFFFFF" stroke-width="1.9" />
+            <path d="M40.5 79H59.5" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" />
+            <circle cx="48.2" cy="72.5" r="2.2" stroke="#FFFFFF" stroke-width="1.5" />
+            <circle cx="52.6" cy="73.2" r="1.6" stroke="#FFFFFF" stroke-width="1.4" />
+
+            <!-- Left Diamond: Ice Sky Blue (#7BC0F8) with 4-Point Spark / Ideation Star Icon -->
+            <g transform="translate(26 50) rotate(45)">
+              <rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#7BC0F8" />
+            </g>
+            <path d="M26 42.5L28 48L33.5 50L28 52L26 57.5L24 52L18.5 50L24 48L26 42.5Z" fill="#FFFFFF" />
+          </svg>
+
+          <div class="flex flex-col">
+            <span class="text-2xl font-extrabold tracking-tight text-[#052242] leading-none">Inceptura</span>
+            <span class="text-[11px] font-medium text-[#0A4D8C] tracking-wide mt-1">A Group Company of WorkHour Business</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-[#052242]/80">
+          <a href="#why-inceptura" class="hover:text-[#1575D1] transition-colors">Why Inceptura</a>
+          <a href="#unified-suite" class="hover:text-[#1575D1] transition-colors">The Unified Suite</a>
+          <a href="#partnership-tracks" class="hover:text-[#1575D1] transition-colors">Partnership Tracks</a>
+          <a href="#how-we-embed" class="hover:text-[#1575D1] transition-colors">How We Embed</a>
+          <a href="#partner-with-us" class="hover:text-[#1575D1] transition-colors">Partner With Us</a>
+        </nav>
+
+        <!-- Primary CTA + Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#partner-with-us" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#052242] hover:bg-[#0A4D8C] text-white text-sm font-semibold shadow-sm transition-all">
+            Start a Partnership
+          </a>
+          <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-xl text-[#052242] hover:bg-[#F4F8FC] focus:outline-none" aria-label="Toggle Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-[#052242]/10 px-4 pt-3 pb-5 space-y-2">
+      <a href="#why-inceptura" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#052242] hover:bg-[#F4F8FC]">Why Inceptura</a>
+      <a href="#unified-suite" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#052242] hover:bg-[#F4F8FC]">The Unified Suite</a>
+      <a href="#partnership-tracks" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#052242] hover:bg-[#F4F8FC]">Partnership Tracks</a>
+      <a href="#how-we-embed" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#052242] hover:bg-[#F4F8FC]">How We Embed</a>
+      <a href="#partner-with-us" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-[#052242] hover:bg-[#F4F8FC]">Partner With Us</a>
+      <a href="#partner-with-us" class="block w-full text-center mt-2 px-5 py-3 rounded-xl bg-[#052242] text-white text-sm font-semibold">Start a Partnership</a>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 2. HERO SECTION                                                       -->
+  <!-- ===================================================================== -->
+  <section id="top" class="relative overflow-hidden bg-gradient-to-b from-[#F4F8FC] via-white to-white hero-grid-bg pt-14 pb-20 lg:pt-20 lg:pb-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <!-- Left Content Column -->
+        <div class="lg:col-span-7 space-y-7">
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-[#1575D1]/25 shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#1575D1]"></span>
+            <span class="text-xs sm:text-sm font-semibold text-[#0A4D8C]">From the First Spark of Ideation to Global Execution</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#052242] tracking-tight leading-[1.12]">
+            Great Ideas Rarely Fail From Lack of Vision. <span class="text-[#1575D1]">They Stall in Execution.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-[#052242]/80 leading-relaxed max-w-2xl">
+            Most founders lose months juggling disconnected incorporation lawyers, recruitment agencies, event vendors, travel coordinators, and cross-border consultants. <strong>Inceptura</strong> replaces that chaos with one unified, embedded operational engine—guiding startups, entrepreneurs, and expanding enterprises from day-one company registration to global market launches.
+          </p>
+
+          <!-- Unified Suite Guarantee Banner -->
+          <div class="p-4 rounded-2xl bg-[#052242] text-white flex items-start sm:items-center gap-3.5 max-w-2xl shadow-card">
+            <div class="w-9 h-9 rounded-xl bg-[#1575D1] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <p class="text-xs sm:text-sm text-white/90 leading-relaxed">
+              <strong class="text-[#7BC0F8]">One Integrated Suite—Never Sold À La Carte:</strong> We do not sell isolated, standalone services. Every Inceptura partnership unites legal, strategy, talent, events, travel, international expansion, and revenue governance under one accountable roof.
+            </p>
+          </div>
+
+          <!-- Interactive Quick Growth Stage Selector -->
+          <div class="pt-1">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#0A4D8C] mb-3">Explore Your Growth Stage:</p>
+            <div class="flex flex-wrap gap-2.5" id="hero-stage-pills">
+              <button type="button" data-stage="ideation" class="hero-pill active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#1575D1] text-white shadow-sm transition-all">
+                0-to-1 Startup Launch
+              </button>
+              <button type="button" data-stage="scale" class="hero-pill px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-[#052242] border border-[#052242]/15 hover:border-[#1575D1] transition-all">
+                Scaling Operations &amp; Fundraising
+              </button>
+              <button type="button" data-stage="global" class="hero-pill px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-[#052242] border border-[#052242]/15 hover:border-[#1575D1] transition-all">
+                International Market Expansion
+              </button>
+            </div>
+            <!-- Dynamic Stage Preview Box -->
+            <div id="hero-stage-preview" class="mt-3.5 p-4 rounded-2xl bg-white border border-[#1575D1]/20 shadow-card max-w-2xl">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <span id="hero-preview-tag" class="text-xs font-bold text-[#1575D1] uppercase tracking-wider">Ideation-to-Launch Suite</span>
+                  <p id="hero-preview-text" class="text-sm text-[#052242]/85 mt-1">
+                    Incorporation, shareholder agreements, GTM validation, founding team hiring, investor pitch events, and founder travel—synchronized from day one.
+                  </p>
+                </div>
+                <a href="#partnership-tracks" class="shrink-0 inline-flex items-center gap-1.5 text-xs font-bold text-[#0A4D8C] hover:text-[#1575D1]">
+                  View Track
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary & Secondary Hero Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a href="#partner-with-us" class="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-[#1575D1] hover:bg-[#0A4D8C] text-white font-bold text-sm sm:text-base shadow-card-hover transition-all">
+              Request a Partnership Briefing
+            </a>
+            <a href="#unified-suite" class="inline-flex items-center justify-center px-6 py-4 rounded-xl bg-white hover:bg-[#F4F8FC] text-[#052242] border border-[#052242]/15 font-semibold text-sm sm:text-base transition-all">
+              Explore the 7-Pillar Suite
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Interactive Brand Ecosystem Visual -->
+        <div class="lg:col-span-5">
+          <div class="relative bg-white rounded-3xl p-7 sm:p-9 border border-[#052242]/10 shadow-card">
+            <div class="flex items-center justify-between border-b border-[#052242]/10 pb-4 mb-6">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#1575D1]">The Inceptura Architecture</span>
+                <h2 class="text-lg font-extrabold text-[#052242] mt-0.5">Four Quadrants. Seven Pillars. One Partner.</h2>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-[#F4F8FC] text-[#0A4D8C] text-xs font-bold">Unified Model</span>
+            </div>
+
+            <!-- Interactive 4-Diamond Quadrant Matrix matching the Logo -->
+            <div class="grid grid-cols-2 gap-3.5">
+              <!-- Quadrant 1: Ice Sky Blue (#7BC0F8) - Ideation -->
+              <div class="p-4 rounded-2xl bg-[#7BC0F8]/20 border border-[#7BC0F8]/60">
+                <div class="w-9 h-9 rounded-xl bg-[#7BC0F8] text-[#052242] flex items-center justify-center mb-3 font-bold">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg>
+                </div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#0A4D8C]">01 • Ideation Spark</span>
+                <h3 class="text-sm font-extrabold text-[#052242] mt-1">Strategy &amp; Structuring</h3>
+                <p class="text-xs text-[#052242]/75 mt-1.5 leading-relaxed">Model validation, unit economics, entity incorporation &amp; investor-ready governance.</p>
+              </div>
+
+              <!-- Quadrant 2: Deep Midnight Navy (#052242) - Global Connectivity -->
+              <div class="p-4 rounded-2xl bg-[#052242] text-white">
+                <div class="w-9 h-9 rounded-xl bg-white/15 text-[#7BC0F8] flex items-center justify-center mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+                </div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#7BC0F8]">02 • Global Reach</span>
+                <h3 class="text-sm font-extrabold text-white mt-1">Cross-Border Scale</h3>
+                <p class="text-xs text-white/80 mt-1.5 leading-relaxed">International entity setup, local licensing, vetted regional networks &amp; entry playbooks.</p>
+              </div>
+
+              <!-- Quadrant 3: Vibrant Azure Blue (#1575D1) - Execution Engine -->
+              <div class="p-4 rounded-2xl bg-[#1575D1] text-white">
+                <div class="w-9 h-9 rounded-xl bg-white/15 text-white flex items-center justify-center mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-white/85">03 • Core Operations</span>
+                <h3 class="text-sm font-extrabold text-white mt-1">Talent, Events &amp; Travel</h3>
+                <p class="text-xs text-white/85 mt-1.5 leading-relaxed">Hiring &amp; payroll, investor demo days, product launches &amp; corporate travel logistics.</p>
+              </div>
+
+              <!-- Quadrant 4: Ocean Sapphire Blue (#0A4D8C) - Revenue Integration -->
+              <div class="p-4 rounded-2xl bg-[#0A4D8C] text-white">
+                <div class="w-9 h-9 rounded-xl bg-white/15 text-[#7BC0F8] flex items-center justify-center mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#7BC0F8]">04 • Revenue Clarity</span>
+                <h3 class="text-sm font-extrabold text-white mt-1">KPIs &amp; Board Reporting</h3>
+                <p class="text-xs text-white/85 mt-1.5 leading-relaxed">Proactive revenue leak checks, funnel conversion tracking &amp; investor-grade dashboards.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-[#052242]/10 flex items-center justify-between text-xs text-[#052242]/70">
+              <span>Single Relationship Lead</span>
+              <span class="font-bold text-[#0A4D8C]">Zero Handoff Friction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. THE FOUNDER'S BOTTLENECK VS. INCEPTURA'S UNIFIED SOLUTION          -->
+  <!-- ===================================================================== -->
+  <section id="why-inceptura" class="py-20 lg:py-28 bg-white border-t border-[#052242]/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#1575D1]">Why Founders &amp; CEOs Partner With Us</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#052242] mt-2 tracking-tight">
+          Stop Patching Growth With Disconnected Vendors
+        </h2>
+        <p class="text-base text-[#052242]/75 mt-4 leading-relaxed">
+          When your legal advisor doesn’t talk to your growth strategist, and your event planner isn’t aligned with your international travel or hiring roadmap, momentum leaks at every seam. Toggle below to see how Inceptura resolves the six core bottlenecks of scaling.
+        </p>
+
+        <!-- Interactive View Toggle -->
+        <div class="inline-flex items-center p-1.5 rounded-2xl bg-[#F4F8FC] border border-[#052242]/10 mt-7">
+          <button type="button" id="btn-compare-both" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#052242] text-white shadow-sm transition-all">
+            Side-by-Side Comparison
+          </button>
+          <button type="button" id="btn-compare-friction" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-[#052242]/75 hover:text-[#052242] transition-all">
+            The Founder Friction
+          </button>
+          <button type="button" id="btn-compare-solution" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-[#052242]/75 hover:text-[#052242] transition-all">
+            The Inceptura Engine
+          </button>
+        </div>
+      </div>
+
+      <!-- 6 Bottleneck-to-Resolution Cards -->
+      <div id="bottleneck-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-2xl bg-[#F4F8FC] border border-[#052242]/10 p-6 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div class="friction-block mb-4 pb-4 border-b border-[#052242]/10">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-red-50 text-red-700 text-[11px] font-bold uppercase tracking-wider">The Friction</span>
+            <h3 class="text-base font-bold text-[#052242] mt-2">Error-Prone Filings &amp; Late Compliance</h3>
+            <p class="text-sm text-[#052242]/70 mt-1">Rushed incorporation and missing statutory governance create painful red flags during institutional due diligence.</p>
+          </div>
+          <div class="solution-block">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1575D1]/15 text-[#0A4D8C] text-[11px] font-bold uppercase tracking-wider">Inceptura Resolution</span>
+            <h4 class="text-base font-bold text-[#0A4D8C] mt-2">Investor-Ready Legal Architecture</h4>
+            <p class="text-sm text-[#052242]/85 mt-1">Entity structuring, shareholder agreements, and automated compliance calendars built from day one for future funding and cross-border scale.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-2xl bg-[#F4F8FC] border border-[#052242]/10 p-6 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div class="friction-block mb-4 pb-4 border-b border-[#052242]/10">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-red-50 text-red-700 text-[11px] font-bold uppercase tracking-wider">The Friction</span>
+            <h3 class="text-base font-bold text-[#052242] mt-2">Strategy Disconnected From Funding Cycles</h3>
+            <p class="text-sm text-[#052242]/70 mt-1">Slide-deck strategies look good in boardrooms but lack unit-economic rigor or quarterly execution KPIs.</p>
+          </div>
+          <div class="solution-block">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1575D1]/15 text-[#0A4D8C] text-[11px] font-bold uppercase tracking-wider">Inceptura Resolution</span>
+            <h4 class="text-base font-bold text-[#0A4D8C] mt-2">Milestone-Linked GTM &amp; Operating Plans</h4>
+            <p class="text-sm text-[#052242]/85 mt-1">Validated problem-solution fit, unit economics modeling, and quarterly operating roadmaps directly tied to investor narrative readiness.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-2xl bg-[#F4F8FC] border border-[#052242]/10 p-6 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div class="friction-block mb-4 pb-4 border-b border-[#052242]/10">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-red-50 text-red-700 text-[11px] font-bold uppercase tracking-wider">The Friction</span>
+            <h3 class="text-base font-bold text-[#052242] mt-2">Slow Hiring &amp; Statutory Payroll Traps</h3>
+            <p class="text-sm text-[#052242]/70 mt-1">Competing for scarce talent without employer branding or structured payroll compliance slows down product velocity.</p>
+          </div>
+          <div class="solution-block">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1575D1]/15 text-[#0A4D8C] text-[11px] font-bold uppercase tracking-wider">Inceptura Resolution</span>
+            <h4 class="text-base font-bold text-[#0A4D8C] mt-2">Milestone Talent &amp; Compliant Payroll</h4>
+            <p class="text-sm text-[#052242]/85 mt-1">Competency-mapped recruiting, structured onboarding, and transparent statutory payroll administration aligned to product milestones.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="rounded-2xl bg-[#F4F8FC] border border-[#052242]/10 p-6 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div class="friction-block mb-4 pb-4 border-b border-[#052242]/10">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-red-50 text-red-700 text-[11px] font-bold uppercase tracking-wider">The Friction</span>
+            <h3 class="text-base font-bold text-[#052242] mt-2">Uncoordinated Launches &amp; Investor Events</h3>
+            <p class="text-sm text-[#052242]/70 mt-1">Product launches, demo days, and leadership offsites drain founder bandwidth when vendors work in isolation.</p>
+          </div>
+          <div class="solution-block">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1575D1]/15 text-[#0A4D8C] text-[11px] font-bold uppercase tracking-wider">Inceptura Resolution</span>
+            <h4 class="text-base font-bold text-[#0A4D8C] mt-2">Outcome-Driven Event Production</h4>
+            <p class="text-sm text-[#052242]/85 mt-1">End-to-end orchestration of investor pitch days, regional roadshows, product launches, and team offsites engineered for measurable pipeline and press.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="rounded-2xl bg-[#F4F8FC] border border-[#052242]/10 p-6 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div class="friction-block mb-4 pb-4 border-b border-[#052242]/10">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-red-50 text-red-700 text-[11px] font-bold uppercase tracking-wider">The Friction</span>
+            <h3 class="text-base font-bold text-[#052242] mt-2">Runaway Travel &amp; Field Logistics Costs</h3>
+            <p class="text-sm text-[#052242]/70 mt-1">Distributed teams booking ad-hoc flights, hotels, and roadshow logistics cause budget overruns and messy expense reconciliation.</p>
+          </div>
+          <div class="solution-block">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1575D1]/15 text-[#0A4D8C] text-[11px] font-bold uppercase tracking-wider">Inceptura Resolution</span>
+            <h4 class="text-base font-bold text-[#0A4D8C] mt-2">Governed Corporate Travel &amp; Logistics</h4>
+            <p class="text-sm text-[#052242]/85 mt-1">Centralized travel policies, negotiated corporate vendor rates, field-team roadshow logistics, and clean finance-ready expense reporting.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="rounded-2xl bg-[#F4F8FC] border border-[#052242]/10 p-6 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div class="friction-block mb-4 pb-4 border-b border-[#052242]/10">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-red-50 text-red-700 text-[11px] font-bold uppercase tracking-wider">The Friction</span>
+            <h3 class="text-base font-bold text-[#052242] mt-2">Blind Cross-Border Entry &amp; Reactive Revenue</h3>
+            <p class="text-sm text-[#052242]/70 mt-1">Entering new countries without local tax clarity or real-time revenue leak tracking stalls international expansion.</p>
+          </div>
+          <div class="solution-block">
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-[#1575D1]/15 text-[#0A4D8C] text-[11px] font-bold uppercase tracking-wider">Inceptura Resolution</span>
+            <h4 class="text-base font-bold text-[#0A4D8C] mt-2">Phased Global Entry &amp; Revenue Telemetry</h4>
+            <p class="text-sm text-[#052242]/85 mt-1">Cross-border entity structuring, vetted local partners, and live KPI dashboards that catch revenue leaks and protect unit economics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. INTERACTIVE '7-PILLAR UNIFIED SUITE' EXPLORER                      -->
+  <!-- ===================================================================== -->
+  <section id="unified-suite" class="py-20 lg:py-28 bg-[#F4F8FC] border-y border-[#052242]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Non-Individual Suite Policy Callout -->
+      <div class="bg-[#052242] rounded-3xl p-7 sm:p-10 text-white mb-14 shadow-card">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1575D1]/30 border border-[#7BC0F8]/30 text-[#7BC0F8] text-xs font-bold uppercase tracking-wider">
+              Our Core Operating Principle
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+              Why We Never Sell Services Individually
+            </h2>
+            <p class="text-sm sm:text-base text-white/85 leading-relaxed">
+              Hiring a standalone event agency when your market-entry strategy isn’t locked—or incorporating a foreign subsidiary without local payroll, travel logistics, and revenue tracking—creates expensive friction. <strong>None of Inceptura’s seven pillars are sold à la carte.</strong> Every engagement operates as a cohesive, interconnected growth suite tailored to your stage so strategy, legal, talent, events, travel, and international expansion reinforce each other automatically.
+            </p>
+          </div>
+          <div class="lg:col-span-4 bg-white/5 border border-white/15 rounded-2xl p-5 space-y-3">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#7BC0F8]">The Compounding Suite Effect</p>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-white/90">
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-[#1575D1] text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                One unified governance &amp; billing relationship
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-[#1575D1] text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                Zero context lost between strategy &amp; execution
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-[#1575D1] text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                Faster time-to-market across new geographies
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Heading -->
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#1575D1]">Interactive Suite Explorer</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-[#052242] mt-1.5">
+          Explore the 7 Interconnected Pillars of Inceptura
+        </h3>
+        <p class="text-sm sm:text-base text-[#052242]/75 mt-2">
+          Select any pillar below to inspect its core deliverables, founder impact, and how it interlocks with the rest of your growth engine.
+        </p>
+      </div>
+
+      <!-- Interactive Pillar Selector + Detail Panel -->
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <!-- Left Navigation Tabs (7 Pillars) -->
+        <div class="lg:col-span-5 flex flex-col gap-2.5" id="pillar-tabs" role="tablist">
+          <!-- Populated & hydrated cleanly via JS + static fallback -->
+        </div>
+
+        <!-- Right Dynamic Pillar Detail Card -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-7 sm:p-10 border border-[#052242]/10 shadow-card" id="pillar-detail-panel">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 5. STAGE-BASED PARTNERSHIP TRACKS & INTERACTIVE SCOPE CONFIGURATOR    -->
+  <!-- ===================================================================== -->
+  <section id="partnership-tracks" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#1575D1]">Holistic Engagement Architecture</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#052242] mt-2 tracking-tight">
+          Three Stage-Based Partnership Tracks
+        </h2>
+        <p class="text-base text-[#052242]/75 mt-3 leading-relaxed">
+          Because we never fragment our capabilities into isolated vendor contracts, you engage Inceptura through a holistic track matched to your current inflection point.
+        </p>
+      </div>
+
+      <!-- 3 Partnership Track Cards -->
+      <div class="grid lg:grid-cols-3 gap-7 mb-16">
+        <!-- Track 1: Ideation-to-Launch Suite -->
+        <div class="rounded-3xl bg-[#F4F8FC] border border-[#052242]/10 p-7 sm:p-8 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-[#7BC0F8]/30 text-[#052242] text-xs font-extrabold uppercase tracking-wider">Track 01 • Startups</span>
+              <span class="text-xs font-bold text-[#0A4D8C]">0-to-1 Foundation</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#052242]">Ideation-to-Launch Suite</h3>
+            <p class="text-sm text-[#052242]/75 mt-2.5 leading-relaxed">
+              Built for founders and early-stage ventures turning a validated concept into an investor-ready, legally sound operating company.
+            </p>
+
+            <div class="mt-6 pt-5 border-t border-[#052242]/10">
+              <p class="text-xs font-bold uppercase tracking-wider text-[#0A4D8C] mb-3">Included Unified Suite Pillars:</p>
+              <ul class="space-y-2.5 text-sm text-[#052242]/90">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#052242] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                  <span><strong>Company Registration &amp; Compliance:</strong> Incorporation, statutory licenses, shareholder agreements &amp; compliance calendar.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#052242] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                  <span><strong>Business Strategy &amp; Growth Planning:</strong> Problem-solution validation, unit economics &amp; investor pitch readiness.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#1575D1] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">+</span>
+                  <span><strong>Integrated Launch Support:</strong> Founding leadership hiring, payroll setup, investor demo days &amp; founder travel coordination.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-[#052242]/10">
+            <button type="button" onclick="selectConfiguratorPreset('Ideation-to-Launch Suite')" class="w-full py-3.5 px-5 rounded-xl bg-white hover:bg-[#052242] text-[#052242] hover:text-white border border-[#052242]/20 font-bold text-sm transition-all">
+              Configure Ideation-to-Launch Scope
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 2: Scale & Operations Suite (Highlighted) -->
+        <div class="rounded-3xl bg-[#052242] text-white p-7 sm:p-8 flex flex-col justify-between shadow-card-hover relative ring-2 ring-[#1575D1]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-[#1575D1] text-white text-xs font-extrabold uppercase tracking-wider">Track 02 • Growth Stage</span>
+              <span class="text-xs font-bold text-[#7BC0F8]">Most Selected</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-white">Scale &amp; Operations Suite</h3>
+            <p class="text-sm text-white/80 mt-2.5 leading-relaxed">
+              Designed for post-seed and Series A/B companies scaling teams, customer acquisition, roadshows, and board-level revenue visibility.
+            </p>
+
+            <div class="mt-6 pt-5 border-t border-white/15">
+              <p class="text-xs font-bold uppercase tracking-wider text-[#7BC0F8] mb-3">Included Unified Suite Pillars:</p>
+              <ul class="space-y-2.5 text-sm text-white/90">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#1575D1] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                  <span><strong>Talent Acquisition &amp; Payroll:</strong> Milestone hiring, competency frameworks &amp; full statutory payroll governance.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#1575D1] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">4</span>
+                  <span><strong>Event Management &amp; Roadshows:</strong> Product launches, customer summits, investor roundtables &amp; leadership offsites.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#1575D1] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">5</span>
+                  <span><strong>Travel, Logistics &amp; Revenue Telemetry:</strong> Policy-governed team travel, KPI dashboards, leak audits &amp; board reporting packs.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-white/15">
+            <button type="button" onclick="selectConfiguratorPreset('Scale & Operations Suite')" class="w-full py-3.5 px-5 rounded-xl bg-[#1575D1] hover:bg-[#7BC0F8] text-white hover:text-[#052242] font-bold text-sm transition-all">
+              Configure Scale &amp; Operations Scope
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 3: Global Expansion Suite -->
+        <div class="rounded-3xl bg-[#F4F8FC] border border-[#052242]/10 p-7 sm:p-8 flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-[#0A4D8C]/15 text-[#0A4D8C] text-xs font-extrabold uppercase tracking-wider">Track 03 • Cross-Border</span>
+              <span class="text-xs font-bold text-[#0A4D8C]">Global Market Entry</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#052242]">Global Expansion Suite</h3>
+            <p class="text-sm text-[#052242]/75 mt-2.5 leading-relaxed">
+              Engineered for established startups and enterprises entering new international territories with full regulatory, local talent, and GTM execution.
+            </p>
+
+            <div class="mt-6 pt-5 border-t border-[#052242]/10">
+              <p class="text-xs font-bold uppercase tracking-wider text-[#0A4D8C] mb-3">Included Unified Suite Pillars:</p>
+              <ul class="space-y-2.5 text-sm text-[#052242]/90">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#0A4D8C] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">6</span>
+                  <span><strong>International Expansion Support:</strong> Market prioritization, cross-border entity structuring, tax setup &amp; local partner networks.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#0A4D8C] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">7</span>
+                  <span><strong>Revenue Checks &amp; Performance Monitoring:</strong> Multi-region funnel tracking, cohort LTV insights &amp; executive governance.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-5 h-5 rounded-md bg-[#1575D1] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">+</span>
+                  <span><strong>On-Ground Launch Mobility:</strong> Regional hiring &amp; payroll, international launch events &amp; executive travel management.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-[#052242]/10">
+            <button type="button" onclick="selectConfiguratorPreset('Global Expansion Suite')" class="w-full py-3.5 px-5 rounded-xl bg-white hover:bg-[#052242] text-[#052242] hover:text-white border border-[#052242]/20 font-bold text-sm transition-all">
+              Configure Global Expansion Scope
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive 'Build Your Partnership Scope' Configurator -->
+      <div id="scope-configurator" class="rounded-3xl bg-[#F4F8FC] border border-[#1575D1]/25 p-7 sm:p-10 shadow-card">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Controls -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#1575D1]">Interactive Partnership Builder</span>
+              <h3 class="text-2xl font-extrabold text-[#052242] mt-1">Build Your Custom Partnership Scope</h3>
+              <p class="text-sm text-[#052242]/75 mt-1">
+                Select your current stage, target regions, and strategic priorities to see how Inceptura combines all seven pillars into a cohesive partnership blueprint.
+              </p>
+            </div>
+
+            <!-- Step 1: Select Stage -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#052242] mb-2.5">1. Current Organizational Stage</label>
+              <div class="grid sm:grid-cols-3 gap-2.5" id="cfg-stage-group">
+                <button type="button" data-val="Ideation-to-Launch Suite" class="cfg-stage-btn px-3.5 py-2.5 rounded-xl text-xs font-bold bg-white text-[#052242] border border-[#052242]/15 text-left transition-all">
+                  0-to-1 Startup
+                </button>
+                <button type="button" data-val="Scale & Operations Suite" class="cfg-stage-btn active px-3.5 py-2.5 rounded-xl text-xs font-bold bg-[#052242] text-white border border-[#052242] text-left transition-all">
+                  Growth-Stage Company
+                </button>
+                <button type="button" data-val="Global Expansion Suite" class="cfg-stage-btn px-3.5 py-2.5 rounded-xl text-xs font-bold bg-white text-[#052242] border border-[#052242]/15 text-left transition-all">
+                  Expanding Enterprise
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Target Regions -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#052242] mb-2.5">2. Target Operating &amp; Expansion Regions</label>
+              <div class="flex flex-wrap gap-2" id="cfg-region-group">
+                <button type="button" data-region="India & South Asia" class="cfg-region-btn active px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#1575D1] text-white transition-all">India &amp; South Asia</button>
+                <button type="button" data-region="Middle East (MENA)" class="cfg-region-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-white text-[#052242] border border-[#052242]/15 transition-all">Middle East (MENA)</button>
+                <button type="button" data-region="North America" class="cfg-region-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-white text-[#052242] border border-[#052242]/15 transition-all">North America</button>
+                <button type="button" data-region="Europe & UK" class="cfg-region-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-white text-[#052242] border border-[#052242]/15 transition-all">Europe &amp; UK</button>
+                <button type="button" data-region="Africa & APAC" class="cfg-region-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-white text-[#052242] border border-[#052242]/15 transition-all">Africa &amp; APAC</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Priority Objectives -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#052242] mb-2.5">3. Immediate 90-Day Priorities (Select All That Apply)</label>
+              <div class="grid sm:grid-cols-2 gap-2.5" id="cfg-goals-group">
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-[#052242]/10 cursor-pointer hover:border-[#1575D1]">
+                  <input type="checkbox" value="Entity Structuring & Compliance" checked class="cfg-goal-cb accent-[#1575D1] w-4 h-4" />
+                  <span class="text-xs font-semibold text-[#052242]">Entity Structuring &amp; Compliance</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-[#052242]/10 cursor-pointer hover:border-[#1575D1]">
+                  <input type="checkbox" value="Fundraising & Investor Demo Days" checked class="cfg-goal-cb accent-[#1575D1] w-4 h-4" />
+                  <span class="text-xs font-semibold text-[#052242]">Fundraising &amp; Investor Demo Days</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-[#052242]/10 cursor-pointer hover:border-[#1575D1]">
+                  <input type="checkbox" value="Talent Hiring & Statutory Payroll" class="cfg-goal-cb accent-[#1575D1] w-4 h-4" />
+                  <span class="text-xs font-semibold text-[#052242]">Talent Hiring &amp; Statutory Payroll</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-[#052242]/10 cursor-pointer hover:border-[#1575D1]">
+                  <input type="checkbox" value="Cross-Border Market Entry & Travel" checked class="cfg-goal-cb accent-[#1575D1] w-4 h-4" />
+                  <span class="text-xs font-semibold text-[#052242]">Cross-Border Market Entry &amp; Travel</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Generated Partnership Brief Output -->
+          <div class="lg:col-span-5 bg-white rounded-2xl p-6 sm:p-7 border border-[#052242]/15 shadow-card">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-[#052242]/10">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#1575D1]">Tailored Partnership Blueprint</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-[#052242] text-white text-[11px] font-bold">Unified Suite</span>
+            </div>
+
+            <h4 id="brief-track-title" class="text-xl font-extrabold text-[#052242]">Scale &amp; Operations Suite</h4>
+            <p id="brief-regions-summary" class="text-xs font-semibold text-[#0A4D8C] mt-1">Corridor: India &amp; South Asia</p>
+
+            <div class="mt-4 space-y-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-[#052242]/60">Activated Suite Capabilities:</p>
+              <ul id="brief-pillars-list" class="space-y-2 text-xs sm:text-sm text-[#052242]/85">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <div class="mt-5 p-3.5 rounded-xl bg-[#F4F8FC] border border-[#0A4D8C]/15 text-xs text-[#052242]/80 leading-relaxed">
+              <strong>Delivery Governance:</strong> Assigned a Dedicated Relationship Lead, bi-weekly strategy &amp; execution reviews, shared KPI tracking workspace, and full access to WorkHour Business's specialist advisor network.
+            </div>
+
+            <button type="button" id="apply-brief-to-form-btn" class="mt-5 w-full py-3.5 px-5 rounded-xl bg-[#1575D1] hover:bg-[#0A4D8C] text-white font-bold text-sm shadow-sm transition-all">
+              Send This Scope to Our Partnership Desk →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 6. VISION, MISSION, CORE VALUES & 'EMBEDDED GROWTH PARTNER' MODEL     -->
+  <!-- ===================================================================== -->
+  <section id="how-we-embed" class="py-20 lg:py-28 bg-[#052242] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Top Row: Mentorship Umbrella & Embedded Integration -->
+      <div class="grid lg:grid-cols-12 gap-10 items-center mb-16 pb-16 border-b border-white/15">
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#7BC0F8]">How We Work With You</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+            An Embedded Growth Partner—Not a Transactional Vendor
+          </h2>
+          <p class="text-base text-white/80 leading-relaxed">
+            Traditional consultants hand over a slide deck and walk away; outsourced agencies wait for tickets. Inceptura operates under a <strong>Mentorship Umbrella Model</strong>. We sit alongside founders and leadership teams inside key strategic discussions, anticipate operational bottlenecks before they slow you down, and own execution follow-through.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/15">
+            <div class="w-9 h-9 rounded-xl bg-[#1575D1] text-white flex items-center justify-center font-bold mb-3">01</div>
+            <h3 class="text-base font-bold text-white">Single Point of Accountability</h3>
+            <p class="text-xs sm:text-sm text-white/75 mt-1.5 leading-relaxed">A Dedicated Relationship Lead orchestrates all seven pillars so you never chase multiple account managers.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/15">
+            <div class="w-9 h-9 rounded-xl bg-[#0A4D8C] text-[#7BC0F8] flex items-center justify-center font-bold mb-3">02</div>
+            <h3 class="text-base font-bold text-white">Structured Execution Cadence</h3>
+            <p class="text-xs sm:text-sm text-white/75 mt-1.5 leading-relaxed">Regular strategy and operational review checkpoints keep registration, hiring, events, and GTM milestones on track.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/15">
+            <div class="w-9 h-9 rounded-xl bg-[#7BC0F8] text-[#052242] flex items-center justify-center font-bold mb-3">03</div>
+            <h3 class="text-base font-bold text-white">Shared Planning &amp; Telemetry</h3>
+            <p class="text-xs sm:text-sm text-white/75 mt-1.5 leading-relaxed">Transparent progress tracking and live commercial KPIs give founders and boards real-time visibility.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/15">
+            <div class="w-9 h-9 rounded-xl bg-[#1575D1] text-white flex items-center justify-center font-bold mb-3">04</div>
+            <h3 class="text-base font-bold text-white">Domain Specialist Network</h3>
+            <p class="text-xs sm:text-sm text-white/75 mt-1.5 leading-relaxed">Immediate access to legal, tax, cross-border expansion, and industry advisors backed by WorkHour Business.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Vision, Mission & 5 Core Values -->
+      <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="p-7 rounded-3xl bg-[#0A4D8C]/50 border border-[#7BC0F8]/25 flex-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#7BC0F8]">Our Vision</span>
+            <h3 class="text-xl font-extrabold text-white mt-2">No Promising Idea Should Fail From Execution Gaps</h3>
+            <p class="text-sm text-white/80 mt-2.5 leading-relaxed">
+              To be the most trusted growth enabler for startups and enterprises—guiding them from initial ideation through execution, optimization, and global expansion so strong ideas never stall due to avoidable operational or compliance hurdles.
+            </p>
+          </div>
+
+          <div class="p-7 rounded-3xl bg-[#1575D1]/25 border border-[#7BC0F8]/25 flex-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#7BC0F8]">Our Mission</span>
+            <h3 class="text-xl font-extrabold text-white mt-2">Accelerating Time-to-Market &amp; Enterprise Value</h3>
+            <p class="text-sm text-white/80 mt-2.5 leading-relaxed">
+              To integrate seamlessly into our partners' journeys as a strategic and operational ally—delivering end-to-end execution that compresses time-to-market, strengthens governance, and maximizes long-term enterprise value.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-9 rounded-3xl bg-white text-[#052242]">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1575D1]">What Guides Every Decision</span>
+          <h3 class="text-2xl font-extrabold text-[#052242] mt-1 mb-6">The Five Core Values of Inceptura</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-[#F4F8FC]">
+              <span class="w-8 h-8 rounded-xl bg-[#052242] text-white font-bold text-sm flex items-center justify-center shrink-0">1</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-[#052242]">Founders-First Empathy</h4>
+                <p class="text-xs sm:text-sm text-[#052242]/75 mt-0.5">Deep respect for the pace, capital discipline, and resilience required on the entrepreneurial journey.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-[#F4F8FC]">
+              <span class="w-8 h-8 rounded-xl bg-[#0A4D8C] text-white font-bold text-sm flex items-center justify-center shrink-0">2</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-[#052242]">Non-Negotiable Integrity &amp; Compliance</h4>
+                <p class="text-xs sm:text-sm text-[#052242]/75 mt-0.5">Clean governance, statutory rigor, and transparent financial structures that withstand institutional scrutiny.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-[#F4F8FC]">
+              <span class="w-8 h-8 rounded-xl bg-[#1575D1] text-white font-bold text-sm flex items-center justify-center shrink-0">3</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-[#052242]">Scalability &amp; Long-Term Architecture</h4>
+                <p class="text-xs sm:text-sm text-[#052242]/75 mt-0.5">Every legal entity, hiring workflow, and travel policy is designed for where your business will be 24 months from today.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-[#F4F8FC]">
+              <span class="w-8 h-8 rounded-xl bg-[#0A4D8C] text-white font-bold text-sm flex items-center justify-center shrink-0">4</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-[#052242]">Data-Driven Decisions &amp; Measurable Impact</h4>
+                <p class="text-xs sm:text-sm text-[#052242]/75 mt-0.5">Unit economics, conversion metrics, and board-grade revenue telemetry replace guesswork.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-[#F4F8FC]">
+              <span class="w-8 h-8 rounded-xl bg-[#052242] text-white font-bold text-sm flex items-center justify-center shrink-0">5</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-[#052242]">Execution Ownership—Not Just Advice</h4>
+                <p class="text-xs sm:text-sm text-[#052242]/75 mt-0.5">We roll up our sleeves alongside your leadership team to get filings completed, roles filled, events launched, and markets opened.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 7. PARTNERSHIP INQUIRY & CONSULTATION SECTION                         -->
+  <!-- ===================================================================== -->
+  <section id="partner-with-us" class="py-20 lg:py-28 bg-[#F4F8FC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <!-- Left Context & Direct Contact -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#1575D1]">Start the Conversation</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#052242] tracking-tight leading-tight">
+            Ready to Unify Your Ideation, Operations &amp; Global Expansion?
+          </h2>
+          <p class="text-base text-[#052242]/75 leading-relaxed">
+            Whether you are incorporating a new venture, preparing for an institutional funding round, orchestrating high-stakes launch events, or expanding into international markets, let’s design a unified Inceptura partnership around your roadmap.
+          </p>
+
+          <div class="p-6 rounded-2xl bg-white border border-[#052242]/10 shadow-card space-y-4">
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-[#0A4D8C]">What Happens Next</h3>
+            <div class="space-y-3 text-sm text-[#052242]/85">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1575D1]/15 text-[#1575D1] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                <span><strong>25-Minute Executive Alignment Call:</strong> Review your current stage, bottlenecks, and target markets with a Senior Growth Partner.</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1575D1]/15 text-[#1575D1] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                <span><strong>Unified Suite Blueprint:</strong> Receive a tailored multi-pillar roadmap (never fragmented vendor quotes) within 48 hours.</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#1575D1]/15 text-[#1575D1] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                <span><strong>Embedded Kickoff:</strong> Onboard your Dedicated Relationship Lead and launch execution immediately.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Verified Contact Card -->
+          <div class="p-6 rounded-2xl bg-[#052242] text-white space-y-3">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#7BC0F8]">Direct Partnership Desk</p>
+            <p class="text-lg font-bold">Inceptura — WorkHour Business</p>
+            <div class="space-y-2 text-sm text-white/85 pt-1">
+              <p class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-[#7BC0F8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <a href="tel:+919810321155" class="hover:text-[#7BC0F8] transition-colors">+91-981 032 1155</a>
+              </p>
+              <p class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-[#7BC0F8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                <a href="https://www.workhourbusiness.com/inceptura" target="_blank" rel="noopener noreferrer" class="hover:text-[#7BC0F8] transition-colors">www.workhourbusiness.com/inceptura</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive Form -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-7 sm:p-10 border border-[#052242]/10 shadow-card">
+          <form id="partnership-form" class="space-y-5">
+            <div class="border-b border-[#052242]/10 pb-4">
+              <h3 class="text-xl font-extrabold text-[#052242]">Initiate a Partnership Conversation</h3>
+              <p class="text-xs sm:text-sm text-[#052242]/70 mt-1">Share your growth stage and objectives—our leadership team will respond within one business day.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="exec-name" class="block text-xs font-bold text-[#052242] mb-1.5">Founder / Executive Name *</label>
+                <input type="text" id="exec-name" required placeholder="e.g., Aarav Sharma" class="w-full px-4 py-3 rounded-xl bg-[#F4F8FC] border border-[#052242]/15 text-sm text-[#052242] focus:outline-none focus:border-[#1575D1]" />
+              </div>
+              <div>
+                <label for="company-name" class="block text-xs font-bold text-[#052242] mb-1.5">Company / Startup Name *</label>
+                <input type="text" id="company-name" required placeholder="e.g., NexaCloud Technologies" class="w-full px-4 py-3 rounded-xl bg-[#F4F8FC] border border-[#052242]/15 text-sm text-[#052242] focus:outline-none focus:border-[#1575D1]" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="work-email" class="block text-xs font-bold text-[#052242] mb-1.5">Work Email *</label>
+                <input type="email" id="work-email" required placeholder="founder@company.com" class="w-full px-4 py-3 rounded-xl bg-[#F4F8FC] border border-[#052242]/15 text-sm text-[#052242] focus:outline-none focus:border-[#1575D1]" />
+              </div>
+              <div>
+                <label for="phone-number" class="block text-xs font-bold text-[#052242] mb-1.5">Direct Phone / WhatsApp *</label>
+                <input type="tel" id="phone-number" required placeholder="+91 98XXX XXXXX" class="w-full px-4 py-3 rounded-xl bg-[#F4F8FC] border border-[#052242]/15 text-sm text-[#052242] focus:outline-none focus:border-[#1575D1]" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="partnership-track" class="block text-xs font-bold text-[#052242] mb-1.5">Preferred Unified Suite Track *</label>
+                <select id="partnership-track" class="w-full px-4 py-3 rounded-xl bg-[#F4F8FC] border border-[#052242]/15 text-sm font-semibold text-[#052242] focus:outline-none focus:border-[#1575D1]">
+                  <option value="Ideation-to-Launch Suite">Ideation-to-Launch Suite (0-to-1 Startups)</option>
+                  <option value="Scale & Operations Suite" selected>Scale &amp; Operations Suite (Growth Stage)</option>
+                  <option value="Global Expansion Suite">Global Expansion Suite (Cross-Border Entry)</option>
+                </select>
+              </div>
+              <div>
+                <label for="target-geo" class="block text-xs font-bold text-[#052242] mb-1.5">Target Expansion Geography</label>
+                <input type="text" id="target-geo" placeholder="e.g., India, Middle East, North America" class="w-full px-4 py-3 rounded-xl bg-[#F4F8FC] border border-[#052242]/15 text-sm text-[#052242] focus:outline-none focus:border-[#1575D1]" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#052242] mb-2">Primary Growth Objectives Inside Your Suite</label>
+              <div class="grid sm:grid-cols-2 gap-2.5 text-xs font-medium text-[#052242]">
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#F4F8FC] border border-[#052242]/10 cursor-pointer">
+                  <input type="checkbox" name="objectives" value="Company Registration & Governance" class="accent-[#1575D1] w-4 h-4" />
+                  <span>Company Registration &amp; Governance</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#F4F8FC] border border-[#052242]/10 cursor-pointer">
+                  <input type="checkbox" name="objectives" value="GTM Strategy & Investor Readiness" class="accent-[#1575D1] w-4 h-4" />
+                  <span>GTM Strategy &amp; Investor Readiness</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#F4F8FC] border border-[#052242]/10 cursor-pointer">
+                  <input type="checkbox" name="objectives" value="Talent Acquisition & Payroll Setup" class="accent-[#1575D1] w-4 h-4" />
+                  <span>Talent Acquisition &amp; Payroll Setup</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#F4F8FC] border border-[#052242]/10 cursor-pointer">
+                  <input type="checkbox" name="objectives" value="Launches, Events & Corporate Travel" class="accent-[#1575D1] w-4 h-4" />
+                  <span>Launches, Events &amp; Corporate Travel</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#F4F8FC] border border-[#052242]/10 cursor-pointer">
+                  <input type="checkbox" name="objectives" value="International Market Expansion" class="accent-[#1575D1] w-4 h-4" />
+                  <span>International Market Expansion</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#F4F8FC] border border-[#052242]/10 cursor-pointer">
+                  <input type="checkbox" name="objectives" value="Revenue Monitoring & Board KPIs" class="accent-[#1575D1] w-4 h-4" />
+                  <span>Revenue Monitoring &amp; Board KPIs</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label for="project-notes" class="block text-xs font-bold text-[#052242] mb-1.5">Brief Context on Your Vision or Expansion Timeline</label>
+              <textarea id="project-notes" rows="3" placeholder="Tell us about your product, upcoming milestones, or target international markets..." class="w-full px-4 py-3 rounded-xl bg-[#F4F8FC] border border-[#052242]/15 text-sm text-[#052242] focus:outline-none focus:border-[#1575D1]"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 px-6 rounded-xl bg-[#052242] hover:bg-[#1575D1] text-white font-bold text-sm sm:text-base shadow-card transition-all">
+              Submit Partnership Briefing Request
+            </button>
+          </form>
+
+          <!-- Instant Confirmation Message Box (Replaces alert()) -->
+          <div id="form-confirmation" class="hidden text-center py-10 space-y-4">
+            <div class="w-16 h-16 rounded-2xl bg-[#1575D1]/15 text-[#1575D1] flex items-center justify-center mx-auto">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="inline-block px-3 py-1 rounded-full bg-[#052242] text-white text-xs font-bold uppercase tracking-wider">Briefing Request Logged</span>
+            <h3 class="text-2xl font-extrabold text-[#052242]" id="confirm-heading">Thank You, Partner</h3>
+            <p class="text-sm text-[#052242]/80 max-w-md mx-auto leading-relaxed" id="confirm-body">
+              Your unified partnership inquiry has been routed to an Inceptura Senior Growth Partner. We will reach out within one business day to schedule your alignment briefing.
+            </p>
+            <div class="pt-2">
+              <button type="button" id="reset-form-btn" class="px-5 py-2.5 rounded-xl bg-[#F4F8FC] hover:bg-[#052242] text-[#052242] hover:text-white text-xs font-bold transition-all">
+                Submit Another Inquiry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 8. CLEAN EXECUTIVE FOOTER                                             -->
+  <!-- ===================================================================== -->
+  <footer class="bg-white border-t border-[#052242]/10 pt-14 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-12 gap-10 pb-10 border-b border-[#052242]/10">
+        <!-- Brand Column -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <svg class="w-10 h-10 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Inceptura Footer Logo">
+              <g transform="translate(50 26) rotate(45)"><rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#052242" /></g>
+              <path d="M41.5 23.5C46.2 19.5 53.8 19.5 58.5 23.5" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M44.5 27C47.7 24.3 52.3 24.3 55.5 27" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
+              <circle cx="50" cy="30.5" r="2" fill="#FFFFFF" />
+              <g transform="translate(74 50) rotate(45)"><rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#0A4D8C" /></g>
+              <path d="M74 42V48.5M74 48.5L71.5 46M74 48.5L76.5 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M67.5 46.5L71 50M71 50H68.5M71 50V47.5" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M80.5 46.5L77 50M77 50H79.5M77 50V47.5" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M67 52V55.5H81V52" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+              <g transform="translate(50 74) rotate(45)"><rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#1575D1" /></g>
+              <rect x="42.5" y="67.5" width="15" height="10" rx="1.5" stroke="#FFFFFF" stroke-width="1.9" />
+              <path d="M40.5 79H59.5" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" />
+              <circle cx="48.2" cy="72.5" r="2.2" stroke="#FFFFFF" stroke-width="1.5" />
+              <circle cx="52.6" cy="73.2" r="1.6" stroke="#FFFFFF" stroke-width="1.4" />
+              <g transform="translate(26 50) rotate(45)"><rect x="-15.5" y="-15.5" width="31" height="31" rx="4" fill="#7BC0F8" /></g>
+              <path d="M26 42.5L28 48L33.5 50L28 52L26 57.5L24 52L18.5 50L24 48L26 42.5Z" fill="#FFFFFF" />
+            </svg>
+            <div>
+              <span class="text-xl font-extrabold text-[#052242] block leading-none">Inceptura</span>
+              <span class="text-xs font-semibold text-[#0A4D8C] block mt-1">A Group Company of WorkHour Business</span>
+            </div>
+          </div>
+          <p class="text-sm text-[#052242]/75 leading-relaxed max-w-sm">
+            From the first spark of ideation to global execution—an integrated, non-fragmented growth suite for ambitious founders and expanding enterprises.
+          </p>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#052242]">Platform &amp; Suite</h4>
+          <ul class="space-y-2 text-sm text-[#052242]/75">
+            <li><a href="#why-inceptura" class="hover:text-[#1575D1] transition-colors">Why Inceptura</a></li>
+            <li><a href="#unified-suite" class="hover:text-[#1575D1] transition-colors">The 7-Pillar Unified Suite</a></li>
+            <li><a href="#partnership-tracks" class="hover:text-[#1575D1] transition-colors">Stage-Based Partnership Tracks</a></li>
+            <li><a href="#how-we-embed" class="hover:text-[#1575D1] transition-colors">Embedded Mentorship Model</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#052242]">Connect With Inceptura</h4>
+          <ul class="space-y-2.5 text-sm text-[#052242]/80">
+            <li>
+              <span class="font-semibold text-[#052242]">Telephone:</span>
+              <a href="tel:+919810321155" class="hover:text-[#1575D1] transition-colors ml-1">+91-981 032 1155</a>
+            </li>
+            <li>
+              <span class="font-semibold text-[#052242]">Web:</span>
+              <a href="https://www.workhourbusiness.com/inceptura" target="_blank" rel="noopener noreferrer" class="hover:text-[#1575D1] transition-colors ml-1">www.workhourbusiness.com/inceptura</a>
+            </li>
+            <li class="pt-1">
+              <span class="inline-block px-3 py-1.5 rounded-xl bg-[#F4F8FC] text-xs font-semibold text-[#0A4D8C]">
+                Unified Suite Policy: Services are delivered exclusively as integrated partnership tracks.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#052242]/60">
+        <p>&copy; <span id="copyright-year">2026</span> Inceptura — A Group Company of WorkHour Business. All rights reserved.</p>
+        <p>Ideation • Structuring • Talent • Events • Travel • Global Expansion • Revenue Governance</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE JAVASCRIPT LOGIC                                          -->
+  <!-- ===================================================================== -->
+  <script>
+    // Set current year dynamically
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // -----------------------------------------------------------------------
+    // 1. Hero Quick Growth-Stage Selector
+    // -----------------------------------------------------------------------
+    const heroStageData = {
+      ideation: {
+        tag: 'Ideation-to-Launch Suite',
+        text: 'Incorporation, shareholder agreements, GTM validation, founding team hiring, investor pitch events, and founder travel—synchronized from day one.'
+      },
+      scale: {
+        tag: 'Scale & Operations Suite',
+        text: 'Milestone talent acquisition, statutory payroll, product launches, investor demo days, policy-governed travel, and real-time revenue KPI dashboards.'
+      },
+      global: {
+        tag: 'Global Expansion Suite',
+        text: 'Cross-border market selection, local entity & tax setup, vetted regional partner networks, international roadshows, and multi-region revenue telemetry.'
+      }
+    };
+
+    const heroPills = document.querySelectorAll('.hero-pill');
+    const heroPreviewTag = document.getElementById('hero-preview-tag');
+    const heroPreviewText = document.getElementById('hero-preview-text');
+
+    heroPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        heroPills.forEach(p => {
+          p.classList.remove('active', 'bg-[#1575D1]', 'text-white', 'shadow-sm');
+          p.classList.add('bg-white', 'text-[#052242]', 'border', 'border-[#052242]/15');
+        });
+        pill.classList.add('active', 'bg-[#1575D1]', 'text-white', 'shadow-sm');
+        pill.classList.remove('bg-white', 'text-[#052242]', 'border', 'border-[#052242]/15');
+
+        const stageKey = pill.getAttribute('data-stage');
+        heroPreviewTag.textContent = heroStageData[stageKey].tag;
+        heroPreviewText.textContent = heroStageData[stageKey].text;
+      });
+    });
+
+    // -----------------------------------------------------------------------
+    // 2. Bottleneck vs. Solution View Toggle
+    // -----------------------------------------------------------------------
+    const btnBoth = document.getElementById('btn-compare-both');
+    const btnFriction = document.getElementById('btn-compare-friction');
+    const btnSolution = document.getElementById('btn-compare-solution');
+    const frictionBlocks = document.querySelectorAll('.friction-block');
+    const solutionBlocks = document.querySelectorAll('.solution-block');
+
+    function setCompareMode(mode) {
+      [btnBoth, btnFriction, btnSolution].forEach(btn => {
+        btn.classList.remove('bg-[#052242]', 'text-white', 'shadow-sm', 'font-bold');
+        btn.classList.add('text-[#052242]/75', 'font-semibold');
+      });
+
+      if (mode === 'both') {
+        btnBoth.classList.add('bg-[#052242]', 'text-white', 'shadow-sm', 'font-bold');
+        btnBoth.classList.remove('text-[#052242]/75', 'font-semibold');
+        frictionBlocks.forEach(el => { el.classList.remove('hidden', 'border-b-0', 'pb-0', 'mb-0'); el.classList.add('mb-4', 'pb-4', 'border-b'); });
+        solutionBlocks.forEach(el => el.classList.remove('hidden'));
+      } else if (mode === 'friction') {
+        btnFriction.classList.add('bg-[#052242]', 'text-white', 'shadow-sm', 'font-bold');
+        btnFriction.classList.remove('text-[#052242]/75', 'font-semibold');
+        frictionBlocks.forEach(el => { el.classList.remove('hidden', 'mb-4', 'pb-4', 'border-b'); el.classList.add('border-b-0', 'pb-0', 'mb-0'); });
+        solutionBlocks.forEach(el => el.classList.add('hidden'));
+      } else {
+        btnSolution.classList.add('bg-[#052242]', 'text-white', 'shadow-sm', 'font-bold');
+        btnSolution.classList.remove('text-[#052242]/75', 'font-semibold');
+        frictionBlocks.forEach(el => el.classList.add('hidden'));
+        solutionBlocks.forEach(el => el.classList.remove('hidden'));
+      }
+    }
+
+    btnBoth.addEventListener('click', () => setCompareMode('both'));
+    btnFriction.addEventListener('click', () => setCompareMode('friction'));
+    btnSolution.addEventListener('click', () => setCompareMode('solution'));
+
+    // -----------------------------------------------------------------------
+    // 3. Interactive 7-Pillar Unified Suite Explorer
+    // -----------------------------------------------------------------------
+    const pillarsData = [
+      {
+        id: 'compliance',
+        number: '01',
+        badgeColor: '#052242',
+        title: 'Company Registration & Compliance',
+        tagline: 'Investor-ready legal foundations built to withstand due diligence and cross-border scale.',
+        summary: 'Rather than treating incorporation as a checklist formality, Inceptura structures entities, shareholder agreements, and statutory governance calendars that anticipate future institutional funding rounds and international expansion.',
+        deliverables: [
+          'Entity type advisory aligned with your business model and fundraising roadmap',
+          'End-to-end company incorporation and regulatory authority registration',
+          'Statutory tax, social security, and industry-specific licensing setup',
+          'Drafting of founding documents, bylaws, and shareholder agreements',
+          'Automated compliance calendars, governance frameworks, and ongoing filings'
+        ],
+        impact: 'Eliminates early-stage legal debt and accelerates investor due diligence readiness from day one.',
+        synergy: 'Feeds directly into International Expansion entity structuring and Talent & Payroll statutory compliance.'
+      },
+      {
+        id: 'strategy',
+        number: '02',
+        badgeColor: '#0A4D8C',
+        title: 'Business Strategy & Growth Planning',
+        tagline: 'Turning raw entrepreneurial vision into unit-economic clarity and executable GTM roadmaps.',
+        summary: 'We collaborate closely with founders and leadership teams to validate problem-solution fit, sharpen market positioning, model unit economics, and align quarterly operating plans with investor narratives.',
+        deliverables: [
+          'Ideation refinement and problem-solution fit validation',
+          'Total addressable market sizing, competitive intelligence, and positioning',
+          'Business model architecture and unit economics modeling',
+          'Go-to-market (GTM) channel prioritization and phased launch playbooks',
+          'Annual and quarterly operating plans linked to measurable KPIs and pitch readiness'
+        ],
+        impact: 'Aligns leadership teams around verifiable growth milestones rather than guesswork.',
+        synergy: 'Guides which roles Talent Acquisition hires first and which markets International Expansion prioritizes.'
+      },
+      {
+        id: 'talent',
+        number: '03',
+        badgeColor: '#1575D1',
+        title: 'Talent Acquisition & Payroll Management',
+        tagline: 'Building high-accountability teams backed by compliant, transparent payroll governance.',
+        summary: 'People are the operating engine of every venture. Inceptura manages end-to-end workforce planning, role definition, candidate sourcing, structured onboarding, and statutory payroll administration.',
+        deliverables: [
+          'Milestone-driven workforce planning aligned with product and revenue goals',
+          'Role architecture, scorecards, job descriptions, and competency frameworks',
+          'End-to-end recruitment covering sourcing, screening, and interview coordination',
+          'Employer branding advisory to attract top-tier product and commercial talent',
+          'Compliant payroll system setup, monthly administration, and statutory filings'
+        ],
+        impact: 'Compresses hiring cycles for critical roles while lifting retention through structured onboarding.',
+        synergy: 'Works alongside Travel & Logistics for distributed team mobility and Compliance for local labor laws.'
+      },
+      {
+        id: 'events',
+        number: '04',
+        badgeColor: '#0A4D8C',
+        title: 'Event Management',
+        tagline: 'High-impact product launches, investor demo days, and leadership offsites engineered for outcomes.',
+        summary: 'Events are pivotal touchpoints to win early adopters, engage institutional investors, and align distributed teams. Inceptura handles concept-to-stage execution so founders stay focused on the room.',
+        deliverables: [
+          'Product launches, live customer demos, and regional market roadshows',
+          'Investor meetups, pitch-day orchestration, and founder roundtables',
+          'Leadership offsites, company town halls, and culture-building retreats',
+          'Vendor sourcing, venue negotiations, AV production, and run-of-show control',
+          'Event branding, collateral alignment, and on-ground guest management'
+        ],
+        impact: 'Transforms events from logistics headaches into measurable media coverage, investor follow-ups, and partner leads.',
+        synergy: 'Synchronized with Corporate Travel & Logistics for speaker/team flights and Growth Strategy for launch messaging.'
+      },
+      {
+        id: 'travel',
+        number: '05',
+        badgeColor: '#1575D1',
+        title: 'Travel & Logistics Management',
+        tagline: 'Centralized corporate mobility, negotiated rates, and finance-ready expense governance.',
+        summary: 'As teams, investors, and customers span cities and continents, ad-hoc travel drains cash and productivity. Inceptura brings policy structure, negotiated vendor rates, and seamless field logistics.',
+        deliverables: [
+          'Corporate travel policy design and streamlined executive approval workflows',
+          'End-to-end booking management for flights, hotels, visas, and ground transport',
+          'Vendor selection and negotiated corporate rate agreements',
+          'Dedicated logistics coordination for roadshows, events, and field sales teams',
+          'Consolidated expense tracking and clean reconciliation packs for finance'
+        ],
+        impact: 'Reduces recurring travel spend while giving leadership complete visibility into mobility ROI.',
+        synergy: 'Directly powers Event Management roadshows and International Expansion market-entry visits.'
+      },
+      {
+        id: 'international',
+        number: '06',
+        badgeColor: '#052242',
+        title: 'International Expansion Support',
+        tagline: 'Structured cross-border market entry without regulatory missteps or wasted capital.',
+        summary: 'Entering new countries unlocks exponential growth but carries complex legal, tax, and cultural hurdles. Inceptura guides market selection, cross-border entity setup, and local ecosystem activation.',
+        deliverables: [
+          'Target market prioritization scored by opportunity, regulatory risk, and product fit',
+          'Advisory on cross-border legal structures, subsidiaries, and tax frameworks',
+          'Coordination of local registrations, commercial licenses, and compliance setups',
+          'Introductions to vetted local partners, channel networks, and regional talent',
+          'Phased market-entry and scale-up playbooks tailored to each geography'
+        ],
+        impact: 'Compresses international launch timelines while protecting parent-company governance.',
+        synergy: 'Integrates all six sister pillars—legal, strategy, hiring, launch events, travel, and multi-currency revenue tracking.'
+      },
+      {
+        id: 'revenue',
+        number: '07',
+        badgeColor: '#0A4D8C',
+        title: 'Revenue Checks & Performance Monitoring',
+        tagline: 'Proactive commercial telemetry, leak audits, and board-grade financial clarity.',
+        summary: 'Revenue is the ultimate validation of strategy and execution. Inceptura establishes disciplined KPI tracking, pricing audits, and retention analytics so founders spot trends before quarter-end.',
+        deliverables: [
+          'Executive revenue dashboards tracking real-time commercial and funnel KPIs',
+          'Revenue leak assessments and value-based pricing structure reviews',
+          'Multi-channel sales funnel and conversion diagnostics',
+          'Cohort, retention, and customer lifetime value (LTV) tracking for recurring models',
+          'Board-level reporting packs and investor-grade financial summaries'
+        ],
+        impact: 'Replaces reactive month-end surprises with predictable unit economics and investor confidence.',
+        synergy: 'Closes the feedback loop back into Business Strategy & Growth Planning for continuous optimization.'
+      }
+    ];
+
+    const pillarTabsContainer = document.getElementById('pillar-tabs');
+    const pillarDetailPanel = document.getElementById('pillar-detail-panel');
+    let activePillarIndex = 0;
+
+    function renderPillarExplorer() {
+      // Render Left Tabs
+      pillarTabsContainer.innerHTML = pillarsData.map((pillar, idx) => {
+        const isActive = idx === activePillarIndex;
+        return `
+          <button
+            type="button"
+            onclick="setActivePillar(${idx})"
+            class="w-full text-left px-5 py-4 rounded-2xl border transition-all flex items-center justify-between gap-3 ${
+              isActive
+                ? 'bg-[#052242] text-white border-[#052242] shadow-card'
+                : 'bg-white text-[#052242] border-[#052242]/10 hover:border-[#1575D1] hover:bg-white'
+            }"
+          >
+            <div class="flex items-center gap-3.5">
+              <span class="w-8 h-8 rounded-xl text-xs font-extrabold flex items-center justify-center shrink-0 ${
+                isActive ? 'bg-[#1575D1] text-white' : 'bg-[#F4F8FC] text-[#0A4D8C]'
+              }">
+                ${pillar.number}
+              </span>
+              <span class="text-sm font-bold leading-snug">${pillar.title}</span>
+            </div>
+            <svg class="w-4 h-4 shrink-0 ${isActive ? 'text-[#7BC0F8]' : 'text-[#052242]/40'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        `;
+      }).join('');
+
+      // Render Right Detail Panel
+      const current = pillarsData[activePillarIndex];
+      pillarDetailPanel.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-5 mb-6 border-b border-[#052242]/10">
+          <div class="inline-flex items-center gap-2.5">
+            <span class="px-3 py-1 rounded-lg bg-[#052242] text-white text-xs font-extrabold">Pillar ${current.number} of 07</span>
+            <span class="px-3 py-1 rounded-lg bg-[#7BC0F8]/25 text-[#0A4D8C] text-xs font-bold">Included in Unified Suite</span>
+          </div>
+          <span class="text-xs font-semibold text-[#052242]/60">Non-Standalone Component</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-[#052242]">${current.title}</h3>
+        <p class="text-sm sm:text-base font-semibold text-[#1575D1] mt-1.5">${current.tagline}</p>
+        <p class="text-sm sm:text-base text-[#052242]/80 mt-4 leading-relaxed">${current.summary}</p>
+
+        <div class="mt-6">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#052242] mb-3">Core Execution Deliverables:</h4>
+          <ul class="space-y-2.5">
+            ${current.deliverables.map(item => `
+              <li class="flex items-start gap-3 text-sm text-[#052242]/85">
+                <span class="w-5 h-5 rounded-full bg-[#1575D1]/15 text-[#1575D1] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                <span>${item}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4 mt-7 pt-6 border-t border-[#052242]/10">
+          <div class="p-4 rounded-2xl bg-[#F4F8FC] border border-[#052242]/10">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#0A4D8C]">Founder &amp; Business Impact</span>
+            <p class="text-xs sm:text-sm text-[#052242]/85 mt-1 leading-relaxed">${current.impact}</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#052242] text-white">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#7BC0F8]">Suite Interlock</span>
+            <p class="text-xs sm:text-sm text-white/85 mt-1 leading-relaxed">${current.synergy}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function setActivePillar(index) {
+      activePillarIndex = index;
+      renderPillarExplorer();
+    }
+
+    renderPillarExplorer();
+
+    // -----------------------------------------------------------------------
+    // 4. Interactive Stage-Based Partnership Configurator
+    // -----------------------------------------------------------------------
+    let selectedTrack = 'Scale & Operations Suite';
+    let selectedRegions = ['India & South Asia'];
+
+    const stageBtns = document.querySelectorAll('.cfg-stage-btn');
+    const regionBtns = document.querySelectorAll('.cfg-region-btn');
+    const goalCheckboxes = document.querySelectorAll('.cfg-goal-cb');
+
+    const trackBasePillars = {
+      'Ideation-to-Launch Suite': [
+        'Company Registration, Shareholder Agreements & Statutory Compliance',
+        'Business Model Validation, Unit Economics & Investor Pitch Strategy',
+        'Founding Team Hiring, Payroll Setup & Launch Demo-Day Execution'
+      ],
+      'Scale & Operations Suite': [
+        'Milestone Talent Acquisition & Compliant Statutory Payroll',
+        'Product Launches, Investor Roundtables & Leadership Offsites',
+        'Policy-Governed Corporate Travel, Logistics & Board Revenue Telemetry'
+      ],
+      'Global Expansion Suite': [
+        'Cross-Border Market Prioritization, Foreign Entity & Tax Structuring',
+        'Vetted Local Partner Networks, Regional Hiring & Launch Roadshows',
+        'Multi-Region Travel Governance & Executive Revenue Leak Monitoring'
+      ]
+    };
+
+    function updateConfiguratorBlueprint() {
+      document.getElementById('brief-track-title').textContent = selectedTrack;
+      const regionsText = selectedRegions.length > 0 ? selectedRegions.join(' • ') : 'Multi-Region / Global';
+      document.getElementById('brief-regions-summary').textContent = 'Target Corridor: ' + regionsText;
+
+      const activeGoals = Array.from(goalCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      const baseItems = trackBasePillars[selectedTrack] || [];
+      const combinedList = [...baseItems];
+
+      if (activeGoals.length > 0) {
+        combinedList.push('Priority Focus Areas: ' + activeGoals.join(', '));
+      }
+
+      const listEl = document.getElementById('brief-pillars-list');
+      listEl.innerHTML = combinedList.map(line => `
+        <li class="flex items-start gap-2.5">
+          <span class="w-4 h-4 rounded-full bg-[#1575D1] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">✓</span>
+          <span>${line}</span>
+        </li>
+      `).join('');
+    }
+
+    stageBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        stageBtns.forEach(b => {
+          b.classList.remove('active', 'bg-[#052242]', 'text-white', 'border-[#052242]');
+          b.classList.add('bg-white', 'text-[#052242]', 'border-[#052242]/15');
+        });
+        btn.classList.add('active', 'bg-[#052242]', 'text-white', 'border-[#052242]');
+        btn.classList.remove('bg-white', 'text-[#052242]', 'border-[#052242]/15');
+        selectedTrack = btn.getAttribute('data-val');
+        updateConfiguratorBlueprint();
+      });
+    });
+
+    regionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const reg = btn.getAttribute('data-region');
+        if (selectedRegions.includes(reg)) {
+          if (selectedRegions.length > 1) {
+            selectedRegions = selectedRegions.filter(r => r !== reg);
+            btn.classList.remove('active', 'bg-[#1575D1]', 'text-white');
+            btn.classList.add('bg-white', 'text-[#052242]', 'border', 'border-[#052242]/15');
+          }
+        } else {
+          selectedRegions.push(reg);
+          btn.classList.add('active', 'bg-[#1575D1]', 'text-white');
+          btn.classList.remove('bg-white', 'text-[#052242]', 'border', 'border-[#052242]/15');
+        }
+        updateConfiguratorBlueprint();
+      });
+    });
+
+    goalCheckboxes.forEach(cb => {
+      cb.addEventListener('change', updateConfiguratorBlueprint);
+    });
+
+    function selectConfiguratorPreset(trackName) {
+      selectedTrack = trackName;
+      stageBtns.forEach(b => {
+        if (b.getAttribute('data-val') === trackName) {
+          b.classList.add('active', 'bg-[#052242]', 'text-white', 'border-[#052242]');
+          b.classList.remove('bg-white', 'text-[#052242]', 'border-[#052242]/15');
+        } else {
+          b.classList.remove('active', 'bg-[#052242]', 'text-white', 'border-[#052242]');
+          b.classList.add('bg-white', 'text-[#052242]', 'border-[#052242]/15');
+        }
+      });
+      updateConfiguratorBlueprint();
+      document.getElementById('scope-configurator').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Transfer configured scope directly into the Partnership Inquiry Form
+    document.getElementById('apply-brief-to-form-btn').addEventListener('click', () => {
+      const trackSelect = document.getElementById('partnership-track');
+      const geoInput = document.getElementById('target-geo');
+      const notesInput = document.getElementById('project-notes');
+
+      trackSelect.value = selectedTrack;
+      geoInput.value = selectedRegions.join(', ');
+
+      const activeGoals = Array.from(goalCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      notesInput.value = `Configured Unified Suite Interest: ${selectedTrack} | Target Regions: ${selectedRegions.join(', ')} | Key Priorities: ${activeGoals.join(', ')}.`;
+      document.getElementById('partner-with-us').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    updateConfiguratorBlueprint();
+
+    // -----------------------------------------------------------------------
+    // 5. Partnership Form Submission (Custom Confirmation UI — Zero alert())
+    // -----------------------------------------------------------------------
+    const partnershipForm = document.getElementById('partnership-form');
+    const formConfirmation = document.getElementById('form-confirmation');
+    const resetFormBtn = document.getElementById('reset-form-btn');
+
+    partnershipForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const execName = document.getElementById('exec-name').value.trim() || 'Partner';
+      const companyName = document.getElementById('company-name').value.trim() || 'your organization';
+      const chosenTrack = document.getElementById('partnership-track').value;
+
+      document.getElementById('confirm-heading').textContent = `Thank You, ${execName}`;
+      document.getElementById('confirm-body').textContent =
+        `Your inquiry for ${companyName} (${chosenTrack}) has been received by the Inceptura Partnership Desk. A Senior Growth Partner will contact you within one business day to schedule your alignment briefing.`;
+
+      partnershipForm.classList.add('hidden');
+      formConfirmation.classList.remove('hidden');
+    });
+
+    resetFormBtn.addEventListener('click', () => {
+      partnershipForm.reset();
+      formConfirmation.classList.add('hidden');
+      partnershipForm.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

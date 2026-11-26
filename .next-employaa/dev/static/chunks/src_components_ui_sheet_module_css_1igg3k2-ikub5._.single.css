@@ -1,0 +1,56 @@
+/* [project]/src/components/ui/sheet.module.css [app-client] (css) */
+.sheet-module__P4f9lq__overlay {
+  z-index: 49;
+  background: #08182a9e;
+  position: fixed;
+  inset: 0;
+}
+
+.sheet-module__P4f9lq__content {
+  z-index: 50;
+  overscroll-behavior: contain;
+  color: #122b40;
+  background: #fff;
+  width: min(92vw, 400px);
+  position: fixed;
+  inset: 0 0 0 auto;
+  overflow-y: auto;
+  box-shadow: -16px 0 60px #08182a33;
+}
+
+.sheet-module__P4f9lq__close {
+  color: #122b40;
+  cursor: pointer;
+  background: #f5f8fb;
+  border: 1px solid #d9e2eb;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font: 28px / 1 system-ui;
+  position: absolute;
+  inset: 16px 16px auto auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sheet-module__P4f9lq__overlay[data-state="open"] {
+    animation: .2s ease-out both sheet-module__P4f9lq__fade-in;
+  }
+
+  .sheet-module__P4f9lq__content[data-state="open"] {
+    animation: .25s ease-out both sheet-module__P4f9lq__slide-in;
+  }
+}
+
+@keyframes sheet-module__P4f9lq__fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-module__P4f9lq__slide-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+/*# sourceMappingURL=src_components_ui_sheet_module_css_1igg3k2-ikub5._.single.css.map*/
